@@ -10,9 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: cargo run
-      - uses: montudor/action-zip@v1
-        with:
-          args: zip -r missions.zip output/*
+      - run: zip -r missions.zip output/*
       - uses: actions/upload-artifact@v2
         with:
           name: missions.zip
