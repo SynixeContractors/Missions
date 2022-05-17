@@ -25,11 +25,10 @@ fn main() {
             println!("  {}", pbo_path);
             pbo.add_file(pbo_path, File::open(entry.path()).unwrap()).unwrap();
         }
-        pbo.add_extension("Synixe Generator", "v0.1.0");
         let scenario = scenario.trim_end_matches(".VR");
         std::fs::create_dir_all(format!("output/{}", scenario)).unwrap();
         for map in &maps {
-            pbo.write(&mut File::create(format!("output/{}/{}.{}.pbo", scenario, scenario, map)).unwrap()).unwrap();
+            pbo.write(&mut File::create(format!("output/{}/{}.{}.pbo", scenario, scenario, map)).unwrap(), false).unwrap();
         }
     }
 }
