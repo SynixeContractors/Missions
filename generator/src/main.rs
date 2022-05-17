@@ -28,7 +28,7 @@ fn main() {
         let scenario = scenario.trim_end_matches(".VR");
         std::fs::create_dir_all(format!("output/{}", scenario)).unwrap();
         for map in &maps {
-            pbo.write(&mut File::create(format!("output/{}/{}.{}.pbo", scenario, scenario, map)).unwrap(), false).unwrap();
+            pbo.write(&mut File::create(format!("output/{}/synixe_generator_{}.{}.pbo", scenario, scenario, map)).unwrap(), false).unwrap();
         }
     }
 }
