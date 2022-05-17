@@ -21,7 +21,7 @@ fn main() {
         for entry in WalkDir::new(format!("scenarios/{}", scenario)) {
             let entry = entry.unwrap();
             if !entry.path().is_file() { continue }
-            let pbo_path = entry.path().display().to_string().trim_start_matches(&format!("scenarios/{}\\", scenario)).to_string();
+            let pbo_path = entry.path().display().to_string().trim_start_matches(&format!("scenarios/{}{}", scenario, std::path::MAIN_SEPARATOR)).to_string();
             println!("  {}", pbo_path);
             pbo.add_file(pbo_path, File::open(entry.path()).unwrap()).unwrap();
         }
