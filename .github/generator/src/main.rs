@@ -9,7 +9,7 @@ fn main() {
         return;
     }
 
-    let scenarios = read_scenarios("scenarios");
+    let scenarios = read_scenarios("generator");
     if scenarios.is_empty() {
         println!("No scenarios found");
         return;
@@ -18,10 +18,10 @@ fn main() {
     for scenario in scenarios {
         println!("{}", scenario);
         let mut pbo = hemtt_pbo::sync::WritablePbo::<File>::new();
-        for entry in WalkDir::new(format!("scenarios/{}", scenario)) {
+        for entry in WalkDir::new(format!("generator/{}", scenario)) {
             let entry = entry.unwrap();
             if !entry.path().is_file() { continue }
-            let pbo_path = entry.path().display().to_string().trim_start_matches(&format!("scenarios/{}{}", scenario, std::path::MAIN_SEPARATOR)).to_string();
+            let pbo_path = entry.path().display().to_string().trim_start_matches(&format!("generator/{}{}", scenario, std::path::MAIN_SEPARATOR)).to_string();
             println!("  {}", pbo_path);
             pbo.add_file(pbo_path, File::open(entry.path()).unwrap()).unwrap();
         }
