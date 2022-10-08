@@ -17,6 +17,8 @@ jobs:
         with:
           path: sync
           ref: sync
+      - name: Clean Sync
+        run: rm -rf sync/*
       - name: Copy Company
         run: |
           cp -r source/company/* sync/
