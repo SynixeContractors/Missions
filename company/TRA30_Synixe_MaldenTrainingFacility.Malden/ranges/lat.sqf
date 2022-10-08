@@ -1,4 +1,6 @@
-params ["_shop"];
+params [
+	["_shops", [], [[]]]
+];
 
 _M136action = ["LATQuickM136","Grab M136","",{
 	_player addWeapon "CUP_launch_M136";
@@ -14,7 +16,9 @@ _M136action = ["LATQuickM136","Grab M136","",{
 		};
 	}, [], 0.5] call CBA_fnc_waitAndExecute;
 },{true}] call ace_interact_menu_fnc_createAction;
-[_shop, 0, ["ACE_MainActions"], _M136action] call ace_interact_menu_fnc_addActionToObject;
+{
+	[_x, 0, ["ACE_MainActions"], _M136action] call ace_interact_menu_fnc_addActionToObject;
+} forEach _shops;
 
 _M72A6action = ["LATQuickM72A6","Grab M72A6","",{
 	_player addWeapon "CUP_launch_M72A6";
@@ -30,4 +34,6 @@ _M72A6action = ["LATQuickM72A6","Grab M72A6","",{
 		};
 	}, [], 0.5] call CBA_fnc_waitAndExecute;
 },{true}] call ace_interact_menu_fnc_createAction;
-[_shop, 0, ["ACE_MainActions"], _M72A6action] call ace_interact_menu_fnc_addActionToObject;
+{
+	[_x, 0, ["ACE_MainActions"], _M72A6action] call ace_interact_menu_fnc_addActionToObject;
+} forEach _shops;
