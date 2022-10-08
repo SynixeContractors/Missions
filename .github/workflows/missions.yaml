@@ -1,4 +1,4 @@
-name: Generator
+name: Sync
 
 on:
   push:
@@ -8,10 +8,34 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: cargo run
-      - run: zip -rj missions.zip output/*
-      - uses: actions/upload-artifact@v2
+      - name: Checkout Missions
+        uses: actions/checkout@v2
         with:
-          name: missions.zip
-          path: 'missions.zip'
+          path: source
+      - name: Checkout Sync
+        uses: actions/checkout@v2
+        with:
+          path: sync
+      - name: Copy Company
+        run: |
+          cp -r source/company/* sync/
+      - name: Copy Contracts
+        run: |
+          cp -r source/contracts/* sync/
+      - name: Copy Specials
+        run: |
+          cp -r source/specials/* sync/
+      - name: Copy Theatres
+        run: |
+          cp -r source/theatres/* sync/
+      - name: Generate Missions
+        run: |
+          python3 source/.github/scripts/generate.py source sync
+      - name: Add Files
+        run: |
+          git config --local user.email "hello@synixe.contractors"
+          git config --local user.name "SynixeBrodsky"
+          git add .
+          git commit -m "Sync Missions"
+          git push
+        working-directory: sync
