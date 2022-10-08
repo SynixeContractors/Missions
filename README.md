@@ -3,11 +3,8 @@
 ## First Time Setup
 
 1. Download and install [GitHub Desktop](https://desktop.github.com/)
-
 2. Sign in or create a GitHub account
-
 3. Request access to the Synixe Contractors organization, if you are not already a member
-
 4. Clone the repository
     - `Clone a repository from the Internet...`
     - Select `SynixeContractors/missions`
