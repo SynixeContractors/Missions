@@ -33,10 +33,10 @@
 
 ![New Branch](.github/docs/github_02_branch.png)
 
-8. Open Arma and create a new missions
+8. Open Arma and create a new mission
 9. Save the mission under `MPMissions/Synixe/Missions/contracts` (or another folder if you are not creating a contract), **uncheck `Binarize the Sceario File`**
 10. Create and test the mission
-11. Return to GitHub Desktop, you will see the new mission file in the `Changes` tab
+11. Return to GitHub Desktop, you will see the new mission files in the `Changes` tab
 
 ![Commit](.github/docs/github_03_commit_summary.png)
 
