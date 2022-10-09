@@ -3,6 +3,8 @@ name: Check
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   check:
@@ -10,3 +12,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: synixecontractors/missionreviewer@main
+        with:
+          GITHUB_TOKEN: ${{ secrets.BRODSKY_TOKEN }}
