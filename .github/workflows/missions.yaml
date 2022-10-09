@@ -19,21 +19,10 @@ jobs:
           ref: sync
       - name: Clean Sync
         run: rm -rf sync/*
-      - name: Copy Company
+      - name: Run Packer
         run: |
-          cp -r source/company/* sync/
-      - name: Copy Contracts
-        run: |
-          cp -r source/contracts/* sync/
-      # - name: Copy Specials
-      #   run: |
-      #     cp -r source/specials/* sync/
-      # - name: Copy Theatres
-      #   run: |
-      #     cp -r source/theatres/* sync/
-      - name: Generate Missions
-        run: |
-          python3 source/.github/scripts/generate.py source sync
+          cd source/.github/packer
+          cargo run -- ../
       - name: Add Files
         run: |
           git config --local user.email "hello@synixe.contractors"
