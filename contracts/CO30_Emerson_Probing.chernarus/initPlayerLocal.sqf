@@ -16,15 +16,6 @@ CUP_stopLampCheck = true;
 // TODO replace with function
 [player] execVM "edit_me\briefing.sqf";
 
-{
-  if (!isNull _x) then {
-    persistent_gear_shop_arsenal_shops pushBack _x;
-  };
-} forEach [shop_1, shop_2, shop_3];
-
-call persistent_gear_shop_arsenal_fnc_create_actions;
-
-
 // -----------------------------------------------------------------
 
 // init chemical detector and chemical damage for mission
