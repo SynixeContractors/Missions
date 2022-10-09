@@ -43,7 +43,7 @@ switch (side _player) do {
     // RESISTANCE/INDEPENDENT briefing -- THIS IS THE BRIEFING YOU WANT TO EDIT FOR YOUR MISSION!
     case resistance: {
 		_player createDiaryRecord ["Diary", ["Employer", "
-            <br/>Horizon Islands government
+            <br/>Horizon Islands Government
         "]];
 
         _player createDiaryRecord ["Diary", ["Situation", "
@@ -63,7 +63,7 @@ switch (side _player) do {
 
         _player createDiaryRecord ["Diary", ["Mission", "
             <br/>Recently an IDAP camp was hit by the Syndikat, it was razed to the ground and workers vanished into thin air. That was the last straw for the government.
-            <br/>The Horizon Islands government has therefore hired Synixe to run counter insurgency operations against the Syndikat. The main objective is to execute a kill or capture order on the both the heads of the bandit and paramilitary branches of the Syndikat (Alika Erenavula and Theo Barou respectively). If possible find the supplies and/or IDAP workers and take them back to base. HUMINT has revealed the location of the bandit leader but the paramiltary leader is still to be found, however we know of several areas were Syndikat forces were spotted
+            <br/>The Horizon Islands Government has therefore hired Synixe to run counter insurgency operations against the Syndikat. The main objective is to execute a kill or capture order on the both the heads of the bandit and paramilitary branches of the Syndikat (Alika Erenavula and Theo Barou respectively). If possible find the supplies and/or IDAP workers and take them back to base. HUMINT has revealed the location of the bandit leader but the paramiltary leader is still to be found, however we know of several areas were Syndikat forces were spotted
             <br/>
             <br/>The government will also pay extra for any intel found, supplies destroyed or goods recovered.
         "]];
