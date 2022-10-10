@@ -5,7 +5,8 @@
 	missionNamespace setVariable ["SFS_SPAWN_POS", ASLtoAGL _location, true];
 
 	// Create Respawn Marker
-	createMarker ["respawn", _location];
+	createMarker ["respawn", [0,0,0]];
+	"respawn" setMarkerPos _location;
 	"respawn" setMarkerType "Empty";
 
 	// Create Spectator Screen
@@ -13,7 +14,7 @@
 
 	// Create Shop
 	private _shop = "CargoNet_01_box_F" createVehicle _location;
-	missionNamespace setVariable ["persistent_gear_shop_arsenal_shops", _shop, true];
+	missionNamespace setVariable ["persistent_gear_shop_arsenal_shops", [_shop], true];
 	persistent_gear_shop_arsenal_fnc_create_actions remoteExec ["call"];
 }] call zen_custom_modules_fnc_register;
 
