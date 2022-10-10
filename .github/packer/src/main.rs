@@ -38,11 +38,11 @@ fn main() {
                 .path()
                 .display()
                 .to_string()
-                .trim_start_matches(&format!(
+                .trim_start_matches(source.join(&format!(
                     "generator/{}{}",
                     scenario,
                     std::path::MAIN_SEPARATOR
-                ))
+                )).display())
                 .to_string();
             pbo.add_file(pbo_path, File::open(entry.path()).unwrap())
                 .unwrap();
@@ -78,12 +78,12 @@ fn main() {
                     .path()
                     .display()
                     .to_string()
-                    .trim_start_matches(&format!(
+                    .trim_start_matches(source.join(&format!(
                         "{}/{}{}",
                         directory,
                         scenario,
                         std::path::MAIN_SEPARATOR
-                    ))
+                    )).display())
                     .to_string();
                 pbo.add_file(pbo_path, File::open(entry.path()).unwrap())
                     .unwrap();
