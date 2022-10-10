@@ -1,11 +1,12 @@
 // Register freestyle modules
 ["Freestyle", "Base Location", {
 	params ["_location", ""];
-	if ((missionNamespace getVariable ["SFS_SPAWN_POS", []]) isEqualTo []) exitWith {};
+	if ((missionNamespace getVariable ["SFS_SPAWN_POS", []]) isNotEqualTo []) exitWith {};
 	missionNamespace setVariable ["SFS_SPAWN_POS", ASLtoAGL _location, true];
 
 	// Create Respawn Marker
-	createMarkerLocal ["respawn", _location];
+	createMarker ["respawn", [0,0,0]];
+	"respawn" setMarkerPos _location;
 	"respawn" setMarkerType "Empty";
 
 	// Create Spectator Screen
@@ -13,8 +14,8 @@
 
 	// Create Shop
 	private _shop = "CargoNet_01_box_F" createVehicle _location;
-	persistent_gear_shop_arsenal_shops pushBackUnique _shop;
-	call persistent_gear_shop_arsenal_fnc_create_actions;
+	missionNamespace setVariable ["persistent_gear_shop_arsenal_shops", [_shop], true];
+	persistent_gear_shop_arsenal_fnc_create_actions remoteExec ["call"];
 }] call zen_custom_modules_fnc_register;
 
 if (side player == sideLogic) exitWith {};
@@ -26,7 +27,7 @@ if (side player == sideLogic) exitWith {};
 	[true] call ace_spectator_fnc_setSpectator;
 
 	SFS_SPAWN_PFH = [{
-		if !((missionNamespace getVariable ["SFS_SPAWN_POS", []]) isEqualTo []) then {
+		if ((missionNamespace getVariable ["SFS_SPAWN_POS", []]) isNotEqualTo []) then {
 			[player, SFS_SPAWN_POS, true] call BIS_fnc_moveToRespawnPosition;
 			player enableSimulation true;
 			[false] call ace_spectator_fnc_setSpectator;
