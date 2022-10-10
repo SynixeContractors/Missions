@@ -1,7 +1,7 @@
 // Register freestyle modules
 ["Freestyle", "Base Location", {
 	params ["_location", ""];
-	if ((missionNamespace getVariable ["SFS_SPAWN_POS", []]) isEqualTo []) exitWith {};
+	if ((missionNamespace getVariable ["SFS_SPAWN_POS", []]) isNotEqualTo []) exitWith {};
 	missionNamespace setVariable ["SFS_SPAWN_POS", ASLtoAGL _location, true];
 
 	// Create Respawn Marker
@@ -26,7 +26,7 @@ if (side player == sideLogic) exitWith {};
 	[true] call ace_spectator_fnc_setSpectator;
 
 	SFS_SPAWN_PFH = [{
-		if !((missionNamespace getVariable ["SFS_SPAWN_POS", []]) isEqualTo []) then {
+		if ((missionNamespace getVariable ["SFS_SPAWN_POS", []]) isNotEqualTo []) then {
 			[player, SFS_SPAWN_POS, true] call BIS_fnc_moveToRespawnPosition;
 			player enableSimulation true;
 			[false] call ace_spectator_fnc_setSpectator;
