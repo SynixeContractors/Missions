@@ -75,6 +75,18 @@ fn main() {
                 if !entry.path().is_file() {
                     continue;
                 }
+                if ["readme.md", "readme.txt"].contains(
+                    &entry
+                        .path()
+                        .file_name()
+                        .unwrap()
+                        .to_str()
+                        .unwrap()
+                        .to_lowercase()
+                        .as_str(),
+                ) {
+                    continue;
+                }
                 let pbo_path = entry
                     .path()
                     .display()

@@ -48,3 +48,4 @@
     - Fill in any details on the website that opens
     - Click `Create pull request`
 13. In GitHub desktop, click `Current Branch` and select `main` after your mission has been merged
+14. You can safely delete the branch you created one it is merged
