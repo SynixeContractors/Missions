@@ -49,7 +49,7 @@ switch (side _player) do {
         _player createDiaryRecord ["Diary", ["Situation", "
             <br/><font color='#D81717'>ENEMY FORCES:</font color>
             <br/>Altis Armed Forces (AAF)
-            <br/>They will protect the area around the objectives and possibly reinforce them
+            <br/>AMCLOA: They will protect the area around the objectives and possibly reinforce them
             <br/>
             <br/><font color='#1D69F6'>FRIENDLY FORCES:</font color>
             <br/>Synixe Contractors, CTRG
