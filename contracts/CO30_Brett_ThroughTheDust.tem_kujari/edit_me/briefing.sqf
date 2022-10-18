@@ -64,16 +64,6 @@ switch (side _player) do {
             <br/>- N/A
         "]];
 
-        _player createDiaryRecord ["Diary", ["Objectives", "
-            <br/>We have been contracted to deliver supplies to a remote village. The region suffers from lack of infrastructure and supplies. Several factions have been competing for control of the area.
-            <br/>
-            <br/><font color='#E3D310'>PRIMARY OBJECTIVES:</font color>
-            <br/>- Transport the supplies to <marker name = 'delivery'>Turawa</marker>
-            <br/>
-            <br/><font color='#E3D310'>SECONDARY OBJECTIVES:</font color>
-            <br/>- Construct a bridge in the <marker name = 'bridge'>designated area.</marker>
-        "]];
-
         _player createDiaryRecord ["Diary", ["Situation", "
             <br/>Multiple factions in the area are fighting over the control of local supplies. Some may be openly hostile, others may be neutral.
             <br/>
@@ -86,6 +76,16 @@ switch (side _player) do {
             <br/><font color='#D81717'>ENEMY FORCES:</font color>
             <br/>- Local Militias
         "]];
+
+        _player createDiaryRecord ["Diary", ["Mission", "
+            <br/>We have been contracted to deliver supplies to a remote village. The region suffers from lack of infrastructure and supplies. Several factions have been competing for control of the area.
+            <br/>
+            <br/><font color='#E3D310'>PRIMARY OBJECTIVES:</font color>
+            <br/>- Transport the supplies to <marker name = 'delivery'>Turawa</marker>
+            <br/>
+            <br/><font color='#E3D310'>SECONDARY OBJECTIVES:</font color>
+            <br/>- Construct a bridge in the <marker name = 'bridge'>designated area.</marker>
+        "]];        
     };
 
     // CIVILIAN briefing
