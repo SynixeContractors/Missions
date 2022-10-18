@@ -1,4 +1,4 @@
-use std::path::PathBuf;
+use std::path::Path;
 
 use regex::Regex;
 use synixe_model::missions::Mission;
@@ -13,11 +13,11 @@ lazy_static::lazy_static! {
     static ref REGEX_BRIEF_MISSION: Regex = Regex::new(r#"(?ms)Mission", "(.+?)"]];"#).unwrap();
 }
 
-pub fn read_mission(dir: &str, id: String) -> Mission {
+pub fn read_mission(source: &Path, dir: &str, id: String) -> Mission {
     // Read description.ext
     let path = format!("{}/{}/edit_me/description.ext", dir, id);
     println!("Reading description: {}", path);
-    let description_ext = std::fs::read_to_string(path).unwrap();
+    let description_ext = std::fs::read_to_string(source.join(path)).unwrap();
 
     let name = REGEX_NAME
         .captures(&description_ext)
@@ -27,7 +27,7 @@ pub fn read_mission(dir: &str, id: String) -> Mission {
         .as_str()
         .to_string();
 
-    let path = PathBuf::from(format!("{}/{}/edit_me/briefing.sqf", dir, id));
+    let path = source.join(format!("{}/{}/edit_me/briefing.sqf", dir, id));
 
     let briefing = if path.exists() {
         // Read briefing.sqf
