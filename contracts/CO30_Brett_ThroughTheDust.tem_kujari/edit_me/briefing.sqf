@@ -42,6 +42,10 @@ switch (side _player) do {
 
     // RESISTANCE/INDEPENDENT briefing
     case resistance: {
+        _player createDiaryRecord ["Diary", ["Employer", "
+            <br/>Kujari Government
+        "]];
+
 		_player createDiaryRecord ["Diary", ["Intelligence", "
             <br/>The militia forces are mostly made up of untrained fighters with late cold war equipment.
             <br/>They have been known to use RPGs and heavy machine guns, although their supply of these weapons is small.
