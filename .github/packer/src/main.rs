@@ -116,7 +116,7 @@ fn main() {
                 false,
             )
             .unwrap();
-            missions.push(read_mission(directory, scenario));
+            missions.push(read_mission(&source, directory, scenario));
         }
     }
 
