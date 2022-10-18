@@ -15,7 +15,9 @@ lazy_static::lazy_static! {
 
 pub fn read_mission(source: &Path, dir: &str, id: String) -> Mission {
     // Read description.ext
-    let description_ext = std::fs::read_to_string(source.join(format!("{}/{}/edit_me/description.ext", dir, id))).unwrap();
+    let description_ext =
+        std::fs::read_to_string(source.join(format!("{}/{}/edit_me/description.ext", dir, id)))
+            .unwrap();
 
     let name = REGEX_NAME
         .captures(&description_ext)
