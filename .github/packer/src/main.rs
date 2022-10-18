@@ -122,7 +122,8 @@ fn main() {
 
     // Write mission list to mission.json
     let mut file = File::create(dest.join("mission.json")).unwrap();
-    serde_json::to_writer_pretty(&mut file, &missions.sort_by(|a, b| a.id.cmp(&b.id))).unwrap();
+    missions.sort_by(|a, b| a.id.cmp(&b.id));
+    serde_json::to_writer_pretty(&mut file, &missions).unwrap();
 }
 
 fn read_maps<P: Into<PathBuf>>(path: P) -> Vec<String> {
