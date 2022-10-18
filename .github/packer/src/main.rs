@@ -1,10 +1,17 @@
+#![warn(clippy::all, clippy::nursery)]
+
 use std::{
     fs::File,
     io::{BufRead, BufReader},
     path::PathBuf,
 };
 
+use synixe_events::missions::Mission;
 use walkdir::WalkDir;
+
+use crate::mission::read_mission;
+
+mod mission;
 
 const DIRECTORIES: [&str; 4] = ["company", "contracts", "specials", "theatres"];
 
@@ -50,7 +57,7 @@ fn main() {
         }
         let scenario = scenario.trim_end_matches(".VR");
         for map in &maps {
-            println!("  {}", format!("gen_{}.{}.pbo", scenario, map));
+            println!("  gen_{}.{}.pbo", scenario, map);
             pbo.write(
                 &mut File::create(dest.join(format!("gen_{}.{}.pbo", scenario, map))).unwrap(),
                 false,
@@ -58,6 +65,8 @@ fn main() {
             .unwrap();
         }
     }
+
+    let mut missions: Vec<Mission> = Vec::new();
 
     println!("Standalone");
     for directory in DIRECTORIES {
@@ -107,8 +116,13 @@ fn main() {
                 false,
             )
             .unwrap();
+            missions.push(read_mission(directory, scenario));
         }
     }
+
+    // Write mission list to mission.json
+    let mut file = File::create(dest.join("mission.json")).unwrap();
+    serde_json::to_writer_pretty(&mut file, &missions).unwrap();
 }
 
 fn read_maps<P: Into<PathBuf>>(path: P) -> Vec<String> {
