@@ -76,7 +76,7 @@ pub fn read_mission(source: &Path, dir: &str, id: String) -> Mission {
             .get(1)
             .unwrap()
             .as_str()
-            .parse::<u32>()
+            .parse::<i32>()
             .unwrap()
             .into(),
     }
