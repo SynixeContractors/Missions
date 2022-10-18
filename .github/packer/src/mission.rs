@@ -73,7 +73,7 @@ pub fn read_mission(source: &Path, dir: &str, id: String) -> Mission {
         typ: REGEX_TYPE
             .captures(&description_ext)
             .unwrap()
-            .get(2)
+            .get(1)
             .unwrap()
             .as_str()
             .parse::<u32>()
