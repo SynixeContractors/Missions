@@ -19,6 +19,7 @@ jobs:
           ref: sync
       - name: Clean Sync
         run: rm -rf sync/*
+      - uses: Swatinem/rust-cache@v1
       - name: Run Packer
         run: |
           cd source/.github/packer
