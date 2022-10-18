@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 use regex::Regex;
 use synixe_events::missions::Mission;
 
@@ -24,32 +26,37 @@ pub fn read_mission(dir: &str, id: String) -> Mission {
         .as_str()
         .to_string();
 
-    // Read briefing.sqf
-    let briefing_sqf =
-        std::fs::read_to_string(format!("{}/{}/edit_me/briefing.sqf", dir, id)).unwrap();
+    let path = PathBuf::from(format!("{}/{}/edit_me/briefing.sqf", dir, id));
 
-    let briefing = format!(
-        "**{}**\n\n**Employer**\n{}\n\n**Situation**\n\n{}\n\n**Mission**\n\n{}",
-        name,
-        REGEX_BRIEF_EMPLOYER
-            .captures(&briefing_sqf)
-            .unwrap()
-            .get(1)
-            .unwrap()
-            .as_str(),
-        REGEX_BRIEF_SITUATION
-            .captures(&briefing_sqf)
-            .unwrap()
-            .get(1)
-            .unwrap()
-            .as_str(),
-        REGEX_BRIEF_MISSION
-            .captures(&briefing_sqf)
-            .unwrap()
-            .get(1)
-            .unwrap()
-            .as_str(),
-    );
+    let briefing = if path.exists() {
+        // Read briefing.sqf
+        let briefing_sqf = std::fs::read_to_string(&path).unwrap();
+
+        format!(
+            "**{}**\n\n**Employer**\n{}\n\n**Situation**\n\n{}\n\n**Mission**\n\n{}",
+            name,
+            REGEX_BRIEF_EMPLOYER
+                .captures(&briefing_sqf)
+                .unwrap()
+                .get(1)
+                .unwrap()
+                .as_str(),
+            REGEX_BRIEF_SITUATION
+                .captures(&briefing_sqf)
+                .unwrap()
+                .get(1)
+                .unwrap()
+                .as_str(),
+            REGEX_BRIEF_MISSION
+                .captures(&briefing_sqf)
+                .unwrap()
+                .get(1)
+                .unwrap()
+                .as_str(),
+        )
+    } else {
+        String::new()
+    };
 
     Mission {
         id,
