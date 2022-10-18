@@ -6,7 +6,7 @@ use std::{
     path::PathBuf,
 };
 
-use synixe_events::missions::Mission;
+use synixe_model::missions::Mission;
 use walkdir::WalkDir;
 
 use crate::mission::read_mission;
