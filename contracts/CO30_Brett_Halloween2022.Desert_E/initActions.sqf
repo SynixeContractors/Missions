@@ -29,8 +29,12 @@ private _lockAction = ["Lock", "Lock", "", {
 private _detonateArmouryAction = ["DetonateArmoury", "Initialize Portside Protocol", "", {
 	("satchelcharge_remote_ammo" createVehicle (getPos charge_armoury_1)) setDamage 1;
 	("satchelcharge_remote_ammo" createVehicle (getPos charge_armoury_2)) setDamage 1;
+	("satchelcharge_remote_ammo" createVehicle (getPos charge_armoury_3)) setDamage 1;
+	("satchelcharge_remote_ammo" createVehicle (getPos charge_armoury_4)) setDamage 1;
 	deleteVehicle charge_armoury_1;
 	deleteVehicle charge_armoury_2;
+	deleteVehicle charge_armoury_3;
+	deleteVehicle charge_armoury_4;
 	missionNamespace setVariable ["halloween_armouryDetonated", true, true];
 }, {
 	!(_target getVariable ["halloween_locked", false]) && {!(missionNamespace getVariable ["halloween_armouryDetonated", false])}
