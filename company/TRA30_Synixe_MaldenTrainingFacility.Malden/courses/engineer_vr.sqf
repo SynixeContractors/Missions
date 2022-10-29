@@ -1,12 +1,13 @@
-if (missionNamespace getVariable ["training_engineer_vr_active", false]) exitWith {};
-missionNamespace setVariable ["training_engineer_vr_active", true, true];
-
 private _unit = (createGroup west) createUnit ["B_Soldier_VR_F", getMarkerPos "engineer_vr_start", [], 0, "NONE"];
-missionNamespace setVariable ["training_engineer_vr_old_unit", player];
+private _player = player;
+missionNamespace setVariable ["training_engineer_vr_old_unit", _player];
 selectPlayer _unit;
 // player setVariable ["eng_vr_unit", _unit, true];
 // player remoteControl _unit;
 // _unit switchCamera "internal";	
+
+_player enableSimulationGlobal false;
+_player allowDamage false;
 
 missionNamespace setVariable ["training_engineer_vr_unit", _unit, true];
 
@@ -21,7 +22,7 @@ training_engineer_vr_tick = [{
 		// player switchCamera "internal";
 		systemChat "Training complete.";
 		selectPlayer (missionNamespace getVariable ["training_engineer_vr_old_unit", objNull]);
+		player enableSimulationGlobal true;
+		player allowDamage true;
 	};
 }] call CBA_fnc_addPerFrameHandler;
-
-// Generate mines
