@@ -67,6 +67,20 @@ private _readExperimentNotes = ["ReadExperimentNotes", "Read Experiment Notes", 
 	!(_target getVariable ["halloween_locked", false])
 }] call ace_interact_menu_fnc_createAction;
 
+{
+	[_x, 0, ["ACE_MainActions"], _readExperimentNotes] call ace_interact_menu_fnc_addActionToObject;
+	[_x, 0, ["ACE_MainActions"], _unlockAction] call ace_interact_menu_fnc_addActionToObject;
+	[_x, 0, ["ACE_MainActions"], _lockAction] call ace_interact_menu_fnc_addActionToObject;
+} forEach [
+	control_laptop_1,
+	control_laptop_2,
+	control_laptop_3,
+	control_laptop_4,
+	control_laptop_5,
+	control_laptop_6,
+	control_laptop_7
+];
+
 // Doors
 
 private _unlockDoorAction = ["UnlockDoor", "Unlock Door", "", {
@@ -104,13 +118,29 @@ private _lockDoorAction = ["LockDoor", "Lock Door", "", {
 
 private _powerOnAction = ["PowerOn", "Power On", "", {
 	missionNamespace setVariable ["halloween_powered", true, true];
+	{
+		_x setObjectTextureGlobal [0, "assets\images\status_connected.jpg"]
+	} forEach [
+		screen_1,
+		screen_2,
+		screen_3,
+		screen_4
+	];
 }, {
-	!(missionNamespace getVariable ["halloween_powered", false])
+	!(missionNamespace getVariable ["halloween_powered", true])
 }] call ace_interact_menu_fnc_createAction;
 private _powerOffAction = ["PowerOff", "Power Off", "", {
 	missionNamespace setVariable ["halloween_powered", false, true];
+	{
+		_x setObjectTextureGlobal [0, "assets\images\status_disconnected.jpg"]
+	} forEach [
+		screen_1,
+		screen_2,
+		screen_3,
+		screen_4
+	];
 }, {
-	(missionNamespace getVariable ["halloween_powered", false])
+	(missionNamespace getVariable ["halloween_powered", true])
 }] call ace_interact_menu_fnc_createAction;
 
 [power_switch , 0, ["ACE_MainActions"], _powerOnAction] call ace_interact_menu_fnc_addActionToObject;
