@@ -1,20 +1,5 @@
 #include "do_not_edit\script_component.hpp"
-
-// Disable CUP street lights based on lighting levels (bad performance script)
-CUP_stopLampCheck = true;
-
-[QGVAR(missionStartTime), {
-    [
-        [
-            [getMissionConfigValue ["onLoadName", ""], "<t size = '1.5' underline = '1'>%1</t><br/>"],
-            ["Synixe Contractors"],
-            [getText (configFile >> "CfgWorlds" >> worldName >> "description"), "<t size = '1' font='puristaSemiBold'>%1</t>", 70]
-        ], 0.75, 0.75, "<t align = 'center' shadow = '1' size = '1.0'>%1</t>"
-    ] spawn BIS_fnc_typeText;
-}] call CBA_fnc_addEventHandler;
-
-// TODO replace with function
-[player] execVM "edit_me\briefing.sqf";
+#include "do_not_edit\initPlayerLocal.sqf"
 
 halloween_loadouts = [
   [["LMG_MK200_black_Holosight_lxWS","","","optic_Holosight_blk_F",["200Rnd_65x39_cased_Box",200],[],""],[],["hgun_P07_blk_F","","","",["16Rnd_9x21_Mag",17],[],""],["U_lxWS_ION_Casual6",[["FirstAidKit",1],["16Rnd_9x21_Mag",2,17],["HandGrenade",1,1],["SmokeShell",1,1],["SmokeShellGreen",1,1]]],["V_PlateCarrier2_blk",[["200Rnd_65x39_cased_Box",2,200],["Chemlight_green",2,1]]],[],"lxWS_H_CapB_rvs_blk_ION","G_Combat_lxWS",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]],
