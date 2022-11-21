@@ -48,7 +48,7 @@ switch (side _player) do {
 
         _player createDiaryRecord ["Diary", ["Situation", "
             <br/><font color='#D81717'>ENEMY FORCES:</font color>
-            <br/>Unkown
+            <br/>Unknown
             <br/>
             <br/><font color='#1D69F6'>FRIENDLY FORCES:</font color>
             <br/>Synixe Contractors, Theseus Inc
