@@ -18,7 +18,7 @@
  * <br/>
  *
  * Text Colour (Hex colour Code)
- * <font color='#FF0000'>TEXT HERE</font color>
+ * <font color='#FF0000'>TEXT HERE</font>
  *
  * Clickable Marker Link:
  * <marker name = 'MARKER_NAME'>MARKER_TEXT</marker>
@@ -47,21 +47,21 @@ switch (side _player) do {
         "]];
 
         _player createDiaryRecord ["Diary", ["Situation", "
-            <br/><font color='#D81717'>ENEMY FORCES:</font color>
+            <br/><font color='#D81717'>ENEMY FORCES:</font>
             <br/>Safe Sea
             <br/>AMLCOA: Hostile against contractors but should not prolong an engagement unless acting defensively.
             <br/>
-            <br/><font color='#1D69F6'>FRIENDLY FORCES:</font color>
+            <br/><font color='#1D69F6'>FRIENDLY FORCES:</font>
             <br/>Synixe Contractors
             <br/>
-            <br/><font color='#139120'>INDEPENDENT FORCES:</font color>
+            <br/><font color='#139120'>INDEPENDENT FORCES:</font>
             <br/>U.N.A.
             <br/>AMLCOA: Most likely expected to engage Contractors on sight, unknown how far spread they are in the area or how they will react to firefights. Contractors should try to limit contact with them, but they can be engaged if fired upon by U.N.A. forces.
             <br/>
-            <br/><font color='#993399'>CIVILIAN CONSIDERATIONS:</font color>
+            <br/><font color='#993399'>CIVILIAN CONSIDERATIONS:</font>
             <br/>Absent from the area.
             <br/>
-            <br/><font color='#663300'>TERRAIN CONSIDERATIONS:</font color>
+            <br/><font color='#663300'>TERRAIN CONSIDERATIONS:</font>
             <br/>N/A
         "]];
 

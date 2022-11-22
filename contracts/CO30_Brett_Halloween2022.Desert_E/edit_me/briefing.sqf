@@ -18,7 +18,7 @@
  * <br/>
  *
  * Text Colour (Hex colour Code)
- * <font color='#FF0000'>TEXT HERE</font color>
+ * <font color='#FF0000'>TEXT HERE</font>
  *
  * Clickable Marker Link:
  * <marker name = 'MARKER_NAME'>MARKER_TEXT</marker>
