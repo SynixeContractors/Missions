@@ -18,7 +18,7 @@
  * <br/>
  *
  * Text Colour (Hex colour Code)
- * <font color='#FF0000'>TEXT HERE</font color>
+ * <font color='#FF0000'>TEXT HERE</font>
  *
  * Clickable Marker Link:
  * <marker name = 'MARKER_NAME'>MARKER_TEXT</marker>
@@ -47,20 +47,20 @@ switch (side _player) do {
         "]];
 
         _player createDiaryRecord ["Diary", ["Situation", "
-            <br/><font color='#D81717'>ENEMY FORCES:</font color>
+            <br/><font color='#D81717'>ENEMY FORCES:</font>
             <br/>Slovakian Partisans
             <br/>AMLCOA: Has high presence in the area and is expected to respond to any contractor action.
             <br/>
-            <br/><font color='#1D69F6'>FRIENDLY FORCES:</font color>
+            <br/><font color='#1D69F6'>FRIENDLY FORCES:</font>
             <br/>Synixe Contractors
             <br/>
-            <br/><font color='#139120'>INDEPENDENT FORCES:</font color>
+            <br/><font color='#139120'>INDEPENDENT FORCES:</font>
             <br/>N/A
             <br/>
-            <br/><font color='#993399'>CIVILIAN CONSIDERATIONS:</font color>
+            <br/><font color='#993399'>CIVILIAN CONSIDERATIONS:</font>
             <br/>Area is devoid of non-combatants
             <br/>
-            <br/><font color='#663300'>TERRAIN CONSIDERATIONS:</font color>
+            <br/><font color='#663300'>TERRAIN CONSIDERATIONS:</font>
             <br/>N/A
         "]];
 

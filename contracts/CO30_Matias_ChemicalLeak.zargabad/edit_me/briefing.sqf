@@ -18,7 +18,7 @@
  * <br/>
  *
  * Text Colour (Hex colour Code)
- * <font color='#FF0000'>TEXT HERE</font color>
+ * <font color='#FF0000'>TEXT HERE</font>
  *
  * Clickable Marker Link:
  * <marker name = 'MARKER_NAME'>MARKER_TEXT</marker>
@@ -47,19 +47,19 @@ switch (side _player) do {
         "]];
 
         _player createDiaryRecord ["Diary", ["Situation", "
-            <br/><font color='#D81717'>ENEMY FORCES:</font color>
+            <br/><font color='#D81717'>ENEMY FORCES:</font>
             <br/>Takistani Army
             <br/>The army will try to prevent the extraction of the HVT, possible QRF is expected.
             <br/>
-            <br/><font color='#1D69F6'>FRIENDLY FORCES:</font color>
+            <br/><font color='#1D69F6'>FRIENDLY FORCES:</font>
             <br/>Synixe Contractors
             <br/>Squad of undercover SAC operatives
             <br/>
 
-            <br/><font color='#993399'>CIVILIAN CONSIDERATIONS:</font color>
+            <br/><font color='#993399'>CIVILIAN CONSIDERATIONS:</font>
             <br/>Some civilians are expected in the main city
 
-            <br/><font color='#663300'>TERRAIN CONSIDERATIONS:</font color>
+            <br/><font color='#663300'>TERRAIN CONSIDERATIONS:</font>
             <br/>The outskirts of Zargabad are relatively flat and desert, except for some trees.
         "]];
 

@@ -18,7 +18,7 @@
  * <br/>
  *
  * Text Colour (Hex colour Code)
- * <font color='#FF0000'>TEXT HERE</font color>
+ * <font color='#FF0000'>TEXT HERE</font>
  *
  * Clickable Marker Link:
  * <marker name = 'MARKER_NAME'>MARKER_TEXT</marker>
@@ -53,37 +53,37 @@ switch (side _player) do {
         "]];
 
         _player createDiaryRecord ["Diary", ["Equipment", "
-            <br/><font color='#0ECE68'>GROUND ASSETS:</font color>
+            <br/><font color='#0ECE68'>GROUND ASSETS:</font>
             <br/>- 2x Land Rover (M2)
             <br/>- 2x Land Rover (Transport)
             <br/>
-            <br/><font color='#0ECE68'>AIR ASSETS:</font color>
+            <br/><font color='#0ECE68'>AIR ASSETS:</font>
             <br/>- N/A
             <br/>
-            <br/><font color='#0ECE68'>SPECIAL ASSETS:</font color>
+            <br/><font color='#0ECE68'>SPECIAL ASSETS:</font>
             <br/>- N/A
         "]];
 
         _player createDiaryRecord ["Diary", ["Situation", "
             <br/>Multiple factions in the area are fighting over the control of local supplies. Some may be openly hostile, others may be neutral.
             <br/>
-            <br/><font color='#1D69F6'>FRIENDLY FORCES:</font color>
+            <br/><font color='#1D69F6'>FRIENDLY FORCES:</font>
             <br/>- Synixe Contractors
             <br/>
-            <br/><font color='#139120'>INDEPENDENT FORCES:</font color>
+            <br/><font color='#139120'>INDEPENDENT FORCES:</font>
             <br/>- Local Militias
             <br/>
-            <br/><font color='#D81717'>ENEMY FORCES:</font color>
+            <br/><font color='#D81717'>ENEMY FORCES:</font>
             <br/>- Local Militias
         "]];
 
         _player createDiaryRecord ["Diary", ["Mission", "
             <br/>We have been contracted to deliver supplies to a remote village. The region suffers from lack of infrastructure and supplies. Several factions have been competing for control of the area.
             <br/>
-            <br/><font color='#E3D310'>PRIMARY OBJECTIVES:</font color>
+            <br/><font color='#E3D310'>PRIMARY OBJECTIVES:</font>
             <br/>- Transport the supplies to <marker name = 'delivery'>Turawa</marker>
             <br/>
-            <br/><font color='#E3D310'>SECONDARY OBJECTIVES:</font color>
+            <br/><font color='#E3D310'>SECONDARY OBJECTIVES:</font>
             <br/>- Construct a bridge in the <marker name = 'bridge'>designated area.</marker>
         "]];        
     };
