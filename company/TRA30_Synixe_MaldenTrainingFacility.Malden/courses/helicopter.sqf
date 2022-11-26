@@ -16,15 +16,15 @@ training_heli_unit setUnitLoadout [[[],[],[],["synixe_contractors_Uniform_Contra
 training_heli_cleanup = [];
 
 training_heli_tick = [{
-	if (!(alive training_heli_unit) || {!(alive training_heli_vehicle)}) then {
-		training_heli_active = false;
-		[training_heli_tick] call CBA_fnc_removePerFrameHandler;
-		selectPlayer training_heli_old_unit;
-		player allowDamage true;
-		player enableSimulationGlobal true;
-		deleteVehicle training_heli_vehicle;
-		private _group = group training_heli_unit;
-		deleteVehicle training_heli_unit;
-		deleteGroup _group;
-	};
+    if (!(alive training_heli_unit) || {!(alive training_heli_vehicle)}) then {
+        training_heli_active = false;
+        [training_heli_tick] call CBA_fnc_removePerFrameHandler;
+        selectPlayer training_heli_old_unit;
+        player allowDamage true;
+        player enableSimulationGlobal true;
+        deleteVehicle training_heli_vehicle;
+        private _group = group training_heli_unit;
+        deleteVehicle training_heli_unit;
+        deleteGroup _group;
+    };
 }] call CBA_fnc_addPerFrameHandler;

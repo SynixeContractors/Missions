@@ -5,4 +5,4 @@ call compile preprocessFileLineNumbers "ranges\engineer.sqf";
 call compile preprocessFileLineNumbers "ranges\grenadier.sqf";
 call compile preprocessFileLineNumbers "ranges\helicopter.sqf";
 
-[shop_lat_1, shop_lat_2] call compile preprocessFileLineNumbers "ranges\lat.sqf";
+[[shop_lat_1, shop_lat_2]] call compile preprocessFileLineNumbers "ranges\lat.sqf";

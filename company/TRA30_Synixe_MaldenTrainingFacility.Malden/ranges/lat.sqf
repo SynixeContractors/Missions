@@ -2,7 +2,7 @@ params [
 	["_shops", [], [[]]]
 ];
 
-_M136action = ["LATQuickM136","Grab M136","",{
+private _M136action = ["LATQuickM136","Grab M136","",{
 	_player addWeapon "CUP_launch_M136";
 	[{
 		if (count weapons player > 0) then  { 
@@ -20,7 +20,7 @@ _M136action = ["LATQuickM136","Grab M136","",{
 	[_x, 0, ["ACE_MainActions"], _M136action] call ace_interact_menu_fnc_addActionToObject;
 } forEach _shops;
 
-_M72A6action = ["LATQuickM72A6","Grab M72A6","",{
+private _M72A6action = ["LATQuickM72A6","Grab M72A6","",{
 	_player addWeapon "CUP_launch_M72A6";
 	[{
 		if (count weapons player > 0) then  { 

@@ -51,7 +51,7 @@ halloween_fnc_spawnSurgeUnit = {
   "Halloween",
   "Spawn Security",
   {
-    ["halloween_spawnEffect", [getPosASL _unit]] call CBA_fnc_globalEvent;
+    ["halloween_spawnEffect", _this] call CBA_fnc_globalEvent;
     [{
       params ["_pos"];
       [_pos, selectRandom halloween_loadouts] call halloween_fnc_spawnSurgeUnit;
