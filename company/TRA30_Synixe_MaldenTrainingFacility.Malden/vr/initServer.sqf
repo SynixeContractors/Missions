@@ -30,24 +30,23 @@ training_get_unit = {
             "I_Soldier_VR_F"
         };
     };
-    systemChat format ["%1", _ret];
     _ret
 };
 
 ["training_vr_spawnUnit", {
-    params ["_tag", "_side", "_posATL", "_code"];
+    params ["_tag", "_side", "_posATL", "_code", ["_params", []]];
     private _tagGroup = training_vr_groups getOrDefault [_tag, grpNull];
     if (isNull _tagGroup) then {
         _tagGroup = createGroup east;
         training_vr_groups set [_tag, _tagGroup];
     };
     private _unit = _tagGroup createUnit [[_side] call training_get_unit, _posATL, [], 0, "NONE"];
-    [_unit] call _code;
+    [_unit, _params] call _code;
     ["training_vr_unit", [_unit]] call CBA_fnc_globalEvent;
 }] call CBA_fnc_addEventHandler;
 
 ["training_vr_spawnGroup", {
-    params ["_tag", "_side", "_posATL", "_count", "_code"];
+    params ["_tag", "_side", "_posATL", "_count", "_code", ["_params", []]];
     private _tagGroup = training_vr_groups getOrDefault [_tag, grpNull];
     if (isNull _tagGroup) then {
         _tagGroup = createGroup east;
@@ -57,7 +56,7 @@ training_get_unit = {
         private _unit = _tagGroup createUnit [[_side] call training_get_unit, _posATL, [], 0, "NONE"];
         ["training_vr_unit", [_unit]] call CBA_fnc_globalEvent;
     };
-    [_tagGroup] call _code;
+    [_tagGroup, _params] call _code;
 }] call CBA_fnc_addEventHandler;
 
 ["training_vr_resetGroup", {
