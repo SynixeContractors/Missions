@@ -1,6 +1,3 @@
-engineer_fence_originals = [engineer_fence_1, engineer_fence_2, engineer_fence_3, engineer_fence_4];
-engineer_fence_clones = [];
-
 engineer_fence_fnc_make_clones = {
     {
         deleteVehicle _x;
@@ -15,6 +12,7 @@ engineer_fence_fnc_make_clones = {
         _clone setPosATL _posClone;
         _clone setVectorDirAndUp [vectorDir _x, vectorUp _x];
         engineer_fence_clones pushBack _clone;
+        publicVariable "engineer_fence_clones";
     } forEach engineer_fence_originals
 };
 
