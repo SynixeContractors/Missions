@@ -86,7 +86,6 @@ medical_patients = [];
                         _params params ["_stretcher"];
                         private _patient = _stretcher getVariable ["medical_patient", objNull];
                         [_patient, _severity, _location, _type] call ace_medical_fnc_addDamageToUnit;
-                        [_patient] call ace_medical_fnc_handleDamage_advancedSetDamage;
                     },
                     {},
                     [_stretcher]
