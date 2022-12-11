@@ -14,8 +14,8 @@
 
 	// Create Shop
 	private _shop = "CargoNet_01_box_F" createVehicle _location;
-	missionNamespace setVariable ["persistent_gear_shop_arsenal_shops", [_shop], true];
-	persistent_gear_shop_arsenal_fnc_create_actions remoteExec ["call"];
+	missionNamespace setVariable ["crate_client_gear_shop_boxes", [_shop], true];
+	crate_client_gear_fnc_shop_init remoteExec ["call"];
 }] call zen_custom_modules_fnc_register;
 
 if (side player == sideLogic) exitWith {};
