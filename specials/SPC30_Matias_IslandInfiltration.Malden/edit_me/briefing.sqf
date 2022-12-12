@@ -33,11 +33,13 @@ _player createDiaryRecord ["Diary", ["Game Rules", "
             <br/>1- Infiltrating forces are not allowed to enter the defender spawn
             <br/>2- Defenders should have at least three times the amount of infiltrators
             <br/>3- Infiltrators are allowed a maximum of 6 respawns
-            <br/>4- Game ends once infiltrators have no more respawns, all the infrastructure is destroyed or op time is over
+            <br/>4- Game ends once infiltrators have no more respawns, all the infrastructure is destroyed or two hours have passed since the infiltrators left their base.
             <br/>5- Infrastructure will have a set of points attached to them. The more valuable it is the more points it awards. Defenders start with all of the points and for every piece of infrastructure that is destroyed infiltrators take those points for themselves.
             <br/>6- Winner is whoever has the most points by the game's end. If it's a tie the defenders win by default.
+            <br/>7- Everything of importance in the infrastructre has to be destroyed for it to count.
             <br/>
             <br/>Main idea is that infiltrators have the technological advantage, while defenders have strength in numbers and vehicles. Infiltrators don't have any medical capabilities aside from first aid.
+            <br/>The infiltrators will have the ability to set the time from their base
         "]];
 
 switch (side _player) do {
