@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1025;
+	toggles=1;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=89;
+		nextID=97;
 	};
 	class MarkerIDProvider
 	{
@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=12;
+		nextID=18;
 	};
 	class Camera
 	{
-		pos[]={16119.313,104.46092,17001.512};
-		dir[]={0.70926666,-0.66556728,-0.23235705};
-		up[]={0.63249856,0.74633139,-0.20720807};
-		aside[]={-0.31132665,-1.2137752e-007,-0.95031983};
+		pos[]={16007.546,20.406651,17281.525};
+		dir[]={0.83456564,-0.41352546,0.36400402};
+		up[]={0.37904054,0.91049224,0.16532239};
+		aside[]={0.39978769,5.9255399e-008,-0.91660881};
 	};
 };
 binarizationWanted=0;
-sourceName="SPC12_Matias_SpiesVsMercs";
+sourceName="SPC18_Matias_SpiesVsMercs";
 addons[]=
 {
 	"A3_Structures_F_Exp_Military_Fortifications",
@@ -44,7 +44,6 @@ addons[]=
 	"eo_gorkas",
 	"ace_realisticnames",
 	"ace_medical_treatment",
-	"A3_Modules_F_Multiplayer",
 	"A3_Ui_F",
 	"A3_Structures_F_Walls",
 	"A3_Structures_F_Furniture",
@@ -54,13 +53,15 @@ addons[]=
 	"MU_CTRG",
 	"tacs_units",
 	"A3_Structures_F_Training",
+	"CUP_CAMisc",
+	"A3_Props_F_Enoch_Military_Camps",
 	"A3_Modules_F_Curator_Misc"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=17;
+		items=18;
 		class Item0
 		{
 			className="A3_Structures_F_Exp";
@@ -123,52 +124,57 @@ class AddonsMetaData
 		};
 		class Item9
 		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item10
-		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item10
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item11
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item12
 		{
 			className="ace_sitting";
 			name="ACE3 - Sitting";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item14
+		class Item13
 		{
 			className="MU_CTRG";
 			name="MU_CTRG";
 		};
-		class Item15
+		class Item14
 		{
 			className="tacs_units";
 			name="Theseus Services - Units";
 			author="Theseus Services Team";
 			url="https://github.com/Theseus-Aegis/TheseusServices";
 		};
+		class Item15
+		{
+			className="CUP_CAMisc";
+			name="CUP_CAMisc";
+		};
 		class Item16
+		{
+			className="A3_Props_F_Enoch";
+			name="Arma 3 Contact Platform - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item17
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
@@ -183,16 +189,183 @@ dlcs[]=
 	"tacu",
 	"ws",
 	"Heli",
-	"tacs"
+	"tacs",
+	"Contact"
 };
 randomSeed=6260737;
 class ScenarioData
 {
 	author="Jackson";
+	respawn=1;
 };
 class CustomAttributes
 {
 	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="ENH_dynamicSkill";
+			expression="if (!is3DEN && _value # 0 && isServer) then      {        _value params        [          '_enable',          '_skillMinBLUFOR',          '_skillAimMinBLUFOR',          '_skillMaxBLUFOR',          '_skillAimMaxBlUFOR',          '_skillMinOPFOR',          '_skillAimMinOPFOR',          '_skillMaxOPFOR',          '_skillAimMaxOPFOR',          '_skillMinINDFOR',          '_skillAimMinINDFOR',          '_skillMaxINDFOR',          '_skillAimMaxINDFOR'        ];        [          true,          [            [WEST, _skillMinBLUFOR, _skillAimMinBLUFOR, _skillMaxBLUFOR, _skillAimMaxBlUFOR],            [EAST, _skillMinOPFOR, _skillAimMinOPFOR, _skillMaxOPFOR, _skillAimMaxOPFOR],            [INDEPENDENT, _skillMinINDFOR, _skillAimMinINDFOR, _skillMaxINDFOR, _skillAimMaxINDFOR]          ]        ] call BIS_fnc_EXP_camp_dynamicAISkill;      }";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+					class value
+					{
+						items=13;
+						class Item0
+						{
+							class data
+							{
+								singleType="BOOL";
+								value=0;
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.5;
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.30000001;
+							};
+						};
+						class Item3
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.80000001;
+							};
+						};
+						class Item4
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.5;
+							};
+						};
+						class Item5
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.5;
+							};
+						};
+						class Item6
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.30000001;
+							};
+						};
+						class Item7
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.80000001;
+							};
+						};
+						class Item8
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.5;
+							};
+						};
+						class Item9
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.5;
+							};
+						};
+						class Item10
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.30000001;
+							};
+						};
+						class Item11
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.80000001;
+							};
+						};
+						class Item12
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.5;
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+					class value
+					{
+						items=3;
+						class Item0
+						{
+							class data
+							{
+								singleType="STRING";
+								value="ace_spectator";
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								singleType="STRING";
+								value="EndMission";
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Spectator";
+							};
+						};
+					};
+				};
+			};
+		};
+		nAttributes=2;
+	};
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -253,14 +426,15 @@ class Mission
 	};
 	class Entities
 	{
-		items=12;
+		items=13;
 		class Item0
 		{
 			dataType="Layer";
 			name="Merc Respawn";
+			state=1;
 			class Entities
 			{
-				items=17;
+				items=16;
 				class Item0
 				{
 					dataType="Object";
@@ -528,7 +702,7 @@ class Mission
 												singleType="ARRAY";
 												class value
 												{
-													items=356;
+													items=371;
 													class Item0
 													{
 														class data
@@ -3377,6 +3551,126 @@ class Mission
 															value="TACU_Police_Vest_HeavyPlateCarrier_PoliceGreen";
 														};
 													};
+													class Item356
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_hgun_FlareGun";
+														};
+													};
+													class Item357
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_5Rnd_B_Saiga12_HE";
+														};
+													};
+													class Item358
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_12Rnd_B_Saiga12_HE";
+														};
+													};
+													class Item359
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_FlareWhite_265_M";
+														};
+													};
+													class Item360
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_FlareRed_265_M";
+														};
+													};
+													class Item361
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_FlareGreen_265_M";
+														};
+													};
+													class Item362
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_FlareYellow_265_M";
+														};
+													};
+													class Item363
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_IllumFlareWhite_265_M";
+														};
+													};
+													class Item364
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_IllumFlareRed_265_M";
+														};
+													};
+													class Item365
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_IllumFlareGreen_265_M";
+														};
+													};
+													class Item366
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_IllumFlareYellow_265_M";
+														};
+													};
+													class Item367
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_StarClusterWhite_265_M";
+														};
+													};
+													class Item368
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_StarClusterRed_265_M";
+														};
+													};
+													class Item369
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_StarClusterGreen_265_M";
+														};
+													};
+													class Item370
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_StarClusterYellow_265_M";
+														};
+													};
 												};
 											};
 										};
@@ -4396,88 +4690,9 @@ class Mission
 					};
 					id=22;
 				};
-				class Item16
-				{
-					dataType="Logic";
-					class PositionInfo
-					{
-						position[]={16079.701,15.831734,17000.035};
-					};
-					id=87;
-					type="ModuleRespawnPosition_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ModuleRespawnPosition_F_Marker";
-							expression="_this setVariable ['Marker',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="2";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ModuleRespawnPosition_F_Name";
-							expression="_this setVariable ['Name',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ModuleRespawnPosition_F_Side";
-							expression="_this setVariable ['Side',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="0";
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="ModuleRespawnPosition_F_ShowNotification";
-							expression="_this setVariable ['ShowNotification',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="1";
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="ModuleRespawnPosition_F_Type";
-							expression="_this setVariable ['Type',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="0";
-								};
-							};
-						};
-						nAttributes=5;
-					};
-				};
 			};
 			id=52;
-			atlOffset=0.0075082779;
+			atlOffset=0.014603615;
 		};
 		class Item1
 		{
@@ -4508,6 +4723,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="Gates";
+			state=1;
 			class Entities
 			{
 				items=5;
@@ -4613,6 +4829,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="Laptop 3";
+			state=1;
 			class Entities
 			{
 				items=3;
@@ -4637,18 +4854,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={16210.45,14.768552,17070.129};
-						angles[]={0.0091544911,5.8502278,6.2805109};
+						position[]={16210.45,14.768064,17070.129};
+						angles[]={0.0091629783,5.8502212,6.2805147};
 					};
 					side="Empty";
 					flags=4;
 					class Attributes
 					{
+						init="lap_3_hacked = false;";
 						name="lap_3";
 					};
 					id=69;
 					type="Land_Laptop_unfolded_F";
-					atlOffset=0.00070381165;
+					atlOffset=0.00021648407;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4668,7 +4886,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="";
+												value="Hack Laptop Three";
 											};
 										};
 										class Item1
@@ -4676,7 +4894,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
+												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa";
 											};
 										};
 										class Item2
@@ -4684,7 +4902,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
+												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa";
 											};
 										};
 										class Item3
@@ -4724,7 +4942,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="";
+												value="playSound ""Alarm"";" \n "systemChat ""Laptop Three has been hacked"";" \n "lap_3_hacked = true;";
 											};
 										};
 										class Item8
@@ -4732,7 +4950,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="";
+												value="playSound ""ACE_Javelin_Locked"";";
 											};
 										};
 										class Item9
@@ -4740,7 +4958,7 @@ class Mission
 											class data
 											{
 												singleType="SCALAR";
-												value=10;
+												value=30;
 											};
 										};
 										class Item10
@@ -4792,12 +5010,13 @@ class Mission
 				};
 			};
 			id=72;
-			atlOffset=0.20571709;
+			atlOffset=0.20559502;
 		};
 		class Item6
 		{
 			dataType="Layer";
 			name="Laptop 2";
+			state=1;
 			class Entities
 			{
 				items=3;
@@ -4806,17 +5025,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={15933.445,15.664351,17031.982};
-						angles[]={0.003521048,4.3723254,0.0088700987};
+						position[]={15933.445,15.664787,17031.982};
+						angles[]={0.0035255651,4.3723292,0.0088662729};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
+						init="lap_2_hacked = false;";
 						name="lap_2";
 					};
 					id=66;
 					type="Land_Laptop_unfolded_F";
-					atlOffset=0.82211971;
+					atlOffset=0.0003528595;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4836,7 +5057,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="";
+												value="Hack Laptop Two";
 											};
 										};
 										class Item1
@@ -4844,7 +5065,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
+												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa";
 											};
 										};
 										class Item2
@@ -4852,7 +5073,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
+												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa";
 											};
 										};
 										class Item3
@@ -4892,7 +5113,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="";
+												value="playSound ""Alarm"";" \n "systemChat ""Laptop Two has been hacked"";" \n "lap_2_hacked = true;";
 											};
 										};
 										class Item8
@@ -4900,7 +5121,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="";
+												value="playSound ""ACE_Javelin_Locked"";";
 											};
 										};
 										class Item9
@@ -4908,7 +5129,7 @@ class Mission
 											class data
 											{
 												singleType="SCALAR";
-												value=10;
+												value=30;
 											};
 										};
 										class Item10
@@ -4976,12 +5197,13 @@ class Mission
 				};
 			};
 			id=73;
-			atlOffset=0.20553017;
+			atlOffset=0.20563889;
 		};
 		class Item7
 		{
 			dataType="Layer";
 			name="Laptop 1";
+			state=1;
 			class Entities
 			{
 				items=3;
@@ -5013,6 +5235,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						init="lap_1_hacked = false;";
 						name="lap_1";
 					};
 					id=62;
@@ -5037,7 +5260,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="";
+												value="Hack Laptop One";
 											};
 										};
 										class Item1
@@ -5045,7 +5268,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
+												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa";
 											};
 										};
 										class Item2
@@ -5053,7 +5276,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
+												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa";
 											};
 										};
 										class Item3
@@ -5093,7 +5316,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="";
+												value="playSound ""Alarm"";" \n "systemChat ""Laptop One has been hacked"";" \n "lap_1_hacked = true;";
 											};
 										};
 										class Item8
@@ -5101,7 +5324,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="";
+												value="playSound ""ACE_Javelin_Locked"";";
 											};
 										};
 										class Item9
@@ -5109,7 +5332,7 @@ class Mission
 											class data
 											{
 												singleType="SCALAR";
-												value=10;
+												value=30;
 											};
 										};
 										class Item10
@@ -5167,9 +5390,10 @@ class Mission
 		{
 			dataType="Layer";
 			name="Spy Respawn";
+			state=1;
 			class Entities
 			{
-				items=5;
+				items=6;
 				class Item0
 				{
 					dataType="Object";
@@ -7278,87 +7502,165 @@ class Mission
 				};
 				class Item4
 				{
-					dataType="Logic";
+					dataType="Object";
 					class PositionInfo
 					{
-						position[]={16009.127,18.8263,17277.926};
+						position[]={16008.614,20.818506,17283.348};
+						angles[]={6.2808466,6.0567288,0.0024609142};
 					};
-					id=88;
-					type="ModuleRespawnPosition_F";
-					atlOffset=0.00010108948;
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						init="spies_extracted = false;";
+					};
+					id=91;
+					type="Vysilacka";
+					atlOffset=0.0002746582;
 					class CustomAttributes
 					{
 						class Attribute0
 						{
-							property="ModuleRespawnPosition_F_Marker";
-							expression="_this setVariable ['Marker',_value,true];";
+							property="ENH_HoldAction";
+							expression="      _value params ['_name', '_iconIdle', '_iconProgress', '_conditionShow', '_conditionProgress', '_codeStart', '_codeProgress', '_codeCompletion', '_codeInterrupt', '_duration', '_priority', '_showUnconscious', '_showWindow'];      if (!is3DEN && !(_name isEqualTo '')) then      {        [          _this,          _name,          _iconIdle,          _iconProgress,          _conditionShow,          _conditionProgress,          compile _codeStart,          compile _codeProgress,          compile format ['%1 %2', '[_this select 0, _this select 2] remoteExecCall [''removeAction'', 0]; remoteExecCall ['''', _this select 0];', _codeCompletion],          compile _codeInterrupt,          nil,          _duration,          _priority,          true,          _showUnconscious,          _showWindow        ] remoteExecCall ['BIS_fnc_holdActionAdd', 0, _this];      };";
 							class Value
 							{
 								class data
 								{
-									singleType="STRING";
-									value="0";
+									singleType="ARRAY";
+									class value
+									{
+										items=13;
+										class Item0
+										{
+											class data
+											{
+												singleType="STRING";
+												value="Call for extraction";
+											};
+										};
+										class Item1
+										{
+											class data
+											{
+												singleType="STRING";
+												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsup_ca.paa";
+											};
+										};
+										class Item2
+										{
+											class data
+											{
+												singleType="STRING";
+												value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsup_ca.paa";
+											};
+										};
+										class Item3
+										{
+											class data
+											{
+												singleType="STRING";
+												value="true";
+											};
+										};
+										class Item4
+										{
+											class data
+											{
+												singleType="STRING";
+												value="lap_1_hacked == true and" \n "lap_2_hacked == true and" \n "lap_3_hacked == true;";
+											};
+										};
+										class Item5
+										{
+											class data
+											{
+												singleType="STRING";
+												value="";
+											};
+										};
+										class Item6
+										{
+											class data
+											{
+												singleType="STRING";
+												value="";
+											};
+										};
+										class Item7
+										{
+											class data
+											{
+												singleType="STRING";
+												value="spies_extracted = true;" \n "playSound ""SN_Flare_Fired_4"";";
+											};
+										};
+										class Item8
+										{
+											class data
+											{
+												singleType="STRING";
+												value="";
+											};
+										};
+										class Item9
+										{
+											class data
+											{
+												singleType="SCALAR";
+												value=10;
+											};
+										};
+										class Item10
+										{
+											class data
+											{
+												singleType="SCALAR";
+												value=1000;
+											};
+										};
+										class Item11
+										{
+											class data
+											{
+												singleType="BOOL";
+												value=0;
+											};
+										};
+										class Item12
+										{
+											class data
+											{
+												singleType="BOOL";
+												value=1;
+											};
+										};
+									};
 								};
 							};
 						};
-						class Attribute1
-						{
-							property="ModuleRespawnPosition_F_Name";
-							expression="_this setVariable ['Name',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ModuleRespawnPosition_F_Side";
-							expression="_this setVariable ['Side',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="1";
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="ModuleRespawnPosition_F_ShowNotification";
-							expression="_this setVariable ['ShowNotification',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="1";
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="ModuleRespawnPosition_F_Type";
-							expression="_this setVariable ['Type',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="0";
-								};
-							};
-						};
-						nAttributes=5;
+						nAttributes=1;
 					};
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={16008.35,19.272646,17283.842};
+						angles[]={6.2814593,1.038442,0.0029296887};
+					};
+					side="Empty";
+					class Attributes
+					{
+					};
+					id=90;
+					type="Land_PortableDesk_01_black_F";
+					atlOffset=0.49028206;
 				};
 			};
 			id=75;
-			atlOffset=0.17131233;
+			atlOffset=0.14047241;
 		};
 		class Item9
 		{
@@ -7393,6 +7695,20 @@ class Mission
 			id=86;
 			type="ModuleCoverMap_F";
 			atlOffset=7.1418505;
+		};
+		class Item12
+		{
+			dataType="Trigger";
+			position[]={16007.639,18.825188,17282.732};
+			class Attributes
+			{
+				sizeA=0;
+				sizeB=0;
+				effectSound="SN_Flare_Fired_4";
+			};
+			id=89;
+			type="EmptyDetector";
+			atlOffset=0.00010681152;
 		};
 	};
 };
