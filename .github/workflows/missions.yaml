@@ -37,3 +37,5 @@ jobs:
           git push
         working-directory: sync
         continue-on-error: true
+      - name: Hook
+        run: curl --location --request POST 'https://cluster.synixe.contractors/hooks/missions/list_updated' --header 'X-Token: ${{ secrets.HOOKS_TOKEN }}'
