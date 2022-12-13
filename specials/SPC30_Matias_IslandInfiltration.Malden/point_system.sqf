@@ -7,68 +7,68 @@ private _points_defenders = 18;
 //Manage the points
 if (!alive rbay_destroy_check) then
 {
-	_points_defenders - 2
-	_points_infiltrators + 2
+	_points_defenders = _points_defenders - 2
+	_points_infiltrators = _points_infiltrators + 2
 };
 
 if (!alive fdepot_destroy_check) then
 {
-	_points_defenders - 1
-	_points_infiltrators + 1
+	_points_defenders = _points_defenders - 1
+	_points_infiltrators = _points_infiltrators + 1
 };
 
 if (!alive astorage_destroy_check) then
 {
-	_points_defenders - 2
-	_points_infiltrators + 2
+	_points_defenders = _points_defenders - 2
+	_points_infiltrators = _points_infiltrators + 2
 };
 
 if (!alive cuplink_destroy_check) then
 {
-	_points_defenders - 3
-	_points_infiltrators + 3
+	_points_defenders = _points_defenders - 3
+	_points_infiltrators = _points_infiltrators + 3
 };
 
 if (!alive sstaffquarters_destroy_check) then
 {
-	_points_defenders - 1
-	_points_infiltrators + 1
+	_points_defenders = _points_defenders - 1
+	_points_infiltrators = _points_infiltrators + 1
 };
 
 if (!alive wstorage_destroy_check) then
 {
-	_points_defenders - 2
-	_points_infiltrators + 2
+	_points_defenders = _points_defenders - 2
+	_points_infiltrators = _points_infiltrators + 2
 };
 
 if (!alive hpad_destroy_check) then
 {
-	_points_defenders - 2
-	_points_infiltrators + 2
+	_points_defenders = _points_defenders - 2
+	_points_infiltrators = _points_infiltrators + 2
 };
 
 if (!alive radar_destroy_check) then
 {
-	_points_defenders - 1
-	_points_infiltrators + 1
+	_points_defenders = _points_defenders - 1
+	_points_infiltrators = _points_infiltrators + 1
 };
 
 if (!alive vstorage_destroy_check) then
 {
-	_points_defenders - 2
-	_points_infiltrators + 2
+	_points_defenders = _points_defenders - 2
+	_points_infiltrators = _points_infiltrators + 2
 };
 
 if (!alive ctb_destroy_check) then
 {
-	_points_defenders - 1
-	_points_infiltrators + 1
+	_points_defenders = _points_defenders - 1
+	_points_infiltrators = _points_infiltrators + 1
 };
 
 if (!alive ctb_destroy_check) then
 {
-	_points_defenders - 1
-	_points_infiltrators + 1
+	_points_defenders = _points_defenders - 1
+	_points_infiltrators = _points_infiltrators + 1
 };
 
 //End in which all of the infrastructure is destroyed
