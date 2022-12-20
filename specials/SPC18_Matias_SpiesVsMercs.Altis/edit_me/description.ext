@@ -1,6 +1,6 @@
 // Mission settings - title, description, author etc.
-OnLoadName = "Special: Spies vs Mercs";
-OnLoadMission = "Spies will try to hack the laptops, mercs will try to protect them";
+OnLoadName = "Spies vs Mercs";
+OnLoadMission = "SOMEONE MUST FIRST JOIN THE SPY SIDE BEFORE SOMEONE JOINS THE MERC SIDE. Spies will try to hack the laptops, mercs will try to protect them";
 author = "Matías Jackson, Synixe Contractors";
 
 synixe_type = 3; // 0: Contract, 1: Sub-Contract, 2: Training, 3: Special
@@ -8,3 +8,23 @@ synixe_start_time = 0; // Start time of the mission.
 
 // Randomization
 disableRandomization[] = {}; // Disables randomization of units and vehicles based off of variable name or classname
+
+// Game end
+class CfgDebriefing {
+    class End1 {
+        title = "The Mercs win";
+        subtitle = "";
+        description = "All of the spies have been killed";
+        pictureBackground = "";
+        picture = "b_inf";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+    class End2 {
+        title = "The spies win";
+        subtitle = "";
+        description = "The spies have escaped with the info";
+        pictureBackground = "";
+        picture = "b_inf";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+};
