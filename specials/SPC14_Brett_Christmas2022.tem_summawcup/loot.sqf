@@ -100,9 +100,9 @@ private _buildings = ((nearestTerrainObjects [mug, ["House"], 5000]) select {_x 
 
 private _randomHolder = {
     params ["_buildings"];
-    private _pos = selectRandom [
-        (getPos selectRandom _buildings) findEmptyPosition [0,50],
-        [] call BIS_fnc_randomPos
+    private _pos = call selectRandom [
+        {(getPos selectRandom _buildings) findEmptyPosition [0,50]},
+        {[] call BIS_fnc_randomPos}
     ];
     if (_pos isEqualTo []) then {
         _pos = [] call BIS_fnc_randomPos;
