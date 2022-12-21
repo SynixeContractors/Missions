@@ -33,7 +33,7 @@ pub fn read_mission(source: &Path, dir: &str, id: String) -> Mission {
         // Read briefing.sqf
         let briefing_sqf = std::fs::read_to_string(&path).unwrap();
 
-        if let Ok(employer) = REGEX_BRIEF_EMPLOYER.captures(&briefing_sqf) {
+        if let Some(employer) = REGEX_BRIEF_EMPLOYER.captures(&briefing_sqf) {
             format!(
                 "**{}**\n\n**Employer**{}\n\n**Situation**{}\n\n**Mission**{}",
                 name,
