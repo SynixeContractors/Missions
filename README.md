@@ -49,3 +49,9 @@
     - Click `Create pull request`
 13. In GitHub desktop, click `Current Branch` and select `main` after your mission has been merged
 14. You can safely delete the branch you created one it is merged
+
+## Recommendations
+
+- Use [Visual Studio Code](https://code.visualstudio.com/) to edit the mission files
+- Open the `Missions` folder in Visual Studio Code, rather than just your mission.
+- Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> and type `Show Recommended Extensions` to install recommended extensions
