@@ -54,6 +54,7 @@ pub fn read_mission(source: &Path, dir: &str, id: String) -> Mission {
         } else {
             format!(
                 "**{}**\n\n**Mission**{}",
+                name,
                 REGEX_BRIEF_MISSION
                     .captures(&briefing_sqf)
                     .unwrap()
