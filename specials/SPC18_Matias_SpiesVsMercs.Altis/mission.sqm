@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=48;
+		nextID=54;
 	};
 	class Camera
 	{
-		pos[]={16050.884,50.764404,17084.699};
-		dir[]={-0.87202394,-0.26740754,-0.40998608};
-		up[]={-0.24200122,0.96357924,-0.11377746};
-		aside[]={-0.42547908,-1.0587974e-007,0.90497881};
+		pos[]={16222.148,34.871124,17300.922};
+		dir[]={0.74004787,-0.42426971,0.52185202};
+		up[]={0.34673369,0.90553606,0.2445028};
+		aside[]={0.57629108,1.0896474e-007,-0.81724864};
 	};
 };
 binarizationWanted=0;
@@ -44,8 +44,8 @@ addons[]=
 	"eo_gorkas",
 	"ace_realisticnames",
 	"ace_medical_treatment",
-	"A3_Ui_F",
 	"A3_Structures_F_Walls",
+	"A3_Ui_F",
 	"A3_Structures_F_Furniture",
 	"A3_Structures_F_Items_Electronics",
 	"A3_Structures_F_Heli_Furniture",
@@ -124,15 +124,15 @@ class AddonsMetaData
 		};
 		class Item9
 		{
-			className="A3_Ui_F";
-			name="Arma 3 - User Interface";
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
 		class Item10
 		{
-			className="A3_Structures_F";
-			name="Arma 3 - Buildings and Structures";
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -4697,31 +4697,6 @@ class Mission
 		};
 		class Item1
 		{
-			dataType="Marker";
-			position[]={16083.544,15.821,16999.717};
-			name="marker_0";
-			markerType="RECTANGLE";
-			type="";
-			colorName="ColorRed";
-			fillName="FDiagonal";
-			a=15.464;
-			b=14.356;
-			id=53;
-			atlOffset=0.00021934509;
-		};
-		class Item2
-		{
-			dataType="Marker";
-			position[]={16082.951,15.811,16998.18};
-			name="marker_1";
-			text="MERC RESPAWN [DO NOT ENTER, SAFE ZONE]";
-			type="mil_box";
-			colorName="ColorRed";
-			id=54;
-			atlOffset=8.392334e-005;
-		};
-		class Item3
-		{
 			dataType="Layer";
 			name="Gates";
 			state=1;
@@ -4816,7 +4791,7 @@ class Mission
 			id=60;
 			atlOffset=0.18787384;
 		};
-		class Item4
+		class Item2
 		{
 			dataType="Marker";
 			position[]={16069.313,13.431,16911.148};
@@ -4826,7 +4801,7 @@ class Mission
 			id=63;
 			atlOffset=0.00012588501;
 		};
-		class Item5
+		class Item3
 		{
 			dataType="Layer";
 			name="Laptop 3";
@@ -4862,7 +4837,6 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="lap_3_hacked = false;";
 						name="lap_3";
 					};
 					id=69;
@@ -4943,7 +4917,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="playSound ""Alarm"";" \n "systemChat ""Laptop Three has been hacked"";" \n "lap_3_hacked = true;";
+												value="[""mission_alarm""] call CBA_fnc_globalEvent;" \n "systemChat ""Laptop Three has been hacked"";" \n "missionNamespace setVariable [""lap_3_hacked"", true, true];";
 											};
 										};
 										class Item8
@@ -4951,7 +4925,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="playSound ""ACE_Javelin_Locked"";";
+												value="[""mission_hackAbort""] call CBA_fnc_globalEvent;" \n "";
 											};
 										};
 										class Item9
@@ -5013,7 +4987,7 @@ class Mission
 			id=72;
 			atlOffset=0.20559502;
 		};
-		class Item6
+		class Item4
 		{
 			dataType="Layer";
 			name="Laptop 2";
@@ -5033,7 +5007,6 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="lap_2_hacked = false;";
 						name="lap_2";
 					};
 					id=66;
@@ -5114,7 +5087,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="playSound ""Alarm"";" \n "systemChat ""Laptop Two has been hacked"";" \n "lap_2_hacked = true;";
+												value="[""mission_alarm""] call CBA_fnc_globalEvent;" \n "systemChat ""Laptop Two has been hacked"";" \n "missionNamespace setVariable [""lap_2_hacked"", true, true]; " \n "";
 											};
 										};
 										class Item8
@@ -5122,7 +5095,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="playSound ""ACE_Javelin_Locked"";";
+												value="[""mission_hackAbort""] call CBA_fnc_globalEvent;" \n "";
 											};
 										};
 										class Item9
@@ -5200,7 +5173,7 @@ class Mission
 			id=73;
 			atlOffset=0.20563889;
 		};
-		class Item7
+		class Item5
 		{
 			dataType="Layer";
 			name="Laptop 1";
@@ -5236,7 +5209,6 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="lap_1_hacked = false;";
 						name="lap_1";
 					};
 					id=62;
@@ -5317,7 +5289,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="playSound ""Alarm"";" \n "systemChat ""Laptop One has been hacked"";" \n "lap_1_hacked = true;";
+												value="[""mission_alarm""] call CBA_fnc_globalEvent;" \n "systemChat ""Laptop One has been hacked"";" \n "missionNamespace setVariable [""lap_1_hacked"", true, true];";
 											};
 										};
 										class Item8
@@ -5325,7 +5297,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="playSound ""ACE_Javelin_Locked"";";
+												value="[""mission_hackAbort""] call CBA_fnc_globalEvent;" \n "";
 											};
 										};
 										class Item9
@@ -5387,7 +5359,7 @@ class Mission
 			id=74;
 			atlOffset=0.20567131;
 		};
-		class Item8
+		class Item6
 		{
 			dataType="Layer";
 			name="Spy Respawn";
@@ -5431,7 +5403,7 @@ class Mission
 												singleType="ARRAY";
 												class value
 												{
-													items=207;
+													items=216;
 													class Item0
 													{
 														class data
@@ -7088,6 +7060,78 @@ class Mission
 															value="CUP_NVG_GPNVG_winter";
 														};
 													};
+													class Item207
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_RUS_Balaclava_blk";
+														};
+													};
+													class Item208
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_PMC_Facewrap_Smilie";
+														};
+													};
+													class Item209
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_PMC_Facewrap_Skull";
+														};
+													};
+													class Item210
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_PMC_Facewrap_Red";
+														};
+													};
+													class Item211
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_PMC_Facewrap_Ranger";
+														};
+													};
+													class Item212
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_PMC_Facewrap_Black";
+														};
+													};
+													class Item213
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_PMC_Facewrap_Tan";
+														};
+													};
+													class Item214
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_PMC_Facewrap_Tropical";
+														};
+													};
+													class Item215
+													{
+														class data
+														{
+															singleType="STRING";
+															value="CUP_PMC_Facewrap_Winter";
+														};
+													};
 												};
 											};
 										};
@@ -7553,7 +7597,6 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="spies_extracted = false;";
 					};
 					id=91;
 					type="Vysilacka";
@@ -7633,7 +7676,7 @@ class Mission
 											class data
 											{
 												singleType="STRING";
-												value="spies_extracted = true;" \n "playSound ""SN_Flare_Fired_4"";";
+												value="spies_extracted = true;" \n "[""mission_extract""] call CBA_fnc_globalEvent;";
 											};
 										};
 										class Item8
@@ -7719,7 +7762,7 @@ class Mission
 			id=75;
 			atlOffset=2.703208;
 		};
-		class Item9
+		class Item7
 		{
 			dataType="Marker";
 			position[]={15932.875,14.099,17031.664};
@@ -7729,7 +7772,7 @@ class Mission
 			id=76;
 			atlOffset=0.00017929077;
 		};
-		class Item10
+		class Item8
 		{
 			dataType="Marker";
 			position[]={16209.507,13.24,17070.271};
@@ -7738,7 +7781,7 @@ class Mission
 			type="mil_objective";
 			id=77;
 		};
-		class Item11
+		class Item9
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -7752,6 +7795,31 @@ class Mission
 			id=86;
 			type="ModuleCoverMap_F";
 			atlOffset=7.1418505;
+		};
+		class Item10
+		{
+			dataType="Marker";
+			position[]={16082.951,15.811,16998.18};
+			name="marker_1";
+			text="MERC RESPAWN [DO NOT ENTER, SAFE ZONE]";
+			type="mil_box";
+			colorName="ColorRed";
+			id=54;
+			atlOffset=8.392334e-005;
+		};
+		class Item11
+		{
+			dataType="Marker";
+			position[]={16083.544,15.821,16999.717};
+			name="marker_0";
+			markerType="RECTANGLE";
+			type="";
+			colorName="ColorRed";
+			fillName="FDiagonal";
+			a=15.464;
+			b=14.356;
+			id=53;
+			atlOffset=0.00021934509;
 		};
 	};
 };
