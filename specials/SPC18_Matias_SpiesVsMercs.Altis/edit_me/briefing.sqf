@@ -49,6 +49,8 @@ switch (side _player) do {
             <br/>Once you've breached all three of the laptops you must exfil back to the safehouse and use the radio to call for an extraction.
             <br/>
             <br/>Good Luck, Zero.
+            <br/>
+            <br/>You can select your infil location of choice through the laptop in the next room
         "]];
         
     };
@@ -62,6 +64,8 @@ switch (side _player) do {
             <br/>If they get the information you must make sure they don't escape with it.
             <br/>
             <br/>Succeed at all costs, King
+            <br/>
+            <br/>You have been provided with a box that contains a flare gun and some ammo for it
         "]];
 
     };
