@@ -5,6 +5,7 @@ call compile preprocessFileLineNumbers "ranges\engineer.sqf";
 call compile preprocessFileLineNumbers "ranges\grenadier.sqf";
 call compile preprocessFileLineNumbers "ranges\helicopter.sqf";
 call compile preprocessFileLineNumbers "ranges\medical.sqf";
+call compile preprocessFileLineNumbers "ranges\driving.sqf";
 
 [[shop_lat_1, shop_lat_2]] call compile preprocessFileLineNumbers "ranges\lat.sqf";
 [[marksman_control]] call compile preprocessFileLineNumbers "weather.sqf";
