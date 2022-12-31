@@ -43,35 +43,30 @@ switch (side _player) do {
     // RESISTANCE/INDEPENDENT briefing -- THIS IS THE BRIEFING YOU WANT TO EDIT FOR YOUR MISSION!
     case resistance: {
         _player createDiaryRecord ["Diary", ["Employer", "
-            <br/>INSERT NAME OF EMPLOYER HERE
+            <br/>AAF
         "]];
 
         _player createDiaryRecord ["Diary", ["Situation", "
             <br/><font color='#D81717'>ENEMY FORCES:</font>
-            <br/>INSERT ENEMIES HERE
-            <br/>INSERT ENEMY AMLCOA (Most Likely Course of Action, AKA, what they're doing, how they act, how they'll act towards us, what we know, etc)
+            <br/>Rebel Forces
+            <br/>Likely to shoot on sight
             <br/>
             <br/><font color='#1D69F6'>FRIENDLY FORCES:</font>
-            <br/>Synixe Contractors, INSERT FRIENDLIES HERE
-            <br/>
-            <br/><font color='#139120'>INDEPENDENT FORCES:</font>
-            <br/>INSERT INDEPENDENT FORCES IF THERE ARE ANY, OTHERWISE REMOVE THIS LINE AND ONE ABOVE
+            <br/>Synixe Contractors, AAF
             <br/>
             <br/><font color='#993399'>CIVILIAN CONSIDERATIONS:</font>
-            <br/>INSERT THINGS TO CONSIDER ABOUT CIVILIANS, PRESENCE/ABSENCE AND/OR BEHAVIOUR/SUPPORT TO FRIENDLIES OR ENEMIES
+            <br/>No Civilians Expected
             <br/>
             <br/><font color='#663300'>TERRAIN CONSIDERATIONS:</font>
-            <br/>INSERT ANYTHING YOU FIND RELEVANT ABOUT HOW THE TERRAIN MAY BE ADVANTAGEOUS OR DISADVANTAGEOUS
+            <br/>Dense Fog conditions
         "]];
 
         _player createDiaryRecord ["Diary", ["Mission", "
-            <br/>YOU CAN WRITE YOUR MISSION DESCRIPTION HERE,
+            <br/>AAF were in the process of recaptuiring Stratis Island. During this activity, they noticed rebel forces starting to setup AA sites in the eastern forest area.
             <br/>
-            <br/>THE BR THING INDICATES THE BEGINNING OF EACH PARAGRAPH, IF LEFT EMPTY, IT'LL BE A SPACE.
+            <br/>Due to sudden onset of bad weather, and low numbers AAF has opted to hire us to help them locate the AA sites and designate them for arterillary strike.
             <br/>
-            <br/>YOU CAN ADD AS MUCH AS YOU FEEL IS RELEVANT.
-            <br/>
-            <br/>AS A RULE OF THUMB, CONSIDER: WHO, WHAT (TASKS), WHERE, WHEN, AND WHY
+            <br/>Expecting 3 camps of small unit AA camps in the forested area marked on map.
         "]];
     };
 
