@@ -17,7 +17,7 @@ private _detonatePlat4 = ["Detonate Platform 4 Fireworks", "Detonate Platform 4 
 
 //Music actions 
 
-_playTunes = ["Start Playing Music", "Start Playing Music", "",     
+private _playTunes = ["Start Playing Music", "Start Playing Music", "",     
    {playMusic "Track01";},{true}] call ace_interact_menu_fnc_createAction;
 
 

@@ -64,7 +64,7 @@ switch (side _player) do {
         _player createDiaryRecord ["Diary", ["Mission", "
             <br/>Dearest Contractor,
             <br/>
-            <br/>Due to your outstanding service to Tanoa you are hereby cordially invited to a new year's eve party by the great governor of Tanoa. The party will be taking place at the governor's estate and will start at 21:00.
+            <br/>Due to your outstanding service to Tanoa you are hereby cordially invited to a new year's eve party by the great governor of Tanoa. The party will be taking place at the Governor's estate and will start at 21:00.
             <br/>
             <br/>We have set you up at the best hotel in Tanoa that has three stars with a great view of the Georgetown bay. Your luggage will be waiting for you there with your clothes. Once you are ready your vehicles will be waiting for you outside the hotel so that you can go to the airort to ride the private helicopters that will take you to the island in which the party is in. You will arrive at the governor's private airfield where you will have vehicles waiting for you.
             <br/>
