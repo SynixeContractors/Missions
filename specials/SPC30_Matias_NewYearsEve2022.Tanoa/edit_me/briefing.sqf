@@ -43,7 +43,7 @@ switch (side _player) do {
     // RESISTANCE/INDEPENDENT briefing -- THIS IS THE BRIEFING YOU WANT TO EDIT FOR YOUR MISSION!
     case resistance: {
         _player createDiaryRecord ["Diary", ["Employer", "
-            <br/>Synixe fun department
+            <br/>Synixe Fun Department
         "]];
 
         _player createDiaryRecord ["Diary", ["Situation", "
@@ -62,7 +62,7 @@ switch (side _player) do {
         "]];
 
         _player createDiaryRecord ["Diary", ["Mission", "
-            <br/>Dearest contractor,
+            <br/>Dearest Contractor,
             <br/>
             <br/>Due to your outstanding service to Tanoa you are hereby cordially invited to a new year's eve party by the great governor of Tanoa. The party will be taking place at the governor's estate and will start at 21:00.
             <br/>
@@ -74,7 +74,7 @@ switch (side _player) do {
             <br/>
             <br/>He's also pre selected a set of 'sweet tunes' himself which if you wish you can start playing from the laptop in his office.
             <br/>
-            <br/>Cordially signed, deputy governor of Tanoa.
+            <br/>Cordially signed, Deputy Governor of Tanoa.
             <br/>
             <br/>P.S: There's no need to worry about the revolutionaries that have threatened with killing everyone at the party. There is no proof that they exist or that their supreme leader rides around in an armored Hilux with a machine gun. Plus I'm sure that their supreme leader would only show up last if there was an attack because he's a coward.
         "]];
