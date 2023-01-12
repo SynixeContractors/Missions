@@ -125,7 +125,7 @@ for "_i" from 0 to 60 do {
 
 // Spawn ammo
 for "_i" from 0 to 200 do {
-    private _pos = [_buildings] call _randomHolder;
+    private _weaponHolder = [_buildings] call _randomHolder;
     _weaponHolder addMagazineCargoGlobal [selectRandom _ammo, ceil random 3];
 };
 
