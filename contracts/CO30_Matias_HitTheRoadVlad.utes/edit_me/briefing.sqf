@@ -43,7 +43,7 @@ switch (side _player) do {
     // RESISTANCE/INDEPENDENT briefing -- THIS IS THE BRIEFING YOU WANT TO EDIT FOR YOUR MISSION!
     case resistance: {
         _player createDiaryRecord ["Diary", ["Employer", "
-            <br/>Chernarussian government
+            <br/>Chernarussian Government
         "]];
 
         _player createDiaryRecord ["Diary", ["Situation", "
@@ -62,17 +62,17 @@ switch (side _player) do {
         "]];
 
         _player createDiaryRecord ["Diary", ["Mission", "
-            <br/>Recently the Russian Armed Forces moved into Utes, killing Chernarussian forces statioend there and taking control of the island.
+            <br/>Recently the Russian Armed Forces moved into Utes, killing Chernarussian forces stationed there and taking control of the island.
             <br/>
             <br/>Synixe has been hired to lay the ground work for a Chernarussian retaking of the island. We are tasked with destroying key infrastructure that would aid the russians in defending their positions.
             <br/>
             <br/>Contractors are to destroy:
-            <br/>-A radar and radio tower
-            <br/>-AA weaponry
-            <br/>-An ammo cache
-            <br/>-A fuel supply
-            <br/>-A transmitter tower
-            <br/>-Any vehicles that may give the russians air superiority
+            <br/>- A radar and radio tower
+            <br/>- AA weaponry
+            <br/>- An ammo cache
+            <br/>- A fuel supply
+            <br/>- A transmitter tower
+            <br/>- Any vehicles that may give the Russians air superiority
             <br/>
             <br/>We have been provided with aerial photos of the island as well as Stingers by the Chernarussians.
         "]];
