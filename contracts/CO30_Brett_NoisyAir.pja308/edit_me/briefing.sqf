@@ -87,7 +87,17 @@ switch (side _player) do {
             <br/>Wifi 4: 2.2GHz - 2.6GHz
             <br/>Wifi 5: 4.8GHz - 5.3GHz
             <br/>Wifi 6: 5.8GHz - 6.2GHz
-        "]]
+            <br/>
+            <br/>AM Radio (Long-wave): 140kHz - 283kHz
+            <br/>AM Radio (Medium-wave): 540kHz - 1600kHz
+            <br/>AM Radio (Short-wave): 1.6MHz - 30MHz
+            <br/>
+            <br/>FM Radio (Low): 88MHz - 108MHz
+            <br/>FM Radio (High): 108MHz - 136MHz
+            <br/>
+            <br/>TV (Low): 54MHz - 88MHz
+            <br/>TV (High): 174MHz - 216MHz
+        "]];
     };
 
     // CIVILIAN briefing

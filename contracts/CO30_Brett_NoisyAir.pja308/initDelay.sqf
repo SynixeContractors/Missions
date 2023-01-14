@@ -1,11 +1,9 @@
-if !(isServer) exitWith {};
-
-systemChat format ["creating delay %1", _this];
+if !(hasInterface) exitWith {};
 
 [{
     params ["_args", "_idPFH"];
     _args params ["_object", "_delay", "_signal"];
-    systemChat format ["Toggle mission source %1", netId _object];
+    if !(alive _object) exitWith {[_idPFH] call CBA_fnc_removePerFrameHandler};
     private _active = _object getVariable ["mission_active", false];
     if (_active) then {
         mission_sources deleteAt netId _object;
