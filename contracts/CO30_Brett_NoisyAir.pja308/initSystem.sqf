@@ -262,7 +262,6 @@ addUserActionEventHandler ["nextweapon", "Activate", {
         private _delay = (_seed random [0,0]) * 8;
         private _freq = (_seed random [1,1]) * 20 + 700;
         [_x, _delay, [[_freq, 150]]] call mission_delay;
-        systemChat format ["%1: %2 - %3", _x, _seed, _freq];
     } forEach _this;
 }] call CBA_fnc_addEventHandler;
 
@@ -291,7 +290,7 @@ addUserActionEventHandler ["nextweapon", "Activate", {
     }, [_id], _duration] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
 
-["lambs_danger_OnPanic", {
+["lambs_danger_OnInformationShared", {
     params ["_unit"];
     ["mission_burst", [_unit, [[random [55, 65, 75], 2000]], 6]] call CBA_fnc_globalEvent;
 }] call CBA_fnc_addEventHandler;
@@ -300,3 +299,16 @@ addUserActionEventHandler ["nextweapon", "Activate", {
     params ["_unit", "_position"];
     ["mission_burst", [_unit, [[random [55, 65, 75], 4000]], 6]] call CBA_fnc_globalEvent;
 }] call CBA_fnc_addEventHandler;
+
+[{
+    {
+        if (isPlayer _x) then { continue };
+        if (_x getVariable ["mission_checked", false]) then { continue };
+        _x setVariable ["mission_checked", true];
+        if (random 1 < 0.7) then { continue };
+        private _seed = parseNumber ((netid _x) select [2,10]);
+        private _delay = (_seed random [0,0]) * 8;
+        private _freq = (_seed random [1,1]) * 20 + 700;
+        [_x, _delay, [[_freq, 150]]] call mission_delay;
+    } forEach allUnits;
+}, 30] call CBA_fnc_addPerFrameHandler;
