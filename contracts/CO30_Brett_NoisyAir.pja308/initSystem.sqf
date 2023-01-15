@@ -124,9 +124,8 @@ mission_logic = {
             _x params ["_f", "_mW"];
             if (_f == 0) then { continue; };
             private _strength = [_f, _mW, ace_player, _source] call mission_signalCalc;
-            private _visualStrength = _strength;
+            private _visualStrength = +_strength;
             _visualStrength = _visualStrength - (_error * 2);
-            if (_visualStrength < -150) then { continue; };
             private _existing = mission_interference_building getOrDefault [_f, -1000];
             if (_existing != -1000) then {
                 _strength = _strength max _existing;
@@ -162,7 +161,7 @@ mission_changeSettings = {
                 "Min Frequency",
                 [
                     0,
-                    1000,
+                    100000,
                     (missionNamespace getVariable ["#EM_FMin", 0]) / _unit,
                     0
                 ]
@@ -172,7 +171,7 @@ mission_changeSettings = {
                 "Window",
                 [
                     1,
-                    1000,
+                    10000,
                     (missionNamespace getVariable ["mission_window", 100]),
                     0
                 ]
