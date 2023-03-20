@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=46;
+		nextID=49;
 	};
 	class MarkerIDProvider
 	{
@@ -20,74 +20,57 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6.7486157,7.2335348,12.874418};
-		dir[]={-0.42798594,-0.17974839,-0.88587648};
-		up[]={-0.078434631,0.98362011,-0.16234867};
-		aside[]={-0.90054911,-7.3303818e-007,0.43507421};
+		pos[]={15.782633,11.779716,0.33504051};
+		dir[]={-0.80211633,-0.51641518,0.29987466};
+		up[]={-0.48371658,0.85633838,0.18083954};
+		aside[]={0.35018247,0,0.93668163};
 	};
 };
 binarizationWanted=0;
 sourceName="pmc_freestyle";
 addons[]=
 {
-	"synixe_contractors_units",
 	"A3_Ui_F",
 	"A3_Characters_F",
-	"A3_Data_F_Curator_Virtual",
 	"A3_Modules_F_Curator_Curator",
-	"A3_Supplies_F_Heli_CargoNets"
+	"synixe_contractors_units"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=6;
+		items=4;
 		class Item0
-		{
-			className="synixe_contractors_units";
-			name="units";
-		};
-		class Item1
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item2
+		class Item1
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item3
-		{
-			className="A3_Data_F_Curator";
-			name="Arma 3 Zeus Update - Main Configuration";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item4
+		class Item2
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item5
+		class Item3
 		{
-			className="A3_Supplies_F_Heli";
-			name="Arma 3 Helicopters - Ammoboxes and Supplies";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			className="synixe_contractors_units";
+			name="units";
 		};
 	};
 };
 dlcs[]=
 {
-	"synixe_contractors",
-	"Heli"
+	"synixe_contractors"
 };
 randomSeed=13118255;
 class ScenarioData
@@ -364,8 +347,95 @@ class Mission
 	};
 	class Entities
 	{
-		items=8;
+		items=5;
 		class Item0
+		{
+			dataType="Marker";
+			position[]={-0.14475918,5,-0.47558594};
+			name="respawn";
+			type="Empty";
+			id=31;
+		};
+		class Item1
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6.5520673,5,1.5033669};
+			};
+			name="hc1";
+			isPlayable=1;
+			description="hc1";
+			id=32;
+			type="HeadlessClient_F";
+		};
+		class Item2
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7.277,5,1.436};
+			};
+			id=35;
+			type="ModuleCurator_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="zeus";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item3
 		{
 			dataType="Group";
 			side="Independent";
@@ -377,19 +447,49 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={0.79669499,5.0014391,1.1476555};
+						position[]={0.79699999,5.0014391,1.148};
 					};
 					side="Independent";
 					flags=7;
 					class Attributes
 					{
 						skill=0.40000001;
-						description="Contractor";
+						description="Contractor@Synixe Contractors";
 						isPlayer=1;
 						isPlayable=1;
 					};
 					id=1;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male08ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item1
 				{
@@ -936,199 +1036,66 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item1
-		{
-			dataType="Marker";
-			position[]={-0.14475918,5,-0.47558594};
-			name="respawn";
-			type="Empty";
-			id=31;
-		};
-		class Item2
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={6.8990002,5,1.173};
-			};
-			name="hc1";
-			isPlayable=1;
-			description="hc1";
-			id=32;
-			type="HeadlessClient_F";
-		};
-		class Item3
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7.256,5,1.173};
-			};
-			name="zeus";
-			isPlayable=1;
-			description="Zeus";
-			id=33;
-			type="VirtualCurator_F";
-		};
 		class Item4
 		{
-			dataType="Logic";
-			class PositionInfo
+			dataType="Group";
+			side="Independent";
+			class Entities
 			{
-				position[]={7.8340001,5,1.135};
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6.217,5.0014391,4.8460002};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="zeus";
+						description="Zeus@Zeus";
+						isPlayable=1;
+					};
+					id=47;
+					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male01ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
 			};
-			name="ass_zeus";
-			isPlayable=1;
-			description="Assistant Zeus";
-			id=34;
-			type="VirtualCurator_F";
-		};
-		class Item5
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7.277,5,1.436};
-			};
-			id=35;
-			type="ModuleCurator_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleCurator_F_Owner";
-					expression="_this setVariable ['Owner',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="zeus";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ModuleCurator_F_Forced";
-					expression="_this setVariable ['Forced',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ModuleCurator_F_Name";
-					expression="_this setVariable ['Name',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ModuleCurator_F_Addons";
-					expression="_this setVariable ['Addons',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=2;
-						};
-					};
-				};
-				nAttributes=4;
-			};
-		};
-		class Item6
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7.8355064,5,1.3378961};
-			};
-			id=36;
-			type="ModuleCurator_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleCurator_F_Owner";
-					expression="_this setVariable ['Owner',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ModuleCurator_F_Forced";
-					expression="_this setVariable ['Forced',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ModuleCurator_F_Name";
-					expression="_this setVariable ['Name',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ModuleCurator_F_Addons";
-					expression="_this setVariable ['Addons',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=2;
-						};
-					};
-				};
-				nAttributes=4;
-			};
-		};
-		class Item7
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7.3187289,5.6349964,4.6282477};
-			};
-			side="Empty";
-			flags=4;
 			class Attributes
 			{
 			};
-			id=45;
-			type="CargoNet_01_box_F";
+			id=46;
 		};
 	};
 };
