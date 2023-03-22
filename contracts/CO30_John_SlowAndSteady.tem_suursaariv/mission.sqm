@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=331;
+		nextID=345;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6978.3516,1031.438,1799.6606};
-		dir[]={0.11015288,-0.84802461,0.51838273};
-		up[]={0.17626406,0.52995688,0.82950389};
-		aside[]={0.9781602,0,-0.20785254};
+		pos[]={6653.7622,474.91486,1702.6998};
+		dir[]={0.18330427,-0.69425839,0.69612956};
+		up[]={0.17678475,0.71972322,0.67137271};
+		aside[]={0.96711397,4.3086766e-007,-0.25466356};
 	};
 };
 binarizationWanted=0;
-sourceName="SCO30_Lamb_SlowAndSteady";
+sourceName="SCO30_John_SlowAndSteady";
 addons[]=
 {
 	"grad_civs_common",
@@ -55,7 +55,8 @@ addons[]=
 	"A3_Soft_F_Offroad_01",
 	"A3_Characters_F_Orange",
 	"Vehicles_F_lxWS_Truck_02",
-	"CUP_Creatures_People_Civil_Russia"
+	"CUP_Creatures_People_Civil_Russia",
+	"A3_Modules_F_Intel"
 };
 class AddonsMetaData
 {
@@ -361,16 +362,16 @@ class Mission
 	};
 	class Entities
 	{
-		items=103;
+		items=109;
 		class Item0
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={6701.5605,98.852295,2119.1345};
-				angles[]={6.2665229,0,0.083140828};
+				position[]={6701.561,98.852364,2119.135};
+				angles[]={6.2665176,0,0.083147481};
 			};
-			name="MatilaExclusion";
+			name="Mattila";
 			id=8;
 			type="grad_civs_common_ExclusionZone";
 			atlOffset=7.6293945e-006;
@@ -380,9 +381,9 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7475.2031,18.549999,3185.1211};
+				position[]={7502.5068,18.549999,3179.3669};
 			};
-			name="FactoryAreaExclusion";
+			name="FactoryArea";
 			id=9;
 			type="grad_civs_common_ExclusionZone";
 		};
@@ -1819,7 +1820,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7428.2163,39.463436,3141.5437};
+						position[]={7428.2158,39.463436,3141.5439};
 						angles[]={0,4.9723554,0};
 					};
 					side="East";
@@ -1827,7 +1828,6 @@ class Mission
 					class Attributes
 					{
 						name="HiddenSniper";
-						isPlayer=1;
 					};
 					id=81;
 					type="O_MU_LIVP_soldier_r1";
@@ -1931,12 +1931,12 @@ class Mission
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
 					position[]={7427.3452,39.094002,3144.9031};
+					type="SeekAndDestroy";
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=84;
-					type="Move";
 					atlOffset=0.00059509277;
 				};
 			};
@@ -2248,8 +2248,7 @@ class Mission
 			position[]={6704.5122,98.908173,2115.814};
 			class Attributes
 			{
-				name="ExclusionforMatila";
-				isServerOnly=1;
+				name="ExclusionforMattila";
 			};
 			id=107;
 			type="EmptyDetectorAreaR50";
@@ -2263,7 +2262,6 @@ class Mission
 				name="ExclusionforFactoryArea";
 				sizeA=140.09599;
 				sizeB=149.32001;
-				isServerOnly=1;
 			};
 			id=110;
 			type="EmptyDetectorAreaR250";
@@ -2315,24 +2313,22 @@ class Mission
 		class Item32
 		{
 			dataType="Marker";
-			position[]={6113.0479,8.507,1542.549};
+			position[]={6111.6733,8.4546938,1540.6923};
 			name="Vehicle Bay";
 			text="Vehicle Bay";
 			type="mil_flag";
 			colorName="ColorOrange";
 			id=116;
-			atlOffset=8.2015991e-005;
 		};
 		class Item33
 		{
 			dataType="Marker";
-			position[]={6104.7412,8.1330004,1507.688};
+			position[]={6105.061,8.1304817,1507.261};
 			name="GearSpawn";
 			text="Gear Drop Off";
 			type="mil_flag";
 			colorName="ColorOrange";
 			id=117;
-			atlOffset=0.00011444092;
 		};
 		class Item34
 		{
@@ -3053,7 +3049,6 @@ class Mission
 				name="ExclusionforLounatrivi";
 				sizeA=250;
 				sizeB=250;
-				isServerOnly=1;
 			};
 			id=158;
 			type="EmptyDetectorAreaR250";
@@ -3065,7 +3060,7 @@ class Mission
 			{
 				position[]={7362.5688,9.8396769,1151.205};
 			};
-			name="LounatriviExclusion";
+			name="Lounatrivi";
 			id=159;
 			type="grad_civs_common_ExclusionZone";
 		};
@@ -3076,7 +3071,7 @@ class Mission
 			{
 				position[]={7230.9702,63.897575,4155.7559};
 			};
-			name="MiettilaExclusion";
+			name="Miettila";
 			id=160;
 			type="grad_civs_common_ExclusionZone";
 		};
@@ -3089,7 +3084,6 @@ class Mission
 				name="ExclusionforMiettila";
 				sizeA=250;
 				sizeB=250;
-				isServerOnly=1;
 			};
 			id=161;
 			type="EmptyDetectorAreaR250";
@@ -3334,7 +3328,8 @@ class Mission
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={7471.1528,18.549999,3146.0933};
+					position[]={7471.1528,18.549999,3146.093};
+					type="SeekAndDestroy";
 					combatMode="RED";
 					formation="COLUMN";
 					speed="FULL";
@@ -3344,7 +3339,6 @@ class Mission
 					};
 					showWP="NEVER";
 					id=196;
-					type="Move";
 				};
 			};
 			class Attributes
@@ -3465,7 +3459,7 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=15;
+				items=16;
 				class Item0
 				{
 					dataType="Object";
@@ -3710,6 +3704,18 @@ class Mission
 					};
 					showWP="NEVER";
 					id=242;
+				};
+				class Item15
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={7473.7949,18.549999,3156.8279};
+					type="SeekAndDestroy";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=342;
 				};
 			};
 			class Attributes
@@ -4715,7 +4721,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6655.9897,96.163063,2095.033};
-						angles[]={0,1.3907077,-0};
+						angles[]={0,1.3907077,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -5011,16 +5017,172 @@ class Mission
 			id=330;
 			atlOffset=0.00031280518;
 		};
+		class Item103
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7586.397,47.153271,2103.9851};
+				angles[]={0.063250735,0,0.1227141};
+			};
+			name="Roadblock1";
+			id=331;
+			type="grad_civs_common_ExclusionZone";
+			atlOffset=3.8146973e-006;
+		};
+		class Item104
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7883.6299,20.551529,3336.9729};
+				angles[]={6.2332339,0,6.1147957};
+			};
+			name="Roadblock2";
+			id=332;
+			type="grad_civs_common_ExclusionZone";
+		};
+		class Item105
+		{
+			dataType="Trigger";
+			position[]={7601.313,47.387844,2161.7671};
+			angle=0.29983014;
+			class Attributes
+			{
+				name="ExclusionForRoadblock1";
+				sizeA=490.89001;
+				sizeB=166.77;
+				isRectangle=1;
+			};
+			id=335;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item106
+		{
+			dataType="Trigger";
+			position[]={7811.0591,8.9616785,3330.2};
+			angle=1.566084;
+			class Attributes
+			{
+				name="ExclusionForRoadblock2";
+				sizeA=1123.442;
+				sizeB=303.86401;
+				isRectangle=1;
+			};
+			id=336;
+			type="EmptyDetectorAreaR250";
+			atlOffset=-12.884;
+		};
+		class Item107
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6429.3809,69.003746,2375.7771};
+			};
+			id=337;
+			type="ModuleSkiptime_F";
+			atlOffset=7.6293945e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSkiptime_F_Skiptime";
+					expression="_this setVariable ['Skiptime',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="-0.5";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item108
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7459.3638,18.551437,3132.8569};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=341;
+					type="C_man_p_beggar_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male04GRE";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=340;
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=7;
+			nextID=9;
 		};
 		class Links
 		{
-			items=7;
+			items=9;
 			class Item0
 			{
 				linkID=0;
@@ -5089,6 +5251,26 @@ class Mission
 				class CustomData
 				{
 					type="WaypointActivation";
+				};
+			};
+			class Item7
+			{
+				linkID=7;
+				item0=331;
+				item1=335;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item8
+			{
+				linkID=8;
+				item0=332;
+				item1=336;
+				class CustomData
+				{
+					type="Sync";
 				};
 			};
 		};

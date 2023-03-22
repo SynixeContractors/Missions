@@ -64,11 +64,11 @@ switch (side _player) do {
         _player createDiaryRecord ["Diary", ["Mission", "
             <br/>The New Suursaariv Govt. has only recently gotten into power, but already they are making plans to further industrialize the island and expand their export of Lumber. There are terrorists intent on stopping this progress.
             <br/>
-            <br/>A work-site and a main exportation harbor have been found to be mined with military grade Anti-Personnel mines as well as some Improvised-Explosive-Devices. These are to be disarmed and collected. Failing that, markers are to be placed for units that are capable of defusal.
+            <br/>A work-site (Mattila) and a main exportation harbor (Lounatrivi) have been found to be mined with military grade Anti-Personnel mines as well as some Improvised-Explosive-Devices. These are to be disarmed and collected. Failing that, markers are to be placed for units that are capable of defusal.
             <br/>
-            <br/>A ruined village has also been found to have UneXploded Ordnance (UXO). These UXOs are to be disarmed and collected. Failing that, they are to be marked for defusal by capable units later.
+            <br/>A ruined village (Miettilä) has also been found to have UneXploded Ordnance (UXO). These UXOs are to be disarmed and collected. Failing that, they are to be marked for defusal by capable units later.
             <br/>
-            <br/>When all explosives have been collected/marked, meet with New Suursaariv Govt. Militia to drop off the explosives for disposal or inform them of the successful markings.
+            <br/>When all explosives have been collected/marked, meet with New Suursaariv Govt. Militia (Factory Area) to drop off the explosives for disposal or inform them of the successful markings.
             <br/>
             <br/>Any and all terrorist activity are to be eliminated.
         "]];
