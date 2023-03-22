@@ -49,9 +49,9 @@ switch (side _player) do {
         _player createDiaryRecord ["Diary", ["Situation", "
             <br/><font color='#D81717'>ENEMY FORCES:</font>
             <br/>Ruhanian liberation front, Unknown weapons dealers
-            <br/>Ruhanian intellegence has recived word that the Ruhanian Liberation Front(RIF) is receiving weapons from an unknown source.
-            <br/>The Ruhanian Liberation Front(RIF) should be considered hostile as they know that the Ruhanian Goverment has hired private contractors to take action against them.
-            <br/>The RIF are well equiped and most have previous military service/training.
+            <br/>Ruhanian intelligence has received word that the Ruhanian Liberation Front(RIF) is receiving weapons from an unknown source.
+            <br/>The Ruhanian Liberation Front(RIF) should be considered hostile as they know that the Ruhanian government has hired private contractors to take action against them.
+            <br/>The RIF is well equipped, and most have previous military service/training.
             <br/>
             <br/><font color='#1D69F6'>FRIENDLY FORCES:</font>
             <br/>Synixe Contractors, Ruha Military
@@ -60,12 +60,12 @@ switch (side _player) do {
             <br/>N/A
             <br/>
             <br/><font color='#993399'>CIVILIAN CONSIDERATIONS:</font>
-            <br/>Civilians remain neutral in fear of reprisal from both sides of the conflict.
+            <br/>Civilians remain neutral out of fear of reprisal from both sides of the conflict.
 
         "]];
 
         _player createDiaryRecord ["Diary", ["Mission", "
-            <br/>Synixe has been hired by the Ruhanian goverment to find and disrupt the delevery of weapons to the Radical milita group the Ruhanian Liberation Front (RIF).
+            <br/>Synixe has been hired by the Ruhanian goverment to find and disrupt the delivery of weapons to the radical milita group, the Ruhanian Liberation Front(RIF).
         "]];
     };
 
