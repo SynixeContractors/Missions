@@ -20,14 +20,14 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6653.7622,474.91486,1702.6998};
-		dir[]={0.18330427,-0.69425839,0.69612956};
-		up[]={0.17678475,0.71972322,0.67137271};
-		aside[]={0.96711397,4.3086766e-007,-0.25466356};
+		pos[]={6101.0181,13.10297,1518.6818};
+		dir[]={0.34446591,-0.33309636,0.87785709};
+		up[]={0.12169885,0.94286752,0.31015193};
+		aside[]={0.93100703,-4.2782631e-007,-0.36532101};
 	};
 };
 binarizationWanted=0;
-sourceName="SCO30_John_SlowAndSteady";
+sourceName="CO30_John_SlowAndSteady";
 addons[]=
 {
 	"grad_civs_common",
@@ -55,8 +55,7 @@ addons[]=
 	"A3_Soft_F_Offroad_01",
 	"A3_Characters_F_Orange",
 	"Vehicles_F_lxWS_Truck_02",
-	"CUP_Creatures_People_Civil_Russia",
-	"A3_Modules_F_Intel"
+	"CUP_Creatures_People_Civil_Russia"
 };
 class AddonsMetaData
 {
@@ -362,7 +361,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=109;
+		items=107;
 		class Item0
 		{
 			dataType="Logic";
@@ -1036,7 +1035,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6099.2861,7.9807091,1527.7806};
+						position[]={6099.2861,7.9806914,1527.781};
 						angles[]={0,1.5719831,0};
 					};
 					side="Independent";
@@ -1045,11 +1044,41 @@ class Mission
 					{
 						skill=0.40000001;
 						description="Contractor";
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=36;
 					type="synixe_contractors_Unit_I_Contractor";
-					atlOffset=4.7683716e-007;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male11ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item1
 				{
@@ -1613,7 +1642,6 @@ class Mission
 			{
 			};
 			id=35;
-			atlOffset=4.7683716e-007;
 		};
 		class Item7
 		{
@@ -5072,106 +5100,6 @@ class Mission
 			id=336;
 			type="EmptyDetectorAreaR250";
 			atlOffset=-12.884;
-		};
-		class Item107
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={6429.3809,69.003746,2375.7771};
-			};
-			id=337;
-			type="ModuleSkiptime_F";
-			atlOffset=7.6293945e-006;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleSkiptime_F_Skiptime";
-					expression="_this setVariable ['Skiptime',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="-0.5";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item108
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7459.3638,18.551437,3132.8569};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						isPlayer=1;
-					};
-					id=341;
-					type="C_man_p_beggar_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male04GRE";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.99000001;
-								};
-							};
-						};
-						nAttributes=3;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=340;
 		};
 	};
 	class Connections
