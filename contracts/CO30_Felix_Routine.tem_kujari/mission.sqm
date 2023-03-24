@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5;
+		nextID=7;
 	};
 	class Camera
 	{
-		pos[]={9622.6006,26.866196,15872.103};
-		dir[]={0.89368892,-0.44791499,-0.027520226};
-		up[]={0.44771683,0.89406824,-0.013786995};
-		aside[]={-0.030779917,1.9512663e-007,-0.99955362};
+		pos[]={9621.252,35.557861,15930.381};
+		dir[]={0.54072094,-0.46477461,-0.70117152};
+		up[]={0.28383008,0.88542372,-0.36805207};
+		aside[]={-0.79189485,3.5390258e-008,-0.61068273};
 	};
 };
 binarizationWanted=0;
@@ -2774,6 +2774,15 @@ class Mission
 										ammoLeft=1;
 									};
 								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="ACE_DeadManSwitch";
+										count=1;
+									};
+								};
 							};
 							map="ItemMap";
 							compass="ItemCompass";
@@ -2908,6 +2917,15 @@ class Mission
 										ammoLeft=1;
 									};
 								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="ACE_DeadManSwitch";
+										count=1;
+									};
+								};
 							};
 							map="ItemMap";
 							compass="ItemCompass";
@@ -2997,11 +3015,11 @@ class Mission
 			class Attributes
 			{
 				name="detoneIED1";
-				condition="this && IED1 in thisList && !(IED1 getVariable [""ace_captives_isHandcuffed"", false])";
+				condition="this && IED1 in thisList && !(IED1 getVariable [""ace_captives_isHandcuffed"", false]) && ""ACE_DeadManSwitch"" in (items IED1)";
 				onActivation="""M_Mo_82mm_AT_LG"" createVehicle (getPos IED1);";
 				sizeA=16;
 				sizeB=16;
-				activationBy="CIV";
+				activationBy="GUER";
 				type="SWITCH";
 				isServerOnly=1;
 			};
@@ -3015,11 +3033,11 @@ class Mission
 			class Attributes
 			{
 				name="detoneIED2";
-				condition="this && IED2 in thisList && !(IED2 getVariable [""ace_captives_isHandcuffed"", false])";
+				condition="this && IED2 in thisList && !(IED2 getVariable [""ace_captives_isHandcuffed"", false]) && ""ACE_DeadManSwitch"" in (items IED2)";
 				onActivation="""M_Mo_82mm_AT_LG"" createVehicle (getPos IED2);";
 				sizeA=16;
 				sizeB=16;
-				activationBy="CIV";
+				activationBy="GUER";
 				type="SWITCH";
 				isServerOnly=1;
 			};
