@@ -64,11 +64,7 @@ switch (side _player) do {
         _player createDiaryRecord ["Diary", ["Mission", "
             <br/>A Marine convoy has been ambushed en route to Zargabad. A Marine Force Recon unit was tasked with clearing a route through Zargabad in their place but have come under heavy fire and have become seperated.
             <br/>
-<<<<<<< Updated upstream
-            <br/>BluFor Trackers have indicated that their unit has been seperated into 3 pieces. They're indicated to be at the following GridCoords/Location: 042040, 038040, and The Villa.
-=======
             <br/>BluFor Trackers have indicated that their unit has been separated into 3 pieces. They're indicated to be at the following GridCoords/Location: 042040, 038040, and The Villa.
->>>>>>> Stashed changes
             <br/>
             <br/>The Force Recon unit, at their time of tasking, was 13 men strong. The objective is recover the dead and provide relief to the living.
             <br/>
