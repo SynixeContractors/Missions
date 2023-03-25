@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7;
+		nextID=8;
 	};
 	class Camera
 	{
-		pos[]={9621.252,35.557861,15930.381};
-		dir[]={0.54072094,-0.46477461,-0.70117152};
-		up[]={0.28383008,0.88542372,-0.36805207};
-		aside[]={-0.79189485,3.5390258e-008,-0.61068273};
+		pos[]={9641.752,41.803993,15929.669};
+		dir[]={0.268913,-0.50604552,-0.81952524};
+		up[]={0.15777454,0.86250407,-0.48082516};
+		aside[]={-0.95016301,-1.3550743e-007,-0.3117792};
 	};
 };
 binarizationWanted=0;
@@ -3015,7 +3015,7 @@ class Mission
 			class Attributes
 			{
 				name="detoneIED1";
-				condition="this && IED1 in thisList && !(IED1 getVariable [""ace_captives_isHandcuffed"", false]) && ""ACE_DeadManSwitch"" in (items IED1)";
+				condition="this && {IED1 in thisList && {!(IED1 getVariable [""ace_captives_isHandcuffed"", false]) && {""ACE_DeadManSwitch"" in (items IED1)}}} " \n "";
 				onActivation="""M_Mo_82mm_AT_LG"" createVehicle (getPos IED1);";
 				sizeA=16;
 				sizeB=16;
@@ -3033,7 +3033,7 @@ class Mission
 			class Attributes
 			{
 				name="detoneIED2";
-				condition="this && IED2 in thisList && !(IED2 getVariable [""ace_captives_isHandcuffed"", false]) && ""ACE_DeadManSwitch"" in (items IED2)";
+				condition="this && {IED2 in thisList && {!(IED2 getVariable [""ace_captives_isHandcuffed"", false]) && {""ACE_DeadManSwitch"" in (items IED2)}}} " \n "";
 				onActivation="""M_Mo_82mm_AT_LG"" createVehicle (getPos IED2);";
 				sizeA=16;
 				sizeB=16;
