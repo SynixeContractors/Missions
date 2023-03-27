@@ -64,7 +64,7 @@ switch (side _player) do {
         "]];
 
         _player createDiaryRecord ["Diary", ["Mission", "
-            <br/>Contractors have been hired to arrest Hasan Okoye, an important figure of the Kujari region - ID by blue suit. He is expected to be arriving at Marwey airfield by 1715.
+            <br/>Contractors have been hired to arrest Hasan Okoye, an important figure of the Kujari region - ID by blue suit. He is expected to be arriving via air at Marwey airfield by 1715.
             <br/>
             <br/>We are tasked with arresting Okoye, and ensuring he arrives safely at the main villa of Kyari Kinnai. Once there, he is to be left restrained alongside the two businessmen in suits at the main building, within the second floor.
             <br/>
