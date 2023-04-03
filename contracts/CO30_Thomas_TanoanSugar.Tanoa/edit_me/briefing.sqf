@@ -48,7 +48,8 @@ switch (side _player) do {
 
         _player createDiaryRecord ["Diary", ["Situation", "
             <br/><font color='#D81717'>ENEMY FORCES:</font>
-            <br/>Syndikat - Powerful criminal organization, employs a variety of small arms and RPGs. Access to unarmored and lightly armored vehicles. Expected to attempt to retake the factory if contractors gain control of the area.
+            <br/>Syndikat
+            <br/>Powerful criminal organization, employs a variety of small arms and RPGs. Access to unarmored and lightly armored vehicles. Expected to attempt to retake the factory if contractors gain control of the area.
             <br/>
             <br/><font color='#1D69F6'>FRIENDLY FORCES:</font>
             <br/>Synixe Contractors, Gendarmerie
