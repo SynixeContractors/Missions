@@ -69,7 +69,9 @@ switch (side _player) do {
             <br/>
             <br/>One informant (Jabr Anwari) has given the CIA many leads into the innerworkings of the group, although many of his physical leads being mixed bags. Upon further analysis, other insiders have reported this informant working with the Warlord to ambush and attack Kushanate Forces and Ground Branch teams working in the area. However, the informant has suddenly requested that he be brought out of the country in return for major information on the Warlord's location. It seems that the Warlord's forces were unaware that the informant was working with the United States, leading to the Warlord putting a large bounty on his head.
             <br/>
-            <br/>With Synixe contractors already in the area, we have been hired by the CIA to secure the informant and bring him to the outpost in Ben Geurrir. Due to the make and distance of the terrain, the CIA will provide transport into the AO to a pre-designated LZ a kilometer away from the town of Oum Ali (where the informant is located).
+            <br/>With Synixe contractors already in the area, we have been hired by the CIA to secure the informant and bring him to the outpost in Ben Geurrir. 
+            <br/>
+            <br/>Due to the make and distance of the terrain, the CIA will provide transport into the AO to a pre-designated LZ a kilometer away from the town of Oum Ali (where the informant is located). Once at the outpost, a helicopter will arrive to bring the contractors and the informant back to the airfield. [Insert more about hot LZ blah blah blah].
         "]];
     };
 
