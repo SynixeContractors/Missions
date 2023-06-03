@@ -66,7 +66,7 @@ switch (side _player) do {
             <br/>
             <br/>Apparently something happened at the facility and the Pan-Chem corporation is willing to pay anyone who can get to the facility and extract any sensitive data that may remain there.
             <br/>
-            <br/>It is unkown what was being investigated at the facility and the exact location of it.
+            <br/>It is unknown what was being investigated at the facility and the exact location of it.
             <br/>
         "]];
     };
