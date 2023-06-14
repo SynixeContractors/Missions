@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=344;
+		nextID=353;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3;
+		nextID=4;
 	};
 	class Camera
 	{
-		pos[]={2348.3694,124.15332,7291.2739};
-		dir[]={0.47277784,-0.28015018,-0.83546841};
-		up[]={0.1379746,0.95995593,-0.24382003};
-		aside[]={-0.87031901,-1.1967495e-007,-0.49250072};
+		pos[]={2344.2856,139.97334,7318.395};
+		dir[]={0.41225284,-0.33053437,-0.84899974};
+		up[]={0.14437918,0.94379622,-0.29733682};
+		aside[]={-0.89956349,-1.3969839e-007,-0.43680471};
 	};
 };
 binarizationWanted=0;
@@ -43,13 +43,15 @@ addons[]=
 	"ace_realisticnames",
 	"A3_Static_F_HMG_02",
 	"synixe_contractors_units",
-	"A3_Supplies_F_Orange_Ammoboxes"
+	"A3_Supplies_F_Orange_Ammoboxes",
+	"A3_Soft_F_Enoch_Offroad_01",
+	"A3_Soft_F_Exp_Offroad_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=10;
+		items=11;
 		class Item0
 		{
 			className="synixe_spectator";
@@ -115,6 +117,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item10
+		{
+			className="A3_Soft_F_Enoch";
+			name="Arma 3 Contact Platform - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -122,7 +131,8 @@ dlcs[]=
 	"Expansion",
 	"Tank",
 	"synixe_contractors",
-	"ORANGE"
+	"ORANGE",
+	"Enoch"
 };
 randomSeed=11823569;
 class ScenarioData
@@ -388,7 +398,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=87;
+		items=93;
 		class Item0
 		{
 			dataType="Layer";
@@ -400,7 +410,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={2407.821,67.920067,7223.8809};
-					angle=0.062255874;
+					angle=0.062255871;
 					class Attributes
 					{
 						name="autoSpec";
@@ -440,11 +450,12 @@ class Mission
 		class Item2
 		{
 			dataType="Marker";
-			position[]={2435.3665,72.411346,7225.6489};
-			name="marker_0";
+			position[]={2435.366,72.411003,7225.6489};
+			name="respawn";
 			type="Empty";
 			angle=272.35999;
 			id=34;
+			atlOffset=-0.00033569336;
 		};
 		class Item3
 		{
@@ -452,7 +463,7 @@ class Mission
 			position[]={2408.6462,65.754997,7187.7891};
 			name="spawn_land";
 			type="Empty";
-			angle=159.73067;
+			angle=159.73065;
 			id=35;
 			atlOffset=4.0464859;
 		};
@@ -6858,7 +6869,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1900.2362,4.2814388,6514.6289};
-						angles[]={0,1.5133425,-0};
+						angles[]={0,1.5133425,0};
 					};
 					side="East";
 					flags=7;
@@ -6875,7 +6886,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1895.5316,4.2814388,6509.3501};
-						angles[]={0,1.5133425,-0};
+						angles[]={0,1.5133425,0};
 					};
 					side="East";
 					flags=5;
@@ -6892,7 +6903,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1894.9573,4.2814388,6519.3335};
-						angles[]={0,1.5133425,-0};
+						angles[]={0,1.5133425,0};
 					};
 					side="East";
 					flags=5;
@@ -6910,7 +6921,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1890.8268,4.2814388,6504.0713};
-						angles[]={0,1.5133425,-0};
+						angles[]={0,1.5133425,0};
 					};
 					side="East";
 					flags=5;
@@ -6933,7 +6944,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1970.3192,4.2800002,6490.0103};
-				angles[]={-0,1.514263,0};
+				angles[]={0,1.514263,0};
 			};
 			areaSize[]={200,-1,200};
 			flags=1;
@@ -6982,6 +6993,204 @@ class Mission
 				};
 				nAttributes=3;
 			};
+		};
+		class Item87
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3796.0466,46.867424,5966.7261};
+						angles[]={6.2778587,1.0755527,6.2485328};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+					};
+					id=346;
+					type="B_GEN_Commander_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=346;
+						item1=345;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+				};
+			};
+			id=344;
+		};
+		class Item88
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3797.7063,48.524979,5966.3691};
+				angles[]={6.2778587,1.0755527,6.2485328};
+			};
+			side="West";
+			flags=6;
+			class Attributes
+			{
+			};
+			id=345;
+			type="B_GEN_Offroad_01_comms_F";
+		};
+		class Item89
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3354.478,14.256083,6656.5288};
+						angles[]={0.063912325,4.0651979,6.2378831};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+					};
+					id=349;
+					type="B_GEN_Commander_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=349;
+						item1=348;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+				};
+			};
+			id=347;
+		};
+		class Item90
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3352.9832,16.00193,6655.3574};
+				angles[]={0.063912325,4.0651979,6.2378831};
+			};
+			side="West";
+			flags=6;
+			class Attributes
+			{
+			};
+			id=348;
+			type="B_GEN_Offroad_01_gen_F";
+		};
+		class Item91
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3516.5994,13.752326,2951.1282};
+						angles[]={6.272521,3.1384873,6.1506343};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+					};
+					id=352;
+					type="B_GEN_Commander_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=352;
+						item1=351;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+				};
+			};
+			id=350;
+		};
+		class Item92
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3521.5212,14.823372,2952.8237};
+				angles[]={6.272521,3.1384873,6.1506343};
+			};
+			side="West";
+			flags=6;
+			class Attributes
+			{
+			};
+			id=351;
+			type="B_GEN_Offroad_01_gen_F";
 		};
 	};
 	class Connections
