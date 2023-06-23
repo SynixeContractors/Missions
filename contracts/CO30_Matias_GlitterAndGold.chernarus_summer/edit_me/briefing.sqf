@@ -62,7 +62,7 @@ switch (side _player) do {
         "]];
 
         _player createDiaryRecord ["Diary", ["Mission", "
-            <br/>Recently four trucks loaded with gold ore were stolen from a mine owned by the Pan-Global corporation.
+            <br/>Recently four trucks loaded with gold ore were stolen from a mine owned by The Pan-Global Corporation.
             <br/>
             <br/>HUMINT has revealed that the people responsible for the theft are the Chernarussian Movement of the Red Star and that they plan to sell the trucks to fund their operations.
             <br/>
