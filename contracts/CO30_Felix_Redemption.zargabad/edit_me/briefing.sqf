@@ -48,30 +48,28 @@ switch (side _player) do {
 
         _player createDiaryRecord ["Diary", ["Situation", "
             <br/><font color='#D81717'>ENEMY FORCES:</font>
-            <br/>INSERT ENEMIES HERE
-            <br/>INSERT ENEMY AMLCOA (Most Likely Course of Action, AKA, what they're doing, how they act, how they'll act towards us, what we know, etc)
+            <br/>Takistani Militia
+            <br/>They will engage contractors on sight, and are known to operate in large groups. It is unlikely that they will be using vehicles due to the adverse weather conditions, however, it is known that a large concentration of enemy forces have garrisoned in the city of Zargabad.
             <br/>
             <br/><font color='#1D69F6'>FRIENDLY FORCES:</font>
-            <br/>Synixe Contractors, INSERT FRIENDLIES HERE
+            <br/>United States Marine Corps
             <br/>
             <br/><font color='#139120'>INDEPENDENT FORCES:</font>
-            <br/>INSERT INDEPENDENT FORCES IF THERE ARE ANY, OTHERWISE REMOVE THIS LINE AND ONE ABOVE
+            <br/>n/a
             <br/>
             <br/><font color='#993399'>CIVILIAN CONSIDERATIONS:</font>
-            <br/>INSERT THINGS TO CONSIDER ABOUT CIVILIANS, PRESENCE/ABSENCE AND/OR BEHAVIOUR/SUPPORT TO FRIENDLIES OR ENEMIES
+            <br/>Zargabad has been deemed a total warzone for months now, meaning that it will be highly unlikely, but not impossible, to run into civilian presence.
             <br/>
             <br/><font color='#663300'>TERRAIN CONSIDERATIONS:</font>
-            <br/>INSERT ANYTHING YOU FIND RELEVANT ABOUT HOW THE TERRAIN MAY BE ADVANTAGEOUS OR DISADVANTAGEOUS
+            <br/>Flat arid desert, heavily urbanized center city, battle-torn theater.
         "]];
 
         _player createDiaryRecord ["Diary", ["Mission", "
-            <br/>YOU CAN WRITE YOUR MISSION DESCRIPTION HERE,
+            <br/>Dr. Nikos Manetta's transport helicopter lost contact as he was travelling across Zargabad while he was en route to continuing an important investigation regarding the Takistan conflict. The main area of town has been under dispute for months, turning it into a constant warzone, causing a long lasting and devastating effect on the local populace and infrastructure.
             <br/>
-            <br/>THE BR THING INDICATES THE BEGINNING OF EACH PARAGRAPH, IF LEFT EMPTY, IT'LL BE A SPACE.
+            <br/>Synixe has been contracted to find out what happened and to attempt to find and rescue Dr. Nikos Manetta, additionally, contractors are invited to act both as offensively and/or defensively as necessary in order to complete the task at hand.
             <br/>
-            <br/>YOU CAN ADD AS MUCH AS YOU FEEL IS RELEVANT.
-            <br/>
-            <br/>AS A RULE OF THUMB, CONSIDER: WHO, WHAT (TASKS), WHERE, WHEN, AND WHY
+            <br/>As of writing this, the weather conditions have severely worsened, and we've had to sacrifice our vehicles to receive help in order to infiltrate the area of operations, giving us a head start into town; sounds like we'll be on foot from here.
         "]];
     };
 
