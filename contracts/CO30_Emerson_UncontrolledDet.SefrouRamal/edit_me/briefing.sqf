@@ -43,12 +43,6 @@ switch (side _player) do {
     // RESISTANCE/INDEPENDENT briefing -- THIS IS THE BRIEFING YOU WANT TO EDIT FOR YOUR MISSION!
     case resistance: {
         _player createDiaryRecord ["Diary", ["Mission", "
-            <br/>Contract Name: Uncontrolled Det
-            <br/>Local Time: 1600
-            <br/>Local Weather: Sunny
-            <br/>
-            <br/>Mission:
-            <br/>
             <br/>Sometime last night, a bomb was brought onto the premises of Daltgreen's train yard at grid 035944. The bomb went unnoticed for most of the day until a Daltgreen employee decided to investigate a suspicious, empty Daltgreen marked vehicle. There, the employee discovered a large bomb sitting in the bed of the truck and Daltgreen immediately contacted us for disposal. Dealing with this threat is our initial tasking.
             <br/>
             <br/>The bomb is situated near important infrastructure (silos/train tracks) and, as such, Daltgreen will not allow us to do controlled detonation on the premises. Any bombs or bomb components must be defused. Any remaining explosive material (including disarmed bombs) will need to be taken offsite and safely disposed of, as they don't want any explosive material falling into the wrong hands. Daltgreen has advised us that the old quarry to the west at grid 020945 would be an ideal location to safely detonate any remaining explosives. If necessary, the Daltgreen truck itself can be driven offsite and destroyed.
