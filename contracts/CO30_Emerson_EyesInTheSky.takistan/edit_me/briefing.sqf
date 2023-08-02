@@ -49,14 +49,14 @@ switch (side _player) do {
         _player createDiaryRecord ["Diary", ["Situation", "
             <br/><font color='#D81717'>ENEMY FORCES:</font>
             <br/>Takistani Army
-            <br/>The Takistani Army is expected to engage any US or western forces on sight.
+            <br/>The Takistani Army is expected to engage any western forces on sight.
             <br/>
             <br/><font color='#1D69F6'>FRIENDLY FORCES:</font>
             <br/>Synixe Contractors
             <br/>
             <br/><font color='#139120'>INDEPENDENT FORCES:</font>
             <br/>Takistani Local Militia
-            <br/>Takistan has many tribal militias that do not support either the Takistan army nor western forces. They will defend themselves if they feel threatened.
+            <br/>Takistan has many tribal militias that do not align with either the Takistani army nor western forces. Mostly confined to mountain camps, they will defend themselves if they feel threatened.
             <br/>
             <br/><font color='#993399'>CIVILIAN CONSIDERATIONS:</font>
             <br/>There are many civilians going about their day within the greater Takistan region. However, there should be limited amounts of civilians in the town of Nur due to it being taken over by the Takistani army.
@@ -72,9 +72,9 @@ switch (side _player) do {
             <br/>
             <br/>At some point along the drone's flight path, it suffered an unknown malfunction and contact was lost. It is highly unlikely that Takistani forces brought it down, due to their outdated equipment. Based on the flight path and last known position, the US believes the drone crashed somewhere near the Takistani border village of Nur.
             <br/>
-            <br/>Since the United States is to have no official presence in Takistan, we have been contracted to secure the crash site. Since it will be impossible to recover the drone in a timely manner, we have been ordered to destroy it. Secondarily, we are to recover any sensitive data the Takistani Army may have extracted (hard drives/thumb drives/laptops).
+            <br/>Since the United States is to have no official presence in Takistan, we have been contracted to secure the crash site. Since it will be impossible to recover the drone in a timely manner, we have been ordered to destroy it. Secondarily, we are to recover any sensitive data the Takistani Army may have extracted (electronics/docuemnts).
             <br/>
-            <br/>Based on what recon the drone gathered before it was lost, the Takistan Army had a concentration of forces near the town of Rasman and the nearby airfield.
+            <br/>Based on what recon the drone gathered before it was lost, the Takistan Army has only just entered the AO, with the majority of forces concentrated near the town of Rasman and the nearby airfield. A couple of Takistani fortifications were spotted in the town of Nur, however their presence has surely only increased since the crash.
         "]];
     };
 
