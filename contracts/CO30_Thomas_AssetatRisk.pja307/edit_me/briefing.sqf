@@ -71,7 +71,7 @@ switch (side _player) do {
             <br/>
             <br/>With Synixe contractors already in the area, we have been hired by the CIA to secure the informant and bring him to the outpost in Ben Geurrir. 
             <br/>
-            <br/>Due to the make and distance of the terrain, the CIA will provide transport into the AO to a pre-designated LZ a kilometer away from the town of Oum Ali (where the informant is located). Once at the outpost, a helicopter will arrive to bring the contractors and the informant back to the airfield. [Insert more about hot LZ blah blah blah].
+            <br/>Due to the make and distance of the terrain, the CIA will provide transport into the AO to a pre-designated LZ a kilometer away from the town of Oum Ali (where the informant is located). Once at the outpost, the helicopter will return to bring the contractors and the informant back to the airfield. While the helicopter shouldn't take too long to arrive, it's best to make sure the LZ, at the Ben Guerrir Outpost, is safe before sending for pick-up.
         "]];
     };
 
