@@ -61,7 +61,7 @@ switch (side _player) do {
             <br/>There are civilians present in the area of operations, they may or may not be in support of either ChDKZ, NAPA, CDF, or contractors.
             <br/>
             <br/><font color='#663300'>TERRAIN CONSIDERATIONS:</font>
-            <br/>Extended mountain range, various elevation changes, and dense forests.
+            <br/>Extensive mountain ranges, various elevation changes, and dense forests.
         "]];
 
         _player createDiaryRecord ["Diary", ["Mission", "
