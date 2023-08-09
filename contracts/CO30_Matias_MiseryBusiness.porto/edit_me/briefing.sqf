@@ -58,7 +58,7 @@ switch (side _player) do {
             <br/>Civilian pressence expected in the island
             <br/>
             <br/><font color='#663300'>TERRAIN CONSIDERATIONS:</font>
-            <br/>Terrain in the island is mostly flat.
+            <br/>Terrain on the island is mostly flat.
         "]];
 
         _player createDiaryRecord ["Diary", ["Mission", "
