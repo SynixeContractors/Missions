@@ -65,7 +65,7 @@ switch (side _player) do {
         "]];
 
         _player createDiaryRecord ["Diary", ["Mission", "
-            <br/>Recently during a private research endeavor a chemical detector started going off when approaching an area in the South Western corner of the AO. Upon further investigation it was revealed that the measurements from the detector allign with those of chemical weapons.
+            <br/>Recently during a private research endeavor a chemical detector started going off when approaching an area in the South Western corner of the AO. Upon further investigation it was revealed that the measurements from the detector align with those of chemical weapons.
             <br/>
             <br/>The CIA has gotten wind of this and has hired Synixe to venture into the area where the signals were detected and recover any and all causes of these signals. Once they are recovered they are to be taken to a drop off site where a CIA helicopter is awaiting to get them off the country.
             <br/>
