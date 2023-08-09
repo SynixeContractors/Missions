@@ -61,7 +61,7 @@ switch (side _player) do {
             <br/>Civilians are expected outside of the quarantined area.
             <br/>
             <br/><font color='#663300'>TERRAIN CONSIDERATIONS:</font>
-            <br/>Terain in the AO is covered by forests and can be mountainous in certain parts.
+            <br/>Terrain in the AO is covered by forests and can be mountainous in certain parts.
         "]];
 
         _player createDiaryRecord ["Diary", ["Mission", "
