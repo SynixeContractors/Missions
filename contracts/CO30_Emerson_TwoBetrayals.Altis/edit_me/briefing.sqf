@@ -45,25 +45,25 @@ switch (side _player) do {
         _player createDiaryRecord ["Diary", ["Mission", "
             <br/>For the greater part of a year, FIA forces on Altis have been skirmishing with the AAF in the absence of NATO's presence. Since the NATO pull out, various NATO states have been trying to gather intel on the conflict.
             <br/>
-            <br/>For some time, the British government had an informant on the island named FirstName LastName. FirstName LastName defected from the AAF and joined the FIA 8 months ago. For approxiamately 6 months, he had been in contact with the British government, providing periodic updates on the situation.
+            <br/>For some time, the British government had an informant on the island named Giorgos Elias. Giorgos Elias defected from the AAF and joined the FIA 8 months ago. For approxiamately 6 months, he had been in contact with the British government, providing periodic updates on the situation.
             <br/>
-            <br/>A vital asset for both the British and the FIA, FirstName LastName has apparently decided to defect back to the AAF, trading his knowledge for protection.
+            <br/>A vital asset for both the British and the FIA, Giorgos Elias has apparently decided to defect back to the AAF, trading his knowledge for protection.
             <br/>
-            <br/>The FIA have determined that FirstName LastName is being held in northwestern Altis. While the FIA are not sure of FirstName LastName's exact whereabouts, the AAF occupy both Oreokastro and the nearby castle. As such, the FIA are preparing an assault on the two locations.
+            <br/>The FIA have determined that Giorgos Elias is being held in northwestern Altis. While the FIA are not sure of Giorgos Elias' exact whereabouts, the AAF occupy both Oreokastro and the nearby castle. As such, the FIA are preparing an assault on the two locations.
             <br/>
             <br/>The British government has contracted us to assist in this planned assault. They have already coordinated with the FIA and locals to insert us on to the island.
             <br/>
-            <br/>Contractors will move to grid XXXXXX to meet the local FIA section leader and get debriefed on the planned assault. When ready, contractors will use the laptop to signal the beginning of the assault. If contractors take too long, the FIA will not wait and will commence the attack by 0530. 
+            <br/>Contractors will move to grid 041202 to meet the local FIA section leader and get debriefed on the planned assault. When ready, contractors will use the laptop to signal the beginning of the assault. If contractors take too long, the FIA will not wait and will commence the attack by 0530. 
             <br/>
-            <br/>Contractors will assist in the assaults, searcing for FirstName LastName. However, the FIA has made it clear that if they find FirstName LastName, they plan on executing him for treason. Secretly, the British government wants us to capture him alive and extract him. As such, it is vital that contractors reach him before the FIA does.
+            <br/>Contractors will assist in the assaults, searcing for Giorgos Elias. However, the FIA has made it clear that if they find Giorgos Elias, they plan on executing him for treason. Secretly, the British government wants us to capture him alive and extract him. As such, it is vital that contractors reach him before the FIA does.
             <br/>
-            <br/>When contractors find and secure FirstName LastName, they are to immediately exfiltrate. Contractors have no obligation to help the FIA once the target is secure.
+            <br/>When contractors find and secure Giorgos Elias, they are to immediately exfiltrate. Contractors have no obligation to help the FIA once the target is secure.
         "]];
 
         _player createDiaryRecord ["Diary", ["Situation", "
             <br/><font color='#D81717'>ENEMY FORCES:</font color>
             <br/>AAF
-            <br/>The AAF occupy the entire island. Based on the recent flashpoint, AAF is expected for fire at any FIA or NATO aligned forces on sight.
+            <br/>The AAF occupy the entire island. Based on the recent flashpoint, AAF is expected for fire at any FIA or NATO aligned forces on sight. It is recommended to avoid main roads and settlements.
             <br/>
             <br/><font color='#1D69F6'>FRIENDLY FORCES:</font color>
             <br/>Synixe Contractors

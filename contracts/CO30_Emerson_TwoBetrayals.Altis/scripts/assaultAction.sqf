@@ -1,10 +1,15 @@
 params ["_obj"];
 
+_statement = {
+    assaultStarted = true;
+    publicVariable "assaultStarted";
+};
+
 _action = [
     "AssaultAction", // name
-    "Start the Assault", // name shown in menu
+    "Start the Assault!", // name shown in menu
     "", // icon
-    {hint "Action fired!"}, // statement
+    _statement, // statement
     {true}, // condition
     {}, // children code
     [_obj], // parameters
