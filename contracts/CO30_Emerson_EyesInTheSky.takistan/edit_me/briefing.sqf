@@ -72,7 +72,7 @@ switch (side _player) do {
             <br/>
             <br/>At some point along the drone's flight path, it suffered an unknown malfunction and contact was lost. It is highly unlikely that Takistani forces brought it down, due to their outdated equipment. Based on the flight path and last known position, the US believes the drone crashed somewhere near the Takistani border village of Nur.
             <br/>
-            <br/>Since the United States is to have no official presence in Takistan, we have been contracted to secure the crash site. Since it will be impossible to recover the drone in a timely manner, we have been ordered to destroy it. Secondarily, we are to recover any sensitive data the Takistani Army may have extracted (electronics/docuemnts).
+            <br/>Since the United States is to have no official presence in Takistan, we have been contracted to secure the crash site. Since it will be impossible to recover the drone in a timely manner, we have been ordered to destroy it. Secondarily, we are to recover any sensitive data the Takistani Army may have extracted (electronics/documents).
             <br/>
             <br/>Based on what recon the drone gathered before it was lost, the Takistan Army has only just entered the AO, with the majority of forces concentrated near the town of Rasman and the nearby airfield. A couple of Takistani fortifications were spotted in the town of Nur, however their presence has surely only increased since the crash.
         "]];
