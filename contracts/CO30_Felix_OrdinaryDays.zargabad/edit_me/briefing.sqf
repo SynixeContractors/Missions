@@ -69,7 +69,7 @@ switch (side _player) do {
             <br/>
             <br/>Due to the previous Takistani conflict, it is highly advised to watch out for UXOs in open fields and destroyed structures, and hidden IEDs alongside roads. It is in your best interest to stick to roads and to try to avoid going off path as you go town to town.
             <br/>
-            <br/>Additionally, it is a hot day for takistani weather - it is recommended to conserve stamina and ensure proper weapon safety measures.
+            <br/>Additionally, contractors have been deployed on foot with no access to their own vehicles. It is a hot day for takistani weather - and it is recommended to conserve stamina and ensure proper weapon safety measures.
         "]];
     };
 
