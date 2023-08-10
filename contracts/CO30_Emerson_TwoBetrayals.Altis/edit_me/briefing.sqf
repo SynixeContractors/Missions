@@ -63,7 +63,7 @@ switch (side _player) do {
         _player createDiaryRecord ["Diary", ["Situation", "
             <br/><font color='#D81717'>ENEMY FORCES:</font color>
             <br/>AAF
-            <br/>Based on the recent flashpoint, AAF is expected for fire at any FIA or NATO aligned forces on sight.
+            <br/>The AAF occupy the entire island. Based on the recent flashpoint, AAF is expected for fire at any FIA or NATO aligned forces on sight.
             <br/>
             <br/><font color='#1D69F6'>FRIENDLY FORCES:</font color>
             <br/>Synixe Contractors
