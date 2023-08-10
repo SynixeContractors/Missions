@@ -67,7 +67,7 @@ switch (side _player) do {
         _player createDiaryRecord ["Diary", ["Mission", "
             <br/>Contractors have been reached out by Chernarus in an extended effort to find and track down weapons and supply smuggling in the northwestern region of Chernarus.
             <br/>
-            <br/>A head of the ChDKZ known as Dima Sejkora is believed to be one of the main key elements of the weapon smuggling line, as such, contractors have been tasked to find him and take him out.
+            <br/>A head of the ChDKZ known as Dima Sejkora is believed to be one of the main key elements of the weapon smuggling line, as such, contractors have been tasked to find him and execute a kill or capture order.
             <br/>
             <br/>We do not have any further information on his whereabouts or how to identify him, however, what we do know, is that he is somewhere in the designated area of operations and we believe he has links with some of the local ChDKZ cells.
             <br/>
