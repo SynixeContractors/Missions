@@ -9,5 +9,5 @@ FARE_fnc_transcript = compile preprocessFileLineNumbers "scripts\transcript.sqf"
 FARE_fnc_mapMarkers = compile preprocessFileLineNumbers "scripts\mapMarkers.sqf";
 FARE_fnc_reinforcements = compile preprocessFileLineNumbers "scripts\reinforcements.sqf";
 
-[laptop_1] call FARE_fnc_assaultAction; // add action to laptop to start the assault
+[laptop_1] call FARE_fnc_assaultAction; // add action to laptop that starts the assault
 [map_1] call FARE_fnc_briefingAction; // add action to map to start briefing
