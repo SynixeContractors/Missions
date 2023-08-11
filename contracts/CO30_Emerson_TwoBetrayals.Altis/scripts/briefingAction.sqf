@@ -6,8 +6,7 @@ _statement = {
     [stavrou_1, "stavrouBriefing"] remoteExec ["say3D"]; // play voiceover for everyone
     [stavrou_1, true] remoteExec ["setRandomLip"];
 
-    // check if we already added map markers and transcript
-    // if not, add them 
+    // check if we already added map markers and transcript and if not, add them 
     // this is here in case people repeat the briefing
     if (!stavrouBriefingAdded) then {
         ["Briefing Markers"] remoteExecCall ["FARE_fnc_mapMarkers", 2]; // run map marker update only on server 

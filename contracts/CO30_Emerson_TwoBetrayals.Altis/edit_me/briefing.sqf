@@ -53,11 +53,11 @@ switch (side _player) do {
             <br/>
             <br/>The British government has contracted us to assist in this planned assault. They have already coordinated with the FIA and locals to insert us on to the island.
             <br/>
-            <br/>Contractors will move to grid 041202 to meet the local FIA section leader and get debriefed on the planned assault. When ready, contractors will use the laptop to signal the beginning of the assault. If contractors take too long, the FIA will not wait and will commence the attack by 0530. 
+            <br/>We will move to grid 041202 to meet the local FIA section leader and get briefed on the planned assault. When ready, we will use the laptop to signal the beginning of the assault. If we take too long, the FIA will not wait and will commence the attack by 0530. 
             <br/>
-            <br/>Contractors will assist in the assaults, searcing for Giorgos Elias. However, the FIA has made it clear that if they find Giorgos Elias, they plan on executing him for treason. Secretly, the British government wants us to capture him alive and extract him. As such, it is vital that contractors reach him before the FIA does.
+            <br/>We will assist in the assaults, searcing for Giorgos Elias. However, the FIA has made it clear that if they find Giorgos Elias, they plan on executing him for treason. Secretly, the British government wants us to capture him alive and extract him. As such, it is vital that we reach him before the FIA does.
             <br/>
-            <br/>When contractors find and secure Giorgos Elias, they are to immediately exfiltrate. Contractors have no obligation to help the FIA once the target is secure.
+            <br/>When we find and secure Giorgos Elias, we are to immediately exfiltrate. We have no obligation to help the FIA once the target is secure.
         "]];
 
         _player createDiaryRecord ["Diary", ["Situation", "
