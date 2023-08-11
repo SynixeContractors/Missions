@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=842;
+		nextID=843;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7;
+		nextID=9;
 	};
 	class Camera
 	{
-		pos[]={6244.1763,59.355545,5869.7363};
-		dir[]={0.53653705,-0.4474102,0.71551645};
-		up[]={0.26841635,0.89432764,0.35795692};
-		aside[]={0.80006039,1.0977965e-007,-0.59993005};
+		pos[]={3445.4067,88.136932,5316.5303};
+		dir[]={0.87646836,-0.4062061,-0.2584863};
+		up[]={0.38961825,0.91377819,-0.11490566};
+		aside[]={-0.28287524,2.374436e-007,-0.95916331};
 	};
 };
 binarizationWanted=0;
@@ -888,18 +888,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3520.9089,48.466522,5271.042};
+				position[]={3520.9089,48.467003,5271.042};
 				angles[]={0,1.6864418,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="cam1 = ""camera"" camCreate [0,0,0]; " \n "cam1 cameraEffect [""Internal"", ""Back"", ""Camera1""];" \n "cam1 attachTo [FLIR1, [0,0,0]];" \n "" \n "cam2 = ""camera"" camCreate [0,0,0]; " \n "cam2 cameraEffect [""Internal"", ""Back"", ""Camera2""];" \n "cam2 attachTo [FLIR2, [0,0,0]];" \n "" \n "cam3 = ""camera"" camCreate [0,0,0]; " \n "cam3 cameraEffect [""Internal"", ""Back"", ""Camera3""];" \n "cam3 attachTo [FLIR3, [0,0,0]];" \n "" \n "cam4 = ""camera"" camCreate [0,0,0]; " \n "cam4 cameraEffect [""Internal"", ""Back"", ""Camera4""];" \n "cam4 attachTo [FLIR4, [0,0,0]];" \n "" \n "cam5 = ""camera"" camCreate [0,0,0]; " \n "cam5 cameraEffect [""Internal"", ""Back"", ""Camera5""];" \n "cam5 attachTo [FLIR5, [0,0,0]];" \n "" \n "cam6 = ""camera"" camCreate [0,0,0]; " \n "cam6 cameraEffect [""Internal"", ""Back"", ""Camera6""];" \n "cam6 attachTo [FLIR6, [0,0,0]];";
 			};
 			id=90;
 			type="Land_MultiScreenComputer_01_black_F";
-			atlOffset=0.045841217;
+			atlOffset=0.046321869;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -973,7 +972,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="cam = ""camera"" camCreate [0,0,0]; " \n "cam cameraEffect [""Internal"", ""Back"", ""uavrtt""]; " \n "cam attachTo [uav, [0,0,0], ""PiP0_pos""];" \n "uav lockCameraTo [tgt, [0]]; " \n "addMissionEventHandler [""Draw3D"", { " \n "    _dir =  " \n "        (uav selectionPosition ""PiP0_pos"")  " \n "            vectorFromTo  " \n "        (uav selectionPosition ""PiP0_dir""); " \n "    cam setVectorDirAndUp [ " \n "        _dir,  " \n "        _dir vectorCrossProduct [-(_dir select 1), _dir select 0, 0] " \n "    ]; " \n "}];";
+				init="[""scripts\CCTV.sqf""] remoteExec [""execVM""];";
 			};
 			id=92;
 			type="Land_TripodScreen_01_large_black_F";
