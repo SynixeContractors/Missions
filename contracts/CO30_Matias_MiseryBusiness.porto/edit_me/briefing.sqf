@@ -66,7 +66,7 @@ switch (side _player) do {
             <br/>
             <br/>Contractors have been hired by Interpol and NATO to break into the company's headquarters and gather evidence on their illicit dealings.
             <br/>
-            <br/>Illegal or CSAT related items work, but copies of sensitive documents are preferred over other types of evidence. For the contract to be successful contractors must find irrefutable proof of the company dealing secretly with CSAT.
+            <br/>Illegal or CSAT related items work, but copies of sensitive documents are preferred over other types of evidence. For the contract to be successful contractors must find irrefutable proof of the company dealing secretly with CSAT. Contractors are to take note of what these documents say but not outright take them as that would tip CSAT off as to why the operation took place. Contractors are also to take some valuables with them back to base, in order to cover up the reason on why they attacked the company.
             <br/>
             <br/>Keep in mind that after contractors are spotted a CSAT response team is expected to arrive on the island.
         "]];
