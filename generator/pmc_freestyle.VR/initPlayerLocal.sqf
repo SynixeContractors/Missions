@@ -8,9 +8,6 @@
     createMarker ["respawn", [0,0,0]];
     "respawn" setMarkerPos _location;
     "respawn" setMarkerType "Empty";
-
-    // Create Spectator Screen
-    "synixe_spectator_screen" createVehicle _location;
 }] call zen_custom_modules_fnc_register;
 
 ["Freestyle", "Create Shop", {
@@ -77,11 +74,6 @@ if (side player == sideLogic) exitWith {};
             SFS_SPAWN_PFH = nil;
         };
     }, 1] call CBA_fnc_addPerFrameHandler;
-
-    // Return to spectator if the player was in spectator when they disconnected
-    if (SFS_SPECTATORS getVariable [getPlayerUID player, false]) then {
-        [player, true] call ace_medical_fnc_setDead;
-    };
 }] call CBA_fnc_waitUntilAndExecute;
 
 [{time > 2}, {
