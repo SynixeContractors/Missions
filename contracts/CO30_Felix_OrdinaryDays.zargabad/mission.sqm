@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=344;
+		nextID=345;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3;
+		nextID=4;
 	};
 	class Camera
 	{
-		pos[]={3117.7205,65.164253,1777.8271};
-		dir[]={0.81706005,-0.38684431,0.42769778};
-		up[]={0.34277803,0.92211497,0.1794325};
-		aside[]={0.46380022,-2.5739428e-007,-0.88602692};
+		pos[]={3195.7522,31.960648,1743.3634};
+		dir[]={0.23873001,-0.28733453,0.92763156};
+		up[]={0.071616501,0.9578259,0.27828151};
+		aside[]={0.96846879,3.1443778e-007,-0.24923757};
 	};
 };
 binarizationWanted=0;
@@ -549,13 +549,13 @@ class Mission
 	{
 		timeOfChanges=1800.0002;
 		startWeather=0;
-		startFog=0.16;
+		startFog=0.23999999;
 		startWind=0.2;
 		startWindDir=90;
 		startWaves=0.1;
 		startGust=0.2;
 		forecastWeather=0;
-		forecastFog=0.16;
+		forecastFog=0.23999999;
 		forecastWind=0.2;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
@@ -590,7 +590,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=137;
+		items=138;
 		class Item0
 		{
 			dataType="Logic";
@@ -1632,6 +1632,7 @@ class Mission
 				name="startSpawningTrigger";
 				sizeA=100;
 				sizeB=100;
+				sizeC=10;
 				activationBy="ANYPLAYER";
 				isServerOnly=1;
 			};
@@ -1642,7 +1643,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3746.938,11.043366,2662.1609};
-			angle=4.3042612;
+			angle=4.3042607;
 			class Attributes
 			{
 				name="spawnEnemiesTrigger";
@@ -1665,7 +1666,7 @@ class Mission
 			class Attributes
 			{
 				name="stopSpawningTrigger";
-				condition="this && triggerActivated startSpawningTrigger";
+				condition="this && {triggerActivated startSpawningTrigger || triggerActivated stopSpawningTrigger2}";
 				sizeA=100;
 				sizeB=100;
 				activationType="NOT PRESENT";
@@ -4116,7 +4117,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3546.2803,21.549744,1923.5377};
-						angles[]={0,2.1703491,-0};
+						angles[]={0,2.1703491,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -4779,7 +4780,6 @@ class Mission
 					};
 					id=211;
 					type="CUP_O_TK_INS_Soldier_AR";
-					atlOffset=-9.5367432e-007;
 				};
 				class Item7
 				{
@@ -4931,6 +4931,7 @@ class Mission
 					};
 					id=217;
 					type="CUP_O_TK_INS_Soldier_TL";
+					atlOffset=-9.5367432e-007;
 				};
 				class Item1
 				{
@@ -5096,6 +5097,7 @@ class Mission
 			{
 			};
 			id=216;
+			atlOffset=-9.5367432e-007;
 		};
 		class Item64
 		{
@@ -5325,7 +5327,7 @@ class Mission
 			};
 			id=235;
 			type="CUP_BOX_TK_WpsLaunch_F";
-			atlOffset=0.079893112;
+			atlOffset=0.079892159;
 		};
 		class Item71
 		{
@@ -5487,6 +5489,7 @@ class Mission
 					};
 					id=242;
 					type="CUP_O_TK_INS_Soldier";
+					atlOffset=-9.5367432e-007;
 				};
 				class Item5
 				{
@@ -5521,6 +5524,7 @@ class Mission
 					};
 					id=244;
 					type="CUP_O_TK_INS_Soldier_AR";
+					atlOffset=9.5367432e-007;
 				};
 				class Item7
 				{
@@ -5601,6 +5605,7 @@ class Mission
 					};
 					id=249;
 					type="CUP_O_TK_INS_Soldier_TL";
+					atlOffset=9.5367432e-007;
 				};
 				class Item1
 				{
@@ -5761,6 +5766,7 @@ class Mission
 			{
 			};
 			id=248;
+			atlOffset=9.5367432e-007;
 		};
 		class Item74
 		{
@@ -7405,7 +7411,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3548.7537,20.458273,1950.3616};
-						angles[]={0,3.839586,-0};
+						angles[]={0,3.839586,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -7531,7 +7537,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3544.0271,20.707695,1937.9366};
-						angles[]={0,0.71937853,-0};
+						angles[]={0,0.71937853,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -7657,7 +7663,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3543.8201,20.590982,1943.0718};
-						angles[]={0,3.567704,-0};
+						angles[]={0,3.567704,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -7686,7 +7692,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3555.3445,20.911774,1932.7383};
-						angles[]={0,0.31601778,-0};
+						angles[]={0,0.31601778,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -8036,6 +8042,22 @@ class Mission
 			};
 			id=342;
 			atlOffset=1.9073486e-006;
+		};
+		class Item137
+		{
+			dataType="Trigger";
+			position[]={3760.2061,10.971467,2631.303};
+			class Attributes
+			{
+				name="stopSpawningTrigger2";
+				sizeA=300;
+				sizeB=300;
+				sizeC=10;
+				activationBy="ANYPLAYER";
+				isServerOnly=1;
+			};
+			id=344;
+			type="EmptyDetectorAreaR250";
 		};
 	};
 	class Connections
