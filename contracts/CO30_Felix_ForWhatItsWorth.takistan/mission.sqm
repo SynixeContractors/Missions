@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4155.4453,52.436138,10946.648};
-		dir[]={-0.36042529,-0.6853565,-0.63276392};
-		up[]={-0.33921483,0.72820503,-0.59552568};
-		aside[]={-0.86892861,-6.0768798e-008,0.49494579};
+		pos[]={2705.9756,192.07263,9905.2129};
+		dir[]={0.93909544,-0.32760417,0.103826};
+		up[]={0.3256214,0.94481516,0.036000572};
+		aside[]={0.10988958,-1.0887743e-007,-0.99394608};
 	};
 };
 binarizationWanted=0;
@@ -8563,8 +8563,9 @@ class Mission
 			{
 				name="stopSpawningTrigger";
 				condition="this || !alive CT";
-				sizeA=150;
-				sizeB=150;
+				sizeA=250;
+				sizeB=250;
+				sizeC=40;
 				activationBy="ANYPLAYER";
 				isServerOnly=1;
 			};
@@ -8579,7 +8580,7 @@ class Mission
 			class Attributes
 			{
 				name="spawnEnemiesTrigger";
-				condition="(triggerActivated startSpawningTrigger) && !(triggerActivated stopSpawningTrigger) && (floor (time) % 300) == 0";
+				condition="(triggerActivated startSpawningTrigger) && !(triggerActivated stopSpawningTrigger) && (floor (time) % 300) == 0 && east countSide allUnits <= 120";
 				onActivation="_grp = [getPos thisTrigger, east, (configfile >> ""CfgGroups"" >> ""East"" >> ""CUP_O_TK_MILITIA"" >> ""Infantry"" >> ""CUP_O_TK_MILITIA_Group"")] call BIS_fnc_spawnGroup; " \n "_wp1 = _grp addWaypoint [getPos startSpawningTrigger, 5]; " \n "_wp1 setWaypointType ""SAD""; " \n "_wp1 setWaypointSpeed ""FULL"";";
 				sizeA=10;
 				sizeB=10;
