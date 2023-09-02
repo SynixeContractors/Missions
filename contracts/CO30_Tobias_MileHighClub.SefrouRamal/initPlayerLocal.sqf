@@ -43,8 +43,6 @@ call tobias_fnc_cctv;
   }, [], 0.5] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
 
-tobias_fnc_waves = compile preprocessFileLineNumbers "scripts\waves.sqf";
-
 [{
 	"marker_16" setMarkerPosLocal uav;
 }, 0.5] call CBA_fnc_addPerFrameHandler;
