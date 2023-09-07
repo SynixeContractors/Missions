@@ -18,6 +18,11 @@ playSound3D [
 [group crateDude, false] remoteExec ["enableDynamicSimulation"]; // disables dynamic sim for groups
 [crateDude, true] remoteExec ["enableSimulationGlobal", 2]; // server only
 
+// enable all simulation for radio speaker
+[crateWorker, false] remoteExec ["enableDynamicSimulation"]; // disables dynamic sim for objects
+[group crateWorker, false] remoteExec ["enableDynamicSimulation"]; // disables dynamic sim for groups
+[crateWorker, true] remoteExec ["enableSimulationGlobal", 2]; // server only
+
 // need to hurt the guy ourselves after crate falls and then play radio message
 [
     {

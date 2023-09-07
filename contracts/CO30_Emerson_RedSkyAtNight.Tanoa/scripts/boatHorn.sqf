@@ -3,9 +3,9 @@ params ["_obj"];
 if (isServer) then {
     playSound3D [
         getMissionPath "sounds\boatHorn.ogg", 
-        vehicle this, 
+        vehicle _obj, 
         false, 
-        getPosASL (vehicle this), 
+        getPosASL (vehicle _obj), 
         5, 
         1, 
         0

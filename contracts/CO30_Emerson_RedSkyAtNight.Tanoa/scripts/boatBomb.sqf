@@ -1,3 +1,8 @@
+// make sure radio speaker is enabled 
+[bombWorker, false] remoteExec ["enableDynamicSimulation"]; // disables dynamic sim for objects
+[group bombWorker, false] remoteExec ["enableDynamicSimulation"]; // disables dynamic sim for groups
+[bombWorker, true] remoteExec ["enableSimulationGlobal", 2]; // server only
+
 // play radio message
 bombWorker globalRadio "radioBomb";
 
