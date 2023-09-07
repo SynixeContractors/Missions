@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=209;
+		nextID=303;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3145.7617,42.812687,1612.7112};
-		dir[]={-0.28342706,-0.52921706,0.79975027};
-		up[]={-0.17677879,0.84848607,0.49881962};
-		aside[]={0.94256067,-1.1757948e-008,0.33403811};
+		pos[]={2694.604,13.001359,1432.687};
+		dir[]={-0.14052071,-0.43666157,-0.8885867};
+		up[]={-0.068206117,0.89962518,-0.43130401};
+		aside[]={-0.98772889,-2.4061592e-008,0.15619926};
 	};
 };
 binarizationWanted=0;
@@ -53,13 +53,14 @@ addons[]=
 	"A3_Characters_F_AoW",
 	"A3_Soft_F_Exp_Offroad_02",
 	"A3_Ui_F",
-	"ace_map"
+	"ace_map",
+	"grad_civs_common"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=20;
 		class Item0
 		{
 			className="crate_client_garage";
@@ -185,6 +186,12 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item19
+		{
+			className="grad_civs_common";
+			name="common";
+			author="AUTHOR";
+		};
 	};
 };
 dlcs[]=
@@ -208,6 +215,130 @@ class CustomAttributes
 		name="Scenario";
 		class Attribute0
 		{
+			property="cba_settings_hash";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+					class value
+					{
+						items=4;
+						class Item0
+						{
+							class data
+							{
+								singleType="STRING";
+								value="#CBA_HASH#";
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								singleType="ARRAY";
+								class value
+								{
+									items=2;
+									class Item0
+									{
+										class data
+										{
+											singleType="STRING";
+											value="grad_civs_main_enabled";
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											singleType="STRING";
+											value="grad_civs_lifecycle_civclasses";
+										};
+									};
+								};
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								singleType="ARRAY";
+								class value
+								{
+									items=2;
+									class Item0
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="C_MU_man_random_civil_afro_F";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+						class Item3
+						{
+							class data
+							{
+								nil=1;
+								singleType="ANY";
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="cba_settings_hasSettingsFile";
 			expression="false";
 			class Value
@@ -219,7 +350,7 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=1;
+		nAttributes=2;
 	};
 };
 class Mission
@@ -246,7 +377,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=59;
+		items=69;
 		class Item0
 		{
 			dataType="Object";
@@ -3671,16 +3802,136 @@ class Mission
 			id=202;
 			atlOffset=1.9073486e-006;
 		};
+		class Item59
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4366.4453,10798.477,1771.5646};
+			};
+			id=209;
+			type="grad_civs_common_ExclusionZone";
+			atlOffset=10739.854;
+		};
+		class Item60
+		{
+			dataType="Trigger";
+			position[]={4364.8369,10798.967,1775.4822};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+			};
+			id=210;
+			type="EmptyDetectorAreaR250";
+			atlOffset=10739.854;
+		};
+		class Item61
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2329.6597,10814.587,2960.5};
+			};
+			id=211;
+			type="grad_civs_common_ExclusionZone";
+			atlOffset=10739.854;
+		};
+		class Item62
+		{
+			dataType="Trigger";
+			position[]={2328.0513,10814.849,2964.4177};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+			};
+			id=212;
+			type="EmptyDetectorAreaR250";
+			atlOffset=10739.854;
+		};
+		class Item63
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={676.4433,10816.031,4202.4492};
+			};
+			id=213;
+			type="grad_civs_common_ExclusionZone";
+			atlOffset=10739.854;
+		};
+		class Item64
+		{
+			dataType="Trigger";
+			position[]={674.8349,10816.254,4206.3672};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+			};
+			id=214;
+			type="EmptyDetectorAreaR250";
+			atlOffset=10739.854;
+		};
+		class Item65
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3060.5771,10917.271,4098.6143};
+			};
+			id=215;
+			type="grad_civs_common_ExclusionZone";
+			atlOffset=10739.854;
+		};
+		class Item66
+		{
+			dataType="Trigger";
+			position[]={3058.9688,10917.377,4102.5322};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+			};
+			id=216;
+			type="EmptyDetectorAreaR250";
+			atlOffset=10739.854;
+		};
+		class Item67
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1912.2843,10752.833,1109.7935};
+			};
+			id=217;
+			type="grad_civs_common_ExclusionZone";
+			atlOffset=10739.854;
+		};
+		class Item68
+		{
+			dataType="Trigger";
+			position[]={1910.6759,10753.206,1113.7111};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+			};
+			id=218;
+			type="EmptyDetectorAreaR250";
+			atlOffset=10739.854;
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=4;
+			nextID=9;
 		};
 		class Links
 		{
-			items=4;
+			items=9;
 			class Item0
 			{
 				linkID=0;
@@ -3719,6 +3970,56 @@ class Mission
 				class CustomData
 				{
 					type="WaypointActivation";
+				};
+			};
+			class Item4
+			{
+				linkID=4;
+				item0=210;
+				item1=209;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item5
+			{
+				linkID=5;
+				item0=212;
+				item1=211;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item6
+			{
+				linkID=6;
+				item0=214;
+				item1=213;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item7
+			{
+				linkID=7;
+				item0=216;
+				item1=215;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item8
+			{
+				linkID=8;
+				item0=218;
+				item1=217;
+				class CustomData
+				{
+					type="Sync";
 				};
 			};
 		};
