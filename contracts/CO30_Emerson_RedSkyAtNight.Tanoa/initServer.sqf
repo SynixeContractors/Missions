@@ -24,3 +24,4 @@ FARE_fnc_mainAttack = compile preprocessFileLineNumbers "scripts\mainAttack.sqf"
 FARE_fnc_transcript = compile preprocessFileLineNumbers "scripts\transcript.sqf";
 FARE_fnc_boatBomb = compile preprocessFileLineNumbers "scripts\boatBomb.sqf";
 FARE_fnc_crateFall = compile preprocessFileLineNumbers "scripts\crateFall.sqf";
+FARE_fnc_drugDeal = compile preprocessFileLineNumbers "scripts\drugDeal.sqf";

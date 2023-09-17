@@ -31,24 +31,21 @@ playSound3D [
 
         // hurt him a lot!
         [crateDude, 1, "Body", "falling"] call ace_medical_fnc_addDamageToUnit;
-        [crateDude, 1, "Body", "bullet"] call ace_medical_fnc_addDamageToUnit;
 
         [crateDude, 0.4, "RightLeg", "falling"] call ace_medical_fnc_addDamageToUnit;
 
         [crateDude, 1, "LeftLeg", "falling"] call ace_medical_fnc_addDamageToUnit;
-        [crateDude, 1, "LeftLeg", "bullet"] call ace_medical_fnc_addDamageToUnit;
-        [crateDude, 1, "LeftLeg", "bullet"] call ace_medical_fnc_addDamageToUnit;
 
         [crateDude, 0.4, "RightArm", "falling"] call ace_medical_fnc_addDamageToUnit;
 
         [crateDude, 1, "LeftArm", "falling"] call ace_medical_fnc_addDamageToUnit;
-        [crateDude, 1, "LeftArm", "bullet"] call ace_medical_fnc_addDamageToUnit;
-        [crateDude, 1, "LeftArm", "bullet"] call ace_medical_fnc_addDamageToUnit;
 
         [crateDude, 0.4, "Head", "falling"] call ace_medical_fnc_addDamageToUnit;
 
+        [crateDude, 0.5] call ace_medical_fnc_adjustPainLevel;
+
         // play radio message
-        crateWorker globalRadio "radioCrate";
+        [crateWorker, "radioCrate"] remoteExec ["globalRadio"];
 
         // add transcript for everyone
         _transcript = "Hello?! Does anybody read me?! We have a medical emergency down at the new silo and need immediate assistance! One of our crates just fucking fell on a guy. Shit! He's... he's not looking good. We're at the construction site of the new silo, on the east side of the port. If you have any medical training at all, come immediately!";

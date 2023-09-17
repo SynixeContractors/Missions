@@ -18,10 +18,10 @@ building01groundDoors = [[[-16.9321,-17.9134,-20.7814],[[0.0086691,0.999962,1.35
 building01roofDoors = [[[3.271,13.941,19.4708],[[-0.999962,0.00870901,1.03373e-005],[0.00870899,0.999961,-0.000820117]]]];
 building01groundLights = [[[-16.46,-18.5643,-19.7456],[[-2.36587e-006,-1,-4.26369e-005],[-0.999999,2.3298e-006,0.000845917]]],[[-16.4497,-10.8968,-19.7446],[[-2.36587e-006,-1,-4.26369e-005],[-0.999999,2.3298e-006,0.000845917]]],[[-16.4497,8.16761,-19.7446],[[-2.36587e-006,-1,-4.26369e-005],[-0.999999,2.3298e-006,0.000845917]]],[[9.26196,-11.222,-20.0126],[[-0.000143066,1,-5.36144e-005],[0.999999,0.000143107,0.000758713]]],[[18.7207,5.29408,-20.0126],[[1,-0.00026825,-7.03802e-005],[-0.000268197,-0.999999,0.000758842]]]];
 building01roofLights = [[[4.46973,14.3004,20.6233],[[1,-0.000203403,-7.37672e-005],[-0.000203347,-0.999999,0.000759319]]]];
-publicVariable "building01groundDoors";
-publicVariable "building01roofDoors";
-publicVariable "building01groundLights";
-publicVariable "building01roofLights";
+// publicVariable "building01groundDoors";
+// publicVariable "building01roofDoors";
+// publicVariable "building01groundLights";
+// publicVariable "building01roofLights";
 
 // get buildings inside trigger
 _triggerArea = triggerArea _trigger; // format [a, b, angle, isRectangle, c]
@@ -140,7 +140,7 @@ _buildings = _buildings select {_x inArea _trigger}; // filter to buildings insi
                 ] call ace_interact_menu_fnc_createAction;
 
                 // add ace action for everyone
-				[_light, 0, ["ACE_MainActions"], _action] remoteExecCall ["ace_interact_menu_fnc_addActionToObject"];
+				[_light, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 			} forEach building01groundLights;
 
@@ -176,7 +176,7 @@ _buildings = _buildings select {_x inArea _trigger}; // filter to buildings insi
                 ] call ace_interact_menu_fnc_createAction;
 
                 // add ace action for everyone
-				[_light, 0, ["ACE_MainActions"], _action] remoteExecCall ["ace_interact_menu_fnc_addActionToObject"];
+				[_light, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 			} forEach building01roofLights;
 		};
