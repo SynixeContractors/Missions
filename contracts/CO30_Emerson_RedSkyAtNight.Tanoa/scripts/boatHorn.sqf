@@ -11,3 +11,4 @@ if (isServer) then {
         0
     ];
 };
+true

@@ -184,3 +184,4 @@ _buildings = _buildings select {_x inArea _trigger}; // filter to buildings insi
 		default {systemChat "No building found for rooftop access!"};
 	};
 } forEach _buildings;
+true

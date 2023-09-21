@@ -6,12 +6,11 @@ _markers = _entities select 1;
 
 // turn off dynamic sim and fully simulate
 {
-    [_x, false] remoteExec ["enableDynamicSimulation"]; // disables dynamic sim for objects
-    [group _x, false] remoteExec ["enableDynamicSimulation"]; // disables dynamic sim for groups
-    [_x, true] remoteExec ["enableSimulationGlobal", 2]; // server only
+    ["FARE_enableSimulation", [_x], _x] call CBA_fnc_targetEvent;
 
     // if dudes were prone, set them back to auto stance
     if (_x isKindOf "Man") then {
         _x setUnitPos "AUTO";
     }
 } forEach _objects;
+true

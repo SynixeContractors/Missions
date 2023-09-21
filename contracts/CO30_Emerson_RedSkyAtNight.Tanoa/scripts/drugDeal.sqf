@@ -1,13 +1,7 @@
 // turn off dynamic sim and fully simulate
-{
-    [_x, false] remoteExec ["enableDynamicSimulation"]; // disables dynamic sim for objects
-    [group _x, false] remoteExec ["enableDynamicSimulation"]; // disables dynamic sim for groups
-    [_x, true] remoteExec ["enableSimulationGlobal", 2]; // server only
-} forEach units drugGrp;
+["FARE_enableSimulation", [drugGrp], leader drugGrp] call CBA_fnc_targetEvent;
 
-[drugWorker, false] remoteExec ["enableDynamicSimulation"]; // disables dynamic sim for objects
-[group drugWorker, false] remoteExec ["enableDynamicSimulation"]; // disables dynamic sim for groups
-[drugWorker, true] remoteExec ["enableSimulationGlobal", 2]; // server only
+["FARE_enableSimulation", [drugWorker], drugWorker] call CBA_fnc_targetEvent;
 
 // make worker join BLUFOR 
 _grp = createGroup west;
@@ -38,3 +32,4 @@ _wp1 setWaypointType "DESTROY";
     [drugGrp],
     5
 ] call CBA_fnc_waitAndExecute;
+true
