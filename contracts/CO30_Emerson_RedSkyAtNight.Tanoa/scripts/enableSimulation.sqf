@@ -18,4 +18,3 @@ if (_obj isEqualType grpNull) then {
         _x enableSimulationGlobal true;
     } forEach units _obj;
 };
-true
