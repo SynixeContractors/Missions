@@ -49,7 +49,19 @@ private _buildings = nearestTerrainObjects [getPos _trigger, [], _triggerSize, f
                 private _statement = {
                     params ["_target", "_player", "_params"];
                     _params params ["_curBuilding", "_roofDoor"];
-                    player setPosWorld (_curBuilding modelToWorldWorld _roofDoor);
+
+                    titlecut ["", "BLACK OUT", 1]; // fade to black
+
+                    // teleport after 2 seconds
+                    [
+                        {
+                            params ["_curBuilding", "_roofDoor"];
+                            player setPosWorld (_curBuilding modelToWorldWorld _roofDoor);
+                            titlecut ["", "BLACK IN", 1]; // fade back in
+                        },
+                        [_curBuilding, _roofDoor],
+                        2
+                    ] call CBA_fnc_waitAndExecute;
                 };
                 private _action = [
                     "RoofAction", // action name
@@ -77,21 +89,29 @@ private _buildings = nearestTerrainObjects [getPos _trigger, [], _triggerSize, f
                 _light setVectorDirAndUp [_curBuilding vectorModelToWorld _relDir, _curBuilding vectorModelToWorld _relUp];
 
                 // ace action
-                _condition = {
-                    params ["_target", "_player", "_params"];
-                    true
-                };
-                _statement = {
+                private _statement = {
                     params ["_target", "_player", "_params"];
                     _params params ["_curBuilding", "_groundDoor"];
-                    player setPosWorld (_curBuilding modelToWorldWorld _groundDoor);
+
+                    titlecut ["", "BLACK OUT", 1]; // fade to black
+
+                    // teleport after 2 seconds
+                    [
+                        {
+                            params ["_curBuilding", "_groundDoor"];
+                            player setPosWorld (_curBuilding modelToWorldWorld _groundDoor);
+                            titlecut ["", "BLACK IN", 1]; // fade back in
+                        },
+                        [_curBuilding, _groundDoor],
+                        2
+                    ] call CBA_fnc_waitAndExecute;
                 };
-                _action = [
+                private _action = [
                     "GroundAction", // action name
                     "Go to the Ground", // menu name
                     "", // icon
                     _statement, // statement
-                    _condition, // condition
+                    {true}, // condition
                     {}, // children code
                     [_curBuilding, _building01groundDoors#0#0] // arguments
                 ] call ace_interact_menu_fnc_createAction;
