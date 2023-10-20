@@ -10,7 +10,7 @@
     private _condition = (_target != objNull) // target can't be null
         && (alive _target) // target must be alive
         && {!(isPlayer _target)} // target can't be a player
-        && {!(_target in _players) // TODO is this necessary?
+        && {!(_target in _players)} // TODO is this necessary?
         && {_target call CBA_fnc_isPerson} // target must be a man
         && {isNull objectParent _target} // target can't be attached to anything
         && {!(_target getVariable ["ACE_captives_isSurrendering", false])} // target can't be surrending

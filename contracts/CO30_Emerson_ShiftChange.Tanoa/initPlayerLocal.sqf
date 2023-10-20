@@ -7,3 +7,4 @@
 ] call mission_fnc_briefing;
 
 FARE_fnc_enableSimulation = compile preprocessFileLineNumbers "scripts\enableSimulation.sqf";
+FARE_fnc_surrenderEH = compile preprocessFileLineNumbers "scripts\surrenderEH.sqf";
