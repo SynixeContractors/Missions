@@ -38,6 +38,7 @@ if ((!isServer) && (player != player)) then {waitUntil {player == player};};
 ["Wacky Modules", "[Cursed] Mark", {
     params ["", "_object"];
     _object setVariable ["wack_marked", !(_object getVariable ["wack_marked", false]), true];
+    _object hideObjectGlobal false;
 }] call zen_custom_modules_fnc_register;
 
 // Fucked in the head
