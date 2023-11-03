@@ -26,31 +26,7 @@ internal_teleport = {
             _body setVariable ["ace_medical_statemachine_AIUnconsciousness", true, true];
             [_body, true, 10e10] call ace_medical_fnc_setUnconscious;
             _body setVariable ["mission_other", _x, true];
-            private _action = ["Join","Join","",{
-                params ["_target", "_player", "_params"];
-                _player enableSimulation false;
-                _params params ["_x"];
-                private _other = synixe_group createUnit ["C_man_1", _x, [], 0, "CAN_COLLIDE"];
-                _other setPosASL (getPosASL _x);
-                _other setUnitLoadout (getUnitLoadout _x);
-                selectPlayer _other;
-                [{
-                    params ["_player", "_target", "_other"];
-                    selectPlayer _player;
-                    _player enableSimulation true;
-                    deleteVehicle _other;
-                }, [_player, _target, _other], 7] call CBA_fnc_waitAndExecute;
-            },{!(missionNamespace getVariable ["woke", false])},{},[_x]] call ace_interact_menu_fnc_createAction;
-            [_body, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
-            private _action = ["WakeUp","Wake Up","",{
-                params ["_target", "_player", "_params"];
-                _params params ["_x"];
-                _x setUnitLoadout (getUnitLoadout _target);
-                _x setPosASL (getPosASL _target);
-                _x allowDamage true;
-                deleteVehicle _target;
-            },{missionNamespace getVariable ["woke", false]},{},[_x]] call ace_interact_menu_fnc_createAction;
-            [_body, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+            ["add_actions_teleport", [_body, _x]] call CBA_fnc_globalEventJIP;
         }, [_body, _x]] call CBA_fnc_execNextFrame;
     } forEach (allPlayers select {getPos _x inArea _trigger});
 };
@@ -59,3 +35,32 @@ action_teleport = {
     [tent_group_src_trigger, tent_group_src, tent_group_dst] call internal_teleport;
     [cave_group_src_trigger, cave_group_src, cave_group_dst] call internal_teleport;
 };
+
+["add_actions_teleport", {
+    params ["_body", "_x"];
+    private _action = ["Join","Join","",{
+        params ["_target", "_player", "_params"];
+        _player enableSimulation false;
+        _params params ["_x"];
+        private _other = synixe_group createUnit ["C_man_1", _x, [], 0, "CAN_COLLIDE"];
+        _other setPosASL (getPosASL _x);
+        _other setUnitLoadout (getUnitLoadout _x);
+        selectPlayer _other;
+        [{
+            params ["_player", "_target", "_other"];
+            selectPlayer _player;
+            _player enableSimulation true;
+            deleteVehicle _other;
+        }, [_player, _target, _other], 7] call CBA_fnc_waitAndExecute;
+    },{!(missionNamespace getVariable ["woke", false])},{},[_x]] call ace_interact_menu_fnc_createAction;
+    [_body, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+    private _action = ["WakeUp","Wake Up","",{
+        params ["_target", "_player", "_params"];
+        _params params ["_x"];
+        _x setUnitLoadout (getUnitLoadout _target);
+        _x setPosASL (getPosASL _target);
+        _x allowDamage true;
+        deleteVehicle _target;
+    },{missionNamespace getVariable ["woke", false]},{},[_x]] call ace_interact_menu_fnc_createAction;
+    [_body, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+}] call CBA_fnc_addEventHandler;
