@@ -33,7 +33,7 @@ halloween_fnc_spawnSurgeUnit = {
     createGroup EAST
   } else {
     halloween_security
-  } createUnit ["I_Survivor_F", ASLtoATL _pos, [], 0, "NONE"];
+  } createUnit ["O_Survivor_F", ASLtoATL _pos, [], 0, "NONE"];
   _unit setUnitLoadout _loadout;
   _unit setPitch 0.7;
   _unit addEventHandler ["Killed", {
