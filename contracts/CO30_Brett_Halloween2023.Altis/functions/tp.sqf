@@ -27,7 +27,7 @@ internal_teleport = {
             [_body, true, 10e10] call ace_medical_fnc_setUnconscious;
             _body setVariable ["mission_other", _x, true];
             ["add_actions_teleport", [_body, _x]] call CBA_fnc_globalEventJIP;
-        }, [_body, _x]] call CBA_fnc_execNextFrame;
+        }, [_body, _x], 1] call CBA_fnc_waitAndExecute;
     } forEach (allPlayers select {getPos _x inArea _trigger});
 };
 
