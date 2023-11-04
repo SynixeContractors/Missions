@@ -1,6 +1,6 @@
 halloween_loadouts = [
-  [[[],[],["CUP_hgun_Glock17_blk","","","",["tacgt_17Rnd_9x19_Glock_Ball",17],[],""],["U_C_Scientist",[]],["milgp_v_marciras_light_blk_blk",[["tacgt_17Rnd_9x19_Glock_Ball",10,17]]],[],"","",[],["ItemMap","","","ItemCompass","ItemWatch",""]],[]],
-  [[[],[],["CUP_hgun_Glock17_blk","","","",["tacgt_17Rnd_9x19_Glock_Ball",17],[],""],["sepsigp_u_fleece_grey_g3_field_pants_blk",[]],["milgp_v_marciras_light_blk_blk",[["tacgt_17Rnd_9x19_Glock_Ball",10,17]]],[],"","",[],["ItemMap","","","ItemCompass","ItemWatch",""]],[]]
+  [[],[],["CUP_hgun_Glock17_blk","","","",["tacgt_17Rnd_9x19_Glock_Ball",17],[],""],["U_C_Scientist",[]],["milgp_v_marciras_light_blk_blk",[["tacgt_17Rnd_9x19_Glock_Ball",10,17]]],[],"","",[],["ItemMap","","","ItemCompass","ItemWatch",""]],
+  [[],[],["CUP_hgun_Glock17_blk","","","",["tacgt_17Rnd_9x19_Glock_Ball",17],[],""],["sepsigp_u_fleece_grey_g3_field_pants_blk",[]],["milgp_v_marciras_light_blk_blk",[["tacgt_17Rnd_9x19_Glock_Ball",10,17]]],[],"","",[],["ItemMap","","","ItemCompass","ItemWatch",""]]
 ];
 
 halloween_fnc_spawnEffect = {
