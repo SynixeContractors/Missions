@@ -1,4 +1,6 @@
-#include "..\..\script_component.hpp"
+#include "..\..\..\script_component.hpp"
+
+PREP_RANGE(grenades,instructions);
 
 grenade_helper hideObject true;
 {

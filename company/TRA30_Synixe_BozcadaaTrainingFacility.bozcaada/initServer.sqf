@@ -2,5 +2,3 @@
 
 call MFUNC(certs,canStartEXT);
 call MFUNC(certs,canStartPFH);
-
-call MFUNC(grenades,init);
