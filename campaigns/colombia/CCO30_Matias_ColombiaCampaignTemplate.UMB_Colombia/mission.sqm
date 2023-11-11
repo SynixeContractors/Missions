@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=1.5707964;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=1537;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=528;
+		nextID=538;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=110;
+		nextID=134;
 	};
 	class Camera
 	{
-		pos[]={7110.7104,44.997585,9858.999};
-		dir[]={0.8811,-0.35411829,-0.3138653};
-		up[]={0.33372584,0.93504202,-0.1188787};
-		aside[]={-0.33558765,3.5887351e-006,-0.94212449};
+		pos[]={7042.3955,75.663689,9841.0928};
+		dir[]={0.80808491,-0.58909488,0.0015339133};
+		up[]={0.58910632,0.80805248,0.0011175148};
+		aside[]={0.0018980675,-4.1438932e-007,-1.0000205};
 	};
 };
 binarizationWanted=0;
@@ -97,13 +97,14 @@ addons[]=
 	"A3_Structures_F_Bootcamp_Items_Food",
 	"structures_F_lxWS_Items_Food",
 	"A3_Structures_F_Bootcamp_Items_Electronics",
-	"ace_field_rations"
+	"ace_field_rations",
+	"grad_civs_common"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=45;
+		items=46;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -405,6 +406,12 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item45
+		{
+			className="grad_civs_common";
+			name="common";
+			author="AUTHOR";
+		};
 	};
 };
 dlcs[]=
@@ -460,7 +467,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=2;
+									items=5;
 									class Item0
 									{
 										class data
@@ -477,6 +484,30 @@ class CustomAttributes
 											value="crate_client_campaigns_key";
 										};
 									};
+									class Item2
+									{
+										class data
+										{
+											singleType="STRING";
+											value="grad_civs_main_enabled";
+										};
+									};
+									class Item3
+									{
+										class data
+										{
+											singleType="STRING";
+											value="grad_civs_lifecycle_civclasses";
+										};
+									};
+									class Item4
+									{
+										class data
+										{
+											singleType="STRING";
+											value="grad_civs_residents_maxcivsresidents";
+										};
+									};
 								};
 							};
 						};
@@ -487,7 +518,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=2;
+									items=5;
 									class Item0
 									{
 										class data
@@ -529,6 +560,87 @@ class CustomAttributes
 													{
 														singleType="STRING";
 														value="04e7974d-9568-4a43-9d6a-cdba1e9807d0";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item2
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item3
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="C_MU_man_random_civil_tanoan_F";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item4
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=100;
 													};
 												};
 												class Item1
@@ -599,7 +711,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=22;
+		items=30;
 		class Item0
 		{
 			dataType="Marker";
@@ -2286,23 +2398,6 @@ class Mission
 							};
 							id=54;
 							type="CargoNet_01_box_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="crate_client_gear_attribute_shop";
-									expression="if(_value)then{crate_client_gear_shop_boxes pushBack _this}";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item24
 						{
@@ -2319,23 +2414,6 @@ class Mission
 							};
 							id=53;
 							type="CargoNet_01_box_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="crate_client_gear_attribute_shop";
-									expression="if(_value)then{crate_client_gear_shop_boxes pushBack _this}";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item25
 						{
@@ -6208,6 +6286,200 @@ class Mission
 			};
 			id=527;
 			atlOffset=0.40778732;
+		};
+		class Item22
+		{
+			dataType="Trigger";
+			position[]={7102.8813,39.268555,9863.1738};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+			};
+			id=530;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item23
+		{
+			dataType="Trigger";
+			position[]={2693.5349,35.285049,7322.1133};
+			class Attributes
+			{
+				sizeA=125.19446;
+				sizeB=176.46875;
+				sizeC=5;
+				isRectangle=1;
+			};
+			id=531;
+			type="EmptyDetectorArea10x10";
+		};
+		class Item24
+		{
+			dataType="Trigger";
+			position[]={2119.9836,3.846776,3765.3145};
+			angle=5.6403236;
+			class Attributes
+			{
+				sizeA=174.38928;
+				sizeB=312.08444;
+				sizeC=5;
+				isRectangle=1;
+			};
+			id=532;
+			type="EmptyDetectorArea10x10";
+			atlOffset=0.003121376;
+		};
+		class Item25
+		{
+			dataType="Trigger";
+			position[]={4447.4858,102.31506,2981.3362};
+			angle=0.41800472;
+			class Attributes
+			{
+				sizeA=125.19446;
+				sizeB=114.52349;
+				sizeC=5;
+				isRectangle=1;
+			};
+			id=533;
+			type="EmptyDetectorArea10x10";
+		};
+		class Item26
+		{
+			dataType="Trigger";
+			position[]={7055.2344,55.011147,836.47644};
+			angle=0.31194443;
+			class Attributes
+			{
+				sizeA=242.72073;
+				sizeB=624.02319;
+				sizeC=5;
+				isRectangle=1;
+			};
+			id=534;
+			type="EmptyDetectorArea10x10";
+			atlOffset=0.0219841;
+		};
+		class Item27
+		{
+			dataType="Trigger";
+			position[]={6810.6382,3.7594292,4777.9268};
+			angle=0.84670347;
+			class Attributes
+			{
+				sizeA=60.880871;
+				sizeB=90.520676;
+				sizeC=5;
+				isRectangle=1;
+			};
+			id=535;
+			type="EmptyDetectorArea10x10";
+		};
+		class Item28
+		{
+			dataType="Trigger";
+			position[]={5454.2915,20.017099,5895.1431};
+			angle=4.71562;
+			class Attributes
+			{
+				sizeA=174.38928;
+				sizeB=312.08444;
+				sizeC=5;
+				isRectangle=1;
+			};
+			id=536;
+			type="EmptyDetectorArea10x10";
+		};
+		class Item29
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6976.293,39.268555,9786.6797};
+			};
+			id=537;
+			type="grad_civs_common_ExclusionZone";
+		};
+	};
+	class Connections
+	{
+		class LinkIDProvider
+		{
+			nextID=7;
+		};
+		class Links
+		{
+			items=7;
+			class Item0
+			{
+				linkID=0;
+				item0=530;
+				item1=537;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item1
+			{
+				linkID=1;
+				item0=531;
+				item1=537;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item2
+			{
+				linkID=2;
+				item0=532;
+				item1=537;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item3
+			{
+				linkID=3;
+				item0=533;
+				item1=537;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item4
+			{
+				linkID=4;
+				item0=534;
+				item1=537;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item5
+			{
+				linkID=5;
+				item0=535;
+				item1=537;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item6
+			{
+				linkID=6;
+				item0=536;
+				item1=537;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
 		};
 	};
 };
