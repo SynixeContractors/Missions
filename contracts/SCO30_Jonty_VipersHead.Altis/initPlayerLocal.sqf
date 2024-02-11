@@ -6,8 +6,8 @@
     // if you create "edit_me/briefing/example.html, then add "Example" here
 ] call mission_fnc_briefing;
 
-[underling, 5, false, 1, "Read Last Text", [], 3, "Cellphone Text", "Viper [04:56]: Wrap it up. Execute exfiltration protocols then bring the cargo to radio station. Squeeze every last bit of information from these fuckers. Load them up or eliminate if non cooperative."] call zen_modules_fnc_addIntelAction;
-[tabledoc, 5, false, 1, "Read Document", [], 3, "Hostage Info. Documents", "Loyalists Captured: Arion Bouras, Sotridis Liosi, Sotiris Papadopoulos. Held at: Radio Station"] call zen_modules_fnc_addIntelAction;
+[underling, 2, false, 1, "Read Last Text", [], 5, "Cellphone Text", "Viper [04:56]: Wrap it up. Execute exfiltration protocols then bring the cargo to radio station. Squeeze every last bit of information from these fuckers. Load them up or eliminate if non cooperative."] call zen_modules_fnc_addIntelAction;
+[tabledoc, 2, false, 1, "Read Document", [], 5, "Hostage Info. Documents", "Loyalists Captured: Arion Bouras, Sotridis Liosi, Sotiris Papadopoulos. Held at: Radio Station"] call zen_modules_fnc_addIntelAction;
 
 tablelaptop setObjectTextureGlobal [0, "#(rgb,1024,1024,3)text(1,3,""RobotoCondensed"",0.1,""#000000"",""#ffffff"",""           Communications Enabled"")"];
 
@@ -25,7 +25,7 @@ private _action = [
     private _onFinish = {
       tablelaptop setObjectTextureGlobal [0, "#(rgb,1024,1024,3)text(1,3,""RobotoCondensed"",0.1,""#000000"",""#ff0000"",""         Communications Disabled\n         Unauthorized Access\n         Encryption Enabled"")"];
       tablelaptop setVariable ["comms_enabled", false, true];
-      hint "Communications Disabled";
+      radio setObjectTextureGlobal [0, ""];
     };
 
     // Title of the progress bar
@@ -53,9 +53,9 @@ private _hackHardDriveAction = [
   {
     // Code to execute upon successful completion of hacking
     private _onFinishHacking = {
-      hint "Files Decrypted";
       tablelaptop setObjectTextureGlobal [0, "#(rgb,1024,1024,3)text(1,3,""RobotoCondensed"",0.1,""#000000"",""#00FF00"",""                  Access Granted\n           Files Available To Read"")"];
-      [tablelaptop,  5, false,  1, "Read Files", [],  3, "Decrypted Files", "Coordinates Found: Radio Station Magos - 045.154"] call zen_modules_fnc_addIntelAction;
+      [tablelaptop, 2, false,  1, "Read Files", [],  10, "Decrypted Files", "Coordinates Found: Radio Station Magos - 045.154"] call zen_modules_fnc_addIntelAction;
+      tablelaptop setVariable ["hacking_enabled", false, true];
     };
 
     // Title of the hacking progress bar
@@ -66,7 +66,7 @@ private _hackHardDriveAction = [
   },
   {
     // Condition to show this action: only when communications are disabled
-    !(tablelaptop getVariable ["comms_enabled", true])
+    !(tablelaptop getVariable ["comms_enabled", true]) && (tablelaptop getVariable ["hacking_enabled", true])
   },
   nil,
   nil,
