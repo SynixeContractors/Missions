@@ -1,10 +1,10 @@
 mission_fnc_toggleLights = compile preprocessFileLineNumbers "fnc_toggleLights.sqf";
 
 {
-    private _lights = _markerPos nearObjects [_x, 100000];
+    private _lights = [worldSize/2,worldSize/2] nearObjects [_x, worldSize];
 
     {
-        _x switchLight _state;
+        _x switchLight "OFF";
     } forEach _lights;
 } forEach [
     "Lamps_Base_F",
@@ -13,6 +13,14 @@ mission_fnc_toggleLights = compile preprocessFileLineNumbers "fnc_toggleLights.s
 ];
 
 ["ppoutage", true] call mission_fnc_toggleLights;
+
+["ppswitch", {
+    params ["_unit", "_state", "_hasGen"];
+    if (_state != 1) exitWith {
+        ["ppoutage", false] call mission_fnc_toggleLights;
+    };
+    ["ppoutage", _hasGen] call mission_fnc_toggleLights;
+}] call CBA_fnc_addEventHandler;
 
 ["pd1switch", {
     params ["_unit", "_state", "_hasGen"];
