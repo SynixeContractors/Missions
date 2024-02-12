@@ -1,9 +1,10 @@
 mission_fnc_switch = compile preprocessFileLineNumbers "fnc_switch.sqf";
 
+ppswitch setVariable ["switch_hasGen", true];
 [
     ppswitch,
     "ppswitch",
-    0
+    1
 ] call mission_fnc_switch;
 
 [
