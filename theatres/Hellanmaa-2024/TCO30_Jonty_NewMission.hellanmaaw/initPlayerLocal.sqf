@@ -6,12 +6,44 @@
     // if you create "edit_me/briefing/example.html, then add "Example" here
 ] call mission_fnc_briefing;
 
-["mission_intel", {
-    [mainterminal, 2, false, 1, "Read Coordinates", [], 10, "Radio Towers", " "] call zen_modules_fnc_addIntelAction;
-}] call CBA_fnc_addEventHandler;
+[reporter, 2, false, 1, "Get Intel", [], 2, "UNA Outpost Intel Report", "UNA has located an abandoned radio station, previously set up and operated by Russian forces, which is now controlled by the Kardishev Front. This central relay point connects numerous smaller outposts, equipped with short range radio towers. Disable the main radio tower to interrupt communications and get the location of the hidden outposts. Additionally, our reconnaissance team has uncovered a guarded roadblock on the crossroads near the station. Both objectives are marked on the map for immediate action."] call zen_modules_fnc_addIntelAction;
+
+[
+    "mission_intel", {
+        // Objective marker for East Tower
+        createMarker ["marker1", [5663,6165]];
+        "marker1" setMarkerType "hd_objective";
+        "marker1" setMarkerText "East Tower";
+        "marker1" setMarkerColor "ColorYellow";
+
+        // Objective marker for North East Tower
+        createMarker ["marker2", [5206,6644]];
+        "marker2" setMarkerType "hd_objective";
+        "marker2" setMarkerText "North East Tower";
+        "marker2" setMarkerColor "ColorRed";
+
+        // Objective marker for Western Tower
+        createMarker ["marker3", [3789,  5987]];
+        "marker3" setMarkerType "hd_objective";
+        "marker3" setMarkerText "Western Tower";
+        "marker3" setMarkerColor "ColorGreen";
+
+        // Objective marker for North West Tower
+        createMarker ["marker4", [3910,  6478]];
+        "marker4" setMarkerType "hd_objective";
+        "marker4" setMarkerText "North West Tower";
+        "marker4" setMarkerColor "ColorBlue";
+
+        // Objective marker for South East Tower
+        createMarker ["marker5", [5700,  5257]];
+        "marker5" setMarkerType "hd_objective";
+        "marker5" setMarkerText "South East Tower";
+        "marker5" setMarkerColor "ColorOrange";
+    }
+] call CBA_fnc_addEventHandler;
 
 
-mainterminal setObjectTextureGlobal [0, "#(rgb,1024,1024,3)text(1,3,""RobotoCondensed"",0.1,""#000000"",""#ffffff"",""        Communications Enabled\n\n        Radio Pings Detected"")"];
+screen setObjectTextureGlobal [0, "#(rgb,1024,1024,3)text(1,3,""RobotoCondensed"",0.1,""#000000"",""#ffffff"",""        Communications Enabled\n\n        Radio Pings Detected"")"];
 
 private _action = [
     "DisableComms",
@@ -25,7 +57,7 @@ private _action = [
         
         // Code to execute upon successful completion
         private _onFinish = {
-            mainterminal setObjectTextureGlobal [0, "#(rgb,1024,1024,3)text(1,3,""RobotoCondensed"",0.1,""#000000"",""#ff0000"",""     All Radio Towers Disabled"")"];
+            screen setObjectTextureGlobal [0, "#(rgb,1024,1024,3)text(1,3,""RobotoCondensed"",0.1,""#000000"",""#ff0000"",""     All Radio Towers Disabled"")"];
             mainterminal setVariable ["comms_enabled", false, true];
             radio setObjectTextureGlobal [0, ""];
         };
@@ -52,13 +84,12 @@ private _hackHardDriveAction = [
     {
         // Code to execute upon successful completion of hacking
         private _onFinishHacking = {
-            mainterminal setObjectTextureGlobal [0, "#(rgb,1024,1024,3)text(1,3,""RobotoCondensed"",0.1,""#000000"",""#00FF00"",""                  Access Granted\n           Files Available To Read"")"];
             ["mission_intel"] call CBA_fnc_globalEvent;
             mainterminal setVariable ["hacking_enabled", false, true];
         };
 
         // Call the progress bar function with no condition for canceling the action
-        [30, [mainterminal, player], _onFinishHacking, nil, "Searching Radio Locations", nil] call ace_common_fnc_progressBar;
+        [2, [mainterminal, player], _onFinishHacking, nil, "Searching Radio Locations", nil] call ace_common_fnc_progressBar;
     },
     {
         // Condition to show this action: only when communications are disabled
