@@ -1,5 +1,5 @@
 mission_fnc_toggleLights = {
-    ["lightoggle", _this] call CBA_fnc_globalEvent;
+    ["lighttoggle", _this] call CBA_fnc_globalEvent;
 };
 
 ["ppoutage", true] call mission_fnc_toggleLights;
