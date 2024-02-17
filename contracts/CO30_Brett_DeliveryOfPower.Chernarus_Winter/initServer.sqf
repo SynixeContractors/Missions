@@ -1,16 +1,6 @@
-mission_fnc_toggleLights = compile preprocessFileLineNumbers "fnc_toggleLights.sqf";
-
-{
-    private _lights = [worldSize/2,worldSize/2] nearObjects [_x, worldSize];
-
-    {
-        _x switchLight "OFF";
-    } forEach _lights;
-} forEach [
-    "Lamps_Base_F",
-    "PowerLines_base_F",
-    "House"
-];
+mission_fnc_toggleLights = {
+    ["lightoggle", _this] call CBA_fnc_globalEvent;
+};
 
 ["ppoutage", true] call mission_fnc_toggleLights;
 
