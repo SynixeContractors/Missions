@@ -6,7 +6,7 @@
     // if you create "edit_me/briefing/example.html, then add "Example" here
 ] call mission_fnc_briefing;
 
-[reporter, 2, false, 1, "Get Intel", [], 2, "UNA Outpost Intel Report", "UNA has located an abandoned radio station, previously set up and operated by Russian forces, which is now controlled by the Kardishev Front. This central relay point connects numerous smaller outposts, equipped with short range radio towers. Disable the main radio tower to interrupt communications and get the location of the hidden outposts. Additionally, our reconnaissance team has uncovered a guarded roadblock on the crossroads near the station. Both objectives are marked on the map for immediate action."] call zen_modules_fnc_addIntelAction;
+[reporter, 2, false, 1, "Get Intel", [], 2, "UNA Outpost Intel Report", "UNA has located an abandoned radio station, previously set up and operated by Russian forces, which is now controlled by the Kardishev Front. This central relay point connects numerous smaller outposts, equipped with short range radio towers. Disable the main radio tower to interrupt communications and get the location of the hidden outposts. Additionally, our reconnaissance team has uncovered a guarded roadblock on the crossroads near the station."] call zen_modules_fnc_addIntelAction;
 [apcintel, 2, false, 1, "Get Intel", [], 2, "Report on stolen APCs", "Two APCs aquired during the last ambush on the UNA convoy. Vehicles will be covertly transported to the ranch at midnight for proximity to the Polk Baskera outpost. Reinforcements en route due to UNA alertness. Expect significant resistance due to the high-value nature of the vehicles. Deployment is scheduled for 0800 hours hence."] call zen_modules_fnc_addIntelAction;
 
 [
