@@ -12,31 +12,31 @@
 [
     "mission_intel", {
         // Objective marker for East Tower
-        createMarker ["marker1", [5663,6165]];
+        createMarkerLocal ["marker1", [5663,6165]];
         "marker1" setMarkerType "hd_objective";
         "marker1" setMarkerText "East Tower";
         "marker1" setMarkerColor "ColorYellow";
 
         // Objective marker for North East Tower
-        createMarker ["marker2", [5206,6644]];
+        createMarkerLocal ["marker2", [5206,6644]];
         "marker2" setMarkerType "hd_objective";
         "marker2" setMarkerText "North East Tower";
         "marker2" setMarkerColor "ColorRed";
 
         // Objective marker for Western Tower
-        createMarker ["marker3", [3789,  5987]];
+        createMarkerLocal ["marker3", [3789,  5987]];
         "marker3" setMarkerType "hd_objective";
         "marker3" setMarkerText "Western Tower";
         "marker3" setMarkerColor "ColorGreen";
 
         // Objective marker for North West Tower
-        createMarker ["marker4", [3910,  6478]];
+        createMarkerLocal ["marker4", [3910,  6478]];
         "marker4" setMarkerType "hd_objective";
         "marker4" setMarkerText "North West Tower";
         "marker4" setMarkerColor "ColorBlue";
 
         // Objective marker for South East Tower
-        createMarker ["marker5", [5700,  5257]];
+        createMarkerLocal ["marker5", [5700,  5257]];
         "marker5" setMarkerType "hd_objective";
         "marker5" setMarkerText "South East Tower";
         "marker5" setMarkerColor "ColorOrange";
@@ -52,9 +52,6 @@ private _action = [
     "",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
-        
-        // Arguments to pass to the condition, fail and finish functions
-        private _args = [_target]; 
         
         // Code to execute upon successful completion
         private _onFinish = {
@@ -85,7 +82,7 @@ private _hackHardDriveAction = [
     {
         // Code to execute upon successful completion of hacking
         private _onFinishHacking = {
-            ["mission_intel"] call CBA_fnc_globalEvent;
+            ["mission_intel"] call CBA_fnc_localEvent;
             mainterminal setVariable ["hacking_enabled", false, true];
         };
 
