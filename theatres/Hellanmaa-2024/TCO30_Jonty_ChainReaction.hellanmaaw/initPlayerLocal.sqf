@@ -13,32 +13,32 @@
     "mission_intel", {
         // Objective marker for East Tower
         createMarkerLocal ["marker1", [5663,6165]];
-        "marker1" setMarkerType "hd_objective";
-        "marker1" setMarkerText "East Tower";
+        "marker1" setMarkerTypeLocal "hd_objective";
+        "marker1" setMarkerTextLocal "East Tower";
         "marker1" setMarkerColor "ColorYellow";
 
         // Objective marker for North East Tower
         createMarkerLocal ["marker2", [5206,6644]];
-        "marker2" setMarkerType "hd_objective";
-        "marker2" setMarkerText "North East Tower";
+        "marker2" setMarkerTypeLocal "hd_objective";
+        "marker2" setMarkerTextLocal "North East Tower";
         "marker2" setMarkerColor "ColorRed";
 
         // Objective marker for Western Tower
         createMarkerLocal ["marker3", [3789,  5987]];
-        "marker3" setMarkerType "hd_objective";
-        "marker3" setMarkerText "Western Tower";
+        "marker3" setMarkerTypeLocal "hd_objective";
+        "marker3" setMarkerTextLocal "Western Tower";
         "marker3" setMarkerColor "ColorGreen";
 
         // Objective marker for North West Tower
         createMarkerLocal ["marker4", [3910,  6478]];
-        "marker4" setMarkerType "hd_objective";
-        "marker4" setMarkerText "North West Tower";
+        "marker4" setMarkerTypeLocal "hd_objective";
+        "marker4" setMarkerTextLocal "North West Tower";
         "marker4" setMarkerColor "ColorBlue";
 
         // Objective marker for South East Tower
         createMarkerLocal ["marker5", [5700,  5257]];
-        "marker5" setMarkerType "hd_objective";
-        "marker5" setMarkerText "South East Tower";
+        "marker5" setMarkerTypeLocal "hd_objective";
+        "marker5" setMarkerTextLocal "South East Tower";
         "marker5" setMarkerColor "ColorOrange";
     }
 ] call CBA_fnc_addEventHandler;
