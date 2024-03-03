@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=67;
+		nextID=73;
 	};
 	class MarkerIDProvider
 	{
@@ -455,7 +455,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=15;
+		items=18;
 		class Item0
 		{
 			dataType="Object";
@@ -1253,7 +1253,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2942.4143,31.551136,5715.5547};
+				position[]={2695.5415,35.584396,5549.8721};
+				angles[]={0.0050033992,0,6.2531958};
 			};
 			id=43;
 			type="grad_civs_common_ExclusionZone";
@@ -1268,21 +1269,77 @@ class Mission
 			id=44;
 			atlOffset=-110.8175;
 		};
+		class Item15
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4987.1875,16.552574,5129.3936};
+				angles[]={6.1785688,0,6.2631893};
+			};
+			id=67;
+			type="grad_civs_common_PopulationZone";
+		};
+		class Item16
+		{
+			dataType="Trigger";
+			position[]={4122.8354,16.527914,4136.9492};
+			class Attributes
+			{
+				sizeA=500;
+				sizeB=500;
+			};
+			id=68;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item17
+		{
+			dataType="Trigger";
+			position[]={4010.1707,42.184952,5670.3018};
+			class Attributes
+			{
+				sizeA=100;
+				sizeB=100;
+			};
+			id=71;
+			type="EmptyDetectorAreaR50";
+			atlOffset=3.8146973e-006;
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=1;
+			nextID=3;
 		};
 		class Links
 		{
-			items=1;
+			items=3;
 			class Item0
 			{
 				linkID=0;
 				item0=43;
 				item1=42;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item1
+			{
+				linkID=1;
+				item0=67;
+				item1=68;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item2
+			{
+				linkID=2;
+				item0=67;
+				item1=71;
 				class CustomData
 				{
 					type="Sync";
