@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=486;
+		nextID=487;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8;
+		nextID=12;
 	};
 	class Camera
 	{
-		pos[]={791.13281,37.589443,1838.7307};
-		dir[]={0.14872858,-0.3320961,0.93146354};
-		up[]={0.052365698,0.94323969,0.32796183};
-		aside[]={0.98750818,-2.3354733e-007,-0.15767811};
+		pos[]={771.2998,46.299706,1847.139};
+		dir[]={-0.4000288,-0.91630363,0.02014919};
+		up[]={-0.91514075,0.40049636,0.046094183};
+		aside[]={0.050306201,-4.249996e-007,0.99875778};
 	};
 };
 binarizationWanted=0;
@@ -88,14 +88,16 @@ addons[]=
 	"A3_Characters_F_Enoch_Headgear",
 	"CUP_Weapons_Grenades",
 	"CUP_Creatures_Military_Russia",
+	"emr_main",
 	"synixe_contractors_units",
-	"A3_Supplies_F_Heli_CargoNets"
+	"A3_Supplies_F_Heli_CargoNets",
+	"A3_Structures_F_Mil_Helipads"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=49;
+		items=51;
 		class Item0
 		{
 			className="crate_client_garage";
@@ -403,13 +405,27 @@ class AddonsMetaData
 		};
 		class Item47
 		{
-			className="synixe_contractors_units";
-			name="units";
+			className="emr_main";
+			name="Enhanced Movement Rework";
+			author="Simplex Team";
+			url="https://github.com/SceptreOfficial/Enhanced-Movement-Rework";
 		};
 		class Item48
 		{
+			className="synixe_contractors_units";
+			name="units";
+		};
+		class Item49
+		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item50
+		{
+			className="A3_Structures_F_Mil";
+			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -640,7 +656,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=142;
+		items=143;
 		class Item0
 		{
 			dataType="Layer";
@@ -902,7 +918,7 @@ class Mission
 						{
 							dataType="Trigger";
 							position[]={6860.1201,46.669998,1224.7111};
-							angle=1.5237246;
+							angle=1.5237244;
 							class Attributes
 							{
 								name="gate_trigger_0";
@@ -6547,14 +6563,14 @@ class Mission
 					};
 					id=303;
 					type="CUP_C_C_Racketeer_03";
-					atlOffset=0.25532484;
+					atlOffset=0.25532532;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=302;
-			atlOffset=0.25532484;
+			atlOffset=0.25532532;
 		};
 		class Item95
 		{
@@ -9511,6 +9527,41 @@ class Mission
 						{
 							singleType="BOOL";
 							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item142
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={760.31299,27.62347,1848.531};
+				angles[]={0.010000736,0,0.059934605};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				createAsLocalObject=1;
+				disableSimulation=1;
+			};
+			id=486;
+			type="Land_HelipadCircle_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
 						};
 					};
 				};
