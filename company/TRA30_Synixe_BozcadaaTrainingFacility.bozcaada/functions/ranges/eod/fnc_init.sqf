@@ -6,7 +6,6 @@ EGVAR(eod,objects) = [];
 
 [QEGVAR(eod,tablets), {
     params ["_tablets"];
-    systemChat format ["EOD: %1 tablets found", count _tablets];
     private _eodResetField = ["EngEODField","Reset Field","",{
         [QEGVAR(eod,reset)] call CBA_fnc_serverEvent;
     }, {true}] call ace_interact_menu_fnc_createAction;

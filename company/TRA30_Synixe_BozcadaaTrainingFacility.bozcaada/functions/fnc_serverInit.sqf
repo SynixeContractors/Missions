@@ -1,4 +1,8 @@
 #include "..\script_component.hpp"
 
-// Init
-call compile preprocessFile "functions\ranges\fnc_serverInit.sqf";
+{
+    call compile preprocessFile format ["functions\%1\fnc_serverInit.sqf", _x];
+} forEach [
+    "ranges",
+    "vr"
+];
