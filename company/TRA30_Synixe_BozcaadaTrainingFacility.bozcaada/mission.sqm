@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1260;
+		nextID=1262;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=506;
+		nextID=535;
 	};
 	class Camera
 	{
-		pos[]={7611.4814,50.813652,12399.035};
-		dir[]={0.77446657,-0.35083959,-0.52642095};
-		up[]={0.29015842,0.93643457,-0.19722632};
-		aside[]={-0.56215441,-2.1379674e-007,-0.82703692};
+		pos[]={7454.7432,341.59528,12806.726};
+		dir[]={0.23844883,-0.56009954,-0.79336995};
+		up[]={0.16121541,0.82842416,-0.5363974};
+		aside[]={-0.95768368,8.4983185e-008,-0.28783387};
 	};
 };
 binarizationWanted=0;
@@ -687,7 +687,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=21;
+		items=23;
 		class Item0
 		{
 			dataType="Layer";
@@ -3115,6 +3115,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="Grenades";
+			state=1;
 			class Entities
 			{
 				items=6;
@@ -4168,6 +4169,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="Spawn";
+			state=1;
 			class Entities
 			{
 				items=5;
@@ -4929,11 +4931,11 @@ class Mission
 							{
 							};
 							id=0;
-							atlOffset=0.0025882721;
+							atlOffset=42.650002;
 						};
 					};
 					id=472;
-					atlOffset=0.0025882721;
+					atlOffset=42.650002;
 				};
 				class Item4
 				{
@@ -5342,7 +5344,7 @@ class Mission
 				};
 			};
 			id=308;
-			atlOffset=0.34313583;
+			atlOffset=69.882263;
 		};
 		class Item4
 		{
@@ -11783,6 +11785,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="EOD - Urban";
+			state=1;
 			class Entities
 			{
 				items=10;
@@ -17851,6 +17854,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="EOD - House";
+			state=1;
 			class Entities
 			{
 				items=4;
@@ -19276,6 +19280,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="AR Range";
+			state=1;
 			class Entities
 			{
 				items=77;
@@ -21291,6 +21296,75 @@ class Mission
 				{
 					property="ENH_markerHideOnStart";
 					expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item21
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7516.666,36.761166,12395.972};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="marksman_control";
+				disableSimulation=1;
+			};
+			id=1260;
+			type="Land_Laptop_unfolded_F";
+			atlOffset=0.00039291382;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item22
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7516.2012,36.200657,12396.228};
+				angles[]={0,3.6192369,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1261;
+			type="Land_CampingTable_F";
+			atlOffset=4.603159;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
 					class Value
 					{
 						class data
