@@ -3,7 +3,6 @@
     if (_x select [0, 9] != "rolearea_") then {
         continue;
     };
-    systemChat format ["%1", _x select [0, 9]];
     private _roles = switch (markerText _x) do {
         case "medic": {
             ["780136967677411389"]
@@ -21,7 +20,7 @@
     _trigger setTriggerActivation ["ANYPLAYER", "PRESENT", true];
     _trigger setTriggerStatements [
         "player in thisList",
-        format ["systemChat 'activate'; this setVariable ['crate_client_discord_roles', %1, true]; call crate_client_discord_fnc_setTraits;", _roles],
-        "systemChat 'deactivate'; this setVariable ['crate_client_discord_roles', [], true]; call crate_client_discord_fnc_setTraits;"
+        format ["player setVariable ['crate_client_discord_roles', %1, true]; call crate_client_discord_fnc_setTraits;", _roles],
+        "player setVariable ['crate_client_discord_roles', [], true]; call crate_client_discord_fnc_setTraits;"
     ];
 } forEach allMapMarkers;

@@ -5,7 +5,3 @@
 } forEach [
     "ar"
 ];
-
-player setVariable ["ACE_isEngineer", true, true];
-player setVariable ["ACE_isEOD", true, true];
-player setVariable ["ace_medical_medicClass", 1, true];
