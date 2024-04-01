@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2745;
+		nextID=2751;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4345.0933,196.58939,3048.3726};
-		dir[]={-0.75607151,-0.63220686,-0.16959864};
-		up[]={-0.61691469,0.77476054,-0.13838345};
-		aside[]={-0.21888541,-2.7514761e-007,0.97578955};
+		pos[]={1848.8074,334.51569,5456.4634};
+		dir[]={0.67923903,-0.52159077,-0.51647174};
+		up[]={0.41525856,0.85314149,-0.31574845};
+		aside[]={-0.60531133,-4.9325172e-007,-0.79608166};
 	};
 };
 binarizationWanted=0;
@@ -127,13 +127,15 @@ addons[]=
 	"A3_Structures_F_Enoch_Military_Training",
 	"cba_xeh",
 	"A3_Soft_F_Gamma_Van_01",
-	"CUP_Editor_Signs_Config"
+	"CUP_Editor_Signs_Config",
+	"A3_Characters_F_Exp_Civil",
+	"A3_Characters_F_AoW"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=67;
+		items=68;
 		class Item0
 		{
 			className="grad_civs_common";
@@ -556,6 +558,13 @@ class AddonsMetaData
 		{
 			className="CUP_Editor_Signs_Config";
 			name="CUP_Editor_Signs_Config";
+		};
+		class Item67
+		{
+			className="A3_Characters_F_AoW";
+			name="Arma 3 Art of War - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -1058,7 +1067,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=208;
+		items=209;
 		class Item0
 		{
 			dataType="Trigger";
@@ -43962,6 +43971,134 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item208
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1860.7167,319.7392,5451.2065};
+						angles[]={0,4.2975101,-0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=2746;
+					type="C_man_polo_4_F_afro";
+					atlOffset=6.1035156e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull, [_this], true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1860.9021,319.73914,5450.2378};
+						angles[]={0,4.5901999,-0};
+					};
+					side="Civilian";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=2748;
+					type="C_Man_casual_4_F_afro";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull, [_this], true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1860.775,319.74338,5449.1187};
+						angles[]={0,4.4917569,-0};
+					};
+					side="Civilian";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=2750;
+					type="C_Man_casual_6_v2_F_afro";
+					atlOffset=0.0042419434;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull, [_this], true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2745;
+			atlOffset=6.1035156e-005;
 		};
 	};
 	class Connections
