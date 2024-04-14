@@ -1,8 +1,6 @@
 #define PREFIX synixecontractors
 #define COMPONENT mission
 
-// Mission
-#define MISSION_TYPES ["Contract", "Sub-Contract", "Training", "Special"]
 
 // Debug
 #define DEBUG_SYNCHRONOUS
