@@ -6,6 +6,16 @@
     // if you create "edit_me/briefing/example.html, then add "Example" here
 ] call mission_fnc_briefing;
 
+[convoyOff, 2, false, 1, "Get Intel", [], 5,
+"Missing Inventory",
+"We got hit bad. Miyović's men ambushed us in this damn forest. We were hoping to avoid attention by taking these secluded roads but it made the perfect opportunity for Miyović's guys to raid our assets. These trucks were transporting vital military assets – missile and air-to-ground bombing units. Miyović, that psycho, might not be able to deploy these complex weapons systems himself, but we fear his forces could extract the deadly warheads and unleash catastrophic damage. We gotta get those missiles secured before they fall into the wrong hands. UAV surveillance has tracked high activty in the red zone marked on the map. That may be a good place to start your search."
+] call zen_modules_fnc_addIntelAction;
+
+[campNotepad, 2, false, 1, "Get Intel", [], 5,
+"Message from HQ",
+"Moving assets to Hideout:023060. Reinforcements arriving soon. Keep your guard up."
+] call zen_modules_fnc_addIntelAction;
+
 private _action = [
   "CallReinforcements",
   "Call Reinforcements",
@@ -32,3 +42,5 @@ private _action = [
 ] call ace_interact_menu_fnc_createAction;
 
 [objectToAddInteractionOn, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+laptop setObjectTextureGlobal [0, "#(rgb,1024,1024,3)text(1,3,""RobotoCondensed"",0.1,""#000000"",""#ffffff"",""        ACE Interact with radio\n        to signal convoy"")"];
