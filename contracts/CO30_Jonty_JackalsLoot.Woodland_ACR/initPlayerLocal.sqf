@@ -6,9 +6,9 @@
     // if you create "edit_me/briefing/example.html, then add "Example" here
 ] call mission_fnc_briefing;
 
-[convoyOff, 2, false, 1, "Get Intel", [], 5,
+[convoyOff, 2, false, 1, "Get Intel", [], 10,
 "Missing Inventory",
-"We got hit bad. Miyović's men ambushed us in this damn forest. We were hoping to avoid attention by taking these secluded roads but it made the perfect opportunity for Miyović's guys to raid our assets. These trucks were transporting vital military assets – missile and air-to-ground bombing units. Miyović, that psycho, might not be able to deploy these complex weapons systems himself, but we fear his forces could extract the deadly warheads and unleash catastrophic damage. We gotta get those missiles secured before they fall into the wrong hands. UAV surveillance has tracked high activty in the red zone marked on the map. That may be a good place to start your search."
+"The convoy was hoping to avoid attention by taking these secluded roads to avoid attention but it made the perfect opportunity for Miyović's guys to raid their assets. These trucks were transporting vital military assets – missile and air-to-ground bombing units. Miyović might not be able to deploy these complex weapons systems himself, but we fear his forces could extract the deadly warheads and unleash catastrophic damage. We have to get those missiles secured before they fall into the wrong hands. CDF has been constantly carrying out UAV surveillance and has tracked high activty in the red zone marked on the map. That may be a good place to start your search."
 ] call zen_modules_fnc_addIntelAction;
 
 [campNotepad, 2, false, 1, "Get Intel", [], 5,
@@ -30,18 +30,14 @@ private _action = [
     };
 
     // Call the progress bar function with no condition for canceling the action, change the first element to no. of seconds
-    [2, [objectToAddInteractionOn, player], _onFinish, nil, "Calling Reinforcements", nil] call ace_common_fnc_progressBar;
+    [5, [reinforcementsRadio, player], _onFinish, nil, "Calling Reinforcements", nil] call ace_common_fnc_progressBar;
   },
   {
-    objectToAddInteractionOn getVariable ["reinforcementsCalled", true]
-  },
-  nil,
-  nil,
-  true, // Show in interaction menu
-  true  // Requires line of sight
+    reinforcementsRadio getVariable ["reinforcementsCalled", true]
+  }
 ] call ace_interact_menu_fnc_createAction;
 
-[objectToAddInteractionOn, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+[reinforcementsRadio, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 
 
