@@ -43,4 +43,6 @@ private _action = [
 
 [objectToAddInteractionOn, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-laptop setObjectTextureGlobal [0, "#(rgb,1024,1024,3)text(1,3,""RobotoCondensed"",0.1,""#000000"",""#ffffff"",""        ACE Interact with radio\n        to signal convoy"")"];
+
+
+laptop setObjectTextureGlobal [0, "#(rgb,1024,1024,3)text(1,3,""RobotoCondensed"",0.1,""#000000"",""#ffffff"",""        Use the radio\n        to signal convoy"")"];
