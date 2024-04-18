@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1296;
+		nextID=1298;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=52;
+		nextID=80;
 	};
 	class Camera
 	{
-		pos[]={6114.5806,20.192698,7011.79};
-		dir[]={0.7596662,-0.5345698,0.37039277};
-		up[]={0.48050299,0.84511369,0.23428009};
-		aside[]={0.43826333,-1.1303928e-007,-0.89886981};
+		pos[]={6112.376,13.005887,6981.2573};
+		dir[]={0.2712633,-0.39654267,-0.87705117};
+		up[]={0.11717516,0.91800976,-0.37885195};
+		aside[]={-0.95537639,-5.6005229e-007,-0.29548958};
 	};
 };
 binarizationWanted=0;
@@ -2905,7 +2905,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="[{[""mission_applyDamage"", [_this, 2, ""Head"", ""bullet""], _this] call CBA_fnc_targetEvent;" \n "[""mission_applyDamage"", [_this, 2, ""Body"", ""bullet""], _this] call CBA_fnc_targetEvent;},this,2] call CBA_fnc_waitAndExecute";
+						init="[""mission_triggerDamage"", {" \n "[""mission_applyDamage"", [_thisArgs, 2, ""Head"", ""bullet""], _thisArgs] call CBA_fnc_targetEvent;" \n "[""mission_applyDamage"", [_thisArgs, 2, ""Body"", ""bullet""], _thisArgs] call CBA_fnc_targetEvent;},this] call CBA_fnc_addEventHandlerArgs";
 					};
 					id=182;
 					type="C_IDAP_Man_AidWorker_04_F";
@@ -3024,7 +3024,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="[{[""mission_applyDamage"", [_this, 2, ""Body"", ""bullet""], _this] call CBA_fnc_targetEvent;},this,2] call CBA_fnc_waitAndExecute";
+						init="[""mission_triggerDamage"", {" \n "[""mission_applyDamage"", [_thisArgs, 2, ""Body"", ""bullet""], _this] call CBA_fnc_targetEvent;" \n "},this] call CBA_fnc_addEventHandlerArgs";
 					};
 					id=184;
 					type="C_IDAP_Man_UAV_01_F";
@@ -4659,6 +4659,7 @@ class Mission
 			position[]={6131.1812,7.1504731,6916.9429};
 			class Attributes
 			{
+				onActivation="[""mission_triggerDamage""] call CBA_fnc_localEvent";
 				sizeA=250;
 				sizeB=250;
 				activationBy="ANYPLAYER";
@@ -5458,7 +5459,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="[{[""mission_applyDamage"", [_this, 0.2, ""RightLeg"", ""bullet""], _this] call CBA_fnc_targetEvent;},this,2] call CBA_fnc_waitAndExecute";
+						init="[""mission_triggerDamage"", {" \n "[""mission_applyDamage"", [_thisArgs, 0.2, ""RightLeg"", ""bullet""], _thisArgs] call CBA_fnc_targetEvent;},this] call CBA_fnc_addEventHandlerArgs";
 					};
 					id=303;
 					type="CUP_C_C_Racketeer_03";
@@ -5579,7 +5580,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="[{[""mission_applyDamage"", [_this, 0.5, ""LeftArm"", ""bullet""], _this] call CBA_fnc_targetEvent;},this,2] call CBA_fnc_waitAndExecute";
+						init="" \n "[""mission_triggerDamage"", {" \n "[""mission_applyDamage"", [_thisArgs, 0.5, ""LeftArm"", ""bullet""], _thisArgs] call CBA_fnc_targetEvent;" \n "},this] call CBA_fnc_addEventHandlerArgs";
 					};
 					id=307;
 					type="CUP_C_C_Citizen_Random";
@@ -5700,7 +5701,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="[{[""mission_applyDamage"", [_this, 2, ""Body"", ""bullet""], _this] call CBA_fnc_targetEvent;" \n "[""mission_applyDamage"", [_this, 2, ""Body"", ""bullet""], _this] call CBA_fnc_targetEvent;" \n "[""mission_applyDamage"", [_this, 1, ""Body"", ""bullet""], _this] call CBA_fnc_targetEvent;},this,2] call CBA_fnc_waitAndExecute";
+						init="[""mission_triggerDamage"", {" \n "[""mission_applyDamage"", [_thisArgs, 2, ""Body"", ""bullet""], _thisArgs] call CBA_fnc_targetEvent;" \n "[""mission_applyDamage"", [_thisArgs, 2, ""Body"", ""bullet""], _thisArgs] call CBA_fnc_targetEvent;" \n "[""mission_applyDamage"", [_thisArgs, 1, ""Body"", ""bullet""], _thisArgs] call CBA_fnc_targetEvent;" \n "},this] call CBA_fnc_addEventHandlerArgs";
 					};
 					id=309;
 					type="CUP_C_C_Villager_02";
@@ -5821,7 +5822,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="[{[""mission_applyDamage"", [_this, 0.5, ""Body"", ""bullet""], _this] call CBA_fnc_targetEvent;" \n "[""mission_applyDamage"", [_this, 0.2, ""LeftArm"", ""bullet""], _this] call CBA_fnc_targetEvent;},this,2] call CBA_fnc_waitAndExecute";
+						init="" \n "[""mission_triggerDamage"", {" \n "[""mission_applyDamage"", [_thisArgs, 0.5, ""Body"", ""bullet""], _thisArgs] call CBA_fnc_targetEvent;" \n "[""mission_applyDamage"", [_thisArgs, 0.2, ""LeftArm"", ""bullet""], _thisArgs] call CBA_fnc_targetEvent;},this] call CBA_fnc_addEventHandlerArgs";
 					};
 					id=311;
 					type="CUP_C_C_Priest_01";
@@ -13979,7 +13980,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6133.75,8.1392546,7018.75};
-						angles[]={-0,4.5606041,0};
+						angles[]={0,4.5606041,0};
 					};
 					side="Empty";
 					flags=4;
@@ -14148,7 +14149,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6132.9458,6.7519178,7017.728};
-						angles[]={-0,4.5606041,0};
+						angles[]={0,4.5606041,0};
 					};
 					side="Empty";
 					flags=4;
@@ -14782,7 +14783,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6133.3281,7.9363689,7030.9375};
-						angles[]={-0,4.5552144,0};
+						angles[]={0,4.5552144,0};
 					};
 					side="Empty";
 					flags=4;
@@ -14845,7 +14846,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6133.3281,8.0740557,7030.9375};
-						angles[]={-0,4.5552177,0};
+						angles[]={0,4.5552177,0};
 					};
 					side="Empty";
 					flags=4;
@@ -14900,7 +14901,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6132.5298,6.6867189,7029.9111};
-						angles[]={-0,4.5552144,0};
+						angles[]={0,4.5552144,0};
 					};
 					side="Empty";
 					flags=4;
@@ -16145,8 +16146,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6118.2783,7.1334996,6989.0273};
-				angles[]={0.00069053395,6.2270145,0.0009134906};
+				position[]={6118.2783,6.7923584,6989.0273};
+				angles[]={0,6.2270145,0};
 			};
 			side="Empty";
 			class Attributes
@@ -16156,7 +16157,7 @@ class Mission
 			};
 			id=845;
 			type="BloodTrail_01_New_F";
-			atlOffset=0.32342196;
+			atlOffset=0.005795002;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16180,7 +16181,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6117.6431,6.9629998,6996.2861};
+				position[]={6117.6431,6.791471,6996.2861};
 			};
 			side="Empty";
 			class Attributes
@@ -16190,7 +16191,7 @@ class Mission
 			};
 			id=846;
 			type="BloodTrail_01_New_F";
-			atlOffset=0.18014288;
+			atlOffset=0.0086140633;
 			class CustomAttributes
 			{
 				class Attribute0
