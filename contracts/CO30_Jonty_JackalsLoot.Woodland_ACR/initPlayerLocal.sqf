@@ -7,7 +7,7 @@
 ] call mission_fnc_briefing;
 
 ["mission_intel", {
-    player createDiaryRecord ["Diary", ["Missing Inventory", "The convoy was hoping to avoid attention by taking these secluded roads to avoid attention but it made the perfect opportunity for Miyović's guys to raid their assets. These trucks were transporting vital military assets – missile and air-to-ground bombing units. Miyović might not be able to deploy these complex weapons systems himself, but we fear his forces could extract the deadly warheads and unleash catastrophic damage. We have to get those missiles secured before they fall into the wrong hands. CDF has been constantly carrying out UAV surveillance and has tracked high activty in the red zone marked on the map. That may be a good place to start your search."]];
+    player createDiaryRecord ["Diary", ["Missing Inventory", "Miyović's guys have ambushed the convoy and stolen vital military assets that could potentially cause catastrophic damage. CDF UAV surveillance has tracked high activity in the red zone marked on the map. That may be a good place to start your search."]];
 }] call CBA_fnc_addEventHandler;
 
 [
