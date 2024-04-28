@@ -18,7 +18,7 @@ controller setObjectTexture [0, "#(rgb,512,512,3)text(0,0,""EtelkaMonospacePro""
         // _player refers to the player who has activated the action
         [_player, "PutDown"] call ace_common_fnc_doGesture;
         fueltruck setDamage 1;
-        // _target refers to the object the action has placed on
+        // _target refers to the object the action is placed on
         // this code only runs on the comptuer of the player who activated the action
         // so we can use setObjectTextureGlobal to make sure everyone sees the change
         _target setObjectTextureGlobal [0, "#(rgb,512,512,3)text(0,0,""EtelkaMonospacePro"",0.3,""#ffffffff"",""#000000"",""Done"")"];
