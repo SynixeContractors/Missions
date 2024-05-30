@@ -6,9 +6,12 @@
     // if you create "edit_me/briefing/example.html, then add "Example" here
 ] call mission_fnc_briefing;
 
-target1 setName (shuffledTargets select 0);
-target2 setName (shuffledTargets select 1);
-target3 setName (shuffledTargets select 2);
+["mission_setName", {
+  params ["_unit", "_name"];
+  _unit setName _name;
+  _unit setVariable ["ACE_name", _name#0];
+  _unit setVariable ["ACE_nameRaw", _name#0];
+}] call CBA_fnc_addEventHandler;
 
 // Reveal hideout locations after collecting intel
 [
