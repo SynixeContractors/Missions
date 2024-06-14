@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1014;
+		nextID=1054;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9541.8311,54.145542,13086.106};
-		dir[]={0.50863743,-0.360248,0.78199077};
-		up[]={0.19642489,0.93285644,0.30198798};
-		aside[]={0.83827692,-5.4511474e-008,-0.54524732};
+		pos[]={10391.407,256.573,8545.2207};
+		dir[]={-0.80758488,-0.48958915,-0.32881418};
+		up[]={-0.45344967,0.87194955,-0.18462537};
+		aside[]={-0.3771008,3.3706601e-007,0.92617697};
 	};
 };
 binarizationWanted=0;
@@ -44,13 +44,18 @@ addons[]=
 	"grad_civs_transit",
 	"RF_Vehicles_Pickup_01",
 	"A3_Characters_F_AoW",
-	"A3_Ui_F"
+	"A3_Ui_F",
+	"tacu_cartel_greek",
+	"lambs_wp",
+	"A3_Soft_F_Orange_Van_02",
+	"A3_Structures_F_Civ_Garbage",
+	"ace_dragging"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=11;
+		items=16;
 		class Item0
 		{
 			className="A3_Supplies_F_Heli";
@@ -119,6 +124,40 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item11
+		{
+			className="tacu_cartel_greek";
+			name="Theseus Units - Cartel Greek";
+			author="Theseus Incorporated";
+			url="https://github.com/Theseus-Aegis/Units";
+		};
+		class Item12
+		{
+			className="lambs_wp";
+			name="LAMBS Danger WP";
+			author="LAMBS Danger Dev Team";
+		};
+		class Item13
+		{
+			className="A3_Soft_F_Orange";
+			name="Arma 3 Orange - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item14
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item15
+		{
+			className="ace_dragging";
+			name="ACE3 - Dragging";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
 	};
 };
 dlcs[]=
@@ -127,7 +166,9 @@ dlcs[]=
 	"ws",
 	"Expansion",
 	"synixe_contractors",
-	"rf"
+	"rf",
+	"tacu",
+	"Orange"
 };
 randomSeed=12440140;
 class ScenarioData
@@ -340,7 +381,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=38;
+		items=54;
 		class Item0
 		{
 			dataType="Layer";
@@ -1932,7 +1973,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={11647.604,10.467392,3130.0603};
-			angle=5.3784924;
+			angle=5.3784919;
 			class Attributes
 			{
 				sizeA=76.236816;
@@ -1949,7 +1990,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10379.296,241.51295,8531.9033};
-				angles[]={6.2432079,0.47869051,6.2511935};
+				angles[]={6.2431998,0.47869146,6.251193};
 			};
 			side="Empty";
 			flags=4;
@@ -1959,6 +2000,7 @@ class Mission
 			};
 			id=1010;
 			type="C_Pickup_rf";
+			atlOffset=-9.1552734e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2303,7 +2345,33 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				class Attribute1
+				{
+					property="ENH_AdvancedDamage";
+					expression="if (local _this) then {parseSimpleArray _value params ['_hitpoints', '_damage']; {if ((_damage # _forEachIndex) == 0) then {continue}; _this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[""hitglass1"",""hitglass2"",""hitglass3"",""hitglass4"",""hitglass5"",""hitglass6"",""hitlfwheel"",""hitlf2wheel"",""hitrfwheel"",""hitrf2wheel"",""hitfuel"",""hitengine"",""hitbody"",""hitrglass"",""hitlglass"",""hitlbwheel"",""hitlmwheel"",""hitrbwheel"",""hitrmwheel"",""hithull"",""#light_l"",""#light_r"",""#light_l"",""#light_r"",""#light_l"",""#light_r"",""#light_spotlight1_hit"",""#light_spotlight2_hit"",""#light_spotlight3_hit"",""#light_spotlight4_hit""],[0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[],[]],[[],[]],[[""UMI_Land_Portable_HDD_F"",""UMI_Briefcase_Money_Open"",""UMI_Money"",""UMI_Cocaine_Brick"",""UMI_Weed_Bale"",""UMI_Coke_Pile_01""],[1,2,5,10,10,1]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=3;
 			};
 		};
 		class Item36
@@ -2391,16 +2459,698 @@ class Mission
 			colorName="ColorCIV";
 			id=1013;
 		};
+		class Item38
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=6;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9177.2891,221.66815,8723.5469};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=1018;
+					type="TACU_Cartel_Greek_U_O_Grunt_Rifleman_01";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9182.2891,220.96143,8718.5469};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=1019;
+					type="TACU_Cartel_Greek_U_O_Grunt_Rifleman_02";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9172.2891,222.01862,8718.5469};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=1020;
+					type="TACU_Cartel_Greek_U_O_Grunt_Rifleman_03";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9187.2891,220.81998,8713.5469};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=1021;
+					type="TACU_Cartel_Greek_U_O_Grunt_Rifleman_04";
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9167.2891,222.39923,8713.5469};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=1022;
+					type="TACU_Cartel_Greek_U_O_Grunt_Rifleman_05";
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9192.2891,221.17801,8708.5469};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=1023;
+					type="TACU_Cartel_Greek_U_O_Grunt_Rifleman_06";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1017;
+		};
+		class Item39
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={9172.7529,222.0547,8716.8457};
+			};
+			areaSize[]={50,-1,50};
+			flags=1;
+			id=1024;
+			type="lambs_wp_TaskGarrison";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="lambs_wp_Teleport";
+					expression="_this setVariable ['lambs_wp_Teleport',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="lambs_wp_Patrol";
+					expression="_this setVariable ['lambs_wp_Patrol',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="lambs_wp_ExitConditions";
+					expression="_this setVariable ['lambs_wp_ExitConditions', _value, true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=-2;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="lambs_wp_SortByHeight";
+					expression="_this setVariable ['lambs_wp_SortByHeight',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item40
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={9161.8447,222.62772,8718.8193};
+				angles[]={0.0079936078,0,6.2299004};
+			};
+			areaSize[]={50,-1,50};
+			flags=1;
+			id=1025;
+			type="lambs_wp_TaskCamp";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="lambs_wp_ExitWP";
+					expression="_this setVariable ['lambs_wp_ExitWP', _value, true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="lambs_wp_Teleport";
+					expression="_this setVariable ['lambs_wp_Teleport',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="lambs_wp_Patrol";
+					expression="_this setVariable ['lambs_wp_Patrol',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item41
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=4;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9165.1367,222.48834,8720.916};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=1027;
+					type="TACU_Cartel_Greek_U_O_Thug_Rifleman_01";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9170.1367,222.24271,8715.916};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=1028;
+					type="TACU_Cartel_Greek_U_O_Thug_Rifleman_02";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9160.1367,222.7312,8715.916};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=1029;
+					type="TACU_Cartel_Greek_U_O_Thug_Rifleman_03";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9175.1367,222.15645,8710.916};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=1030;
+					type="TACU_Cartel_Greek_U_O_Thug_Rifleman_04";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1026;
+		};
+		class Item42
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10378.752,239.21455,8523.666};
+				angles[]={6.1927671,0,6.2698536};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1033;
+			type="Tire_Van_02_F";
+			atlOffset=-0.0002746582;
+		};
+		class Item43
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10380.295,239.21368,8523.9121};
+				angles[]={6.2299037,0,6.2698536};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1034;
+			type="Tire_Van_02_Cargo_F";
+			atlOffset=-4.5776367e-005;
+		};
+		class Item44
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10384.938,239.36407,8528.9277};
+				angles[]={6.253859,0,6.2698488};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1035;
+			type="Tire_Van_02_Transport_F";
+			atlOffset=-1.5258789e-005;
+		};
+		class Item45
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10377.726,239.20375,8523.3955};
+				angles[]={6.1927671,0,6.2698536};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1036;
+			type="Tire_Van_02_F";
+			atlOffset=-0.00019836426;
+		};
+		class Item46
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10385.785,239.38666,8533.7002};
+				angles[]={6.2645183,0,6.2618537};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1037;
+			type="Land_Tyre_F";
+			atlOffset=-1.5258789e-005;
+		};
+		class Item47
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10381.446,239.21692,8524.8076};
+				angles[]={6.2299037,0,6.2698536};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1038;
+			type="Tire_Van_02_Spare_F";
+			atlOffset=-6.1035156e-005;
+		};
+		class Item48
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10382.643,239.16287,8524.0928};
+				angles[]={6.2299037,0,6.2698536};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1039;
+			type="Tire_Van_02_Spare_F";
+		};
+		class Item49
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10381.248,239.18086,8523.6152};
+				angles[]={6.1954112,0,6.2698488};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1040;
+			type="Tire_Van_02_Cargo_F";
+		};
+		class Item50
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10386.847,239.35556,8533.248};
+				angles[]={6.2645183,0,6.2618537};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1041;
+			type="Land_Tyre_F";
+		};
+		class Item51
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10385.097,239.39076,8529.9092};
+				angles[]={6.2591896,0,6.2645183};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1043;
+			type="Tire_Van_02_Transport_F";
+		};
+		class Item52
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10386.247,239.36264,8537.1338};
+						angles[]={0,3.120858,0};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+						rank="SERGEANT";
+						init="doStop this;";
+					};
+					id=1045;
+					type="TACU_Cartel_Greek_U_O_Grunt_Rifleman_01";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male06GRE";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10378.294,239.90019,8543.8242};
+						angles[]={0,4.6197858,-0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						init="doStop this;";
+					};
+					id=1046;
+					type="TACU_Cartel_Greek_U_O_Grunt_Rifleman_02";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male06GRE";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1044;
+		};
+		class Item53
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=6;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10386.771,239.70247,8526.6855};
+						angles[]={0,5.1882138,-0};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+						rank="SERGEANT";
+						init="doStop this;";
+					};
+					id=1048;
+					type="TACU_Cartel_Greek_U_O_Thug_Rifleman_01";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10382.496,239.03883,8519.5898};
+						angles[]={0,5.9548798,-0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						init="doStop this;";
+					};
+					id=1049;
+					type="TACU_Cartel_Greek_U_O_Thug_Rifleman_02";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10368.765,239.76617,8530.7324};
+						angles[]={0,1.9533758,-0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						rank="SERGEANT";
+						init="doStop this;";
+					};
+					id=1050;
+					type="TACU_Cartel_Greek_U_O_Thug_Rifleman_03";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10368.615,239.07243,8521.1982};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+						init="doStop this;";
+					};
+					id=1051;
+					type="TACU_Cartel_Greek_U_O_Thug_Rifleman_04";
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10372.306,240.28041,8543.7891};
+						angles[]={0,5.1532059,-0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						init="doStop this;";
+					};
+					id=1052;
+					type="TACU_Cartel_Greek_U_O_Thug_Rifleman_05";
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10391.733,239.73422,8530.0576};
+						angles[]={0,2.3197479,-0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						rank="SERGEANT";
+						init="doStop this;";
+					};
+					id=1053;
+					type="TACU_Cartel_Greek_U_O_Thug_Rifleman_06";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1047;
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=16;
+			nextID=18;
 		};
 		class Links
 		{
-			items=16;
+			items=18;
 			class Item0
 			{
 				linkID=0;
@@ -2556,6 +3306,26 @@ class Mission
 				linkID=15;
 				item0=978;
 				item1=977;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item16
+			{
+				linkID=16;
+				item0=1018;
+				item1=1024;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item17
+			{
+				linkID=17;
+				item0=1027;
+				item1=1025;
 				class CustomData
 				{
 					type="Sync";
