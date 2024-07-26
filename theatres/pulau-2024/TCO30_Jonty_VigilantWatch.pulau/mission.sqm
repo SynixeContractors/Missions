@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1025;
+	toggles=1537;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=1603;
+		nextID=1711;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=40;
+		nextID=44;
 	};
 	class Camera
 	{
-		pos[]={2338.1677,494.16589,6359.3677};
-		dir[]={0.90429801,-0.37747267,0.19977611};
-		up[]={0.36862814,0.92599726,0.081436209};
-		aside[]={0.21573181,3.2884418e-007,-0.97652537};
+		pos[]={2432.4949,14.359524,7087.0972};
+		dir[]={-0.15157917,-0.58795089,0.79458684};
+		up[]={-0.11017488,0.80889183,0.57754314};
+		aside[]={0.98230052,7.241033e-008,0.18738788};
 	};
 };
 binarizationWanted=0;
@@ -95,13 +95,16 @@ addons[]=
 	"tacs_vehicles",
 	"A3_Characters_F_Exp",
 	"tacu_faction_overwrites",
-	"A3_Modules_F_Curator_Misc"
+	"A3_Modules_F_Curator_Misc",
+	"MU_LIV",
+	"A3_Boat_F_Gamma_Boat_Civil_01",
+	"A3_Boat_F_Exp_Boat_Armed_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=39;
+		items=42;
 		class Item0
 		{
 			className="A3_Structures_F_Bootcamp";
@@ -362,6 +365,25 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item39
+		{
+			className="MU_LIV";
+			name="MU_LIV";
+		};
+		class Item40
+		{
+			className="A3_Boat_F_Gamma";
+			name="Arma 3 - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item41
+		{
+			className="A3_Boat_F_Exp";
+			name="Arma 3 Apex - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -371,7 +393,8 @@ dlcs[]=
 	"Heli",
 	"tacs",
 	"synixe_contractors",
-	"tacu"
+	"tacu",
+	"Missing_Units"
 };
 randomSeed=14749749;
 class ScenarioData
@@ -11459,7 +11482,7 @@ class Mission
 					position[]={3457.8994,11.717649,1109.6807};
 					name="marker_0";
 					type="loc_CivilDefense";
-					angle=220.26965;
+					angle=220.26947;
 					id=454;
 				};
 				class Item13
@@ -14250,7 +14273,7 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=8;
+				items=9;
 				class Item0
 				{
 					dataType="Object";
@@ -14321,6 +14344,22 @@ class Mission
 				};
 				class Item4
 				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2259.6838,0.0014388561,8218.8994};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1658;
+					type="TACU_Somali_Pirates_U_O_Rifleman_04";
+					atlOffset=16.936609;
+				};
+				class Item5
+				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
 					position[]={2254.531,0.00040054321,8231.3711};
@@ -14332,7 +14371,7 @@ class Mission
 					type="Hold";
 					atlOffset=34.018005;
 				};
-				class Item5
+				class Item6
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -14345,7 +14384,7 @@ class Mission
 					type="Move";
 					atlOffset=20.762079;
 				};
-				class Item6
+				class Item7
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -14357,7 +14396,7 @@ class Mission
 					id=1365;
 					type="GetOut";
 				};
-				class Item7
+				class Item8
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -14377,11 +14416,11 @@ class Mission
 			{
 				class LinkIDProvider
 				{
-					nextID=4;
+					nextID=5;
 				};
 				class Links
 				{
-					items=4;
+					items=5;
 					class Item0
 					{
 						linkID=0;
@@ -14423,6 +14462,17 @@ class Mission
 						{
 							role=2;
 							turretPath[]={2};
+						};
+					};
+					class Item4
+					{
+						linkID=4;
+						item0=1658;
+						item1=820;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={3};
 						};
 					};
 				};
@@ -16259,7 +16309,7 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=8;
+				items=9;
 				class Item0
 				{
 					dataType="Object";
@@ -16330,18 +16380,34 @@ class Mission
 				};
 				class Item4
 				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2421.6497,0.0014388561,8256.1738};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1655;
+					type="TACU_Somali_Pirates_U_O_Rifleman_01";
+					atlOffset=15.019304;
+				};
+				class Item5
+				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={2420.9753,0,8258.8711};
+					position[]={2415.7566,0,8267.9531};
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=1362;
 					type="Hold";
-					atlOffset=17.397812;
+					atlOffset=24.501551;
 				};
-				class Item5
+				class Item6
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -16354,7 +16420,7 @@ class Mission
 					type="Move";
 					atlOffset=17.344547;
 				};
-				class Item6
+				class Item7
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -16366,7 +16432,7 @@ class Mission
 					id=1367;
 					type="GetOut";
 				};
-				class Item7
+				class Item8
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -16386,11 +16452,11 @@ class Mission
 			{
 				class LinkIDProvider
 				{
-					nextID=4;
+					nextID=5;
 				};
 				class Links
 				{
-					items=4;
+					items=5;
 					class Item0
 					{
 						linkID=0;
@@ -16434,17 +16500,28 @@ class Mission
 							turretPath[]={2};
 						};
 					};
+					class Item4
+					{
+						linkID=4;
+						item0=1655;
+						item1=1299;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={3};
+						};
+					};
 				};
 			};
 			id=1294;
-			atlOffset=3.9923437;
+			atlOffset=15.019304;
 		};
 		class Item25
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2422.6729,1.2435327,8243.1709};
+				position[]={2421.6497,1.2435327,8256.124};
 				angles[]={0,6.1963038,0};
 			};
 			side="East";
@@ -16454,7 +16531,7 @@ class Mission
 			};
 			id=1299;
 			type="TACU_Somali_Pirates_V_O_Assault_Boat";
-			atlOffset=3.9923437;
+			atlOffset=15.019304;
 		};
 		class Item26
 		{
@@ -16462,7 +16539,7 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=7;
+				items=8;
 				class Item0
 				{
 					dataType="Object";
@@ -16478,7 +16555,7 @@ class Mission
 					};
 					id=1301;
 					type="TACU_Somali_Pirates_U_O_Driver";
-					atlOffset=20.720299;
+					atlOffset=20.371237;
 				};
 				class Item1
 				{
@@ -16495,7 +16572,7 @@ class Mission
 					};
 					id=1302;
 					type="TACU_Somali_Pirates_U_O_Autorifleman";
-					atlOffset=20.720299;
+					atlOffset=20.371246;
 				};
 				class Item2
 				{
@@ -16512,7 +16589,7 @@ class Mission
 					};
 					id=1303;
 					type="TACU_Somali_Pirates_U_O_Rifleman_06";
-					atlOffset=20.720299;
+					atlOffset=20.371246;
 				};
 				class Item3
 				{
@@ -16529,9 +16606,25 @@ class Mission
 					};
 					id=1304;
 					type="TACU_Somali_Pirates_U_O_Rifleman_02";
-					atlOffset=20.720299;
+					atlOffset=20.371246;
 				};
 				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-487.03671,0.39221454,7466.9067};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1645;
+					type="TACU_Somali_Pirates_U_O_Rifleman_02";
+					atlOffset=20.720299;
+				};
+				class Item5
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -16544,7 +16637,7 @@ class Mission
 					type="Hold";
 					atlOffset=20.323997;
 				};
-				class Item5
+				class Item6
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -16556,7 +16649,7 @@ class Mission
 					id=1355;
 					type="GetOut";
 				};
-				class Item6
+				class Item7
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -16577,11 +16670,11 @@ class Mission
 			{
 				class LinkIDProvider
 				{
-					nextID=4;
+					nextID=5;
 				};
 				class Links
 				{
-					items=4;
+					items=5;
 					class Item0
 					{
 						linkID=0;
@@ -16625,6 +16718,17 @@ class Mission
 							turretPath[]={2};
 						};
 					};
+					class Item4
+					{
+						linkID=4;
+						item0=1645;
+						item1=1305;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={3};
+						};
+					};
 				};
 			};
 			id=1300;
@@ -16653,7 +16757,7 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=7;
+				items=8;
 				class Item0
 				{
 					dataType="Object";
@@ -16724,6 +16828,22 @@ class Mission
 				};
 				class Item4
 				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-590.63013,0.0014388561,7066.9004};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1642;
+					type="TACU_Somali_Pirates_U_O_Autorifleman";
+					atlOffset=20.570848;
+				};
+				class Item5
+				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
 					position[]={-586.30164,0,7068.9531};
@@ -16735,7 +16855,7 @@ class Mission
 					type="Hold";
 					atlOffset=20.602715;
 				};
-				class Item5
+				class Item6
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -16747,7 +16867,7 @@ class Mission
 					id=1356;
 					type="GetOut";
 				};
-				class Item6
+				class Item7
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -16767,11 +16887,11 @@ class Mission
 			{
 				class LinkIDProvider
 				{
-					nextID=4;
+					nextID=5;
 				};
 				class Links
 				{
-					items=4;
+					items=5;
 					class Item0
 					{
 						linkID=0;
@@ -16815,6 +16935,17 @@ class Mission
 							turretPath[]={2};
 						};
 					};
+					class Item4
+					{
+						linkID=4;
+						item0=1642;
+						item1=1311;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={3};
+						};
+					};
 				};
 			};
 			id=1306;
@@ -16843,13 +16974,13 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=11;
+				items=13;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1799.3347,-0.31585717,8486.3428};
+						position[]={1794.3086,0.0014388561,8485.8545};
 						angles[]={0,5.9639311,0};
 					};
 					side="East";
@@ -16859,14 +16990,14 @@ class Mission
 					};
 					id=1315;
 					type="TACU_Revolutionaries_U_O_Tanoan_Rifleman01";
-					atlOffset=10.959875;
+					atlOffset=12.51395;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1799.3347,-0.31585717,8486.3428};
+						position[]={1794.3086,0.0014388561,8485.8545};
 						angles[]={0,5.9639311,0};
 					};
 					side="East";
@@ -16876,14 +17007,14 @@ class Mission
 					};
 					id=1316;
 					type="TACU_Revolutionaries_U_O_Tanoan_SMG01";
-					atlOffset=10.959875;
+					atlOffset=12.51395;
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1799.3347,-0.31585717,8486.3428};
+						position[]={1794.3086,0.0014388561,8485.8545};
 						angles[]={0,5.9639311,0};
 					};
 					side="East";
@@ -16893,14 +17024,14 @@ class Mission
 					};
 					id=1317;
 					type="TACU_Revolutionaries_U_O_Tanoan_Rocketeer";
-					atlOffset=10.959875;
+					atlOffset=12.51395;
 				};
 				class Item3
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1799.3347,-0.31585717,8486.3428};
+						position[]={1794.3086,0.0014388561,8485.8545};
 						angles[]={0,5.9639311,0};
 					};
 					side="East";
@@ -16910,14 +17041,14 @@ class Mission
 					};
 					id=1318;
 					type="TACU_Revolutionaries_U_O_Tanoan_Paramedic";
-					atlOffset=10.959875;
+					atlOffset=12.51395;
 				};
 				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1799.3347,-0.31585717,8486.3428};
+						position[]={1794.3086,0.0014388561,8485.8545};
 						angles[]={0,5.9639311,0};
 					};
 					side="East";
@@ -16927,14 +17058,14 @@ class Mission
 					};
 					id=1319;
 					type="TACU_Revolutionaries_U_O_Tanoan_Leader";
-					atlOffset=10.959875;
+					atlOffset=12.51395;
 				};
 				class Item5
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1799.3347,-0.31585717,8486.3428};
+						position[]={1794.3086,0.0014388561,8485.8545};
 					};
 					side="East";
 					flags=1;
@@ -16943,9 +17074,41 @@ class Mission
 					};
 					id=1320;
 					type="TACU_Revolutionaries_U_O_Tanoan_Machinegunner";
-					atlOffset=10.959875;
+					atlOffset=12.51395;
 				};
 				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1794.3086,0.0014388561,8485.8545};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1649;
+					type="TACU_Revolutionaries_U_O_Tanoan_Rifleman01";
+					atlOffset=12.51395;
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1794.3086,0.0014388561,8485.8545};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1650;
+					type="TACU_Revolutionaries_U_O_Tanoan_SMG01";
+					atlOffset=12.51395;
+				};
+				class Item8
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -16958,7 +17121,7 @@ class Mission
 					type="Hold";
 					atlOffset=24.405001;
 				};
-				class Item7
+				class Item9
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -16971,7 +17134,7 @@ class Mission
 					type="Move";
 					atlOffset=20.767416;
 				};
-				class Item8
+				class Item10
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -16984,7 +17147,7 @@ class Mission
 					type="Move";
 					atlOffset=12.842295;
 				};
-				class Item9
+				class Item11
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -16997,7 +17160,7 @@ class Mission
 					type="GetOut";
 					atlOffset=2.3841858e-007;
 				};
-				class Item10
+				class Item12
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -17017,619 +17180,108 @@ class Mission
 			{
 				class LinkIDProvider
 				{
-					nextID=6;
+					nextID=8;
 				};
 				class Links
 				{
-					items=6;
+					items=8;
 					class Item0
 					{
 						linkID=0;
 						item0=1315;
-						item1=1313;
+						item1=1606;
 						class CustomData
 						{
 							role=2;
-							turretPath[]={0};
+							turretPath[]={1};
 						};
 					};
 					class Item1
 					{
 						linkID=1;
 						item0=1316;
-						item1=1313;
+						item1=1606;
 						class CustomData
 						{
-							role=2;
-							turretPath[]={1};
+							role=1;
 						};
 					};
 					class Item2
 					{
 						linkID=2;
 						item0=1317;
-						item1=1313;
+						item1=1606;
 						class CustomData
 						{
 							role=2;
-							turretPath[]={2};
+							turretPath[]={3};
 						};
 					};
 					class Item3
 					{
 						linkID=3;
 						item0=1318;
-						item1=1313;
+						item1=1606;
 						class CustomData
 						{
 							role=2;
-							turretPath[]={3};
+							turretPath[]={0};
 						};
 					};
 					class Item4
 					{
 						linkID=4;
 						item0=1319;
-						item1=1313;
+						item1=1606;
 						class CustomData
 						{
-							role=1;
+							role=2;
+							turretPath[]={2};
 						};
 					};
 					class Item5
 					{
 						linkID=5;
 						item0=1320;
-						item1=1313;
+						item1=1606;
 						class CustomData
 						{
 							role=2;
 							turretPath[]={4};
+						};
+					};
+					class Item6
+					{
+						linkID=6;
+						item0=1649;
+						item1=1606;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={5};
+						};
+					};
+					class Item7
+					{
+						linkID=7;
+						item0=1650;
+						item1=1606;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={6};
 						};
 					};
 				};
 			};
 			id=1312;
-			atlOffset=10.959875;
+			atlOffset=12.51395;
 		};
 		class Item31
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1799.3347,1.0017748,8486.293};
-				angles[]={0,5.9639311,0};
-			};
-			side="East";
-			class Attributes
-			{
-			};
-			id=1313;
-			type="TACU_Somali_Pirates_V_O_RHIB";
-			atlOffset=10.959875;
-		};
-		class Item32
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=9;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={-64.832306,0.0014388561,8461.1631};
-						angles[]={0,2.0287564,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1322;
-					type="TACU_Revolutionaries_U_O_Tanoan_Rifleman01";
-					atlOffset=18.217735;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={-64.832306,0.0014388561,8461.1631};
-						angles[]={0,2.0287564,0};
-					};
-					side="East";
-					flags=3;
-					class Attributes
-					{
-					};
-					id=1323;
-					type="TACU_Revolutionaries_U_O_Tanoan_SMG01";
-					atlOffset=18.217735;
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={-64.832306,0.0014388561,8461.1631};
-						angles[]={0,2.0287564,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1324;
-					type="TACU_Revolutionaries_U_O_Tanoan_Rocketeer";
-					atlOffset=18.217735;
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={-64.832306,0.0014388561,8461.1631};
-						angles[]={0,2.0287564,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1325;
-					type="TACU_Revolutionaries_U_O_Tanoan_Paramedic";
-					atlOffset=18.217735;
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={-64.832306,0.0014388561,8461.1631};
-						angles[]={0,2.0287564,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1326;
-					type="TACU_Revolutionaries_U_O_Tanoan_Leader";
-					atlOffset=18.217735;
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={-64.832306,0.0014388561,8461.1631};
-						angles[]={0,2.0287564,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1327;
-					type="TACU_Revolutionaries_U_O_Tanoan_Machinegunner";
-					atlOffset=18.217735;
-				};
-				class Item6
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
-					position[]={-47.694214,0,8460.7334};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=1347;
-					type="Hold";
-					atlOffset=18.225323;
-				};
-				class Item7
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
-					position[]={1878.489,0.82669985,7389.9551};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=1354;
-					type="GetOut";
-				};
-				class Item8
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
-					position[]={1919.005,7.7546773,7344.3511};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=1584;
-					type="SeekAndDestroy";
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=6;
-				};
-				class Links
-				{
-					items=6;
-					class Item0
-					{
-						linkID=0;
-						item0=1322;
-						item1=1328;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=1323;
-						item1=1328;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={1};
-						};
-					};
-					class Item2
-					{
-						linkID=2;
-						item0=1324;
-						item1=1328;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={2};
-						};
-					};
-					class Item3
-					{
-						linkID=3;
-						item0=1325;
-						item1=1328;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={3};
-						};
-					};
-					class Item4
-					{
-						linkID=4;
-						item0=1326;
-						item1=1328;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item5
-					{
-						linkID=5;
-						item0=1327;
-						item1=1328;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={4};
-						};
-					};
-				};
-			};
-			id=1321;
-			atlOffset=18.217735;
-		};
-		class Item33
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={-64.832306,1.3190708,8461.1133};
-				angles[]={0,2.0287564,0};
-			};
-			side="East";
-			class Attributes
-			{
-			};
-			id=1328;
-			type="TACU_Somali_Pirates_V_O_RHIB";
-			atlOffset=18.217735;
-		};
-		class Item34
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=11;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2305.1726,0.0014388561,8825.3721};
-						angles[]={0,1.9531032,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1330;
-					type="TACU_Revolutionaries_U_O_Tanoan_Rifleman01";
-					atlOffset=6.2942429;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2305.1726,0.0014388561,8825.3721};
-						angles[]={0,1.9531032,0};
-					};
-					side="East";
-					flags=3;
-					class Attributes
-					{
-					};
-					id=1331;
-					type="TACU_Revolutionaries_U_O_Tanoan_SMG01";
-					atlOffset=6.2942429;
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2305.1726,0.0014388561,8825.3721};
-						angles[]={0,1.9531032,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1332;
-					type="TACU_Revolutionaries_U_O_Tanoan_Rocketeer";
-					atlOffset=6.2942429;
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2305.1726,0.0014388561,8825.3721};
-						angles[]={0,1.9531032,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1333;
-					type="TACU_Revolutionaries_U_O_Tanoan_Paramedic";
-					atlOffset=6.2942429;
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2305.1726,0.0014388561,8825.3721};
-						angles[]={0,1.9531032,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1334;
-					type="TACU_Revolutionaries_U_O_Tanoan_Leader";
-					atlOffset=6.2942429;
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2305.1726,0.0014388561,8825.3721};
-						angles[]={0,1.9531032,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1335;
-					type="TACU_Revolutionaries_U_O_Tanoan_Machinegunner";
-					atlOffset=6.2942429;
-				};
-				class Item6
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
-					position[]={2309.145,-0.00029993057,8812.5};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=1368;
-					type="Hold";
-					atlOffset=6.1540008;
-				};
-				class Item7
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
-					position[]={2363.7297,0,8833.6875};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=1371;
-					type="Move";
-					atlOffset=13.684572;
-				};
-				class Item8
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
-					position[]={3188.9236,0,7456.4961};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=1372;
-					type="Move";
-					atlOffset=15.949015;
-				};
-				class Item9
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
-					position[]={2486.0911,6.0933127,7038.2832};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=1373;
-					type="GetOut";
-				};
-				class Item10
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
-					position[]={2161.8474,4.1316695,7064.9404};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=1587;
-					type="SeekAndDestroy";
-					atlOffset=4.7683716e-007;
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=6;
-				};
-				class Links
-				{
-					items=6;
-					class Item0
-					{
-						linkID=0;
-						item0=1330;
-						item1=1336;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=1331;
-						item1=1336;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={1};
-						};
-					};
-					class Item2
-					{
-						linkID=2;
-						item0=1332;
-						item1=1336;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={2};
-						};
-					};
-					class Item3
-					{
-						linkID=3;
-						item0=1333;
-						item1=1336;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={3};
-						};
-					};
-					class Item4
-					{
-						linkID=4;
-						item0=1334;
-						item1=1336;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item5
-					{
-						linkID=5;
-						item0=1335;
-						item1=1336;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={4};
-						};
-					};
-				};
-			};
-			id=1329;
-			atlOffset=5.8487568;
-		};
-		class Item35
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2296.0728,1.3190708,8818.9424};
-				angles[]={0,1.9531032,0};
-			};
-			side="East";
-			class Attributes
-			{
-			};
-			id=1336;
-			type="TACU_Somali_Pirates_V_O_RHIB";
-			atlOffset=5.8487568;
-		};
-		class Item36
-		{
 			dataType="Trigger";
 			position[]={2036.86,14.742254,7412.188};
-			angle=3.2080374;
+			angle=3.2080362;
 			class Attributes
 			{
 				text="Mandomai Hostiles Alert when these are found";
@@ -17644,7 +17296,7 @@ class Mission
 			type="EmptyDetectorAreaR250";
 			atlOffset=6.3429985;
 		};
-		class Item37
+		class Item32
 		{
 			dataType="Group";
 			side="East";
@@ -17726,7 +17378,7 @@ class Mission
 			id=1351;
 			atlOffset=-4.7683716e-007;
 		};
-		class Item38
+		class Item33
 		{
 			dataType="Group";
 			side="East";
@@ -17858,32 +17510,32 @@ class Mission
 			};
 			id=1357;
 		};
-		class Item39
+		class Item34
 		{
 			dataType="Trigger";
-			position[]={2070.6682,2.0678964,7217.9219};
+			position[]={2082.7141,2.0679817,7220.8701};
 			class Attributes
 			{
 				text="Initial Phase, First 5 Enemy Boats, 6 mins delay";
 				sizeA=522.84601;
 				sizeB=142.39;
-				timeout[]={600,600,600};
+				timeout[]={6,6,6};
 				activationBy="ANYPLAYER";
 				type="SWITCH";
 				isServerOnly=1;
 			};
 			id=1363;
 			type="EmptyDetectorAreaR250";
-			atlOffset=2.1748409;
+			atlOffset=2.5439997;
 		};
-		class Item40
+		class Item35
 		{
 			dataType="Trigger";
-			position[]={524.67297,5.2817354,9112.499};
+			position[]={502.32977,5.5733242,9465.7461};
 			class Attributes
 			{
-				text="Final Phase, 4 Enemy Boats, 7:45";
-				condition="((date select 3) >= 07) && ((date select 4) >= 45)";
+				text="Final Phase, 4 Enemy Boats, 8:15";
+				condition="((date select 3) >= 08) && ((date select 4) >= 15)";
 				sizeA=222.16901;
 				sizeB=223.218;
 				type="SWITCH";
@@ -17891,43 +17543,9 @@ class Mission
 			};
 			id=1369;
 			type="EmptyDetectorAreaR250";
-			atlOffset=19.792999;
+			atlOffset=23.252022;
 		};
-		class Item41
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4601.6191,1.3190708,4998.5713};
-				angles[]={0,4.2578726,0};
-			};
-			side="West";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=1378;
-			type="tacs_RHIB_B_Theseus_Black";
-			atlOffset=1.6422168;
-		};
-		class Item42
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4609.0591,1.3190708,4987.6177};
-				angles[]={0,4.0352306,0};
-			};
-			side="West";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=1412;
-			type="tacs_RHIB_B_Theseus_Black";
-			atlOffset=1.0277174;
-		};
-		class Item43
+		class Item36
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17944,7 +17562,7 @@ class Mission
 			type="tacs_RHIB_B_Theseus_Black";
 			atlOffset=3.4937341;
 		};
-		class Item44
+		class Item37
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17961,19 +17579,20 @@ class Mission
 			type="tacs_RHIB_B_Theseus_Black";
 			atlOffset=3.6009107;
 		};
-		class Item45
+		class Item38
 		{
 			dataType="Group";
 			side="West";
 			class Entities
 			{
-				items=6;
+				items=5;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4601.6191,0.0014388561,4998.6211};
+						position[]={4603.0356,0.0014388561,4995.1162};
+						angles[]={0,4.2578726,0};
 					};
 					side="West";
 					flags=3;
@@ -17982,30 +17601,15 @@ class Mission
 					};
 					id=1420;
 					type="B_GEN_Commander_F";
-					atlOffset=1.6422168;
+					atlOffset=1.526792;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4601.6191,0.0014388561,4998.6211};
-					};
-					side="West";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1435;
-					type="B_GEN_Soldier_F";
-					atlOffset=1.6422168;
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4601.6191,0.0014388561,4998.6211};
+						position[]={4603.0356,0.0014388561,4995.1162};
+						angles[]={0,4.2578726,0};
 					};
 					side="West";
 					flags=1;
@@ -18014,25 +17618,9 @@ class Mission
 					};
 					id=1436;
 					type="B_GEN_Soldier_F";
-					atlOffset=1.6422168;
+					atlOffset=1.526792;
 				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4601.6191,0.0014388561,4998.6211};
-					};
-					side="West";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1437;
-					type="B_Captain_Dwarden_F";
-					atlOffset=1.6422168;
-				};
-				class Item4
+				class Item2
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -18045,18 +17633,30 @@ class Mission
 					type="Hold";
 					atlOffset=2.0569999;
 				};
-				class Item5
+				class Item3
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={2350.8022,0,7587.3926};
+					position[]={2382.1741,0,7487.8652};
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=1441;
-					type="SeekAndDestroy";
-					atlOffset=20.23872;
+					type="Move";
+					atlOffset=19.486704;
+				};
+				class Item4
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={2262.387,1.3640697,7342.1602};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1686;
+					type="GetOut";
 				};
 			};
 			class Attributes
@@ -18066,16 +17666,16 @@ class Mission
 			{
 				class LinkIDProvider
 				{
-					nextID=4;
+					nextID=2;
 				};
 				class Links
 				{
-					items=4;
+					items=2;
 					class Item0
 					{
 						linkID=0;
 						item0=1420;
-						item1=1378;
+						item1=1684;
 						class CustomData
 						{
 							role=1;
@@ -18084,54 +17684,33 @@ class Mission
 					class Item1
 					{
 						linkID=1;
-						item0=1435;
-						item1=1378;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-					class Item2
-					{
-						linkID=2;
 						item0=1436;
-						item1=1378;
+						item1=1684;
 						class CustomData
 						{
-							role=2;
-							turretPath[]={1};
-						};
-					};
-					class Item3
-					{
-						linkID=3;
-						item0=1437;
-						item1=1378;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={2};
+							role=3;
+							cargoIndex=1;
 						};
 					};
 				};
 			};
 			id=1419;
-			atlOffset=1.6422168;
+			atlOffset=1.526792;
 		};
-		class Item46
+		class Item39
 		{
 			dataType="Group";
 			side="West";
 			class Entities
 			{
-				items=6;
+				items=5;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4609.0591,0.0014388561,4987.6675};
+						position[]={4618.5479,1.3775438,4982.2612};
+						angles[]={0,3.9725947,0};
 					};
 					side="West";
 					flags=3;
@@ -18140,14 +17719,15 @@ class Mission
 					};
 					id=1422;
 					type="B_GEN_Commander_F";
-					atlOffset=1.0277174;
+					atlOffset=1.8445717;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4609.0591,0.0014388561,4987.6675};
+						position[]={4614.5269,0.0014388561,4982.6865};
+						angles[]={0,3.9725947,0};
 					};
 					side="West";
 					flags=1;
@@ -18156,14 +17736,15 @@ class Mission
 					};
 					id=1432;
 					type="B_GEN_Soldier_F";
-					atlOffset=1.0277174;
+					atlOffset=0.69631225;
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4609.0591,0.0014388561,4987.6675};
+						position[]={4614.5269,0.0014388561,4982.6865};
+						angles[]={0,3.9725947,0};
 					};
 					side="West";
 					flags=1;
@@ -18172,25 +17753,9 @@ class Mission
 					};
 					id=1433;
 					type="B_GEN_Soldier_F";
-					atlOffset=1.0277174;
+					atlOffset=0.69631225;
 				};
 				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4609.0591,0.0014388561,4987.6675};
-					};
-					side="West";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1434;
-					type="B_GEN_Soldier_F";
-					atlOffset=1.0277174;
-				};
-				class Item4
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -18203,7 +17768,7 @@ class Mission
 					type="Hold";
 					atlOffset=1.997;
 				};
-				class Item5
+				class Item4
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -18224,16 +17789,16 @@ class Mission
 			{
 				class LinkIDProvider
 				{
-					nextID=4;
+					nextID=3;
 				};
 				class Links
 				{
-					items=4;
+					items=3;
 					class Item0
 					{
 						linkID=0;
 						item0=1422;
-						item1=1412;
+						item1=1696;
 						class CustomData
 						{
 							role=1;
@@ -18243,7 +17808,7 @@ class Mission
 					{
 						linkID=1;
 						item0=1432;
-						item1=1412;
+						item1=1696;
 						class CustomData
 						{
 							role=2;
@@ -18254,30 +17819,19 @@ class Mission
 					{
 						linkID=2;
 						item0=1433;
-						item1=1412;
+						item1=1696;
 						class CustomData
 						{
 							role=2;
 							turretPath[]={1};
 						};
 					};
-					class Item3
-					{
-						linkID=3;
-						item0=1434;
-						item1=1412;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={2};
-						};
-					};
 				};
 			};
 			id=1421;
-			atlOffset=1.0277174;
+			atlOffset=0.69797486;
 		};
-		class Item47
+		class Item40
 		{
 			dataType="Group";
 			side="West";
@@ -18473,14 +18027,14 @@ class Mission
 			id=1423;
 			atlOffset=3.6009107;
 		};
-		class Item48
+		class Item41
 		{
 			dataType="Trigger";
-			position[]={3809.98,4.7330251,7356.188};
+			position[]={4479.7251,10.702427,7452.2329};
 			class Attributes
 			{
-				text="Police Reinforcements & Last 2 Enemy Boats, 08:00";
-				condition="((date select 3) >= 08) && ((date select 4) >= 00)";
+				text="Police Reinforcements & Last 2 Enemy Boats, 08:45";
+				condition="((date select 3) >= 08) && ((date select 4) >= 45)";
 				sizeA=267.74799;
 				sizeB=264.62399;
 				type="SWITCH";
@@ -18489,7 +18043,7 @@ class Mission
 			id=1446;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item49
+		class Item42
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -18503,7 +18057,7 @@ class Mission
 			type="ModuleCoverMap_F";
 			atlOffset=7.8984032;
 		};
-		class Item50
+		class Item43
 		{
 			dataType="Marker";
 			position[]={1452.4017,4.5960536,6219.6104};
@@ -18511,7 +18065,7 @@ class Mission
 			type="mil_unknown";
 			id=1453;
 		};
-		class Item51
+		class Item44
 		{
 			dataType="Marker";
 			position[]={2379.7258,4.8666186,6664.0059};
@@ -18519,7 +18073,7 @@ class Mission
 			type="mil_unknown";
 			id=1454;
 		};
-		class Item52
+		class Item45
 		{
 			dataType="Group";
 			side="East";
@@ -18606,7 +18160,7 @@ class Mission
 			};
 			id=1460;
 		};
-		class Item53
+		class Item46
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18621,7 +18175,7 @@ class Mission
 			id=789;
 			type="Particle_SmallSmoke_F";
 		};
-		class Item54
+		class Item47
 		{
 			dataType="Group";
 			side="East";
@@ -18789,7 +18343,7 @@ class Mission
 			id=1470;
 			atlOffset=-4.7683716e-007;
 		};
-		class Item55
+		class Item48
 		{
 			dataType="Group";
 			side="East";
@@ -18952,7 +18506,7 @@ class Mission
 			};
 			id=1481;
 		};
-		class Item56
+		class Item49
 		{
 			dataType="Group";
 			side="East";
@@ -19010,7 +18564,7 @@ class Mission
 			};
 			id=1491;
 		};
-		class Item57
+		class Item50
 		{
 			dataType="Group";
 			side="East";
@@ -19069,7 +18623,7 @@ class Mission
 			};
 			id=1495;
 		};
-		class Item58
+		class Item51
 		{
 			dataType="Group";
 			side="East";
@@ -19204,7 +18758,7 @@ class Mission
 			};
 			id=1499;
 		};
-		class Item59
+		class Item52
 		{
 			dataType="Trigger";
 			position[]={1459.0519,4.5352869,6239.293};
@@ -19219,7 +18773,7 @@ class Mission
 			type="EmptyDetectorAreaR50";
 			atlOffset=4.7683716e-007;
 		};
-		class Item60
+		class Item53
 		{
 			dataType="Group";
 			side="East";
@@ -19310,7 +18864,7 @@ class Mission
 			};
 			id=1512;
 		};
-		class Item61
+		class Item54
 		{
 			dataType="Group";
 			side="East";
@@ -19404,7 +18958,7 @@ class Mission
 			id=1518;
 			atlOffset=4.7683716e-007;
 		};
-		class Item62
+		class Item55
 		{
 			dataType="Group";
 			side="East";
@@ -19496,7 +19050,7 @@ class Mission
 			};
 			id=1524;
 		};
-		class Item63
+		class Item56
 		{
 			dataType="Group";
 			side="East";
@@ -19590,7 +19144,7 @@ class Mission
 			id=1530;
 			atlOffset=9.5367432e-007;
 		};
-		class Item64
+		class Item57
 		{
 			dataType="Group";
 			side="East";
@@ -19684,266 +19238,20 @@ class Mission
 			id=1536;
 			atlOffset=4.7683716e-007;
 		};
-		class Item65
+		class Item58
 		{
 			dataType="Group";
 			side="East";
 			class Entities
 			{
-				items=9;
+				items=12;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2195.1792,0.0014388561,8214.7793};
-						angles[]={0,5.9639311,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1547;
-					type="TACU_Revolutionaries_U_O_Tanoan_Rifleman01";
-					atlOffset=7.3166032;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2195.1792,0.0014388561,8214.7793};
-						angles[]={0,5.9639311,0};
-					};
-					side="East";
-					flags=3;
-					class Attributes
-					{
-					};
-					id=1548;
-					type="TACU_Revolutionaries_U_O_Tanoan_SMG01";
-					atlOffset=7.3166032;
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2195.1792,0.0014388561,8214.7793};
-						angles[]={0,5.9639311,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1549;
-					type="TACU_Revolutionaries_U_O_Tanoan_Rocketeer";
-					atlOffset=7.3166032;
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2195.1792,0.0014388561,8214.7793};
-						angles[]={0,5.9639311,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1550;
-					type="TACU_Revolutionaries_U_O_Tanoan_Paramedic";
-					atlOffset=7.3166032;
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2195.1792,0.0014388561,8214.7793};
-						angles[]={0,5.9639311,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1551;
-					type="TACU_Revolutionaries_U_O_Tanoan_Leader";
-					atlOffset=7.3166032;
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2195.1792,0.0014388561,8214.7793};
-						angles[]={0,5.9639311,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=1552;
-					type="TACU_Revolutionaries_U_O_Tanoan_Machinegunner";
-					atlOffset=7.3166032;
-				};
-				class Item6
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
-					position[]={2190.5015,0,8229.8809};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=1554;
-					type="Hold";
-					atlOffset=18.756382;
-				};
-				class Item7
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
-					position[]={1803.657,0,7888.0063};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=1564;
-					type="Move";
-					atlOffset=19.250404;
-				};
-				class Item8
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
-					position[]={1962.671,1.6517082,7444.4541};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=1565;
-					type="SeekAndDestroy";
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=6;
-				};
-				class Links
-				{
-					items=6;
-					class Item0
-					{
-						linkID=0;
-						item0=1547;
-						item1=1553;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=1548;
-						item1=1553;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={1};
-						};
-					};
-					class Item2
-					{
-						linkID=2;
-						item0=1549;
-						item1=1553;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={2};
-						};
-					};
-					class Item3
-					{
-						linkID=3;
-						item0=1550;
-						item1=1553;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={3};
-						};
-					};
-					class Item4
-					{
-						linkID=4;
-						item0=1551;
-						item1=1553;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item5
-					{
-						linkID=5;
-						item0=1552;
-						item1=1553;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={4};
-						};
-					};
-				};
-			};
-			id=1546;
-			atlOffset=10.479726;
-		};
-		class Item66
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2197.5251,1.3190708,8218.9629};
-				angles[]={0,5.9639311,0};
-			};
-			side="East";
-			class Attributes
-			{
-			};
-			id=1553;
-			type="TACU_Somali_Pirates_V_O_RHIB";
-			atlOffset=10.479726;
-		};
-		class Item67
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=10;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2345.4373,0.0014388561,8246.7432};
-						angles[]={0,5.9639311,0};
+						position[]={2318.6052,0.0014388561,8247.0107};
+						angles[]={0,6.2020855,0};
 					};
 					side="East";
 					flags=1;
@@ -19952,15 +19260,15 @@ class Mission
 					};
 					id=1556;
 					type="TACU_Revolutionaries_U_O_Tanoan_Rifleman01";
-					atlOffset=29.744778;
+					atlOffset=46.303886;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2345.4373,0.0014388561,8246.7432};
-						angles[]={0,5.9639311,0};
+						position[]={2320.9417,0.0014388561,8253.1611};
+						angles[]={0,6.2020855,0};
 					};
 					side="East";
 					flags=3;
@@ -19969,15 +19277,15 @@ class Mission
 					};
 					id=1557;
 					type="TACU_Revolutionaries_U_O_Tanoan_SMG01";
-					atlOffset=29.744778;
+					atlOffset=44.127544;
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2345.4373,0.0014388561,8246.7432};
-						angles[]={0,5.9639311,0};
+						position[]={2318.6052,0.0014388561,8247.0107};
+						angles[]={0,6.2020855,0};
 					};
 					side="East";
 					flags=1;
@@ -19986,15 +19294,15 @@ class Mission
 					};
 					id=1558;
 					type="TACU_Revolutionaries_U_O_Tanoan_Rocketeer";
-					atlOffset=29.744778;
+					atlOffset=46.303886;
 				};
 				class Item3
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2345.4373,0.0014388561,8246.7432};
-						angles[]={0,5.9639311,0};
+						position[]={2318.6052,0.0014388561,8247.0107};
+						angles[]={0,6.2020855,0};
 					};
 					side="East";
 					flags=1;
@@ -20003,15 +19311,15 @@ class Mission
 					};
 					id=1559;
 					type="TACU_Revolutionaries_U_O_Tanoan_Paramedic";
-					atlOffset=29.744778;
+					atlOffset=46.303886;
 				};
 				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2345.4373,0.0014388561,8246.7432};
-						angles[]={0,5.9639311,0};
+						position[]={2320.9417,0.0014388561,8253.1611};
+						angles[]={0,6.2020855,0};
 					};
 					side="East";
 					flags=1;
@@ -20020,15 +19328,15 @@ class Mission
 					};
 					id=1560;
 					type="TACU_Revolutionaries_U_O_Tanoan_Leader";
-					atlOffset=29.744778;
+					atlOffset=44.127544;
 				};
 				class Item5
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2345.4373,0.0014388561,8246.7432};
-						angles[]={0,5.9639311,0};
+						position[]={2318.6052,0.0014388561,8247.0107};
+						angles[]={0,6.2020855,0};
 					};
 					side="East";
 					flags=1;
@@ -20037,22 +19345,54 @@ class Mission
 					};
 					id=1561;
 					type="TACU_Revolutionaries_U_O_Tanoan_Machinegunner";
-					atlOffset=29.744778;
+					atlOffset=46.303886;
 				};
 				class Item6
 				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2320.9417,0.0014388561,8253.1611};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1653;
+					type="TACU_Revolutionaries_U_O_Tanoan_Rifleman02";
+					atlOffset=44.127544;
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2320.9417,0.0014388561,8253.1611};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1654;
+					type="TACU_Revolutionaries_U_O_Tanoan_Saboteur";
+					atlOffset=44.127544;
+				};
+				class Item8
+				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={2321.2881,0.00043869019,8262.7578};
+					position[]={2318.5754,0,8264.8418};
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=1563;
 					type="Hold";
-					atlOffset=38.750999;
+					atlOffset=37.377697;
 				};
-				class Item7
+				class Item9
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -20065,7 +19405,7 @@ class Mission
 					type="Move";
 					atlOffset=12.396713;
 				};
-				class Item8
+				class Item10
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -20077,7 +19417,7 @@ class Mission
 					id=1567;
 					type="GetOut";
 				};
-				class Item9
+				class Item11
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -20098,104 +19438,110 @@ class Mission
 			{
 				class LinkIDProvider
 				{
-					nextID=6;
+					nextID=8;
 				};
 				class Links
 				{
-					items=6;
+					items=8;
 					class Item0
 					{
 						linkID=0;
 						item0=1556;
-						item1=1562;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=1557;
-						item1=1562;
+						item1=1612;
 						class CustomData
 						{
 							role=2;
 							turretPath[]={1};
 						};
 					};
+					class Item1
+					{
+						linkID=1;
+						item0=1557;
+						item1=1612;
+						class CustomData
+						{
+							role=1;
+						};
+					};
 					class Item2
 					{
 						linkID=2;
 						item0=1558;
-						item1=1562;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={2};
-						};
-					};
-					class Item3
-					{
-						linkID=3;
-						item0=1559;
-						item1=1562;
+						item1=1612;
 						class CustomData
 						{
 							role=2;
 							turretPath[]={3};
 						};
 					};
-					class Item4
+					class Item3
 					{
-						linkID=4;
-						item0=1560;
-						item1=1562;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item5
-					{
-						linkID=5;
-						item0=1561;
-						item1=1562;
+						linkID=3;
+						item0=1559;
+						item1=1612;
 						class CustomData
 						{
 							role=2;
 							turretPath[]={4};
 						};
 					};
+					class Item4
+					{
+						linkID=4;
+						item0=1560;
+						item1=1612;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={2};
+						};
+					};
+					class Item5
+					{
+						linkID=5;
+						item0=1561;
+						item1=1612;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+					class Item6
+					{
+						linkID=6;
+						item0=1653;
+						item1=1612;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={5};
+						};
+					};
+					class Item7
+					{
+						linkID=7;
+						item0=1654;
+						item1=1612;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={6};
+						};
+					};
 				};
 			};
 			id=1555;
-			atlOffset=44.346718;
+			atlOffset=44.127544;
 		};
-		class Item68
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2324.4141,1.3190708,8249.5254};
-				angles[]={0,5.9639311,0};
-			};
-			side="East";
-			class Attributes
-			{
-			};
-			id=1562;
-			type="TACU_Somali_Pirates_V_O_RHIB";
-			atlOffset=44.346718;
-		};
-		class Item69
+		class Item59
 		{
 			dataType="Group";
 			side="East";
 			class Entities
 			{
-				items=6;
+				items=7;
 				class Item0
 				{
 					dataType="Object";
@@ -20266,6 +19612,22 @@ class Mission
 				};
 				class Item4
 				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-487.47958,0.0014388561,7479.9385};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1646;
+					type="TACU_Somali_Pirates_U_O_Rifleman_05";
+					atlOffset=20.461857;
+				};
+				class Item5
+				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
 					position[]={-474.49908,0,7476.5552};
@@ -20277,7 +19639,7 @@ class Mission
 					type="Hold";
 					atlOffset=20.425552;
 				};
-				class Item5
+				class Item6
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -20298,11 +19660,11 @@ class Mission
 			{
 				class LinkIDProvider
 				{
-					nextID=4;
+					nextID=5;
 				};
 				class Links
 				{
-					items=4;
+					items=5;
 					class Item0
 					{
 						linkID=0;
@@ -20346,12 +19708,23 @@ class Mission
 							turretPath[]={2};
 						};
 					};
+					class Item4
+					{
+						linkID=4;
+						item0=1646;
+						item1=1573;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={3};
+						};
+					};
 				};
 			};
 			id=1568;
 			atlOffset=20.461857;
 		};
-		class Item70
+		class Item60
 		{
 			dataType="Object";
 			class PositionInfo
@@ -20368,13 +19741,13 @@ class Mission
 			type="TACU_Somali_Pirates_V_O_Assault_Boat";
 			atlOffset=20.461857;
 		};
-		class Item71
+		class Item61
 		{
 			dataType="Group";
 			side="East";
 			class Entities
 			{
-				items=8;
+				items=9;
 				class Item0
 				{
 					dataType="Object";
@@ -20445,6 +19818,23 @@ class Mission
 				};
 				class Item4
 				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-590.69666,0.0014388561,7082.6128};
+						angles[]={0,1.418038,0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1643;
+					type="TACU_Somali_Pirates_U_O_Rifleman_02";
+					atlOffset=20.53582;
+				};
+				class Item5
+				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
 					position[]={-582.36884,0,7087.167};
@@ -20456,7 +19846,7 @@ class Mission
 					type="Hold";
 					atlOffset=20.513891;
 				};
-				class Item5
+				class Item6
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -20469,7 +19859,7 @@ class Mission
 					type="Move";
 					atlOffset=16.732294;
 				};
-				class Item6
+				class Item7
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -20481,7 +19871,7 @@ class Mission
 					id=1583;
 					type="GetOut";
 				};
-				class Item7
+				class Item8
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -20502,11 +19892,11 @@ class Mission
 			{
 				class LinkIDProvider
 				{
-					nextID=4;
+					nextID=5;
 				};
 				class Links
 				{
-					items=4;
+					items=5;
 					class Item0
 					{
 						linkID=0;
@@ -20550,12 +19940,23 @@ class Mission
 							turretPath[]={2};
 						};
 					};
+					class Item4
+					{
+						linkID=4;
+						item0=1643;
+						item1=1581;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={3};
+						};
+					};
 				};
 			};
 			id=1575;
 			atlOffset=20.53582;
 		};
-		class Item72
+		class Item62
 		{
 			dataType="Object";
 			class PositionInfo
@@ -20572,7 +19973,7 @@ class Mission
 			type="TACU_Somali_Pirates_V_O_Assault_Boat";
 			atlOffset=20.53582;
 		};
-		class Item73
+		class Item63
 		{
 			dataType="Group";
 			side="West";
@@ -20588,13 +19989,13 @@ class Mission
 						angles[]={0,4.4981351,0};
 					};
 					side="West";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 					};
 					id=1597;
 					type="B_GEN_Commander_F";
-					atlOffset=3.4937341;
+					atlOffset=4.7683716e-007;
 				};
 				class Item1
 				{
@@ -20605,13 +20006,13 @@ class Mission
 						angles[]={0,4.4981351,0};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 					};
 					id=1426;
 					type="B_GEN_Soldier_F";
-					atlOffset=3.4937341;
+					atlOffset=2.3841858e-007;
 				};
 				class Item2
 				{
@@ -20622,13 +20023,13 @@ class Mission
 						angles[]={0,4.4981351,0};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 					};
 					id=1427;
 					type="B_GEN_Soldier_F";
-					atlOffset=3.4937341;
+					atlOffset=2.3841858e-007;
 				};
 				class Item3
 				{
@@ -20639,13 +20040,13 @@ class Mission
 						angles[]={0,4.4981351,0};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 					};
 					id=1428;
 					type="B_GEN_Soldier_F";
-					atlOffset=3.4937341;
+					atlOffset=2.3841858e-007;
 				};
 				class Item4
 				{
@@ -20771,6 +20172,919 @@ class Mission
 			id=1596;
 			atlOffset=3.4937341;
 		};
+		class Item64
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1794.3086,1.3190708,8485.8047};
+				angles[]={0,6.0379562,-0};
+			};
+			side="East";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=1606;
+			type="O_MU_LIVP_RHIB";
+			atlOffset=12.51395;
+		};
+		class Item65
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2320.9417,1.3190708,8253.1113};
+				angles[]={0,6.2020855,0};
+			};
+			side="East";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=1612;
+			type="O_MU_LIVP_RHIB";
+			atlOffset=44.127544;
+		};
+		class Item66
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=12;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2301.3115,0.0014388561,8836.1338};
+						angles[]={0,1.8011839,-0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1620;
+					type="TACU_Revolutionaries_U_O_Tanoan_Rifleman01";
+					atlOffset=6.6382957;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2301.3115,0.0014388561,8836.1338};
+						angles[]={0,1.8011839,-0};
+					};
+					side="East";
+					flags=3;
+					class Attributes
+					{
+					};
+					id=1621;
+					type="TACU_Revolutionaries_U_O_Tanoan_SMG01";
+					atlOffset=6.6382957;
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2301.3115,0.0014388561,8836.1338};
+						angles[]={0,1.8011839,-0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1622;
+					type="TACU_Revolutionaries_U_O_Tanoan_Rocketeer";
+					atlOffset=6.6382957;
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2301.3115,0.0014388561,8836.1338};
+						angles[]={0,1.8011839,-0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1623;
+					type="TACU_Revolutionaries_U_O_Tanoan_Paramedic";
+					atlOffset=6.6382957;
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2301.3115,0.0014388561,8836.1338};
+						angles[]={0,1.8011839,-0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1624;
+					type="TACU_Revolutionaries_U_O_Tanoan_Leader";
+					atlOffset=6.6382957;
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2301.3115,0.0014388561,8836.1338};
+						angles[]={0,1.8011839,-0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1625;
+					type="TACU_Revolutionaries_U_O_Tanoan_Machinegunner";
+					atlOffset=6.6382957;
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2301.3115,0.0014388561,8836.1338};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1651;
+					type="TACU_Revolutionaries_U_O_Tanoan_Machinegunner";
+					atlOffset=6.6382957;
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2301.3115,0.0014388561,8836.1338};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1652;
+					type="TACU_Revolutionaries_U_O_Tanoan_Marksman";
+					atlOffset=6.6382957;
+				};
+				class Item8
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={2319.373,0.00047588348,8829.5469};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1627;
+					type="Hold";
+					atlOffset=8.4069996;
+				};
+				class Item9
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={2824.1931,0,8066.9185};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1628;
+					type="Move";
+					atlOffset=12.81706;
+				};
+				class Item10
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={2556.1943,4.6218114,6967.8447};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1629;
+					type="GetOut";
+				};
+				class Item11
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={2447.0239,6.2234349,6938.8228};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1630;
+					type="SeekAndDestroy";
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=8;
+				};
+				class Links
+				{
+					items=8;
+					class Item0
+					{
+						linkID=0;
+						item0=1620;
+						item1=1626;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={1};
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=1621;
+						item1=1626;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item2
+					{
+						linkID=2;
+						item0=1622;
+						item1=1626;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={3};
+						};
+					};
+					class Item3
+					{
+						linkID=3;
+						item0=1623;
+						item1=1626;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+					class Item4
+					{
+						linkID=4;
+						item0=1624;
+						item1=1626;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={2};
+						};
+					};
+					class Item5
+					{
+						linkID=5;
+						item0=1625;
+						item1=1626;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={4};
+						};
+					};
+					class Item6
+					{
+						linkID=6;
+						item0=1651;
+						item1=1626;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={5};
+						};
+					};
+					class Item7
+					{
+						linkID=7;
+						item0=1652;
+						item1=1626;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={6};
+						};
+					};
+				};
+			};
+			id=1619;
+			atlOffset=6.6382957;
+		};
+		class Item67
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2301.3115,1.3190708,8836.084};
+				angles[]={0,1.8011839,-0};
+			};
+			side="East";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=1626;
+			type="O_MU_LIVP_RHIB";
+			atlOffset=6.6382957;
+		};
+		class Item68
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=11;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-69.372345,0.0014388561,8455.334};
+						angles[]={0,1.9806349,-0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1632;
+					type="TACU_Revolutionaries_U_O_Tanoan_Rifleman01";
+					atlOffset=18.328588;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-69.372345,0.0014388561,8455.334};
+						angles[]={0,1.9806349,-0};
+					};
+					side="East";
+					flags=3;
+					class Attributes
+					{
+					};
+					id=1633;
+					type="TACU_Revolutionaries_U_O_Tanoan_SMG01";
+					atlOffset=18.328588;
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-69.372345,0.0014388561,8455.334};
+						angles[]={0,1.9806349,-0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1634;
+					type="TACU_Revolutionaries_U_O_Tanoan_Rocketeer";
+					atlOffset=18.328588;
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-69.372345,0.0014388561,8455.334};
+						angles[]={0,1.9806349,-0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1635;
+					type="TACU_Revolutionaries_U_O_Tanoan_Paramedic";
+					atlOffset=18.328588;
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-69.372345,0.0014388561,8455.334};
+						angles[]={0,1.9806349,-0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1636;
+					type="TACU_Revolutionaries_U_O_Tanoan_Leader";
+					atlOffset=18.328588;
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-69.372345,0.0014388561,8455.334};
+						angles[]={0,1.9806349,-0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1637;
+					type="TACU_Revolutionaries_U_O_Tanoan_Machinegunner";
+					atlOffset=18.328588;
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-69.372345,0.0014388561,8455.334};
+						angles[]={0,1.9806349,-0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1647;
+					type="TACU_Revolutionaries_U_O_Tanoan_Autorifleman";
+					atlOffset=18.328588;
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-69.372345,0.0014388561,8455.334};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1648;
+					type="TACU_Revolutionaries_U_O_Tanoan_Rifleman01";
+					atlOffset=18.328588;
+				};
+				class Item8
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={-59.183998,0.00044441223,8450.958};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1639;
+					type="Hold";
+					atlOffset=18.391001;
+				};
+				class Item9
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={1894.3719,1.2023395,7402.4409};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1640;
+					type="GetOut";
+				};
+				class Item10
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={1931.303,11.135216,7372.9541};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1641;
+					type="SeekAndDestroy";
+					atlOffset=1.9073486e-006;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=8;
+				};
+				class Links
+				{
+					items=8;
+					class Item0
+					{
+						linkID=0;
+						item0=1632;
+						item1=1638;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={1};
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=1633;
+						item1=1638;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item2
+					{
+						linkID=2;
+						item0=1634;
+						item1=1638;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={3};
+						};
+					};
+					class Item3
+					{
+						linkID=3;
+						item0=1635;
+						item1=1638;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+					class Item4
+					{
+						linkID=4;
+						item0=1636;
+						item1=1638;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={2};
+						};
+					};
+					class Item5
+					{
+						linkID=5;
+						item0=1637;
+						item1=1638;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={4};
+						};
+					};
+					class Item6
+					{
+						linkID=6;
+						item0=1647;
+						item1=1638;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={5};
+						};
+					};
+					class Item7
+					{
+						linkID=7;
+						item0=1648;
+						item1=1638;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={6};
+						};
+					};
+				};
+			};
+			id=1631;
+			atlOffset=18.328588;
+		};
+		class Item69
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={-69.372345,1.3190708,8455.2842};
+				angles[]={0,1.9806349,-0};
+			};
+			side="East";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=1638;
+			type="O_MU_LIVP_RHIB";
+			atlOffset=18.328588;
+		};
+		class Item70
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4603.0356,1.2970161,4995.0664};
+				angles[]={0,4.2073441,0};
+			};
+			side="West";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=1684;
+			type="C_Boat_Civil_01_police_F";
+			atlOffset=1.526792;
+		};
+		class Item71
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4614.6226,3.3238735,4982.3506};
+				angles[]={0,3.9725947,0};
+			};
+			side="West";
+			class Attributes
+			{
+			};
+			id=1696;
+			type="B_T_Boat_Armed_01_minigun_F";
+			atlOffset=0.69797486;
+		};
+		class Item72
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=9;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2169.9351,0.0014388561,8227.2305};
+						angles[]={0,6.1963038,0};
+					};
+					side="East";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=1701;
+					type="TACU_Somali_Pirates_U_O_Driver";
+					atlOffset=26.329285;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2171.3721,0.0014388561,8227.2275};
+						angles[]={0,6.1963038,0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1702;
+					type="TACU_Somali_Pirates_U_O_Autorifleman";
+					atlOffset=25.628096;
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2171.3721,0.0014388561,8227.2275};
+						angles[]={0,6.1963038,0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1703;
+					type="TACU_Somali_Pirates_U_O_Rifleman_06";
+					atlOffset=25.628096;
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2171.3721,0.0014388561,8227.2275};
+						angles[]={0,6.1963038,0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1704;
+					type="TACU_Somali_Pirates_U_O_Rifleman_02";
+					atlOffset=25.628096;
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2202.8965,0.0014388561,8219.793};
+						angles[]={0,6.1963038,0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+					};
+					id=1705;
+					type="TACU_Somali_Pirates_U_O_Rifleman_04";
+					atlOffset=12.446846;
+				};
+				class Item5
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={2205.321,0.00016784668,8234.0879};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1707;
+					type="Hold";
+					atlOffset=29.936001;
+				};
+				class Item6
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={1982.2217,0,8142.4248};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1708;
+					type="Move";
+					atlOffset=19.650751;
+				};
+				class Item7
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={1989.467,3.0786786,7443.9712};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1709;
+					type="GetOut";
+				};
+				class Item8
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={2069.1389,6.8234591,7339.6021};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1710;
+					type="SeekAndDestroy";
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=5;
+				};
+				class Links
+				{
+					items=5;
+					class Item0
+					{
+						linkID=0;
+						item0=1701;
+						item1=1706;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=1702;
+						item1=1706;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={1};
+						};
+					};
+					class Item2
+					{
+						linkID=2;
+						item0=1703;
+						item1=1706;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+					class Item3
+					{
+						linkID=3;
+						item0=1704;
+						item1=1706;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={2};
+						};
+					};
+					class Item4
+					{
+						linkID=4;
+						item0=1705;
+						item1=1706;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={3};
+						};
+					};
+				};
+			};
+			id=1700;
+			atlOffset=13.591582;
+		};
+		class Item73
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2207.4211,1.2435327,8219.3311};
+				angles[]={0,6.1963038,0};
+			};
+			side="East";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=1706;
+			type="TACU_Somali_Pirates_V_O_Assault_Boat";
+			atlOffset=13.591582;
+		};
 	};
 	class Connections
 	{
@@ -20865,7 +21179,7 @@ class Mission
 			{
 				linkID=8;
 				item0=1369;
-				item1=1368;
+				item1=1370;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20874,8 +21188,8 @@ class Mission
 			class Item9
 			{
 				linkID=9;
-				item0=1369;
-				item1=1370;
+				item0=1446;
+				item1=1439;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20885,7 +21199,7 @@ class Mission
 			{
 				linkID=10;
 				item0=1446;
-				item1=1439;
+				item1=1438;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20895,7 +21209,7 @@ class Mission
 			{
 				linkID=11;
 				item0=1446;
-				item1=1438;
+				item1=1440;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20904,8 +21218,8 @@ class Mission
 			class Item12
 			{
 				linkID=12;
-				item0=1446;
-				item1=1440;
+				item0=1508;
+				item1=1506;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20914,8 +21228,8 @@ class Mission
 			class Item13
 			{
 				linkID=13;
-				item0=1508;
-				item1=1506;
+				item0=1446;
+				item1=1563;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20925,7 +21239,7 @@ class Mission
 			{
 				linkID=14;
 				item0=1446;
-				item1=1563;
+				item1=1361;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20934,8 +21248,8 @@ class Mission
 			class Item15
 			{
 				linkID=15;
-				item0=1446;
-				item1=1361;
+				item0=1369;
+				item1=1574;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20944,8 +21258,8 @@ class Mission
 			class Item16
 			{
 				linkID=16;
-				item0=1363;
-				item1=1554;
+				item0=1369;
+				item1=1580;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20954,8 +21268,8 @@ class Mission
 			class Item17
 			{
 				linkID=17;
-				item0=1369;
-				item1=1574;
+				item0=1363;
+				item1=1350;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20964,8 +21278,8 @@ class Mission
 			class Item18
 			{
 				linkID=18;
-				item0=1369;
-				item1=1580;
+				item0=1363;
+				item1=1348;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20974,8 +21288,8 @@ class Mission
 			class Item19
 			{
 				linkID=19;
-				item0=1363;
-				item1=1350;
+				item0=1446;
+				item1=1598;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20984,8 +21298,8 @@ class Mission
 			class Item20
 			{
 				linkID=20;
-				item0=1363;
-				item1=1348;
+				item0=1369;
+				item1=1627;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -20995,7 +21309,7 @@ class Mission
 			{
 				linkID=21;
 				item0=1363;
-				item1=1347;
+				item1=1639;
 				class CustomData
 				{
 					type="WaypointActivation";
@@ -21004,8 +21318,8 @@ class Mission
 			class Item22
 			{
 				linkID=22;
-				item0=1446;
-				item1=1598;
+				item0=1363;
+				item1=1707;
 				class CustomData
 				{
 					type="WaypointActivation";
