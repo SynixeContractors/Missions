@@ -4,5 +4,4 @@
 [
     // Add additional files here
     // if you create "edit_me/briefing/example.html, then add "Example" here
-    <img image='intel.jpg'/>
 ] call mission_fnc_briefing;
