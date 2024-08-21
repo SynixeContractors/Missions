@@ -23,3 +23,19 @@
         }, _this, 2] call CBA_fnc_waitAndExecute;
     }
 ] call synixe_missions_fnc_computerUpload;
+
+[
+    Priest,    // variable name of the officer unit
+    "Priest",  // class from CfgSounds in description.ext
+    {
+        systemChat "Priest: Thanks";
+    },
+    {
+        systemChat "Priest: I'm out of here";
+        // The first time we interact, play an animation and give intel
+			if (_first) then {
+            [_unit, "PutDown"] call ace_common_fnc_doGesture;
+            systemChat "Intel Received!";
+			};
+    }
+] call synixe_missions_fnc_speak;
