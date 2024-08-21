@@ -5,7 +5,7 @@ FACTIONS:
     - Vehicles - NATO (Pacific)
 
     OPFOR:  
-    - Chernarussian Movement of the Red Star.
+    - Chernarussian Movement of the Red Star for RSA
     - Men(Armed Civilians) from Chernarussian Movement of the Red Star.
 
 Functions:
