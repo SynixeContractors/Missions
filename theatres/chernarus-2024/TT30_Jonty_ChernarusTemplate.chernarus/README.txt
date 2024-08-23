@@ -11,5 +11,4 @@ FACTIONS:
 Functions:
     - For Commander Voice: Just convert the AI voice file to ogg format and add it to the root folder using the name "intel.ogg"
 
-    - To add intel on the clipboard in his office, edit in lines 23, 26 and 28 in initPlayerLocal.sqf
-
+    - To add intel on the clipboard in his office, edit in lines 25, 28 and 30 in initPlayerLocal.sqf
