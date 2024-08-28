@@ -12,10 +12,10 @@
     100, // size in GB
     300,  // time to upload in seconds
 	{
-        systemChat "Server: Upload Started...";
+        playerChat "Server: Upload Started...";
     },
     {
-        systemChat "Server: Upload Finished. LAUNCH ABORTED!";
+        playerChat "Server: Upload Finished. LAUNCH ABORTED!";
         // Clear the screen after 2 seconds
         [{
             params ["_object"];
