@@ -57,10 +57,8 @@ IMPORTANT: AVOID CROSSING LINE OF CONTROL AT ANY COST." // Edit this for intel c
     50, // size in GB
     120,  // time to upload in seconds
     {
-        systemChat "Hacking Initiated. ETA 2 Minutes";
     },
     {
-        systemChat "Data Sent to CDF";
         // Clear the screen after 2 seconds
         [
             {
