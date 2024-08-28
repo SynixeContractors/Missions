@@ -2,7 +2,7 @@
     laptop1,
     1,  // texture source, (in the attributes of the object, Texture #X)
     50, // size in GB
-    10,  // time to upload in seconds
+    30,  // time to upload in seconds
     {
         systemChat "Server: Upload Started";
     },
@@ -20,7 +20,7 @@
     laptop2,
     1,  // texture source, (in the attributes of the object, Texture #X)
     50, // size in GB
-    10,  // time to upload in seconds
+    30,  // time to upload in seconds
     {
         systemChat "Server: Upload Started";
     },
@@ -38,7 +38,7 @@
     laptop3,
     1,  // texture source, (in the attributes of the object, Texture #X)
     50, // size in GB
-    10,  // time to upload in seconds
+    45,  // time to upload in seconds
     {
         systemChat "Server: Upload Started";
     },
@@ -56,7 +56,7 @@
     laptop4,
     1,  // texture source
     50, // size in GB
-    10,  // time to upload in seconds
+    30,  // time to upload in seconds
     {
         systemChat "Server: Upload Started";
     },
@@ -74,7 +74,7 @@
     laptop5,
     1,  // texture source
     50, // size in GB
-    10,  // time to upload in seconds
+    45,  // time to upload in seconds
     {
         systemChat "Server: Upload Started";
     },
