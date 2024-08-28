@@ -7,7 +7,9 @@
     "Forward Operating Base"
 ] call mission_fnc_briefing;
 
-// ** UNCOMMENT TO USE THE CODE BELOW **
+["mission_intel", {
+    player createDiaryRecord ["Diary", ["Data is Encrypted", "Encrypted Data Sent to CDF intelligence command for further analysis."]];
+}] call CBA_fnc_addEventHandler;
 
 [
     officer,    // variable name of the officer unit
