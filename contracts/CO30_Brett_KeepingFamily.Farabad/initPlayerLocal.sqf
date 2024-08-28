@@ -5,3 +5,10 @@
     // Add additional files here
     // if you create "edit_me/briefing/example.html, then add "Example" here
 ] call mission_fnc_briefing;
+
+[
+    contact,
+    "Contact",
+    {},
+    {}
+] call synixe_missions_fnc_speak;
