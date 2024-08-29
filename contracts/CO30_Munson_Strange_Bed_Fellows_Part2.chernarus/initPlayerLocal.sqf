@@ -11,8 +11,10 @@
     1,  // texture source
     100, // size in GB
     300,  // time to upload in seconds
-	{
-        // Clear the screen after 2 seconds
+	{ 
+	},
+        {
+		// Clear the screen after 2 seconds
         [{
             params ["_object"];
             _object setObjectTextureGlobal [1, ""];
