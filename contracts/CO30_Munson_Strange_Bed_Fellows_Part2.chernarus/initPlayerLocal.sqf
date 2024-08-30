@@ -28,46 +28,14 @@
     "Priest"  // class from CfgSounds in description.ext   
 ] call synixe_missions_fnc_speak;
 
-[
-	missile_1, 
-	"Destroy Guidance System",
-    {
-       // Play sound or trigger effect
-        playSound3D ["A3\sounds_f\weapons\mines\deactivate_mine_1.wss", missile_1];
-        [_player, "PutDown"] call ace_common_fnc_doGesture;
-        ["SmokeShellRed", getPosATL missile_1, 3] call BIS_fnc_effectSmoke;
-    }
-] call synixe_missions_fnc_action;
- 
-[
-	missile2, 
-	"Destroy Guidance System",
-    {
-       // Play sound or trigger effect
-        playSound3D ["A3\sounds_f\weapons\mines\deactivate_mine_1.wss", missile2];
-        [_player, "PutDown"] call ace_common_fnc_doGesture;
-        ["SmokeShellRed", getPosATL missile2, 3] call BIS_fnc_effectSmoke;
-    }
-] call synixe_missions_fnc_action;
-
-[
-	missile3, 
-	"Destroy Guidance System",
-    {
-       // Play sound or trigger effect
-        playSound3D ["A3\sounds_f\weapons\mines\deactivate_mine_1.wss", missile3];
-        [_player, "PutDown"] call ace_common_fnc_doGesture;
-        ["SmokeShellRed", getPosATL missile3, 3] call BIS_fnc_effectSmoke;
-    }
-] call synixe_missions_fnc_action;
-
-[
-	missile4, 
-	"Destroy Guidance System",
-    {
-       // Play sound or trigger effect
-        playSound3D ["A3\sounds_f\weapons\mines\deactivate_mine_1.wss", missile4];
-        [_player, "PutDown"] call ace_common_fnc_doGesture;
-        ["SmokeShellRed", getPosATL missile4, 3] call BIS_fnc_effectSmoke;
-    }
-] call synixe_missions_fnc_action;
+{
+    [
+        _x, 
+        "Destroy Guidance System",
+        {
+            playSound3D ["A3\sounds_f\weapons\mines\deactivate_mine_1.wss", _x];
+            [_player, "PutDown"] call ace_common_fnc_doGesture;
+            ["SmokeShellRed", getPosATL _x, 3] call BIS_fnc_effectSmoke;
+        }
+    ] call synixe_missions_fnc_action;
+} forEach [missile1, missile2, missile3, missile4];
