@@ -25,8 +25,13 @@
 [board, 2, false, 1, "Get Intel", // Edit this if you want to change the intel ACE action name
 [], 5,
 
-"", // Edit this for intel title
+"Operation Execution", // Edit this for intel title
 
-"" // Edit this for intel content
+"Conduct clearance operations in marked areas, neutralizing all hostile forces within the Area of Operations (AO).
+A CDF infantry section, augmented by an armored Armored Personnel Carrier (APC), will provide security and firepower as you maneuver to objectives.
+Attempt to clear the artillery camp located on the north-eastern perimeter, but be prepared for intense hostile retaliation, as this objective lies outside the AO.
+Carry sufficient explosives to effectively destroy armored camps, which are expected to be stationed with tanks, APCs, and artillery.
+Be advised that enemy forces may deploy the armored assets, including main battle tanks. To counter this threat, ensure that HAT launchers are also carried and prepared for deployment.
+Exercise extreme caution and maintain heightened vigilance throughout the operation." // Edit this for intel content
 
 ] call zen_modules_fnc_addIntelAction;
