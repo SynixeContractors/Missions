@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=97;
+		nextID=99;
 	};
 	class Camera
 	{
-		pos[]={4242.9434,112.85471,4215.6318};
-		dir[]={-0.25985116,-0.33984032,-0.90388912};
-		up[]={-0.093896426,0.94048023,-0.32661849};
-		aside[]={-0.96108902,-3.9901352e-08,0.27629355};
+		pos[]={2500.0686,81.030823,2376.5769};
+		dir[]={0.74417418,-0.51621646,0.42399734};
+		up[]={0.44852892,0.85645717,0.25555241};
+		aside[]={0.49505463,-8.6612999e-08,-0.86889005};
 	};
 };
 binarizationWanted=0;
@@ -31,13 +31,14 @@ addons[]=
 	"A3_Weapons_F",
 	"acre_main",
 	"A3_Characters_F_Enoch_Headgear",
-	"CUP_Creatures_Military_NAPA"
+	"CUP_Creatures_Military_NAPA",
+	"synixe_spectator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			className="A3_Missions_F_Oldman";
@@ -78,13 +79,19 @@ class AddonsMetaData
 			className="CUP_Creatures_Military_NAPA";
 			name="CUP_Creatures_Military_NAPA";
 		};
+		class Item6
+		{
+			className="synixe_spectator";
+			name="spectator";
+		};
 	};
 };
 dlcs[]=
 {
 	"tacu",
 	"Contact",
-	"CUP_Units"
+	"CUP_Units",
+	"Expansion"
 };
 randomSeed=11889881;
 class ScenarioData
@@ -93,6 +100,24 @@ class ScenarioData
 };
 class CustomAttributes
 {
+	class Category1
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="cba_settings_hasSettingsFile";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="BOOL";
+					value=1;
+				};
+			};
+		};
+		nAttributes=1;
+	};
 };
 class Mission
 {
@@ -123,7 +148,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=5;
 		class Item0
 		{
 			dataType="Group";
@@ -626,6 +651,37 @@ class Mission
 			{
 			};
 			id=35;
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2499.2813,79.431145,2376.5286};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=97;
+			type="synixe_spectator_respawn";
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2504.1301,79.425308,2377.929};
+				angles[]={0,4.3839226,-0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=98;
+			type="synixe_spectator_screen";
 		};
 	};
 };
