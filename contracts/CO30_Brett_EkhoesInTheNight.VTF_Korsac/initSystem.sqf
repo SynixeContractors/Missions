@@ -315,5 +315,5 @@ addMissionEventHandler ["Draw3D", {
 ["Ekho", "Add Source", {
     params ["", "_object"];
     // Adds a source on 66.1
-    [_object, 10, [[66.1, 1000]]] call mission_delay;
+    ["mission_delay", [_object, 10, [[66.1, 1000]]]] call CBA_fnc_globalEventJIP;
 }] call zen_custom_modules_fnc_register;

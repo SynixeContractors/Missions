@@ -6,6 +6,10 @@ mission_sources = createHashMap;
 
 mission_delay = compile preprocessFileLineNumbers "initDelay.sqf";
 
+["mission_delay", {
+    _this call mission_delay;
+}] call CBA_fnc_addEventHandler;
+
 mission_military_channels = [];
 mission_cellphone_channels = [];
 mission_wifi_channels = [];
