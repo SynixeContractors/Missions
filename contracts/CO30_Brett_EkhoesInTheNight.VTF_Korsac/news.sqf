@@ -1,3 +1,6 @@
+if (isServer) exitWith {
+  playSound3D [getMissionPath "audio\news.ogg", tv, true, getPosASL tv,4,1,20];
+};
 tv setObjectTexture [0,"audio\news.ogv"]; 
 with uiNamespace do {
     1100 cutRsc ["RscMissionScreen","PLAIN"];
@@ -10,5 +13,4 @@ with uiNamespace do {
     }];
     _scr ctrlCommit 0;
 };
-playSound3D [getMissionPath "audio\news.ogg", tv, true, getPosASL tv,4,1,20];
 missionNamespace setVariable ["news", true];
