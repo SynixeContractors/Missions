@@ -1,4 +1,7 @@
-// Disable CUP street lights based on lighting levels (bad performance script)
-CUP_stopLampCheck = true;
+#include "do_not_edit\script_component.hpp"
+#include "do_not_edit\initPlayerLocal.sqf"
 
-mission_fnc_briefing = compile preprocessFileLineNumbers "do_not_edit\briefing.sqf";
+[
+    // Add additional files here
+    // if you create "edit_me/briefing/example.html, then add "Example" here
+] call mission_fnc_briefing;
