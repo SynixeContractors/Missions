@@ -28,4 +28,4 @@ for "_i" from 0 to (_numOfDeliveries - 1) do {
     _text = _text + "<br/>";
 };
 
-hintSilent _text;
+hint parseText format [_text];
