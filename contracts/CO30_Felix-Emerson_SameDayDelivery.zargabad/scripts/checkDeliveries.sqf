@@ -1,3 +1,5 @@
+params ["_player"];
+
 private _text = "
 IDAP reports that the following supplies have been delivered.
 <br/>
@@ -28,4 +30,5 @@ for "_i" from 0 to (_numOfDeliveries - 1) do {
     _text = _text + "<br/>";
 };
 
-hint parseText format [_text];
+// give a hint to the player who called the function
+["FELIX_hintSilent", [_text], _player] call CBA_fnc_globalEvent;
