@@ -7,8 +7,8 @@ IDAP reports that the following supplies have been delivered.
 ";
 
 // get array of all objects with certain class names, these are our supply objects
-private _allSupplies = ("Land_FoodSacks_01_cargo_white_idap_F" allObjects 1) ;
-_allSupplies append ("Land_PaperBox_01_small_stacked_F" allObjects 1);
+private _allSupplies = ("Land_PaperBox_01_small_closed_white_med_F" allObjects 1) ;
+_allSupplies append ("Land_PaperBox_01_small_closed_brown_food_F" allObjects 1);
 
 // iterate over each delivery and create structured text
 private _numOfDeliveries = count deliveryCamps;
