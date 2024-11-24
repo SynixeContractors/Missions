@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1287;
+		nextID=1297;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7925.3052,30.703636,12227.219};
-		dir[]={0.92354226,-0.35993737,0.13271795};
-		up[]={0.35630262,0.93296498,0.051204283};
-		aside[]={0.14225414,1.4329271e-07,-0.98987865};
+		pos[]={7554.3955,65.700607,12326.091};
+		dir[]={0.89944863,-0.33439848,0.28137305};
+		up[]={0.31914681,0.94243175,0.099838369};
+		aside[]={0.29856095,7.5669959e-09,-0.95439112};
 	};
 };
 binarizationWanted=0;
@@ -90,6 +90,7 @@ addons[]=
 	"A3_Props_F_Enoch_Military_Camps",
 	"A3_Structures_F_Heli_Furniture",
 	"ace_sitting",
+	"A3_Structures_F_Walls",
 	"A3_Structures_F_Enoch_Military_Camps",
 	"A3_Soft_F_Offroad_01",
 	"A3_Soft_F_Gamma_Hatchback_01",
@@ -711,7 +712,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=19;
+		items=15;
 		class Item0
 		{
 			dataType="Layer";
@@ -1218,7 +1219,7 @@ class Mission
 			state=1;
 			class Entities
 			{
-				items=88;
+				items=89;
 				class Item0
 				{
 					dataType="Object";
@@ -3124,9 +3125,41 @@ class Mission
 					id=261;
 					atlOffset=0.00016593933;
 				};
+				class Item88
+				{
+					dataType="Marker";
+					position[]={7667.5288,18.073,12449.672};
+					name="rolearea_1";
+					text="medic";
+					markerType="RECTANGLE";
+					type="";
+					colorName="ColorPink";
+					a=23.031;
+					b=43.937;
+					angle=27.452995;
+					id=1252;
+					atlOffset=0.0028705597;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ENH_markerHideOnStart";
+							expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			id=220;
-			atlOffset=1.0060139;
+			atlOffset=0.50444412;
 		};
 		class Item2
 		{
@@ -5375,7 +5408,7 @@ class Mission
 			state=1;
 			class Entities
 			{
-				items=71;
+				items=72;
 				class Item0
 				{
 					dataType="Logic";
@@ -6759,9 +6792,41 @@ class Mission
 					type="mil_box";
 					id=120;
 				};
+				class Item71
+				{
+					dataType="Marker";
+					position[]={7573.8281,17.839001,12385.979};
+					name="rolearea_2";
+					text="engineer";
+					markerType="RECTANGLE";
+					type="";
+					colorName="ColorPink";
+					a=23.031;
+					b=24.087999;
+					angle=27.45298;
+					id=1253;
+					atlOffset=0.00046539307;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ENH_markerHideOnStart";
+							expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			id=465;
-			atlOffset=0.54669762;
+			atlOffset=0.27510643;
 		};
 		class Item5
 		{
@@ -6770,7 +6835,7 @@ class Mission
 			state=1;
 			class Entities
 			{
-				items=56;
+				items=65;
 				class Item0
 				{
 					dataType="Object";
@@ -7739,9 +7804,180 @@ class Mission
 						nAttributes=1;
 					};
 				};
+				class Item56
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7775.395,19.708712,12343.244};
+						angles[]={0,1.9873108,-0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1288;
+					type="Land_Mil_WallBig_4m_F";
+				};
+				class Item57
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7779.3979,19.716337,12344.664};
+						angles[]={0,3.5599864,-0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1291;
+					type="Land_Mil_WallBig_4m_F";
+				};
+				class Item58
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7779.3589,19.726217,12349.194};
+						angles[]={0,3.5599864,-0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1293;
+					type="Land_Mil_WallBig_4m_F";
+				};
+				class Item59
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7783.0088,19.722097,12347.582};
+						angles[]={0,3.5599864,-0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1294;
+					type="Land_Mil_WallBig_4m_F";
+				};
+				class Item60
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7773.1045,19.711376,12346.268};
+						angles[]={0,2.434232,-0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1296;
+					type="Land_Mil_WallBig_4m_F";
+				};
+				class Item61
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7773.4629,19.705923,12341.537};
+						angles[]={0,2.0218012,-0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1290;
+					type="Land_Mil_WallBig_Corner_F";
+				};
+				class Item62
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7776.7583,19.715034,12345.618};
+						angles[]={0,2.0218012,-0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1292;
+					type="Land_Mil_WallBig_Corner_F";
+				};
+				class Item63
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7775.3057,19.717619,12347.75};
+						angles[]={0,5.066505,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1295;
+					type="Land_Mil_WallBig_Corner_F";
+				};
+				class Item64
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={7774.6206,18.010242,12344.663};
+						angles[]={6.2819405,1.9263723,0.00048828125};
+					};
+					areaSize[]={5,-1,5};
+					flags=1;
+					id=1287;
+					type="ModuleHideTerrainObjects_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="#filter";
+							expression="_this setVariable [""#filter"",_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=15;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="#hideLocally";
+							expression="_this setVariable [""#hideLocally"",_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
 			};
 			id=474;
-			atlOffset=0.0011882782;
+			atlOffset=0.00033569336;
 		};
 		class Item6
 		{
@@ -11856,7 +12092,7 @@ class Mission
 			state=1;
 			class Entities
 			{
-				items=10;
+				items=11;
 				class Item0
 				{
 					dataType="Logic";
@@ -17881,9 +18117,41 @@ class Mission
 						nAttributes=2;
 					};
 				};
+				class Item10
+				{
+					dataType="Marker";
+					position[]={7887.937,18,12309.088};
+					name="rolearea_3";
+					text="engineer";
+					markerType="RECTANGLE";
+					type="";
+					colorName="ColorPink";
+					a=22.825001;
+					b=31.729;
+					angle=112.13476;
+					id=1254;
+					atlOffset=0.00066184998;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ENH_markerHideOnStart";
+							expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			id=639;
-			atlOffset=6.386013;
+			atlOffset=2.621191;
 		};
 		class Item11
 		{
@@ -17892,7 +18160,7 @@ class Mission
 			state=1;
 			class Entities
 			{
-				items=6;
+				items=7;
 				class Item0
 				{
 					dataType="Layer";
@@ -19340,9 +19608,41 @@ class Mission
 					type="Land_HBarrier_5_F";
 					atlOffset=7.2479248e-05;
 				};
+				class Item6
+				{
+					dataType="Marker";
+					position[]={8414.502,31.837999,12366.129};
+					name="rolearea_4";
+					text="engineer";
+					markerType="RECTANGLE";
+					type="";
+					colorName="ColorPink";
+					a=48.741001;
+					b=62.616001;
+					angle=31.249996;
+					id=1255;
+					atlOffset=0.024629593;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ENH_markerHideOnStart";
+							expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			id=964;
-			atlOffset=1.7385483;
+			atlOffset=1.0043507;
 		};
 		class Item12
 		{
@@ -21247,134 +21547,6 @@ class Mission
 				};
 			};
 			id=1214;
-		};
-		class Item15
-		{
-			dataType="Marker";
-			position[]={7573.8281,17.839001,12385.979};
-			name="rolearea_2";
-			text="engineer";
-			markerType="RECTANGLE";
-			type="";
-			colorName="ColorPink";
-			a=23.031;
-			b=24.087999;
-			angle=27.45298;
-			id=1253;
-			atlOffset=0.00046539307;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerHideOnStart";
-					expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item16
-		{
-			dataType="Marker";
-			position[]={7887.937,18,12309.088};
-			name="rolearea_3";
-			text="engineer";
-			markerType="RECTANGLE";
-			type="";
-			colorName="ColorPink";
-			a=22.825001;
-			b=31.729;
-			angle=112.13476;
-			id=1254;
-			atlOffset=0.00066184998;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerHideOnStart";
-					expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item17
-		{
-			dataType="Marker";
-			position[]={8414.502,31.837999,12366.129};
-			name="rolearea_4";
-			text="engineer";
-			markerType="RECTANGLE";
-			type="";
-			colorName="ColorPink";
-			a=48.741001;
-			b=62.616001;
-			angle=31.249996;
-			id=1255;
-			atlOffset=0.024629593;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerHideOnStart";
-					expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item18
-		{
-			dataType="Marker";
-			position[]={7667.5288,18.073,12449.672};
-			name="rolearea_1";
-			text="medic";
-			markerType="RECTANGLE";
-			type="";
-			colorName="ColorPink";
-			a=23.031;
-			b=43.937;
-			angle=27.452995;
-			id=1252;
-			atlOffset=0.0028705597;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerHideOnStart";
-					expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
 		};
 	};
 };
