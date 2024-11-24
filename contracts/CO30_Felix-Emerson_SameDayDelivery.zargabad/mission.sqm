@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=832;
+		nextID=836;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=20;
+		nextID=26;
 	};
 	class Camera
 	{
-		pos[]={3503.9761,73.048492,1860.2795};
-		dir[]={0.044557411,-0.30969706,0.94980919};
-		up[]={0.014512822,0.95083094,0.30937064};
-		aside[]={0.99891788,-2.169545e-07,-0.046861775};
+		pos[]={3664.6733,101.18461,2691.0076};
+		dir[]={0.86652625,-0.38571602,0.316798};
+		up[]={0.36226723,0.92261767,0.13244341};
+		aside[]={0.34336779,-4.2712782e-07,-0.93920487};
 	};
 };
 binarizationWanted=0;
@@ -452,7 +452,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=129;
+		items=115;
 		class Item0
 		{
 			dataType="Layer";
@@ -3882,7 +3882,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4286,18.041054,4122};
-						angles[]={0,4.712389,-0};
+						angles[]={0,4.712389,0};
 					};
 					side="Empty";
 					flags=5;
@@ -3965,7 +3965,7 @@ class Mission
 								class Attribute0
 								{
 									property="ENH_AmbientAnimations";
-									expression="      if !(_value # 0 isEqualTo '') then      {        _value params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          if (alive _unit) then          {            [_unit, ''] remoteExec ['switchMove', 0];            _unit enableAI 'ANIM';          };          _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };";
+									expression="            if (_value # 0 != '') then            {                _value params ['_animSet', '_anims', '_canExit', '_attach'];                                _this setVariable ['ENH_ambientAnimations_anims', _anims];                _this disableAI 'ANIM';                if (_attach && !is3DEN) then                {                    private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];                    _this setVariable ['ENH_ambientAnimations_logic', _logic];                    [_this, _logic] call BIS_fnc_attachToRelative;                };                                ENH_fnc_ambientAnimations_play =                {                    params ['_unit'];                    private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);                    [_unit, _anim] remoteExec ['switchMove', 0];                };                                ENH_fnc_ambientAnimations_exit =                {                    params ['_unit'];                    if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};                    _unit setVariable ['ENH_ambientAnimations_exit', true];                    detach _unit;                    deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);                    if (alive _unit) then                    {                        [_unit, ''] remoteExec ['switchMove', 0];                        _unit enableAI 'ANIM';                    };                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];                    _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];                    _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];                };                                private _EHAnimDone = _this addEventHandler ['AnimDone',                    {                        params ['_unit'];                        if (alive _unit) then                        {                            _unit call ENH_fnc_ambientAnimations_play;                        }                        else                        {                            _unit call ENH_fnc_ambientAnimations_exit;                        };                    }                ];                _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                                if (_canExit && !is3DEN) then                {                    private _EHKilled = _this addEventHandler ['Killed',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHKilled', _EHKilled];                    private _EHDammaged = _this addEventHandler ['Dammaged',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHDammaged', _EHDammaged];                    _this spawn                    {                        scriptName 'ENH_Attribute_AmbientAnimations';                        params ['_unit'];                        waitUntil                        {                            sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}                        };                        _unit call ENH_fnc_ambientAnimations_exit;                    };                };                _this call ENH_fnc_ambientAnimations_play;            };";
 									class Value
 									{
 										class data
@@ -4056,7 +4056,7 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=224;
-					atlOffset=1.9073486e-06;
+					atlOffset=-110.95;
 				};
 				class Item1
 				{
@@ -4086,7 +4086,7 @@ class Mission
 								class Attribute0
 								{
 									property="ENH_AmbientAnimations";
-									expression="      if !(_value # 0 isEqualTo '') then      {        _value params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          if (alive _unit) then          {            [_unit, ''] remoteExec ['switchMove', 0];            _unit enableAI 'ANIM';          };          _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };";
+									expression="            if (_value # 0 != '') then            {                _value params ['_animSet', '_anims', '_canExit', '_attach'];                                _this setVariable ['ENH_ambientAnimations_anims', _anims];                _this disableAI 'ANIM';                if (_attach && !is3DEN) then                {                    private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];                    _this setVariable ['ENH_ambientAnimations_logic', _logic];                    [_this, _logic] call BIS_fnc_attachToRelative;                };                                ENH_fnc_ambientAnimations_play =                {                    params ['_unit'];                    private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);                    [_unit, _anim] remoteExec ['switchMove', 0];                };                                ENH_fnc_ambientAnimations_exit =                {                    params ['_unit'];                    if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};                    _unit setVariable ['ENH_ambientAnimations_exit', true];                    detach _unit;                    deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);                    if (alive _unit) then                    {                        [_unit, ''] remoteExec ['switchMove', 0];                        _unit enableAI 'ANIM';                    };                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];                    _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];                    _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];                };                                private _EHAnimDone = _this addEventHandler ['AnimDone',                    {                        params ['_unit'];                        if (alive _unit) then                        {                            _unit call ENH_fnc_ambientAnimations_play;                        }                        else                        {                            _unit call ENH_fnc_ambientAnimations_exit;                        };                    }                ];                _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                                if (_canExit && !is3DEN) then                {                    private _EHKilled = _this addEventHandler ['Killed',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHKilled', _EHKilled];                    private _EHDammaged = _this addEventHandler ['Dammaged',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHDammaged', _EHDammaged];                    _this spawn                    {                        scriptName 'ENH_Attribute_AmbientAnimations';                        params ['_unit'];                        waitUntil                        {                            sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}                        };                        _unit call ENH_fnc_ambientAnimations_exit;                    };                };                _this call ENH_fnc_ambientAnimations_play;            };";
 									class Value
 									{
 										class data
@@ -4192,7 +4192,7 @@ class Mission
 								class Attribute0
 								{
 									property="ENH_AmbientAnimations";
-									expression="      if !(_value # 0 isEqualTo '') then      {        _value params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          if (alive _unit) then          {            [_unit, ''] remoteExec ['switchMove', 0];            _unit enableAI 'ANIM';          };          _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };";
+									expression="            if (_value # 0 != '') then            {                _value params ['_animSet', '_anims', '_canExit', '_attach'];                                _this setVariable ['ENH_ambientAnimations_anims', _anims];                _this disableAI 'ANIM';                if (_attach && !is3DEN) then                {                    private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];                    _this setVariable ['ENH_ambientAnimations_logic', _logic];                    [_this, _logic] call BIS_fnc_attachToRelative;                };                                ENH_fnc_ambientAnimations_play =                {                    params ['_unit'];                    private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);                    [_unit, _anim] remoteExec ['switchMove', 0];                };                                ENH_fnc_ambientAnimations_exit =                {                    params ['_unit'];                    if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};                    _unit setVariable ['ENH_ambientAnimations_exit', true];                    detach _unit;                    deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);                    if (alive _unit) then                    {                        [_unit, ''] remoteExec ['switchMove', 0];                        _unit enableAI 'ANIM';                    };                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];                    _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];                    _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];                };                                private _EHAnimDone = _this addEventHandler ['AnimDone',                    {                        params ['_unit'];                        if (alive _unit) then                        {                            _unit call ENH_fnc_ambientAnimations_play;                        }                        else                        {                            _unit call ENH_fnc_ambientAnimations_exit;                        };                    }                ];                _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                                if (_canExit && !is3DEN) then                {                    private _EHKilled = _this addEventHandler ['Killed',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHKilled', _EHKilled];                    private _EHDammaged = _this addEventHandler ['Dammaged',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHDammaged', _EHDammaged];                    _this spawn                    {                        scriptName 'ENH_Attribute_AmbientAnimations';                        params ['_unit'];                        waitUntil                        {                            sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}                        };                        _unit call ENH_fnc_ambientAnimations_exit;                    };                };                _this call ENH_fnc_ambientAnimations_play;            };";
 									class Value
 									{
 										class data
@@ -4283,6 +4283,7 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=205;
+					atlOffset=-110.95;
 				};
 				class Item2
 				{
@@ -4312,7 +4313,7 @@ class Mission
 								class Attribute0
 								{
 									property="ENH_AmbientAnimations";
-									expression="      if !(_value # 0 isEqualTo '') then      {        _value params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          if (alive _unit) then          {            [_unit, ''] remoteExec ['switchMove', 0];            _unit enableAI 'ANIM';          };          _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };";
+									expression="            if (_value # 0 != '') then            {                _value params ['_animSet', '_anims', '_canExit', '_attach'];                                _this setVariable ['ENH_ambientAnimations_anims', _anims];                _this disableAI 'ANIM';                if (_attach && !is3DEN) then                {                    private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];                    _this setVariable ['ENH_ambientAnimations_logic', _logic];                    [_this, _logic] call BIS_fnc_attachToRelative;                };                                ENH_fnc_ambientAnimations_play =                {                    params ['_unit'];                    private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);                    [_unit, _anim] remoteExec ['switchMove', 0];                };                                ENH_fnc_ambientAnimations_exit =                {                    params ['_unit'];                    if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};                    _unit setVariable ['ENH_ambientAnimations_exit', true];                    detach _unit;                    deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);                    if (alive _unit) then                    {                        [_unit, ''] remoteExec ['switchMove', 0];                        _unit enableAI 'ANIM';                    };                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];                    _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];                    _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];                };                                private _EHAnimDone = _this addEventHandler ['AnimDone',                    {                        params ['_unit'];                        if (alive _unit) then                        {                            _unit call ENH_fnc_ambientAnimations_play;                        }                        else                        {                            _unit call ENH_fnc_ambientAnimations_exit;                        };                    }                ];                _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                                if (_canExit && !is3DEN) then                {                    private _EHKilled = _this addEventHandler ['Killed',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHKilled', _EHKilled];                    private _EHDammaged = _this addEventHandler ['Dammaged',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHDammaged', _EHDammaged];                    _this spawn                    {                        scriptName 'ENH_Attribute_AmbientAnimations';                        params ['_unit'];                        waitUntil                        {                            sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}                        };                        _unit call ENH_fnc_ambientAnimations_exit;                    };                };                _this call ENH_fnc_ambientAnimations_play;            };";
 									class Value
 									{
 										class data
@@ -4418,7 +4419,7 @@ class Mission
 								class Attribute0
 								{
 									property="ENH_AmbientAnimations";
-									expression="      if !(_value # 0 isEqualTo '') then      {        _value params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          if (alive _unit) then          {            [_unit, ''] remoteExec ['switchMove', 0];            _unit enableAI 'ANIM';          };          _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };";
+									expression="            if (_value # 0 != '') then            {                _value params ['_animSet', '_anims', '_canExit', '_attach'];                                _this setVariable ['ENH_ambientAnimations_anims', _anims];                _this disableAI 'ANIM';                if (_attach && !is3DEN) then                {                    private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];                    _this setVariable ['ENH_ambientAnimations_logic', _logic];                    [_this, _logic] call BIS_fnc_attachToRelative;                };                                ENH_fnc_ambientAnimations_play =                {                    params ['_unit'];                    private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);                    [_unit, _anim] remoteExec ['switchMove', 0];                };                                ENH_fnc_ambientAnimations_exit =                {                    params ['_unit'];                    if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};                    _unit setVariable ['ENH_ambientAnimations_exit', true];                    detach _unit;                    deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);                    if (alive _unit) then                    {                        [_unit, ''] remoteExec ['switchMove', 0];                        _unit enableAI 'ANIM';                    };                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];                    _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];                    _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];                };                                private _EHAnimDone = _this addEventHandler ['AnimDone',                    {                        params ['_unit'];                        if (alive _unit) then                        {                            _unit call ENH_fnc_ambientAnimations_play;                        }                        else                        {                            _unit call ENH_fnc_ambientAnimations_exit;                        };                    }                ];                _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                                if (_canExit && !is3DEN) then                {                    private _EHKilled = _this addEventHandler ['Killed',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHKilled', _EHKilled];                    private _EHDammaged = _this addEventHandler ['Dammaged',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHDammaged', _EHDammaged];                    _this spawn                    {                        scriptName 'ENH_Attribute_AmbientAnimations';                        params ['_unit'];                        waitUntil                        {                            sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}                        };                        _unit call ENH_fnc_ambientAnimations_exit;                    };                };                _this call ENH_fnc_ambientAnimations_play;            };";
 									class Value
 									{
 										class data
@@ -4509,6 +4510,7 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=220;
+					atlOffset=-110.95;
 				};
 				class Item3
 				{
@@ -4523,7 +4525,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={4264,17.001438,4141.0498};
-								angles[]={0,5.0614567,-0};
+								angles[]={0,5.0614567,0};
 							};
 							side="Civilian";
 							flags=7;
@@ -4538,7 +4540,7 @@ class Mission
 								class Attribute0
 								{
 									property="ENH_AmbientAnimations";
-									expression="      if !(_value # 0 isEqualTo '') then      {        _value params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          if (alive _unit) then          {            [_unit, ''] remoteExec ['switchMove', 0];            _unit enableAI 'ANIM';          };          _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };";
+									expression="            if (_value # 0 != '') then            {                _value params ['_animSet', '_anims', '_canExit', '_attach'];                                _this setVariable ['ENH_ambientAnimations_anims', _anims];                _this disableAI 'ANIM';                if (_attach && !is3DEN) then                {                    private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];                    _this setVariable ['ENH_ambientAnimations_logic', _logic];                    [_this, _logic] call BIS_fnc_attachToRelative;                };                                ENH_fnc_ambientAnimations_play =                {                    params ['_unit'];                    private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);                    [_unit, _anim] remoteExec ['switchMove', 0];                };                                ENH_fnc_ambientAnimations_exit =                {                    params ['_unit'];                    if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};                    _unit setVariable ['ENH_ambientAnimations_exit', true];                    detach _unit;                    deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);                    if (alive _unit) then                    {                        [_unit, ''] remoteExec ['switchMove', 0];                        _unit enableAI 'ANIM';                    };                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];                    _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];                    _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];                };                                private _EHAnimDone = _this addEventHandler ['AnimDone',                    {                        params ['_unit'];                        if (alive _unit) then                        {                            _unit call ENH_fnc_ambientAnimations_play;                        }                        else                        {                            _unit call ENH_fnc_ambientAnimations_exit;                        };                    }                ];                _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                                if (_canExit && !is3DEN) then                {                    private _EHKilled = _this addEventHandler ['Killed',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHKilled', _EHKilled];                    private _EHDammaged = _this addEventHandler ['Dammaged',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHDammaged', _EHDammaged];                    _this spawn                    {                        scriptName 'ENH_Attribute_AmbientAnimations';                        params ['_unit'];                        waitUntil                        {                            sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}                        };                        _unit call ENH_fnc_ambientAnimations_exit;                    };                };                _this call ENH_fnc_ambientAnimations_play;            };";
 									class Value
 									{
 										class data
@@ -4629,7 +4631,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={4270,17.001438,4147.0498};
-								angles[]={0,4.625123,-0};
+								angles[]={0,4.625123,0};
 							};
 							side="Civilian";
 							flags=5;
@@ -4644,7 +4646,7 @@ class Mission
 								class Attribute0
 								{
 									property="ENH_AmbientAnimations";
-									expression="      if !(_value # 0 isEqualTo '') then      {        _value params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          if (alive _unit) then          {            [_unit, ''] remoteExec ['switchMove', 0];            _unit enableAI 'ANIM';          };          _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };";
+									expression="            if (_value # 0 != '') then            {                _value params ['_animSet', '_anims', '_canExit', '_attach'];                                _this setVariable ['ENH_ambientAnimations_anims', _anims];                _this disableAI 'ANIM';                if (_attach && !is3DEN) then                {                    private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];                    _this setVariable ['ENH_ambientAnimations_logic', _logic];                    [_this, _logic] call BIS_fnc_attachToRelative;                };                                ENH_fnc_ambientAnimations_play =                {                    params ['_unit'];                    private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);                    [_unit, _anim] remoteExec ['switchMove', 0];                };                                ENH_fnc_ambientAnimations_exit =                {                    params ['_unit'];                    if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};                    _unit setVariable ['ENH_ambientAnimations_exit', true];                    detach _unit;                    deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);                    if (alive _unit) then                    {                        [_unit, ''] remoteExec ['switchMove', 0];                        _unit enableAI 'ANIM';                    };                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];                    _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];                    _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];                };                                private _EHAnimDone = _this addEventHandler ['AnimDone',                    {                        params ['_unit'];                        if (alive _unit) then                        {                            _unit call ENH_fnc_ambientAnimations_play;                        }                        else                        {                            _unit call ENH_fnc_ambientAnimations_exit;                        };                    }                ];                _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                                if (_canExit && !is3DEN) then                {                    private _EHKilled = _this addEventHandler ['Killed',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHKilled', _EHKilled];                    private _EHDammaged = _this addEventHandler ['Dammaged',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHDammaged', _EHDammaged];                    _this spawn                    {                        scriptName 'ENH_Attribute_AmbientAnimations';                        params ['_unit'];                        waitUntil                        {                            sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}                        };                        _unit call ENH_fnc_ambientAnimations_exit;                    };                };                _this call ENH_fnc_ambientAnimations_play;            };";
 									class Value
 									{
 										class data
@@ -4743,6 +4745,7 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=537;
+					atlOffset=-110.95;
 				};
 				class Item4
 				{
@@ -4772,7 +4775,7 @@ class Mission
 								class Attribute0
 								{
 									property="ENH_AmbientAnimations";
-									expression="      if !(_value # 0 isEqualTo '') then      {        _value params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          if (alive _unit) then          {            [_unit, ''] remoteExec ['switchMove', 0];            _unit enableAI 'ANIM';          };          _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };";
+									expression="            if (_value # 0 != '') then            {                _value params ['_animSet', '_anims', '_canExit', '_attach'];                                _this setVariable ['ENH_ambientAnimations_anims', _anims];                _this disableAI 'ANIM';                if (_attach && !is3DEN) then                {                    private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];                    _this setVariable ['ENH_ambientAnimations_logic', _logic];                    [_this, _logic] call BIS_fnc_attachToRelative;                };                                ENH_fnc_ambientAnimations_play =                {                    params ['_unit'];                    private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);                    [_unit, _anim] remoteExec ['switchMove', 0];                };                                ENH_fnc_ambientAnimations_exit =                {                    params ['_unit'];                    if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};                    _unit setVariable ['ENH_ambientAnimations_exit', true];                    detach _unit;                    deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);                    if (alive _unit) then                    {                        [_unit, ''] remoteExec ['switchMove', 0];                        _unit enableAI 'ANIM';                    };                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];                    _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];                    _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];                };                                private _EHAnimDone = _this addEventHandler ['AnimDone',                    {                        params ['_unit'];                        if (alive _unit) then                        {                            _unit call ENH_fnc_ambientAnimations_play;                        }                        else                        {                            _unit call ENH_fnc_ambientAnimations_exit;                        };                    }                ];                _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                                if (_canExit && !is3DEN) then                {                    private _EHKilled = _this addEventHandler ['Killed',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHKilled', _EHKilled];                    private _EHDammaged = _this addEventHandler ['Dammaged',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHDammaged', _EHDammaged];                    _this spawn                    {                        scriptName 'ENH_Attribute_AmbientAnimations';                        params ['_unit'];                        waitUntil                        {                            sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}                        };                        _unit call ENH_fnc_ambientAnimations_exit;                    };                };                _this call ENH_fnc_ambientAnimations_play;            };";
 									class Value
 									{
 										class data
@@ -4878,7 +4881,7 @@ class Mission
 								class Attribute0
 								{
 									property="ENH_AmbientAnimations";
-									expression="      if !(_value # 0 isEqualTo '') then      {        _value params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          if (alive _unit) then          {            [_unit, ''] remoteExec ['switchMove', 0];            _unit enableAI 'ANIM';          };          _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };";
+									expression="            if (_value # 0 != '') then            {                _value params ['_animSet', '_anims', '_canExit', '_attach'];                                _this setVariable ['ENH_ambientAnimations_anims', _anims];                _this disableAI 'ANIM';                if (_attach && !is3DEN) then                {                    private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];                    _this setVariable ['ENH_ambientAnimations_logic', _logic];                    [_this, _logic] call BIS_fnc_attachToRelative;                };                                ENH_fnc_ambientAnimations_play =                {                    params ['_unit'];                    private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);                    [_unit, _anim] remoteExec ['switchMove', 0];                };                                ENH_fnc_ambientAnimations_exit =                {                    params ['_unit'];                    if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};                    _unit setVariable ['ENH_ambientAnimations_exit', true];                    detach _unit;                    deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);                    if (alive _unit) then                    {                        [_unit, ''] remoteExec ['switchMove', 0];                        _unit enableAI 'ANIM';                    };                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];                    _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];                    _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];                };                                private _EHAnimDone = _this addEventHandler ['AnimDone',                    {                        params ['_unit'];                        if (alive _unit) then                        {                            _unit call ENH_fnc_ambientAnimations_play;                        }                        else                        {                            _unit call ENH_fnc_ambientAnimations_exit;                        };                    }                ];                _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                                if (_canExit && !is3DEN) then                {                    private _EHKilled = _this addEventHandler ['Killed',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHKilled', _EHKilled];                    private _EHDammaged = _this addEventHandler ['Dammaged',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHDammaged', _EHDammaged];                    _this spawn                    {                        scriptName 'ENH_Attribute_AmbientAnimations';                        params ['_unit'];                        waitUntil                        {                            sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}                        };                        _unit call ENH_fnc_ambientAnimations_exit;                    };                };                _this call ENH_fnc_ambientAnimations_play;            };";
 									class Value
 									{
 										class data
@@ -4969,10 +4972,11 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=762;
+					atlOffset=-110.95;
 				};
 			};
 			id=241;
-			atlOffset=1.85993;
+			atlOffset=-110.95;
 		};
 		class Item3
 		{
@@ -6743,7 +6747,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3434,12.186439,4587.0498};
-						angles[]={0,3.6651919,-0};
+						angles[]={0,3.6651919,0};
 					};
 					side="Independent";
 					flags=7;
@@ -6778,7 +6782,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3432.1699,12.497845,4593.8799};
-						angles[]={0,3.6651919,-0};
+						angles[]={0,3.6651919,0};
 					};
 					side="Independent";
 					flags=5;
@@ -6812,7 +6816,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3438,12.11144,4587.0498};
-						angles[]={0,3.6651919,-0};
+						angles[]={0,3.6651919,0};
 					};
 					side="Independent";
 					flags=5;
@@ -6847,7 +6851,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3436.1699,12.613827,4593.8799};
-						angles[]={0,3.6651919,-0};
+						angles[]={0,3.6651919,0};
 					};
 					side="Independent";
 					flags=5;
@@ -8040,7 +8044,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3486,16.688938,1975.05};
-						angles[]={0,5.497788,-0};
+						angles[]={0,5.497788,0};
 					};
 					side="Independent";
 					flags=7;
@@ -8535,7 +8539,7 @@ class Mission
 						class Attribute0
 						{
 							property="ENH_markerHideOnStart";
-							expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
+							expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
 							class Value
 							{
 								class data
@@ -8565,7 +8569,7 @@ class Mission
 						class Attribute0
 						{
 							property="ENH_markerHideOnStart";
-							expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
+							expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
 							class Value
 							{
 								class data
@@ -8595,7 +8599,7 @@ class Mission
 						class Attribute0
 						{
 							property="ENH_markerHideOnStart";
-							expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
+							expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
 							class Value
 							{
 								class data
@@ -8625,7 +8629,7 @@ class Mission
 						class Attribute0
 						{
 							property="ENH_markerHideOnStart";
-							expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
+							expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
 							class Value
 							{
 								class data
@@ -8654,7 +8658,7 @@ class Mission
 						class Attribute0
 						{
 							property="ENH_markerHideOnStart";
-							expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
+							expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
 							class Value
 							{
 								class data
@@ -8682,7 +8686,7 @@ class Mission
 						class Attribute0
 						{
 							property="ENH_markerHideOnStart";
-							expression="        if (!isServer || is3DEN || !_value) exitWith {};        missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];        _this setMarkerAlpha 0";
+							expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
 							class Value
 							{
 								class data
@@ -8827,7 +8831,7 @@ class Mission
 					};
 					id=436;
 					type="O_Tura_enforcer_lxWS";
-					atlOffset=-9.5367432e-07;
+					atlOffset=-1.9073486e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8910,7 +8914,6 @@ class Mission
 					};
 					id=438;
 					type="O_Tura_watcher_lxWS";
-					atlOffset=-9.5367432e-07;
 				};
 				class Item3
 				{
@@ -8967,7 +8970,7 @@ class Mission
 				dynamicSimulation=1;
 			};
 			id=435;
-			atlOffset=-9.5367432e-07;
+			atlOffset=-1.9073486e-06;
 		};
 		class Item45
 		{
@@ -10284,7 +10287,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3333,17.985001,3959};
-				angles[]={-0,0,0.22131434};
+				angles[]={0,0,0.22131434};
 			};
 			id=470;
 			type="grad_civs_common_ExclusionZone";
@@ -11550,7 +11553,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3550.4871,24.081783,4262.1274};
-						angles[]={-0,0,6.2631865};
+						angles[]={0,0,6.2631865};
 					};
 					side="Independent";
 					flags=2;
@@ -11595,7 +11598,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3551.0337,24.069412,4263};
-				angles[]={-0,0,6.2631865};
+				angles[]={0,0,6.2631865};
 			};
 			side="Independent";
 			flags=6;
@@ -12119,7 +12122,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4047,15.863938,4362.0498};
-						angles[]={0,1.5707963,-0};
+						angles[]={0,1.5707963,0};
 					};
 					side="Independent";
 					flags=7;
@@ -12154,7 +12157,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4042,15.908939,4357.0498};
-						angles[]={0,1.5707963,-0};
+						angles[]={0,1.5707963,0};
 					};
 					side="Independent";
 					flags=5;
@@ -12188,7 +12191,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4033.4636,15.798338,4362.0708};
-						angles[]={0,1.5707963,-0};
+						angles[]={0,1.5707963,0};
 					};
 					side="Independent";
 					flags=5;
@@ -12223,7 +12226,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4028.4636,15.787469,4357.0708};
-						angles[]={0,1.5707963,-0};
+						angles[]={0,1.5707963,0};
 					};
 					side="Independent";
 					flags=5;
@@ -12257,7 +12260,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4039.9329,15.860067,4361.4634};
-						angles[]={0,1.5707963,-0};
+						angles[]={0,1.5707963,0};
 					};
 					side="Independent";
 					flags=5;
@@ -12292,7 +12295,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4034.9329,15.850167,4356.4634};
-						angles[]={0,1.5707963,-0};
+						angles[]={0,1.5707963,0};
 					};
 					side="Independent";
 					flags=5;
@@ -12398,197 +12401,6 @@ class Mission
 		};
 		class Item82
 		{
-			dataType="Trigger";
-			position[]={4167,15.5725,4689};
-			class Attributes
-			{
-				name="convertINDtoEAST_1";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=150;
-				sizeB=150;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=596;
-			type="EmptyDetectorArea10x10";
-		};
-		class Item83
-		{
-			dataType="Trigger";
-			position[]={3911,15.737499,4202};
-			class Attributes
-			{
-				name="convertINDtoEAST_2";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=75;
-				sizeB=75;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=597;
-			type="EmptyDetectorArea10x10";
-			atlOffset=-9.5367432e-07;
-		};
-		class Item84
-		{
-			dataType="Trigger";
-			position[]={4182,17.215,3866};
-			class Attributes
-			{
-				name="convertINDtoEAST_3";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=100;
-				sizeB=100;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=598;
-			type="EmptyDetectorArea10x10";
-		};
-		class Item85
-		{
-			dataType="Trigger";
-			position[]={4419,18.432501,3855};
-			class Attributes
-			{
-				name="convertINDtoEAST_4";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=100;
-				sizeB=100;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=599;
-			type="EmptyDetectorArea10x10";
-		};
-		class Item86
-		{
-			dataType="Trigger";
-			position[]={4089,23.664999,3654};
-			class Attributes
-			{
-				name="convertINDtoEAST_5";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=100;
-				sizeB=100;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=600;
-			type="EmptyDetectorArea10x10";
-		};
-		class Item87
-		{
-			dataType="Trigger";
-			position[]={4330,17.02,3424};
-			class Attributes
-			{
-				name="convertINDtoEAST_6";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=100;
-				sizeB=100;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=601;
-			type="EmptyDetectorArea10x10";
-		};
-		class Item88
-		{
-			dataType="Trigger";
-			position[]={5010,33.192501,1921};
-			class Attributes
-			{
-				name="convertINDtoEAST_7";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=100;
-				sizeB=100;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=602;
-			type="EmptyDetectorArea10x10";
-		};
-		class Item89
-		{
-			dataType="Trigger";
-			position[]={3979,19.844999,3341};
-			class Attributes
-			{
-				name="convertINDtoEAST_8";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=100;
-				sizeB=100;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=603;
-			type="EmptyDetectorArea10x10";
-		};
-		class Item90
-		{
-			dataType="Trigger";
-			position[]={3642,12.17,2924};
-			class Attributes
-			{
-				name="convertINDtoEAST_9";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=100;
-				sizeB=100;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=604;
-			type="EmptyDetectorArea10x10";
-		};
-		class Item91
-		{
-			dataType="Trigger";
-			position[]={3819,11.105,2670};
-			class Attributes
-			{
-				name="convertINDtoEAST_10";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=100;
-				sizeB=100;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=605;
-			type="EmptyDetectorArea10x10";
-		};
-		class Item92
-		{
 			dataType="Group";
 			side="Independent";
 			class Entities
@@ -12600,7 +12412,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4316,17.171438,4112.0498};
-						angles[]={0,4.625123,-0};
+						angles[]={0,4.625123,0};
 					};
 					side="Independent";
 					flags=7;
@@ -12618,7 +12430,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4320.5454,17.318443,4117.4668};
-						angles[]={0,4.625123,-0};
+						angles[]={0,4.625123,0};
 					};
 					side="Independent";
 					flags=5;
@@ -12636,7 +12448,7 @@ class Mission
 			};
 			id=606;
 		};
-		class Item93
+		class Item83
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -12705,27 +12517,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item94
-		{
-			dataType="Trigger";
-			position[]={4304,17.569,4138};
-			class Attributes
-			{
-				name="convertINDtoEAST_11";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=75;
-				sizeB=75;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=610;
-			type="EmptyDetectorArea10x10";
-			atlOffset=0.00026893616;
-		};
-		class Item95
+		class Item84
 		{
 			dataType="Group";
 			side="Independent";
@@ -12806,7 +12598,7 @@ class Mission
 			};
 			id=613;
 		};
-		class Item96
+		class Item85
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -12876,7 +12668,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item97
+		class Item86
 		{
 			dataType="Group";
 			side="Independent";
@@ -13022,7 +12814,7 @@ class Mission
 			};
 			id=618;
 		};
-		class Item98
+		class Item87
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -13091,25 +12883,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item99
-		{
-			dataType="Trigger";
-			position[]={4401,17.462999,4214};
-			class Attributes
-			{
-				name="convertINDtoEAST_13";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=622;
-			type="EmptyDetectorArea10x10";
-			atlOffset=0.49300003;
-		};
-		class Item100
+		class Item88
 		{
 			dataType="Group";
 			side="Independent";
@@ -13122,7 +12896,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3952,16.331438,4040.05};
-						angles[]={0,7.0780527e-07,-0};
+						angles[]={0,7.0780527e-07,0};
 					};
 					side="Independent";
 					flags=7;
@@ -13140,7 +12914,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3957.0002,16.336441,4035.0498};
-						angles[]={0,7.0780527e-07,-0};
+						angles[]={0,7.0780527e-07,0};
 					};
 					side="Independent";
 					flags=5;
@@ -13159,7 +12933,7 @@ class Mission
 			};
 			id=623;
 		};
-		class Item101
+		class Item89
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -13229,25 +13003,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item102
-		{
-			dataType="Trigger";
-			position[]={3956,16.859999,4062};
-			class Attributes
-			{
-				name="convertINDtoEAST_14";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=627;
-			type="EmptyDetectorArea10x10";
-			atlOffset=0.54999924;
-		};
-		class Item103
+		class Item90
 		{
 			dataType="Group";
 			side="East";
@@ -13354,7 +13110,7 @@ class Mission
 			};
 			id=628;
 		};
-		class Item104
+		class Item91
 		{
 			dataType="Object";
 			class PositionInfo
@@ -13388,7 +13144,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item105
+		class Item92
 		{
 			dataType="Trigger";
 			position[]={4265.689,17,4143.0918};
@@ -13407,7 +13163,7 @@ class Mission
 			id=634;
 			type="EmptyDetectorArea10x10";
 		};
-		class Item106
+		class Item93
 		{
 			dataType="Group";
 			side="East";
@@ -13420,7 +13176,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4606,18.136438,4161.0498};
-						angles[]={0,3.2288592,-0};
+						angles[]={0,3.2288592,0};
 					};
 					side="East";
 					flags=7;
@@ -13438,7 +13194,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4601.4546,18.054274,4166.4668};
-						angles[]={0,3.2288592,-0};
+						angles[]={0,3.2288592,0};
 					};
 					side="East";
 					flags=5;
@@ -13456,7 +13212,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4611.417,18.203106,4165.5952};
-						angles[]={0,3.2288592,-0};
+						angles[]={0,3.2288592,0};
 					};
 					side="East";
 					flags=5;
@@ -13475,7 +13231,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4596.9097,18.026575,4171.8833};
-						angles[]={0,3.2288592,-0};
+						angles[]={0,3.2288592,0};
 					};
 					side="East";
 					flags=5;
@@ -13493,7 +13249,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4616.8335,18.14036,4170.1401};
-						angles[]={0,3.2288592,-0};
+						angles[]={0,3.2288592,0};
 					};
 					side="East";
 					flags=5;
@@ -13512,7 +13268,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4592.3643,17.983261,4177.3003};
-						angles[]={0,3.2288592,-0};
+						angles[]={0,3.2288592,0};
 					};
 					side="East";
 					flags=5;
@@ -13531,7 +13287,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4622.2505,18.428198,4174.6855};
-						angles[]={0,3.2288592,-0};
+						angles[]={0,3.2288592,0};
 					};
 					side="East";
 					flags=5;
@@ -13550,7 +13306,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4587.8193,17.943247,4182.7168};
-						angles[]={0,3.2288592,-0};
+						angles[]={0,3.2288592,0};
 					};
 					side="East";
 					flags=5;
@@ -13662,7 +13418,7 @@ class Mission
 			};
 			id=635;
 		};
-		class Item107
+		class Item94
 		{
 			dataType="Group";
 			side="East";
@@ -13951,7 +13707,7 @@ class Mission
 			};
 			id=644;
 		};
-		class Item108
+		class Item95
 		{
 			dataType="Group";
 			side="East";
@@ -14014,7 +13770,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4490.3838,54.543926,5724.0059};
-						angles[]={0,0.87266457,-0};
+						angles[]={0,0.87266457,0};
 					};
 					side="East";
 					flags=5;
@@ -14034,7 +13790,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4483.9561,54.384953,5731.666};
-						angles[]={0,0.87266457,-0};
+						angles[]={0,0.87266457,0};
 					};
 					side="East";
 					flags=5;
@@ -14053,7 +13809,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4489.7676,55.172756,5716.9614};
-						angles[]={0,0.87266457,-0};
+						angles[]={0,0.87266457,0};
 					};
 					side="East";
 					flags=5;
@@ -14072,7 +13828,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4476.9116,55.029766,5732.2822};
-						angles[]={0,0.87266457,-0};
+						angles[]={0,0.87266457,0};
 					};
 					side="East";
 					flags=5;
@@ -14092,7 +13848,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4489.1514,55.84531,5709.9175};
-						angles[]={0,0.87266457,-0};
+						angles[]={0,0.87266457,0};
 					};
 					side="East";
 					flags=5;
@@ -14111,7 +13867,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4469.8677,55.44368,5732.8984};
-						angles[]={0,0.87266457,-0};
+						angles[]={0,0.87266457,0};
 					};
 					side="East";
 					flags=5;
@@ -14130,7 +13886,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4488.5347,56.697601,5702.873};
-						angles[]={0,0.87266457,-0};
+						angles[]={0,0.87266457,0};
 					};
 					side="East";
 					flags=5;
@@ -14179,7 +13935,7 @@ class Mission
 			};
 			id=668;
 		};
-		class Item109
+		class Item96
 		{
 			dataType="Group";
 			side="East";
@@ -14369,7 +14125,7 @@ class Mission
 			};
 			id=677;
 		};
-		class Item110
+		class Item97
 		{
 			dataType="Trigger";
 			position[]={4808,29.985001,6143};
@@ -14388,7 +14144,7 @@ class Mission
 			id=690;
 			type="EmptyDetectorArea10x10";
 		};
-		class Item111
+		class Item98
 		{
 			dataType="Group";
 			side="Independent";
@@ -14474,13 +14230,13 @@ class Mission
 			id=733;
 			atlOffset=0.57250023;
 		};
-		class Item112
+		class Item99
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
 				position[]={4215,17,4283};
-				angles[]={-0,1.8431734,0};
+				angles[]={0,1.8431734,0};
 			};
 			areaSize[]={25,0,25};
 			flags=1;
@@ -14544,27 +14300,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item113
-		{
-			dataType="Trigger";
-			position[]={4214,17.002501,4279};
-			class Attributes
-			{
-				name="convertINDtoEAST_15";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=100;
-				sizeB=100;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
-			};
-			id=737;
-			type="EmptyDetectorArea10x10";
-			atlOffset=0.58249855;
-		};
-		class Item114
+		class Item100
 		{
 			dataType="Group";
 			side="East";
@@ -14815,6 +14551,7 @@ class Mission
 					showWP="NEVER";
 					id=760;
 					type="SeekAndDestroy";
+					atlOffset=9.5367432e-07;
 				};
 			};
 			class Attributes
@@ -14826,7 +14563,7 @@ class Mission
 			};
 			id=747;
 		};
-		class Item115
+		class Item101
 		{
 			dataType="Trigger";
 			position[]={3959.219,15.620301,4280.2129};
@@ -14846,7 +14583,7 @@ class Mission
 			type="EmptyDetectorArea10x10";
 			atlOffset=-0.020999908;
 		};
-		class Item116
+		class Item102
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -14859,7 +14596,7 @@ class Mission
 			id=766;
 			atlOffset=-0.00049972534;
 		};
-		class Item117
+		class Item103
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -14871,7 +14608,7 @@ class Mission
 			description="Entire group probability based on leader presence.";
 			id=767;
 		};
-		class Item118
+		class Item104
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -14884,7 +14621,7 @@ class Mission
 			id=768;
 			atlOffset=-0.00043869019;
 		};
-		class Item119
+		class Item105
 		{
 			dataType="Group";
 			side="Independent";
@@ -15034,7 +14771,7 @@ class Mission
 			};
 			id=772;
 		};
-		class Item120
+		class Item106
 		{
 			dataType="Object";
 			class PositionInfo
@@ -15069,13 +14806,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item121
+		class Item107
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={3438.8611,24.572802,4059.2629};
-				angles[]={-0,4.0142574,0};
+				angles[]={0,4.0142574,0};
 			};
 			side="Independent";
 			flags=4;
@@ -15103,7 +14840,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item122
+		class Item108
 		{
 			dataType="Object";
 			class PositionInfo
@@ -15138,7 +14875,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item123
+		class Item109
 		{
 			dataType="Group";
 			side="Independent";
@@ -15245,7 +14982,7 @@ class Mission
 			id=796;
 			atlOffset=-0.00026702881;
 		};
-		class Item124
+		class Item110
 		{
 			dataType="Group";
 			side="Independent";
@@ -15258,7 +14995,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3438.8611,22.001438,4059.3132};
-						angles[]={-0,4.0142574,0};
+						angles[]={0,4.0142574,0};
 					};
 					side="Independent";
 					flags=4;
@@ -15274,7 +15011,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3438.8611,24.57424,4059.3132};
-						angles[]={-0,4.0142574,0};
+						angles[]={0,4.0142574,0};
 					};
 					side="Independent";
 					flags=2;
@@ -15291,7 +15028,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3438.8611,24.57424,4059.3132};
-						angles[]={-0,4.0142574,0};
+						angles[]={0,4.0142574,0};
 					};
 					side="Independent";
 					class Attributes
@@ -15350,7 +15087,7 @@ class Mission
 			};
 			id=798;
 		};
-		class Item125
+		class Item111
 		{
 			dataType="Group";
 			side="Independent";
@@ -15457,7 +15194,7 @@ class Mission
 			id=800;
 			atlOffset=7.4386597e-05;
 		};
-		class Item126
+		class Item112
 		{
 			dataType="Object";
 			class PositionInfo
@@ -15494,7 +15231,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item127
+		class Item113
 		{
 			dataType="Group";
 			side="Independent";
@@ -15600,24 +15337,303 @@ class Mission
 			id=807;
 			atlOffset=9.5367432e-06;
 		};
-		class Item128
+		class Item114
 		{
-			dataType="Trigger";
-			position[]={4080,36.990002,5928};
-			class Attributes
+			dataType="Layer";
+			name="Convert Triggers";
+			class Entities
 			{
-				name="convertINDtoEAST_12";
-				condition="thisList findIf {isPlayer _x} > -1";
-				onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
-				sizeA=250;
-				sizeB=250;
-				sizeC=25;
-				activationBy="GUER";
-				isServerOnly=1;
-				triggerInterval=4;
+				items=15;
+				class Item0
+				{
+					dataType="Trigger";
+					position[]={4167,15.5725,4689};
+					class Attributes
+					{
+						name="convertINDtoEAST_1";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=150;
+						sizeB=150;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=596;
+					type="EmptyDetectorArea10x10";
+				};
+				class Item1
+				{
+					dataType="Trigger";
+					position[]={3819,11.105,2670};
+					class Attributes
+					{
+						name="convertINDtoEAST_10";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=100;
+						sizeB=100;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=605;
+					type="EmptyDetectorArea10x10";
+					atlOffset=-9.5367432e-07;
+				};
+				class Item2
+				{
+					dataType="Trigger";
+					position[]={4304,17.569,4138};
+					class Attributes
+					{
+						name="convertINDtoEAST_11";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=75;
+						sizeB=75;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=610;
+					type="EmptyDetectorArea10x10";
+					atlOffset=0.00026893616;
+				};
+				class Item3
+				{
+					dataType="Trigger";
+					position[]={4080,36.990002,5928};
+					class Attributes
+					{
+						name="convertINDtoEAST_12";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=250;
+						sizeB=250;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=824;
+					type="EmptyDetectorArea10x10";
+				};
+				class Item4
+				{
+					dataType="Trigger";
+					position[]={4401,17.462999,4214};
+					class Attributes
+					{
+						name="convertINDtoEAST_13";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=622;
+					type="EmptyDetectorArea10x10";
+					atlOffset=0.49300003;
+				};
+				class Item5
+				{
+					dataType="Trigger";
+					position[]={3956,16.859999,4062};
+					class Attributes
+					{
+						name="convertINDtoEAST_14";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=627;
+					type="EmptyDetectorArea10x10";
+					atlOffset=0.54999924;
+				};
+				class Item6
+				{
+					dataType="Trigger";
+					position[]={4214,17.002501,4279};
+					class Attributes
+					{
+						name="convertINDtoEAST_15";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=100;
+						sizeB=100;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=737;
+					type="EmptyDetectorArea10x10";
+					atlOffset=0.58249855;
+				};
+				class Item7
+				{
+					dataType="Trigger";
+					position[]={3911,15.737499,4202};
+					class Attributes
+					{
+						name="convertINDtoEAST_2";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=75;
+						sizeB=75;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=597;
+					type="EmptyDetectorArea10x10";
+					atlOffset=-9.5367432e-07;
+				};
+				class Item8
+				{
+					dataType="Trigger";
+					position[]={4182,17.215,3866};
+					class Attributes
+					{
+						name="convertINDtoEAST_3";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=100;
+						sizeB=100;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=598;
+					type="EmptyDetectorArea10x10";
+				};
+				class Item9
+				{
+					dataType="Trigger";
+					position[]={4419,18.432501,3855};
+					class Attributes
+					{
+						name="convertINDtoEAST_4";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=100;
+						sizeB=100;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=599;
+					type="EmptyDetectorArea10x10";
+				};
+				class Item10
+				{
+					dataType="Trigger";
+					position[]={4089,23.664999,3654};
+					class Attributes
+					{
+						name="convertINDtoEAST_5";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=100;
+						sizeB=100;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=600;
+					type="EmptyDetectorArea10x10";
+				};
+				class Item11
+				{
+					dataType="Trigger";
+					position[]={4330,17.02,3424};
+					class Attributes
+					{
+						name="convertINDtoEAST_6";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=100;
+						sizeB=100;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=601;
+					type="EmptyDetectorArea10x10";
+				};
+				class Item12
+				{
+					dataType="Trigger";
+					position[]={5010,33.192501,1921};
+					class Attributes
+					{
+						name="convertINDtoEAST_7";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=100;
+						sizeB=100;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=602;
+					type="EmptyDetectorArea10x10";
+				};
+				class Item13
+				{
+					dataType="Trigger";
+					position[]={3979,19.844999,3341};
+					class Attributes
+					{
+						name="convertINDtoEAST_8";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=100;
+						sizeB=100;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=603;
+					type="EmptyDetectorArea10x10";
+				};
+				class Item14
+				{
+					dataType="Trigger";
+					position[]={3642,12.17,2924};
+					class Attributes
+					{
+						name="convertINDtoEAST_9";
+						condition="thisList findIf {isPlayer _x} > -1";
+						onActivation="_groups = [];" \n "{" \n "    if (!(isPlayer _x)) then {" \n "        if (!(group _x in _groups)) then {" \n "            _groups pushBack (group _x);" \n "        };" \n "    };" \n "} forEach thisList;" \n "" \n "{" \n "    _newGroup = createGroup opfor;" \n "    _newGroup copyWaypoints _x;" \n "    (units _x) joinSilent _newGroup;" \n "    deleteGroup _x;" \n "} forEach _groups;";
+						sizeA=100;
+						sizeB=100;
+						sizeC=25;
+						activationBy="GUER";
+						isServerOnly=1;
+						triggerInterval=4;
+					};
+					id=604;
+					type="EmptyDetectorArea10x10";
+				};
 			};
-			id=824;
-			type="EmptyDetectorArea10x10";
+			id=832;
+			atlOffset=3.752615;
 		};
 	};
 	class Connections
