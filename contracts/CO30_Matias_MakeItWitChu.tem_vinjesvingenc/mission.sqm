@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1050;
+		nextID=1056;
 	};
 	class MarkerIDProvider
 	{
@@ -20,11 +20,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=31;
+		nextID=32;
 	};
 	class Camera
 	{
-		pos[]={3394.3215,149.05032,1805.5576};
+		pos[]={3367.5193,162.73926,1849.8285};
 		dir[]={-0.46928337,-0.42301685,0.77514184};
 		up[]={-0.21908118,0.90612292,0.36186853};
 		aside[]={0.85545003,1.6833656e-07,0.51790249};
@@ -115,13 +115,14 @@ addons[]=
 	"vtf_kf_units",
 	"vtf_kf_vehicles",
 	"A3_Structures_F_Enoch_Military_Barracks",
-	"A3_Ui_F"
+	"A3_Ui_F",
+	"grad_civs_common"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=42;
+		items=43;
 		class Item0
 		{
 			className="tacu_proxy_russia";
@@ -400,6 +401,12 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item42
+		{
+			className="grad_civs_common";
+			name="common";
+			author="AUTHOR";
+		};
 	};
 };
 dlcs[]=
@@ -425,6 +432,130 @@ class CustomAttributes
 		name="Scenario";
 		class Attribute0
 		{
+			property="cba_settings_hash";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+					class value
+					{
+						items=4;
+						class Item0
+						{
+							class data
+							{
+								singleType="STRING";
+								value="#CBA_HASH#";
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								singleType="ARRAY";
+								class value
+								{
+									items=2;
+									class Item0
+									{
+										class data
+										{
+											singleType="STRING";
+											value="grad_civs_main_enabled";
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											singleType="STRING";
+											value="grad_civs_lifecycle_civclasses";
+										};
+									};
+								};
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								singleType="ARRAY";
+								class value
+								{
+									items=2;
+									class Item0
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="""CUP_C_C_Worker_01"",   ""CUP_C_C_Worker_02"",   ""CUP_C_C_Worker_04"",   ""CUP_C_C_Worker_03"",   ""CUP_C_C_Woodlander_04"",   ""CUP_C_C_Woodlander_03"",   ""CUP_C_C_Woodlander_02"",   ""CUP_C_C_Woodlander_01"",   ""CUP_C_C_Villager_03"",   ""CUP_C_C_Villager_02"",   ""CUP_C_C_Villager_01"",   ""CUP_C_C_Citizen_Random"",   ""CUP_C_C_Rocker_04"",   ""CUP_C_C_Rocker_02"",   ""CUP_C_C_Rocker_03"",   ""CUP_C_C_Rocker_01"",   ""CUP_C_C_Racketeer_03"",   ""CUP_C_C_Racketeer_02"",   ""CUP_C_C_Racketeer_04"",   ""CUP_C_C_Racketeer_01"",   ""CUP_C_C_Worker_05"",   ""CUP_C_C_Mechanic_02"",   ""CUP_C_C_Mechanic_03"",   ""CUP_C_C_Mechanic_01"",   ""CUP_C_C_Citizen_03"",   ""CUP_C_C_Citizen_04"",   ""CUP_C_C_Citizen_01"",   ""CUP_C_C_Citizen_02""";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+						class Item3
+						{
+							class data
+							{
+								nil=1;
+								singleType="ANY";
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="cba_settings_hasSettingsFile";
 			expression="false";
 			class Value
@@ -436,7 +567,7 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=1;
+		nAttributes=2;
 	};
 };
 class Mission
@@ -463,7 +594,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=16;
+		items=17;
 		class Item0
 		{
 			dataType="Layer";
@@ -16926,16 +17057,92 @@ class Mission
 			id=1049;
 			atlOffset=-0.00017547607;
 		};
+		class Item16
+		{
+			dataType="Layer";
+			name="GRAD Civs";
+			state=1;
+			class Entities
+			{
+				items=5;
+				class Item0
+				{
+					dataType="Trigger";
+					position[]={1184.1404,195.03278,5281.022};
+					class Attributes
+					{
+						sizeA=515.72729;
+						sizeB=510.55054;
+					};
+					id=1050;
+					type="EmptyDetectorAreaR250";
+					atlOffset=63.71283;
+				};
+				class Item1
+				{
+					dataType="Trigger";
+					position[]={5239.3252,65.742859,710.75555};
+					angle=0.55983901;
+					class Attributes
+					{
+						sizeA=892.1864;
+						sizeB=432.90283;
+					};
+					id=1051;
+					type="EmptyDetectorAreaR250";
+					atlOffset=63.71286;
+				};
+				class Item2
+				{
+					dataType="Trigger";
+					position[]={3381.1396,140.36691,1883.7609};
+					class Attributes
+					{
+						sizeA=174.86633;
+						sizeB=173.94458;
+					};
+					id=1052;
+					type="EmptyDetectorAreaR250";
+					atlOffset=24.606911;
+				};
+				class Item3
+				{
+					dataType="Trigger";
+					position[]={2488.6826,2.5259094,3558.0901};
+					class Attributes
+					{
+						sizeA=18.883789;
+						sizeB=29.375977;
+						sizeC=5;
+						isRectangle=1;
+					};
+					id=1053;
+					type="EmptyDetectorArea10x10";
+				};
+				class Item4
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={2376.1287,3.1522431,3608.2178};
+					};
+					id=1054;
+					type="grad_civs_common_ExclusionZone";
+				};
+			};
+			id=1055;
+			atlOffset=34.265953;
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=20;
+			nextID=24;
 		};
 		class Links
 		{
-			items=20;
+			items=24;
 			class Item0
 			{
 				linkID=0;
@@ -17131,6 +17338,46 @@ class Mission
 				linkID=19;
 				item0=1015;
 				item1=1043;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item20
+			{
+				linkID=20;
+				item0=1050;
+				item1=1054;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item21
+			{
+				linkID=21;
+				item0=1051;
+				item1=1054;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item22
+			{
+				linkID=22;
+				item0=1052;
+				item1=1054;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item23
+			{
+				linkID=23;
+				item0=1053;
+				item1=1054;
 				class CustomData
 				{
 					type="Sync";
