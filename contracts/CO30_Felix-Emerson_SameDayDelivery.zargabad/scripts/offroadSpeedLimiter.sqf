@@ -18,7 +18,7 @@
         continue;
     };
     private _speed = speed _vehicle;
-    private _max = 50; // Replace 5 with the m/s you want to limit to
+    private _max = 60; // Replace 6 with the m/s you want to limit to
     if (_speed > _max) then {
       _vehicle setVelocity ((velocity _vehicle) vectorMultiply ((_max / _speed) - 0.0001));
     };
