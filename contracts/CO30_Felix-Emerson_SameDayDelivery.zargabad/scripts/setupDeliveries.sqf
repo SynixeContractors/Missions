@@ -57,4 +57,4 @@ for "_i" from 0 to (_numOfDeliveries - 1) do {
 };
 
 // add delivery briefing once deliveries have been determined
-["FELIX_addBriefing", ["Deliveries", _text]] call CBA_fnc_globalEvent;
+["FELIX_addBriefing", ["Deliveries", _text]] call CBA_fnc_globalEventJIP;

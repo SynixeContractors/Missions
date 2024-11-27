@@ -6,8 +6,8 @@ FELIX_fnc_addCheckDeliveriesAction = compile preprocessFileLineNumbers "scripts\
 // setup deliveries immediately
 call FELIX_fnc_setupDeliveries;
 
-// add check delivery ACE action to object
-[checkDeliveriesBoard] call FELIX_fnc_addCheckDeliveriesAction;
+// add check deliveries ACE action to object for everyone
+["FELIX_addCheckDeliveriesAction", [checkDeliveriesBoard]] call CBA_fnc_globalEventJIP;
 
 // randomly delete triggers that would convert IND units to EAST
 private _triggers = (getMissionLayerEntities "Convert Triggers") select 0;

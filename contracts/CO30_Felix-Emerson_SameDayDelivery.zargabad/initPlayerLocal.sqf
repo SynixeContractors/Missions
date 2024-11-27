@@ -12,7 +12,5 @@
 "colorCorrections" ppEffectCommit 0;
 
 // scripts
-FELIX_fnc_offroadSpeedLimiter = compile preprocessFileLineNumbers "scripts\offroadSpeedLimiter.sqf";
-
-// start speed limiter per frame handler
-call FELIX_fnc_offroadSpeedLimiter;
+FELIX_fnc_addCheckDeliveriesAction = compile preprocessFileLineNumbers "scripts\addCheckDeliveriesAction.sqf";
+call compile preprocessFileLineNumbers "scripts\offroadSpeedLimiter.sqf";
