@@ -1,12 +1,6 @@
 // event handlers
-["FELIX_addBriefing", {
-    params ["_title", "_text"];
-    player createDiaryRecord ["Diary", [_title, _text]];
-}] call CBA_fnc_addEventHandler;
-
 ["FELIX_addCheckDeliveriesAction", {
-    params ["_obj"];
-    [_obj] call FELIX_fnc_addCheckDeliveriesAction;
+    call FELIX_fnc_addCheckDeliveriesAction;
 }] call CBA_fnc_addEventHandler;
 
 ["FELIX_checkDeliveries", {

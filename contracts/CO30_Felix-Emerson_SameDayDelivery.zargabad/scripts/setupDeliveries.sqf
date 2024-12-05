@@ -47,8 +47,7 @@ for "_i" from 0 to (_numOfDeliveries - 1) do {
     private _supplies = deliveries select _i;
     {
         // get display name of supply object
-        private _supplyConfig = configOf _x;
-        private _supplyName = [_supplyConfig] call BIS_fnc_displayName;
+        private _supplyName = [configOf _x] call BIS_fnc_displayName;
 
         _text = _text + _supplyName + "<br/>";
     } forEach _supplies;

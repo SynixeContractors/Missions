@@ -14,12 +14,11 @@
     if (isOnRoad _vehicle) then {
         continue;
     };
+    if (speed _vehicle < 60) then {
+        continue;
+    };
     if (surfaceType (getPos _vehicle) in ["#ZRBeton", "#ZRDlazbaOld"]) then {
         continue;
     };
-    private _speed = speed _vehicle;
-    private _max = 60; // Replace 6 with the m/s you want to limit to
-    if (_speed > _max) then {
-        _vehicle setVelocity ((velocity _vehicle) vectorMultiply ((_max / _speed) - 0.0001));
-    };
+    _vehicle setVelocity ((velocity _vehicle) vectorMultiply ((60 / speed _vehicle) - 0.0001));
 }] call CBA_fnc_addPerFrameHandler;
