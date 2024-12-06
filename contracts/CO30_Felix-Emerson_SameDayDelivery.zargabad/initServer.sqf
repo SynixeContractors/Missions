@@ -17,6 +17,12 @@ private _triggers = (getMissionLayerEntities "Convert Triggers") select 0;
     private _chance = random 1;
     // 50/50 chance a trigger gets deleted
     if (_chance > 0.5) then {
-        deleteVehicle _x;
-    }
+        private _trigger = _x;
+        // disable lambs on units in the trigger
+        allUnits select { _x inArea _trigger } apply {
+            _x setVariable ["lambs_danger_disableAI", true];
+            (group _x) setVariable ["lambs_danger_disableGroupAI", true];
+        };
+        deleteVehicle _trigger;
+    };
 } forEach _triggers;
