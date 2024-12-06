@@ -12,6 +12,15 @@
 "colorCorrections" ppEffectCommit 0;
 
 // event handlers
+["FELIX_hintSilent", {
+    params ["_text"];
+    hintSilent parseText format [_text];
+}] call CBA_fnc_addEventHandler;
+
+["FELIX_addCheckDeliveriesAction", {
+    call FELIX_fnc_addCheckDeliveriesAction;
+}] call CBA_fnc_addEventHandler;
+
 ["FELIX_addBriefing", {
     params ["_title", "_text"];
     player createDiaryRecord ["Diary", [_title, _text]];

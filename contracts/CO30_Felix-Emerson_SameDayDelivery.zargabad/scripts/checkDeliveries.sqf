@@ -30,4 +30,5 @@ for "_i" from 0 to (_numOfDeliveries - 1) do {
 };
 
 // give a hint to the player who called the function
+diag_log format ["%1 - %2", _player, _text];
 ["FELIX_hintSilent", [_text], _player] call CBA_fnc_targetEvent;
