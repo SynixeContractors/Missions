@@ -11,21 +11,10 @@
 "colorCorrections" ppEffectAdjust [1,1.02,-0.005,[0,0,0,0],[1,0.8,0.6,0.65],[0.199,0.587,0.115,0]];
 "colorCorrections" ppEffectCommit 0;
 
-// event handlers
-["FELIX_hintSilent", {
-    params ["_text"];
-    hintSilent parseText format [_text];
-}] call CBA_fnc_addEventHandler;
-
-["FELIX_addCheckDeliveriesAction", {
-    call FELIX_fnc_addCheckDeliveriesAction;
-}] call CBA_fnc_addEventHandler;
-
 ["FELIX_addBriefing", {
     params ["_title", "_text"];
     player createDiaryRecord ["Diary", [_title, _text]];
 }] call CBA_fnc_addEventHandler;
 
 // scripts
-FELIX_fnc_addCheckDeliveriesAction = compile preprocessFileLineNumbers "scripts\addCheckDeliveriesAction.sqf";
 call compile preprocessFileLineNumbers "scripts\offroadSpeedLimiter.sqf";
