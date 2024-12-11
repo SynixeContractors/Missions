@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=659;
+		nextID=688;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=32;
+		nextID=52;
 	};
 	class Camera
 	{
-		pos[]={12287.982,350.74796,11812.852};
-		dir[]={0.23554404,-0.46391404,0.85400486};
-		up[]={0.12334828,0.88587797,0.44722068};
-		aside[]={0.96401477,5.5115379e-09,-0.26588586};
+		pos[]={5317.6636,303.81723,14510.968};
+		dir[]={0.85728133,-0.2008794,0.47405759};
+		up[]={0.17579384,0.97961658,0.097210288};
+		aside[]={0.48392147,-7.788185e-08,-0.87511981};
 	};
 };
 binarizationWanted=0;
@@ -74,13 +74,14 @@ addons[]=
 	"A3_Structures_F_EPA_Items_Medical",
 	"A3_Structures_F_Civ_Constructions",
 	"A3_Structures_F_EPA_Civ_Camping",
-	"grad_civs_common"
+	"grad_civs_common",
+	"A3_Modules_F_Curator_Misc"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=27;
 		class Item0
 		{
 			className="A3_Structures_F_Bootcamp";
@@ -253,6 +254,13 @@ class AddonsMetaData
 			className="grad_civs_common";
 			name="common";
 			author="AUTHOR";
+		};
+		class Item26
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -439,7 +447,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=13;
+		items=11;
 		class Item0
 		{
 			dataType="Layer";
@@ -2317,7 +2325,7 @@ class Mission
 			state=1;
 			class Entities
 			{
-				items=14;
+				items=16;
 				class Item0
 				{
 					dataType="Group";
@@ -2498,6 +2506,7 @@ class Mission
 						};
 					};
 					id=302;
+					atlOffset=-283.63736;
 				};
 				class Item1
 				{
@@ -2641,6 +2650,7 @@ class Mission
 					{
 					};
 					id=313;
+					atlOffset=-283.63736;
 				};
 				class Item2
 				{
@@ -2784,6 +2794,7 @@ class Mission
 					{
 					};
 					id=322;
+					atlOffset=-283.63736;
 				};
 				class Item3
 				{
@@ -2862,6 +2873,7 @@ class Mission
 					{
 					};
 					id=560;
+					atlOffset=-283.63736;
 				};
 				class Item4
 				{
@@ -2941,6 +2953,7 @@ class Mission
 					{
 					};
 					id=565;
+					atlOffset=-283.63736;
 				};
 				class Item5
 				{
@@ -3019,6 +3032,7 @@ class Mission
 					{
 					};
 					id=573;
+					atlOffset=-283.63736;
 				};
 				class Item6
 				{
@@ -3428,9 +3442,145 @@ class Mission
 					type="TACU_African_North_V_O_M2HMG_Low";
 					atlOffset=0.0069580078;
 				};
+				class Item14
+				{
+					dataType="Group";
+					side="East";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={12474.291,315.20813,12466.437};
+							};
+							side="East";
+							flags=7;
+							class Attributes
+							{
+								rank="SERGEANT";
+							};
+							id=661;
+							type="TACU_African_North_U_O_Teamleader";
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={12479.291,314.83618,12461.437};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								skill=0.40000001;
+							};
+							id=662;
+							type="TACU_African_North_U_O_Medic";
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={12469.291,314.99356,12461.437};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								rank="SERGEANT";
+							};
+							id=663;
+							type="TACU_African_North_U_O_Rifleman";
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={12484.291,315.02133,12456.437};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								skill=0.44999999;
+								rank="CORPORAL";
+							};
+							id=664;
+							type="TACU_African_North_U_O_Grenadier";
+						};
+					};
+					class Attributes
+					{
+					};
+					id=660;
+					atlOffset=-283.63736;
+				};
+				class Item15
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={12446.115,315.75882,12539.959};
+						angles[]={6.2752519,0,0.0009765625};
+					};
+					areaSize[]={200,-1,200};
+					flags=1;
+					id=665;
+					type="lambs_wp_TaskPatrol";
+					atlOffset=3.0517578e-05;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="lambs_wp_WaypointCount";
+							expression="_this setVariable ['lambs_wp_WaypointCount', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=4;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="lambs_wp_enableReinforcement";
+							expression="_this setVariable ['lambs_wp_EnableReinforcement',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="lambs_wp_moveWaypoints";
+							expression="_this setVariable ['lambs_wp_MoveWaypoints',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
 			};
 			id=579;
-			atlOffset=0.81573486;
+			atlOffset=-74.53862;
 		};
 		class Item6
 		{
@@ -3439,7 +3589,7 @@ class Mission
 			state=1;
 			class Entities
 			{
-				items=60;
+				items=62;
 				class Item0
 				{
 					dataType="Group";
@@ -5551,9 +5701,144 @@ class Mission
 						nAttributes=3;
 					};
 				};
+				class Item60
+				{
+					dataType="Group";
+					side="East";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11684.651,370.16525,7842.5723};
+							};
+							side="East";
+							flags=7;
+							class Attributes
+							{
+								rank="SERGEANT";
+							};
+							id=680;
+							type="TACU_African_North_U_O_Teamleader";
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11693.457,369.17737,7843.5503};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								skill=0.40000001;
+							};
+							id=681;
+							type="TACU_African_North_U_O_Medic";
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11684.23,369.98691,7843.9902};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								rank="SERGEANT";
+							};
+							id=682;
+							type="TACU_African_North_U_O_Rifleman";
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11695.442,370.2652,7840.2427};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								skill=0.44999999;
+								rank="CORPORAL";
+							};
+							id=683;
+							type="TACU_African_North_U_O_Grenadier";
+						};
+					};
+					class Attributes
+					{
+					};
+					id=679;
+					atlOffset=-283.63736;
+				};
+				class Item61
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={11746.258,361.96964,7753.1729};
+						angles[]={0.18626457,0,6.1306443};
+					};
+					areaSize[]={200,-1,200};
+					flags=1;
+					id=678;
+					type="lambs_wp_TaskPatrol";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="lambs_wp_WaypointCount";
+							expression="_this setVariable ['lambs_wp_WaypointCount', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=4;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="lambs_wp_enableReinforcement";
+							expression="_this setVariable ['lambs_wp_EnableReinforcement',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="lambs_wp_moveWaypoints";
+							expression="_this setVariable ['lambs_wp_MoveWaypoints',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
 			};
 			id=580;
-			atlOffset=-90.288879;
+			atlOffset=-56.558563;
 		};
 		class Item7
 		{
@@ -5562,7 +5847,7 @@ class Mission
 			state=1;
 			class Entities
 			{
-				items=117;
+				items=121;
 				class Item0
 				{
 					dataType="Group";
@@ -8642,50 +8927,281 @@ class Mission
 						nAttributes=3;
 					};
 				};
+				class Item117
+				{
+					dataType="Group";
+					side="East";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={15597.537,349.0444,8197.3887};
+							};
+							side="East";
+							flags=7;
+							class Attributes
+							{
+								rank="SERGEANT";
+							};
+							id=667;
+							type="TACU_African_North_U_O_Teamleader";
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={15602.537,348.08765,8192.3887};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								skill=0.40000001;
+							};
+							id=668;
+							type="TACU_African_North_U_O_Medic";
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={15592.537,349.24878,8192.3887};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								rank="SERGEANT";
+							};
+							id=669;
+							type="TACU_African_North_U_O_Rifleman";
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={15607.537,347.65976,8187.3887};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								skill=0.44999999;
+								rank="CORPORAL";
+							};
+							id=670;
+							type="TACU_African_North_U_O_Grenadier";
+						};
+					};
+					class Attributes
+					{
+					};
+					id=666;
+					atlOffset=-283.63736;
+				};
+				class Item118
+				{
+					dataType="Group";
+					side="East";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={15949.756,352.51221,8555.5752};
+							};
+							side="East";
+							flags=7;
+							class Attributes
+							{
+								rank="SERGEANT";
+							};
+							id=672;
+							type="TACU_African_North_U_O_Teamleader";
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={15954.756,352.59808,8550.5752};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								skill=0.40000001;
+							};
+							id=673;
+							type="TACU_African_North_U_O_Medic";
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={15944.756,350.85144,8550.5752};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								rank="SERGEANT";
+							};
+							id=674;
+							type="TACU_African_North_U_O_Rifleman";
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={15959.756,352.10733,8545.5752};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								skill=0.44999999;
+								rank="CORPORAL";
+							};
+							id=675;
+							type="TACU_African_North_U_O_Grenadier";
+						};
+					};
+					class Attributes
+					{
+					};
+					id=671;
+					atlOffset=-283.63736;
+				};
+				class Item119
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={15563.72,352.42792,8310.7441};
+						angles[]={6.2653346,0,6.0560751};
+					};
+					areaSize[]={200,-1,200};
+					flags=1;
+					id=676;
+					type="lambs_wp_TaskPatrol";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="lambs_wp_WaypointCount";
+							expression="_this setVariable ['lambs_wp_WaypointCount', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=4;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="lambs_wp_enableReinforcement";
+							expression="_this setVariable ['lambs_wp_EnableReinforcement',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="lambs_wp_moveWaypoints";
+							expression="_this setVariable ['lambs_wp_MoveWaypoints',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item120
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={15894.047,340.97299,8621.1729};
+						angles[]={6.2722726,0,0.098862037};
+					};
+					areaSize[]={200,-1,200};
+					flags=1;
+					id=677;
+					type="lambs_wp_TaskPatrol";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="lambs_wp_WaypointCount";
+							expression="_this setVariable ['lambs_wp_WaypointCount', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=4;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="lambs_wp_enableReinforcement";
+							expression="_this setVariable ['lambs_wp_EnableReinforcement',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="lambs_wp_moveWaypoints";
+							expression="_this setVariable ['lambs_wp_MoveWaypoints',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
 			};
 			id=581;
-			atlOffset=-34.3974;
+			atlOffset=-173.612;
 		};
 		class Item8
-		{
-			dataType="Marker";
-			position[]={12086.324,340.44299,8104.376};
-			name="marker_1";
-			markerType="ELLIPSE";
-			type="";
-			colorName="ColorEAST";
-			a=886.94702;
-			b=1073.223;
-			id=612;
-			atlOffset=-6.1826782;
-		};
-		class Item9
-		{
-			dataType="Marker";
-			position[]={11796.85,322.13492,12309.051};
-			name="marker_2";
-			markerType="ELLIPSE";
-			type="";
-			colorName="ColorEAST";
-			a=951.14868;
-			b=999.29431;
-			id=613;
-			atlOffset=-8.0419006;
-		};
-		class Item10
-		{
-			dataType="Marker";
-			position[]={15389.968,327.66144,8604.8096};
-			name="marker_3";
-			markerType="ELLIPSE";
-			type="";
-			colorName="ColorEAST";
-			a=1383.3704;
-			b=1225.1652;
-			id=614;
-			atlOffset=-18.400085;
-		};
-		class Item11
 		{
 			dataType="Layer";
 			name="Targets";
@@ -9021,7 +9537,7 @@ class Mission
 			id=615;
 			atlOffset=-108.53091;
 		};
-		class Item12
+		class Item9
 		{
 			dataType="Layer";
 			name="GRAD Civs";
@@ -9161,16 +9677,30 @@ class Mission
 			id=627;
 			atlOffset=25.759644;
 		};
+		class Item10
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={13999.199,388.66565,10262.018};
+			};
+			areaSize[]={3000.5005,0,3499.3542};
+			areaIsRectangle=1;
+			flags=1;
+			id=659;
+			type="ModuleCoverMap_F";
+			atlOffset=38.850037;
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=29;
+			nextID=33;
 		};
 		class Links
 		{
-			items=29;
+			items=33;
 			class Item0
 			{
 				linkID=0;
@@ -9456,6 +9986,46 @@ class Mission
 				linkID=28;
 				item0=625;
 				item1=626;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item29
+			{
+				linkID=29;
+				item0=661;
+				item1=665;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item30
+			{
+				linkID=30;
+				item0=672;
+				item1=677;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item31
+			{
+				linkID=31;
+				item0=667;
+				item1=676;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item32
+			{
+				linkID=32;
+				item0=680;
+				item1=678;
 				class CustomData
 				{
 					type="Sync";
