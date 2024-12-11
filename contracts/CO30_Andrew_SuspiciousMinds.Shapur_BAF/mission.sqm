@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=7683;
+		nextID=7689;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1569.6108,60.246151,1906.7339};
-		dir[]={-0.16434322,-0.48898524,0.85669893};
-		up[]={-0.092124693,0.87228644,0.48023665};
-		aside[]={0.98211622,-1.4269244e-07,0.18840432};
+		pos[]={1395.1525,99.578423,783.09491};
+		dir[]={-0.15239105,-0.64144152,0.75191361};
+		up[]={-0.12741145,0.76716274,0.62866485};
+		aside[]={0.98009676,-5.9220474e-07,0.19863579};
 	};
 };
 binarizationWanted=0;
@@ -10294,7 +10294,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=322;
+		items=324;
 		class Item0
 		{
 			dataType="Layer";
@@ -118293,16 +118293,150 @@ class Mission
 			id=7680;
 			type="EmptyDetectorAreaR50";
 		};
+		class Item322
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=4;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1389.9095,40.623512,856.55493};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=7684;
+					type="TACU_Taliban_Militia_U_O_Leader";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1394.9095,40.630783,851.55493};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=7685;
+					type="TACU_Taliban_Militia_U_O_Medic";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1384.9095,40.565784,851.55493};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=7686;
+					type="TACU_Taliban_Militia_U_O_Rifleman_02";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1399.9095,40.643284,846.55493};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=7687;
+					type="TACU_Taliban_Militia_U_O_Machinegunner";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=7683;
+		};
+		class Item323
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1395.783,40.719303,866.07745};
+				angles[]={6.278194,0,0.0049914722};
+			};
+			areaSize[]={50,-1,50};
+			flags=1;
+			id=7688;
+			type="lambs_wp_TaskCamp";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="lambs_wp_ExitWP";
+					expression="_this setVariable ['lambs_wp_ExitWP', _value, true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="lambs_wp_Teleport";
+					expression="_this setVariable ['lambs_wp_Teleport',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="lambs_wp_Patrol";
+					expression="_this setVariable ['lambs_wp_Patrol',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=16;
+			nextID=17;
 		};
 		class Links
 		{
-			items=16;
+			items=17;
 			class Item0
 			{
 				linkID=0;
@@ -118461,6 +118595,16 @@ class Mission
 				class CustomData
 				{
 					type="WaypointActivation";
+				};
+			};
+			class Item16
+			{
+				linkID=16;
+				item0=7688;
+				item1=7684;
+				class CustomData
+				{
+					type="Sync";
 				};
 			};
 		};
