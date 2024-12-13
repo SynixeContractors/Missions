@@ -19,7 +19,7 @@ for "_i" from 1 to _numOfDeliveries do {
 
 // select (somewhat) random amount of supplies to deliver to each camp
 {
-    private _numOfSupplies = selectRandom [1, 2, 3, 4];
+    private _numOfSupplies = selectRandom [4, 5, 6, 7, 8];
     private _deliverySupplies = [];
     for "_i" from 1 to _numOfSupplies do {
         _randomSupply = selectRandom _supplies;
