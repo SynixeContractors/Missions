@@ -25,12 +25,12 @@ mission_fnc_chemEH = {
         if ("heavy" in _x) then {
             _level = 100;
         };
-        private _new = linearConversion [20, 350, ace_player distance getMarkerPos _x, _level, 0, true];
+        private _new = linearConversion [50, 200, ace_player distance getMarkerPos _x, _level, 0, true];
         if (_new > _threat) then {
             _threat = _new;
         };
     } forEach mission_markers;
-    if (_threat > 0) then {
+    if (_threat > 10) then {
         _threat = _threat + random 5;
     };
     if (_threat > 100) then {
@@ -43,6 +43,8 @@ mission_fnc_chemEH = {
             _threat = _threat max 60;
         };
     };
+    _threat = _threat / 10;
+    _threat = _threat min 9.99;
     (_this select 0) select 0 ctrlAnimateModel ["Threat_Level_Source", _threat, true];
 };
 
