@@ -5,21 +5,21 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=1025;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=580;
+		nextID=591;
 	};
 	class Camera
 	{
-		pos[]={6335.1372,915.66492,4596.8638};
-		dir[]={0.94028521,-0.33906585,0.032315504};
-		up[]={0.33891436,0.94073594,0.011647273};
-		aside[]={0.0343506,6.2966137e-07,-0.99949473};
+		pos[]={7410.0928,1090.0873,1590.1843};
+		dir[]={-0.88204002,-0.45212662,0.1329021};
+		up[]={-0.44710627,0.89193267,0.06736777};
+		aside[]={0.1489953,-4.3425825e-07,0.98887068};
 	};
 };
 binarizationWanted=0;
@@ -90,13 +90,15 @@ addons[]=
 	"A3_Props_F_Orange_Furniture",
 	"A3_Structures_F_Items_Food",
 	"A3_Structures_F_EPB_Civ_Camping",
-	"ace_interaction"
+	"ace_interaction",
+	"crate_client_garage",
+	"grad_civs_common"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=38;
+		items=40;
 		class Item0
 		{
 			className="synixe_contractors_units";
@@ -348,6 +350,18 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item38
+		{
+			className="crate_client_garage";
+			name="garage";
+			author="AUTHOR";
+		};
+		class Item39
+		{
+			className="grad_civs_common";
+			name="common";
+			author="AUTHOR";
+		};
 	};
 };
 dlcs[]=
@@ -414,7 +428,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=411;
+		items=421;
 		class Item0
 		{
 			dataType="Group";
@@ -11302,16 +11316,148 @@ class Mission
 			id=579;
 			type="Land_Garbage_square3_F";
 		};
+		class Item411
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7724.1055,836.42047,854.30847};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=580;
+			type="crate_client_garage_land_large";
+		};
+		class Item412
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7734.2197,836.42047,854.32581};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=581;
+			type="crate_client_garage_land_large";
+		};
+		class Item413
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7762.5522,836.42047,875.83594};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=583;
+			type="crate_client_garage_thing_small";
+		};
+		class Item414
+		{
+			dataType="Trigger";
+			position[]={7277.2393,829.28467,2909.6609};
+			angle=-0.04402661;
+			class Attributes
+			{
+				sizeA=70.360352;
+				sizeB=30.119019;
+				sizeC=5;
+				isRectangle=1;
+			};
+			id=584;
+			type="EmptyDetectorArea10x10";
+			atlOffset=-0.84893799;
+		};
+		class Item415
+		{
+			dataType="Trigger";
+			position[]={7711.3652,842.37,4491.3325};
+			class Attributes
+			{
+				sizeA=149.31836;
+				sizeB=130.96069;
+			};
+			id=585;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item416
+		{
+			dataType="Trigger";
+			position[]={7928.2852,828.40002,5325.6401};
+			class Attributes
+			{
+				sizeA=149.31836;
+				sizeB=130.96069;
+			};
+			id=586;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item417
+		{
+			dataType="Trigger";
+			position[]={7389.7773,831.94403,6292.3657};
+			class Attributes
+			{
+				sizeA=149.31836;
+				sizeB=130.96069;
+			};
+			id=587;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item418
+		{
+			dataType="Trigger";
+			position[]={6255.2192,850.37872,4690.9106};
+			class Attributes
+			{
+				sizeA=149.31836;
+				sizeB=130.96069;
+			};
+			id=588;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item419
+		{
+			dataType="Trigger";
+			position[]={7745.752,836.41998,880.70374};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+			};
+			id=589;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item420
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7888.144,839.97662,1125.9604};
+			};
+			id=590;
+			type="grad_civs_common_ExclusionZone";
+			atlOffset=6.1035156e-05;
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=15;
+			nextID=21;
 		};
 		class Links
 		{
-			items=15;
+			items=21;
 			class Item0
 			{
 				linkID=0;
@@ -11457,6 +11603,66 @@ class Mission
 				linkID=14;
 				item0=251;
 				item1=125;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item15
+			{
+				linkID=15;
+				item0=584;
+				item1=590;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item16
+			{
+				linkID=16;
+				item0=585;
+				item1=590;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item17
+			{
+				linkID=17;
+				item0=586;
+				item1=590;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item18
+			{
+				linkID=18;
+				item0=587;
+				item1=590;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item19
+			{
+				linkID=19;
+				item0=588;
+				item1=590;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item20
+			{
+				linkID=20;
+				item0=589;
+				item1=590;
 				class CustomData
 				{
 					type="Sync";
