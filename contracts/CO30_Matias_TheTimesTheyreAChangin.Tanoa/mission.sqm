@@ -12,15 +12,15 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=995;
+		nextID=997;
 	};
 	class MarkerIDProvider
 	{
-		nextID=7;
+		nextID=8;
 	};
 	class LayerIndexProvider
 	{
-		nextID=34;
+		nextID=45;
 	};
 	class Camera
 	{
@@ -118,13 +118,14 @@ addons[]=
 	"3den_Objects",
 	"UMI_Static",
 	"A3_Aegis_Soft_F_Aegis_Quadbike_01",
-	"A3_Props_F_Jets_Military_Trolley"
+	"A3_Props_F_Jets_Military_Trolley",
+	"A3_Modules_F_Curator_Misc"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=48;
+		items=49;
 		class Item0
 		{
 			className="A3_Aegis_Characters_F_Aegis";
@@ -450,6 +451,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item48
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -639,7 +647,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=14;
+		items=16;
 		class Item0
 		{
 			dataType="Group";
@@ -13210,6 +13218,73 @@ class Mission
 			id=991;
 			type="TACU_Vanguard_V_O_Dagor_Armed_Green";
 			atlOffset=-0.0024299622;
+		};
+		class Item14
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2499.9824,0,7050.0029};
+			};
+			areaSize[]={1900.0159,0,1649.9973};
+			areaIsRectangle=1;
+			flags=1;
+			id=995;
+			type="ModuleCoverMap_F";
+			atlOffset=-44.13863;
+		};
+		class Item15
+		{
+			dataType="Marker";
+			position[]={2150.2661,12.95,3453.3101};
+			name="marker_7";
+			text="F.O.B";
+			type="mil_flag";
+			id=996;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="markerblink";
+					expression="if ((_value # 0 isNotEqualTo 0) || (_value # 1 isNotEqualTo 0)) then {[_this, _value # 0, _value # 1] spawn BIS_fnc_blinkMarker};";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=3;
+								class Item0
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0;
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0;
+									};
+								};
+								class Item2
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0;
+									};
+								};
+							};
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections
