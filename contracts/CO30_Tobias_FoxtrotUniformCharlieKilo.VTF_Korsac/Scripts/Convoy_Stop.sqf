@@ -1,5 +1,5 @@
 Convoy_Go = false;
-Kill_Engines = false;
+Kill_engines = false;
 (driver V1) disableAI "PATH";
 (driver V2) disableAI "PATH";
 (driver V3) disableAI "PATH";
