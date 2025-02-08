@@ -42,7 +42,8 @@ private _action = [
   "checkpoint1", // unique id
   "Waypoint 1 Clear!", // text
   "", // icon
-  { missionNamespace setVariable ["checkpoint_1", true, true]; }, // statment
+  { missionNamespace setVariable ["checkpoint_1", true, true];
+  missionNamespace setVariable ["checkpoint_1T", true, true]; }, // statment
   { !checkpoint_1T } // condition
 ] call ace_interact_menu_fnc_createAction;
 [Offroad, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
@@ -52,7 +53,8 @@ private _action = [
   "checkpoint2", // unique id
   "Waypoint 2 Clear!", // text
   "", // icon
-  { missionNamespace setVariable ["checkpoint_2", true, true]; }, // statment
+  { missionNamespace setVariable ["checkpoint_2", true, true];
+  missionNamespace setVariable ["checkpoint_2T", true, true]; }, // statment
   { !checkpoint_2T } // condition
 ] call ace_interact_menu_fnc_createAction;
 [Offroad, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
@@ -62,7 +64,8 @@ private _action = [
   "checkpoint3", // unique id
   "Waypoint 3 Clear!", // text
   "", // icon
-  { missionNamespace setVariable ["checkpoint_3", true, true]; }, // statment
+  { missionNamespace setVariable ["checkpoint_3", true, true];
+  missionNamespace setVariable ["checkpoint_3T", true, true]; }, // statment
   { !checkpoint_3T } // condition
 ] call ace_interact_menu_fnc_createAction;
 [Offroad, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
@@ -72,7 +75,8 @@ private _action = [
   "checkpoint4", // unique id
   "Waypoint 4 Clear!", // text
   "", // icon
-  { missionNamespace setVariable ["checkpoint_4", true, true]; }, // statment
+  { missionNamespace setVariable ["checkpoint_4", true, true]; 
+  missionNamespace setVariable ["checkpoint_4T", true, true]; }, // statment
   { !checkpoint_4T } // condition
 ] call ace_interact_menu_fnc_createAction;
 [Offroad, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
@@ -82,7 +86,8 @@ private _action = [
   "checkpoint5", // unique id
   "Waypoint 5 Clear!", // text
   "", // icon
-  { missionNamespace setVariable ["checkpoint_5", true, true]; }, // statment
+  { missionNamespace setVariable ["checkpoint_5", true, true]; 
+  missionNamespace setVariable ["checkpoint_5T", true, true]; }, // statment
   { !checkpoint_5T } // condition
 ] call ace_interact_menu_fnc_createAction;
 [Offroad, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
