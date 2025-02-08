@@ -6,27 +6,27 @@
   _unit call ENH_fnc_ambientAnimations_exit;
 }] call CBA_fnc_addEventHandler;
 
-Convoy_Go = false;
-Convoy_Stop = true;
-Kill_engines = true;
+mission_fnc_hasStarted = {
+    ((date select 3) >= 07) && ((date select 4) >= 00)
+};
 
-Checkpoint_1 = false;
-Checkpoint_1T = true;
+convoy_move = false;
 
-Checkpoint_2 = false;
-Checkpoint_2T = true;
+checkpoint_1 = false;
+checkpoint_1T = true;
 
-Checkpoint_3 = false;
-Checkpoint_3T = true;
+checkpoint_2 = false;
+checkpoint_2T = true;
 
-Checkpoint_4 = false;
-Checkpoint_4T = true;
+checkpoint_3 = false;
+checkpoint_3T = true;
 
-Checkpoint_5 = false;
-Checkpoint_5T = true;
+checkpoint_4 = false;
+checkpoint_4T = true;
 
-CheckFuel = true;
+checkpoint_5 = false;
+checkpoint_5T = true;
 
 ["mission_applyDamage", {
-  _this call ace_medical_fnc_addDamageToUnit;
+    _this call ace_medical_fnc_addDamageToUnit;
 }] call CBA_fnc_addEventHandler;
