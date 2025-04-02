@@ -30,16 +30,34 @@ private _action = ["Jump", "Jump", "", {
         setViewDistance -1;
         player allowDamage true;
         removeUserActionEventHandler ["MoveDown", "Activate", mission_no_prone];
+        removeUserActionEventHandler ["showMap", "Activate", mission_no_map];
     }] call CBA_fnc_waitUntilAndExecute;
-}, {true}] call ace_interact_menu_fnc_createAction;
+}, {true}, {}, [], [0, 0, 0], 6] call ace_interact_menu_fnc_createAction;
 [jump, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;
 
 private _action = ["TP", "Teleport to Plane", "", {
     player setPosASL getPosASL tp;
-}, { mission_tp_enable }] call ace_interact_menu_fnc_createAction;
+}, { mission_tp_enable && {
+    private _virtualLoad = 0;
+    {
+        _virtualLoad = _virtualLoad + (_x getVariable ["ace_movement_vLoad", 0]);
+    } forEach [
+        player,
+        uniformContainer player,
+        vestContainer player,
+        backpackContainer player
+    ];
+    private _weight = (loadAbs player + _virtualLoad) * 0.1;
+    ((round (_weight * (1/2.2046) * 100)) / 100) < 40
+} }] call ace_interact_menu_fnc_createAction;
 [tp_start, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;
 
 mission_no_prone = addUserActionEventHandler ["MoveDown", "Activate", {
+    disableUserInput true;
+    disableUserInput false;
+}];
+
+mission_no_map = addUserActionEventHandler ["showMap", "Activate", {
     disableUserInput true;
     disableUserInput false;
 }];
