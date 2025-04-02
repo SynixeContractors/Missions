@@ -5,10 +5,10 @@ mission_map_markers = [
     "map_hospital"
 ];
 
-player enableSimulationGlobal false;
+player setUnitFreefallHeight 10000;
 player allowDamage false;
 
-player setUnitFreefallHeight 10000;
+mission_tp_enable = false;
 
 waitUntil { time > 0 && { !isNull ( uiNamespace getVariable [ "RscDiary", displayNull ] ) } };
 (findDisplay 12) displayAddEventHandler ["MouseZChanged", {
@@ -29,10 +29,17 @@ private _action = ["Jump", "Jump", "", {
     [{ (getPosASL player) select 2 < 500 }, {
         setViewDistance -1;
         player allowDamage true;
+        removeUserActionEventHandler ["MoveDown", "Activate", mission_no_prone];
     }] call CBA_fnc_waitUntilAndExecute;
 }, {true}] call ace_interact_menu_fnc_createAction;
 [jump, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;
 
-waitUntil { time > 3 };
-player setPosASL start_pos;
-player enableSimulationGlobal true;
+private _action = ["TP", "Teleport to Plane", "", {
+    player setPosASL getPosASL tp;
+}, { mission_tp_enable }] call ace_interact_menu_fnc_createAction;
+[tp_start, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;
+
+mission_no_prone = addUserActionEventHandler ["MoveDown", "Activate", {
+    disableUserInput true;
+    disableUserInput false;
+}];
