@@ -5,6 +5,9 @@ mission_map_markers = [
     "map_hospital"
 ];
 
+player enableSimulationGlobal false;
+player allowDamage false;
+
 player setUnitFreefallHeight 10000;
 
 waitUntil { time > 0 && { !isNull ( uiNamespace getVariable [ "RscDiary", displayNull ] ) } };
@@ -25,6 +28,11 @@ private _action = ["Jump", "Jump", "", {
     setViewDistance 8000;
     [{ (getPosASL player) select 2 < 500 }, {
         setViewDistance -1;
+        player allowDamage true;
     }] call CBA_fnc_waitUntilAndExecute;
 }, {true}] call ace_interact_menu_fnc_createAction;
 [jump, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;
+
+waitUntil { time > 3 };
+player setPosASL start_pos;
+player enableSimulationGlobal true;

@@ -1,5 +1,10 @@
-plane_pos = getPosASL spawn_plane;
+start_pos = getPosASL player;
+
+spawn_plane enableSimulation false;
+spawn_plane setPhysicsCollisionFlag true;
 
 [{
-    spawn_plane setPosASL plane_pos;
+    private _pos = getPosASL spawn_plane;
+    _pos set [2, (_pos select 2) + 8];
+    sound_plane setPosASL _pos;
 }] call CBA_fnc_addPerFrameHandler;
