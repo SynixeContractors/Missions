@@ -37,6 +37,14 @@ private _action = ["Jump", "Jump", "", {
 
 private _action = ["TP", "Teleport to Plane", "", {
     player setPosASL getPosASL tp;
+    mission_no_prone = addUserActionEventHandler ["MoveDown", "Activate", {
+        disableUserInput true;
+        disableUserInput false;
+    }];
+    mission_no_map = addUserActionEventHandler ["showMap", "Activate", {
+        disableUserInput true;
+        disableUserInput false;
+    }];
 }, { mission_tp_enable && {
     private _virtualLoad = 0;
     {
@@ -51,13 +59,3 @@ private _action = ["TP", "Teleport to Plane", "", {
     ((round (_weight * (1/2.2046) * 100)) / 100) < 40
 } }] call ace_interact_menu_fnc_createAction;
 [tp_start, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;
-
-mission_no_prone = addUserActionEventHandler ["MoveDown", "Activate", {
-    disableUserInput true;
-    disableUserInput false;
-}];
-
-mission_no_map = addUserActionEventHandler ["showMap", "Activate", {
-    disableUserInput true;
-    disableUserInput false;
-}];
