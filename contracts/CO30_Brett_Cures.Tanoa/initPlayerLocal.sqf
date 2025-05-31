@@ -53,7 +53,7 @@ private _action = ["IntelSpeak", "Speak", "\a3\ui_f\data\igui\cfg\actions\talk_c
     };
     ["synixe_missions_speak", [_target, _voice_line, {}, {}, "noid", true]] call CBA_fnc_globalEvent;
 }, {
-    !(_target getVariable ["synixe_missions_speaking", false])
+    side _target == civilian && !(_target getVariable ["synixe_missions_speaking", false])
 }] call ace_interact_menu_fnc_createAction;
 ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
@@ -72,7 +72,7 @@ private _action = ["GiveFood", "Give Ration", "\a3\ui_f\data\igui\cfg\actions\ta
     };
     _target setVariable ["mission_voice_line", _voice_line, true];
 }, {
-    alive _target && "ACE_Humanitarian_Ration" in (items ace_player)
+    side _target == civilian && alive _target && "ACE_Humanitarian_Ration" in (items ace_player)
 }] call ace_interact_menu_fnc_createAction;
 ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 private _action = ["GiveWater", "Give Water", "\a3\ui_f\data\igui\cfg\actions\take_ca.paa", {
@@ -90,6 +90,6 @@ private _action = ["GiveWater", "Give Water", "\a3\ui_f\data\igui\cfg\actions\ta
     };
     _target setVariable ["mission_voice_line", _voice_line, true];
 }, {
-    alive _target && "ACE_WaterBottle" in (items ace_player)
+    side _target == civilian && alive _target && "ACE_WaterBottle" in (items ace_player)
 }] call ace_interact_menu_fnc_createAction;
 ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
