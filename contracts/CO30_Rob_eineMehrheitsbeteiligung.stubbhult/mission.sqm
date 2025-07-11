@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2435;
+		nextID=2437;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=157;
+		nextID=178;
 	};
 	class Camera
 	{
-		pos[]={8708.9717,26.33,11998.376};
-		dir[]={-0.98232633,-0.042805731,-0.1822222};
-		up[]={-0.042088617,0.99908423,-0.0078074508};
-		aside[]={-0.18238944,-3.5375706e-08,0.98322797};
+		pos[]={8999.6396,18.236132,1256.9801};
+		dir[]={-0.95500803,-0.14418721,-0.25923982};
+		up[]={-0.13915938,0.9895463,-0.037775211};
+		aside[]={-0.26197672,2.0451262e-07,0.96509242};
 	};
 };
 binarizationWanted=0;
@@ -184,13 +184,14 @@ addons[]=
 	"synixeunits_sof",
 	"grad_civs_common",
 	"Air_Globe_Heli_Light_02",
-	"A3_Modules_F_Curator_Curator"
+	"A3_Modules_F_Curator_Curator",
+	"A3_Supplies_F_Heli_CargoNets"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=98;
+		items=99;
 		class Item0
 		{
 			className="synixe_contractors_units";
@@ -833,6 +834,13 @@ class AddonsMetaData
 			author="Trager";
 			url="https://steamcommunity.com/workshop/filedetails/?id=1923321700";
 		};
+		class Item98
+		{
+			className="A3_Supplies_F_Heli";
+			name="Arma 3 Helicopters - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -1061,7 +1069,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=681;
+		items=683;
 		class Item0
 		{
 			dataType="Group";
@@ -1074,18 +1082,63 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8997.3721,14.081437,1256.1945};
-						angles[]={0,5.3760271,0};
+						position[]={8997.3721,14.081439,1256.1941};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=7;
 					class Attributes
 					{
 						skill=0.40000001;
-						isPlayer=1;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=1;
 					type="synixe_contractors_Unit_I_Contractor";
+					atlOffset=1.9073486e-06;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male05ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.97000003;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 				class Item1
 				{
@@ -1093,16 +1146,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8997.9883,14.081437,1256.9823};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=2;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item2
 				{
@@ -1110,16 +1182,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8998.6035,14.081437,1257.7701};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=3;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item3
 				{
@@ -1127,16 +1218,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8999.2207,14.081437,1258.5575};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=4;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item4
 				{
@@ -1144,16 +1254,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8999.8359,14.081437,1259.3453};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=5;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item5
 				{
@@ -1161,16 +1290,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8996.584,14.081437,1256.8104};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=6;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item6
 				{
@@ -1178,16 +1326,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8997.1992,14.081437,1257.5983};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=7;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item7
 				{
@@ -1195,16 +1362,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8997.8154,14.081437,1258.3862};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=8;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item8
 				{
@@ -1212,16 +1398,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8998.4316,14.081437,1259.174};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=9;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item9
 				{
@@ -1229,16 +1434,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8999.0479,14.081437,1259.9613};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=10;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item10
 				{
@@ -1246,16 +1470,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8995.7969,14.081437,1257.4261};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=11;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item11
 				{
@@ -1263,16 +1506,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8996.4121,14.081437,1258.2141};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=12;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item12
 				{
@@ -1280,16 +1542,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8997.0283,14.081437,1259.0021};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=13;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item13
 				{
@@ -1297,16 +1578,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8997.6436,14.081437,1259.7899};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=14;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item14
 				{
@@ -1314,16 +1614,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8998.2607,14.081437,1260.5771};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=15;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item15
 				{
@@ -1331,16 +1650,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8995.0088,14.081437,1258.0421};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=16;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item16
 				{
@@ -1348,16 +1686,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8995.625,14.081437,1258.8301};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=17;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item17
 				{
@@ -1365,16 +1722,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8996.2412,14.081437,1259.6179};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=18;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item18
 				{
@@ -1382,16 +1758,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8996.8564,14.081437,1260.4059};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=19;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item19
 				{
@@ -1399,16 +1794,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8997.4727,14.081437,1261.1936};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=20;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item20
 				{
@@ -1416,16 +1830,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8994.2207,14.081437,1258.6581};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=21;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item21
 				{
@@ -1433,16 +1866,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8994.8369,14.081437,1259.4459};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=22;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item22
 				{
@@ -1450,16 +1902,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8995.4521,14.081437,1260.2338};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=23;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item23
 				{
@@ -1467,16 +1938,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8996.0684,14.081437,1261.0217};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=24;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item24
 				{
@@ -1484,16 +1974,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8996.6836,14.081437,1261.8096};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=25;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item25
 				{
@@ -1501,16 +2010,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8993.4326,14.081437,1259.2747};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=26;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item26
 				{
@@ -1518,16 +2046,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8994.0488,14.081437,1260.0619};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=27;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item27
 				{
@@ -1535,16 +2082,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8994.665,14.081437,1260.8497};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=28;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item28
 				{
@@ -1552,16 +2118,35 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8995.2813,14.081437,1261.6376};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=29;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item29
 				{
@@ -1569,22 +2154,42 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8995.8965,14.081437,1262.4255};
-						angles[]={0,5.3760271,0};
+						angles[]={0,5.3760328,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						description="Contractor";
+						isPlayable=1;
 					};
 					id=30;
 					type="synixe_contractors_Unit_I_Contractor";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 			};
 			class Attributes
 			{
 			};
 			id=0;
+			atlOffset=1.9073486e-06;
 		};
 		class Item1
 		{
@@ -30208,7 +30813,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={6565.5762,24.003336,9251.168};
-			angle=6.267314;
+			angle=6.2673135;
 			class Attributes
 			{
 				sizeA=692.94312;
@@ -30592,6 +31197,74 @@ class Mission
 					};
 				};
 				nAttributes=4;
+			};
+		};
+		class Item681
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9001.8838,14.714996,1273.04};
+				angles[]={0,2.1665819,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2435;
+			type="CargoNet_01_box_F";
+			atlOffset=1.9073486e-06;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="crate_client_gear_attribute_shop";
+					expression="if(_value)then{crate_client_gear_shop_boxes pushBack _this}";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item682
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8987.5586,14.714996,1250.261};
+				angles[]={0,2.1402624,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2436;
+			type="CargoNet_01_box_F";
+			atlOffset=1.9073486e-06;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="crate_client_gear_attribute_shop";
+					expression="if(_value)then{crate_client_gear_shop_boxes pushBack _this}";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
 			};
 		};
 	};
