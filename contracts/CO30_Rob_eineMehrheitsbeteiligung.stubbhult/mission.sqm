@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2437;
+		nextID=2441;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=178;
+		nextID=199;
 	};
 	class Camera
 	{
-		pos[]={8999.6396,18.236132,1256.9801};
-		dir[]={-0.95500803,-0.14418721,-0.25923982};
-		up[]={-0.13915938,0.9895463,-0.037775211};
-		aside[]={-0.26197672,2.0451262e-07,0.96509242};
+		pos[]={4638.8525,9.674489,8540.998};
+		dir[]={0.29798597,-0.70984596,-0.63831204};
+		up[]={0.30026767,0.70436037,-0.64319652};
+		aside[]={-0.9061811,-5.1295501e-07,-0.42303589};
 	};
 };
 binarizationWanted=0;
@@ -184,8 +184,9 @@ addons[]=
 	"synixeunits_sof",
 	"grad_civs_common",
 	"Air_Globe_Heli_Light_02",
-	"A3_Modules_F_Curator_Curator",
-	"A3_Supplies_F_Heli_CargoNets"
+	"A3_Supplies_F_Heli_CargoNets",
+	"A3_Aegis_Boat_F_Aegis_Boat_Civil_02",
+	"A3_Aegis_Boat_F_Aegis_Scooter_Transport_01"
 };
 class AddonsMetaData
 {
@@ -868,7 +869,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -1069,7 +1070,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=683;
+		items=686;
 		class Item0
 		{
 			dataType="Group";
@@ -18619,24 +18620,25 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8880.5215,15.4705,1207.9958};
-				angles[]={0,6.1175194,0};
+				position[]={8943.9375,14.012977,1307.0854};
+				angles[]={0,4.5395279,-0};
 			};
 			side="Empty";
-			flags=5;
+			flags=1;
 			class Attributes
 			{
 			};
 			id=2017;
 			type="crate_client_garage_plane_large";
+			atlOffset=0.025602341;
 		};
 		class Item611
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8950.1875,14.917648,1243.5256};
-				angles[]={0,5.2273655,0};
+				position[]={8944.9805,14.917648,1241.0305};
+				angles[]={-0,5.2273655,0};
 			};
 			side="Empty";
 			flags=4;
@@ -18651,8 +18653,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8950.0479,14.466753,1242.9006};
-				angles[]={0,5.2450199,0};
+				position[]={8944.4209,14.466753,1240.2367};
+				angles[]={-0,5.2450199,0};
 			};
 			side="Empty";
 			flags=4;
@@ -18667,8 +18669,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8950.8086,14.466753,1244.1222};
-				angles[]={0,5.1629229,0};
+				position[]={8945.5762,14.466753,1241.765};
+				angles[]={-0,5.1629229,0};
 			};
 			side="Empty";
 			flags=4;
@@ -27464,6 +27466,15 @@ class Mission
 									ammoLeft=10;
 								};
 							};
+							class handgun
+							{
+								name="hgun_DEagle_camo_RF";
+								class primaryMuzzleMag
+								{
+									name="7Rnd_50AE_Mag_RF";
+									ammoLeft=7;
+								};
+							};
 							class uniform
 							{
 								typeName="Opf_U_O_S_Gorka_01_autumn_F";
@@ -27484,17 +27495,17 @@ class Mission
 								isBackpack=0;
 								class MagazineCargo
 								{
-									items=3;
+									items=4;
 									class Item0
 									{
 										name="HandGrenade_Guer";
-										count=1;
+										count=3;
 										ammoLeft=1;
 									};
 									class Item1
 									{
 										name="SmokeShell";
-										count=1;
+										count=2;
 										ammoLeft=1;
 									};
 									class Item2
@@ -27502,6 +27513,12 @@ class Mission
 										name="ACE_10Rnd_338_API526_Mag";
 										count=5;
 										ammoLeft=10;
+									};
+									class Item3
+									{
+										name="7Rnd_50AE_Mag_RF";
+										count=5;
+										ammoLeft=7;
 									};
 								};
 							};
@@ -31135,72 +31152,6 @@ class Mission
 		};
 		class Item680
 		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={6474.1099,16.972147,11919.599};
-			};
-			id=2434;
-			type="ModuleCurator_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleCurator_F_Owner";
-					expression="_this setVariable ['Owner',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="#adminlogged";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ModuleCurator_F_Forced";
-					expression="_this setVariable ['Forced',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ModuleCurator_F_Name";
-					expression="_this setVariable ['Name',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ModuleCurator_F_Addons";
-					expression="_this setVariable ['Addons',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=2;
-						};
-					};
-				};
-				nAttributes=4;
-			};
-		};
-		class Item681
-		{
 			dataType="Object";
 			class PositionInfo
 			{
@@ -31233,7 +31184,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item682
+		class Item681
 		{
 			dataType="Object";
 			class PositionInfo
@@ -31266,6 +31217,70 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item682
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6510.6636,1.5517105,6228.8218};
+				angles[]={0,2.2907927,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=2437;
+			type="C_Boat_Civil_02_F";
+			atlOffset=2.6022754;
+		};
+		class Item683
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6486.2207,1.2435327,6154.1416};
+				angles[]={0,2.2576954,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=2438;
+			type="Aegis_C_Rubberboat_F_Tanoa";
+			atlOffset=2.3171167;
+		};
+		class Item684
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6405.7783,1.3881396,6105.0698};
+				angles[]={0,1.0376704,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=2439;
+			type="Aegis_C_Scooter_Transport_01_F_Malden";
+			atlOffset=2.8122101;
+		};
+		class Item685
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6401.1982,1.3881396,6102.063};
+				angles[]={0,0.97420675,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=2440;
+			type="Aegis_C_Scooter_Transport_01_F_Tanoa";
+			atlOffset=3.5719581;
 		};
 	};
 	class Connections
