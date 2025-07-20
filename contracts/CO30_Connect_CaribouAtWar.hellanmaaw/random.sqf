@@ -3,12 +3,12 @@ _selectedPosition2 = selectRandom ((getMissionLayerEntities "goodguy_pos") selec
 _selectedPosition3 = selectRandom ((getMissionLayerEntities "wiesel_pos") select 0);
 
 {
-  _pos = [_selectedPosition1, 1, 5, 1, 0, 20, 0] call BIS_fnc_findSafePos;
+  _pos = [_selectedPosition1, 1, 15, 1, 0, 20, 0] call BIS_fnc_findSafePos;
   _x setPos [_pos select 0, _pos select 1, 1];
 } forEach ((getMissionLayerEntities "badguy_group") select 0);
 
 {
-  _pos = [_selectedPosition2, 1, 50, 1, 0, 20, 0] call BIS_fnc_findSafePos;
+  _pos = [_selectedPosition2, 1, 5, 1, 0, 20, 0] call BIS_fnc_findSafePos;
   _x setPos [_pos select 0, _pos select 1, 1];
 } forEach ((getMissionLayerEntities "goodguy_group") select 0);
 
