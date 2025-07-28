@@ -21,4 +21,4 @@ private _selectedPosition3 = selectRandom ((getMissionLayerEntities "wiesel_pos"
 wiesel setPosASL (getPosASL _selectedPosition3);
 goodguy setPosASL (getPosASL _selectedPosition2);
 badguy setPosASL (getPosASL _selectedPosition1);
-vip move (getPosASL wiesel);
+vip doMove (getPosASL wiesel);
