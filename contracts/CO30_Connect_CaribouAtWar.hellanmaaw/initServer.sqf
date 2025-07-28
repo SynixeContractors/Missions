@@ -1,1 +1,1 @@
-call compile preprocessFile "random.sqf"
+call compile preprocessFile "random.sqf";

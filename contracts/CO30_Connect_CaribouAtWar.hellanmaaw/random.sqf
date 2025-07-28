@@ -14,9 +14,11 @@ private _selectedPosition3 = selectRandom ((getMissionLayerEntities "wiesel_pos"
 
 
 {
-  _pos = [_selectedPosition3, 1, 50, 1, 0, 20, 0] call BIS_fnc_findSafePos;
+  _pos = [_selectedPosition3, 3, 50, 1, 0, 20, 0] call BIS_fnc_findSafePos;
   _x setPos [_pos select 0, _pos select 1, 1];
 } forEach ((getMissionLayerEntities "wiesel_group") select 0);
 
+wiesel setPosASL (getPosASL _selectedPosition3);
 goodguy setPosASL (getPosASL _selectedPosition2);
 badguy setPosASL (getPosASL _selectedPosition1);
+vip move (getPosASL wiesel);
