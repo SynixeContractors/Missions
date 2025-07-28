@@ -1,9 +1,9 @@
 //camps
 diag_log "camps";
-private _positions = nil;
-private _selectedPosition1 = nil;
-private _selectedPosition2 = nil;
-private _groups = nil;
+private _positions = [];
+private _selectedPosition1 = [0,0,0];
+private _selectedPosition2 = [0,0,0];
+private _groups = [];
 
 _positions = (getMissionLayerEntities "camplocations") select 0;
 
