@@ -7,7 +7,9 @@ EGVAR(eod,objects) = [];
 [QEGVAR(eod,tablets), {
     params ["_tablets"];
     private _eodResetField = ["EngEODField","Reset Field","",{
-        [QEGVAR(eod,reset)] call CBA_fnc_serverEvent;
+        [QEGVAR(eod,reset), [
+            _target getVariable [QEGVAR(eod,range), ""]
+        ]] call CBA_fnc_serverEvent;
     }, {true}] call ace_interact_menu_fnc_createAction;
     {
         [_x, 0, ["ACE_MainActions"], _eodResetField] call ace_interact_menu_fnc_addActionToObject;
