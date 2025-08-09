@@ -23,7 +23,7 @@ eod_mines = [
     "tacgt_ModuleMine_Claymore_Training_F"
 ];
 
-[QEGVAR(eod,tablets), [(getMissionLayerEntities format ["%1 - Tablets", _range]) select 0]] call CBA_fnc_globalEvent;
+[QEGVAR(eod,tablets), [(getMissionLayerEntities format ["%1 - Tablets", _range]) select 0]] call CBA_fnc_globalEventJIP;
 
 [QEGVAR(eod,reset), {
     params ["_range"];
