@@ -58,9 +58,34 @@ vr_fnc_get_unit = {
     _ret
 };
 
+["vr_spawnObject", {
+    params ["_class", "_posATL", "_source", ["_code", {}], ["_params", []]];
+    private _veh = createVehicle [_class, _posATL, [], 0, "CAN_COLLIDE"];
+    if (_source isNotEqualTo objNull) then {
+        _veh setVariable ["VR_source", _source, true];
+    };
+    [_veh] call vr_fnc_addObject;
+    [_veh, _params] call _code;
+    ["vr_object", [_veh]] call CBA_fnc_globalEvent;
+}] call CBA_fnc_addEventHandler;
+
+["vr_spawnUnit", {
+    params ["_tag", "_side", "_posATL", ["_code", {}], ["_params", []]];
+    private _tagGroup = vr_groups getOrDefault [_tag, []];
+    if (_tagGroup isEqualTo []) then {
+        _tagGroup = createGroup _side;
+        vr_groups set [_tag, [_tagGroup]];
+        _tagGroup = vr_groups getOrDefault [_tag, []];
+    };
+    private _tagGroup = _tagGroup select 0;
+    private _unit = _tagGroup createUnit [[_side] call vr_fnc_get_unit, _posATL, [], 0, "NONE"];
+    [_unit, _params] call _code;
+    ["vr_unit", [_unit]] call CBA_fnc_globalEvent;
+}] call CBA_fnc_addEventHandler;
+
 ["vr_spawnGroup", {
-    params ["_tag", "_side", "_posATL", "_count", "_code", ["_params", []]];
-    _tagGroup = createGroup east;
+    params ["_tag", "_side", "_posATL", "_count", ["_code", {}], ["_params", []]];
+    _tagGroup = createGroup _side;
     private _existing = vr_groups getOrDefault [_tag, []];
     vr_groups set [_tag, [_tagGroup] + _existing];
     for "_i" from 1 to _count do {
