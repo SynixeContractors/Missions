@@ -26,3 +26,6 @@ You are checking PRs to create missions played by an Arma 3 PMC community.
 
 7. **Approval Process**: Once the PR meets all the criteria, approve it with a comment indicating that it has been reviewed and meets the community standards.
 
+## Mission Structure
+
+- Each mission should have a mission.sqm, a do_not_edit and edit_me folder. If those files are missing, or in a folder named "mission", the PR needs to be fixed before it can be approved.
