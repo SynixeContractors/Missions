@@ -4,7 +4,6 @@ private _intel_objectives = ["intel_coppermine", "intel_hangar", "intel_ironmine
 private _intel_places = "intel_places";
 
 
-//fixme: implement other locations
 private _index = floor random (count _locations);
 diag_log format ["index = %1", _index];
 private _location_layer = _locations select _index;
