@@ -20,7 +20,22 @@
     _trigger setTriggerActivation ["ANYPLAYER", "PRESENT", true];
     _trigger setTriggerStatements [
         "player in thisList",
-        format ["player setVariable ['crate_client_discord_roles', %1, true]; call crate_client_discord_fnc_setTraits;", _roles],
-        "player setVariable ['crate_client_discord_roles', [], true]; call crate_client_discord_fnc_setTraits;"
+        format ["[""synixe_rolearea_enter"", [%1]] call CBA_fnc_localEvent", _roles],
+        "[""synixe_rolearea_exit""] call CBA_fnc_localEvent"
     ];
 } forEach allMapMarkers;
+
+["synixe_rolearea_enter", {
+    params ["_roles"];
+    if (isNil "_roles") exitWith {
+        diag_log "Rolearea Enter: No roles specified.";
+    };
+    rolearea_original_roles = player getVariable ["crate_client_discord_roles", []];
+    player setVariable ["crate_client_discord_roles", _roles + rolearea_original_roles, true];
+    call crate_client_discord_fnc_setTraits;
+}] call CBA_fnc_addEventHandler;
+
+["synixe_rolearea_exit", {
+    player setVariable ["crate_client_discord_roles", rolearea_original_roles, true];
+    call crate_client_discord_fnc_setTraits;
+}] call CBA_fnc_addEventHandler;
