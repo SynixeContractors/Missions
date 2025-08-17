@@ -27,6 +27,12 @@
     _unit hideObject !_isVr;
 }] call CBA_fnc_addEventHandler;
 
+["vr_object", {
+    params ["_obj"];
+    private _isVr = ((getUnitLoadout player) select 7) == "G_Goggles_VR";
+    _obj hideObject !_isVr;
+}] call CBA_fnc_addEventHandler;
+
 player addEventHandler ["HandleDamage", {
     private _isVR = (typeOf (_this select 3)) select [10,4] == "VR_F";
     player allowDamage !_isVR;
