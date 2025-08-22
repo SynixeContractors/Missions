@@ -3,7 +3,8 @@
 {
     call compile preprocessFileLineNumbers format ["functions\ranges\%1\fnc_serverInit.sqf", _x];
 } forEach [
-    "at"
+    "at",
+    "gl"
 ];
 
 ["EOD Urban"] call compile preprocessFileLineNumbers "functions\ranges\eod\fnc_serverInit.sqf";
