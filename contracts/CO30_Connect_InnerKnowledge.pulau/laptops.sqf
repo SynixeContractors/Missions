@@ -1,4 +1,4 @@
-isHacked = false; // for a trigger so i dont have to program the moves :D
+isHacked = false; // Used for a trigger to avoid having to program the moves manually.
 
 [
     laptop1,
