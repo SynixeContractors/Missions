@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1450;
+		nextID=1458;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2338.9236,133.13408,4002.197};
-		dir[]={0.055150133,-0.61915505,0.78333259};
-		up[]={0.043483768,0.78526872,0.61762649};
-		aside[]={0.99753296,5.1848474e-08,-0.070230894};
+		pos[]={1333.7122,192.16028,2744.96};
+		dir[]={-0.59812891,-0.56726503,-0.56609643};
+		up[]={-0.41200036,0.82353097,-0.38993624};
+		aside[]={-0.68739438,-1.2782402e-07,0.72629011};
 	};
 };
 binarizationWanted=0;
@@ -667,7 +667,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Scenario";
 		class Attribute0
@@ -834,7 +834,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=90;
+		items=95;
 		class Item0
 		{
 			dataType="Group";
@@ -15421,7 +15421,7 @@ class Mission
 						};
 					};
 					id=808;
-					atlOffset=0.62647343;
+					atlOffset=-0.0041913986;
 				};
 				class Item1
 				{
@@ -17506,7 +17506,7 @@ class Mission
 				};
 			};
 			id=763;
-			atlOffset=0.66058779;
+			atlOffset=0.62169504;
 		};
 		class Item36
 		{
@@ -21301,7 +21301,7 @@ class Mission
 										angles[]={0.013332055,0.48525047,0.02999169};
 									};
 									side="East";
-									flags=5;
+									flags=7;
 									class Attributes
 									{
 										class Inventory
@@ -21785,7 +21785,7 @@ class Mission
 										angles[]={0.013332055,0.48525047,0.02999169};
 									};
 									side="East";
-									flags=7;
+									flags=5;
 									class Attributes
 									{
 										rank="CORPORAL";
@@ -22301,7 +22301,7 @@ class Mission
 								angles[]={0.013332055,0.48525047,0.02999169};
 							};
 							side="East";
-							flags=4;
+							flags=6;
 							class Attributes
 							{
 								textures="Green";
@@ -22400,7 +22400,7 @@ class Mission
 										angles[]={0.063249089,0.48525047,0.013332055};
 									};
 									side="East";
-									flags=1;
+									flags=3;
 									class Attributes
 									{
 										class Inventory
@@ -22884,7 +22884,7 @@ class Mission
 										angles[]={0.063249089,0.48525047,0.013332055};
 									};
 									side="East";
-									flags=3;
+									flags=1;
 									class Attributes
 									{
 										rank="CORPORAL";
@@ -23398,7 +23398,7 @@ class Mission
 								angles[]={0.063249089,0.48525047,0.013332055};
 							};
 							side="East";
-							flags=4;
+							flags=6;
 							class Attributes
 							{
 								textures="Green";
@@ -23496,7 +23496,7 @@ class Mission
 										angles[]={0.17486227,0.48525047,0.013332055};
 									};
 									side="East";
-									flags=5;
+									flags=7;
 									class Attributes
 									{
 										class Inventory
@@ -23980,7 +23980,7 @@ class Mission
 										angles[]={0.17486227,0.48525047,0.013332055};
 									};
 									side="East";
-									flags=7;
+									flags=5;
 									class Attributes
 									{
 										rank="CORPORAL";
@@ -24495,7 +24495,7 @@ class Mission
 								angles[]={0.17486227,0.48525047,0.013332055};
 							};
 							side="East";
-							flags=4;
+							flags=6;
 							class Attributes
 							{
 								textures="Green";
@@ -38991,7 +38991,7 @@ class Mission
 			name="cars";
 			class Entities
 			{
-				items=37;
+				items=40;
 				class Item0
 				{
 					dataType="Object";
@@ -39008,6 +39008,36 @@ class Mission
 					id=1355;
 					type="Aegis_C_Offroad_02_F_Tanoa";
 					atlOffset=-0.0044088364;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item1
 				{
@@ -39025,6 +39055,36 @@ class Mission
 					id=1357;
 					type="Aegis_C_Offroad_01_F_Tanoa";
 					atlOffset=-0.0010814667;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item2
 				{
@@ -39042,6 +39102,36 @@ class Mission
 					id=1358;
 					type="Aegis_C_Quadbike_01_F_Tanoa";
 					atlOffset=-0.0045156479;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item3
 				{
@@ -39059,6 +39149,36 @@ class Mission
 					id=1359;
 					type="Aegis_C_Pickup_RF_Tanoa";
 					atlOffset=-0.0026750565;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item4
 				{
@@ -39076,6 +39196,36 @@ class Mission
 					id=1360;
 					type="Aegis_C_Van_01_transport_tanoa_F";
 					atlOffset=-0.00044941902;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item5
 				{
@@ -39093,6 +39243,36 @@ class Mission
 					id=1361;
 					type="Aegis_C_Van_02_vehicle_Tanoa_F";
 					atlOffset=-1.7404556e-05;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item6
 				{
@@ -39110,6 +39290,36 @@ class Mission
 					id=1354;
 					type="Aegis_C_Van_01_fuel_tanoa_F";
 					atlOffset=-0.00050497055;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item7
 				{
@@ -39127,6 +39337,36 @@ class Mission
 					id=1362;
 					type="Aegis_C_Offroad_02_F_Tanoa";
 					atlOffset=-4.529953e-05;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item8
 				{
@@ -39143,6 +39383,36 @@ class Mission
 					};
 					id=1363;
 					type="Aegis_C_Offroad_01_F_Tanoa";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item9
 				{
@@ -39160,6 +39430,36 @@ class Mission
 					id=1364;
 					type="Aegis_C_Quadbike_01_F_Tanoa";
 					atlOffset=-7.0571899e-05;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item10
 				{
@@ -39176,6 +39476,36 @@ class Mission
 					};
 					id=1365;
 					type="Aegis_C_Pickup_RF_Tanoa";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item11
 				{
@@ -39193,6 +39523,36 @@ class Mission
 					id=1366;
 					type="Aegis_C_Van_01_transport_tanoa_F";
 					atlOffset=-9.5367432e-05;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item12
 				{
@@ -39210,6 +39570,36 @@ class Mission
 					id=1367;
 					type="Aegis_C_Van_02_vehicle_Tanoa_F";
 					atlOffset=-0.0016274452;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item13
 				{
@@ -39227,6 +39617,36 @@ class Mission
 					id=1369;
 					type="Aegis_C_Offroad_02_F_Tanoa";
 					atlOffset=-0.0011005402;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item14
 				{
@@ -39244,6 +39664,36 @@ class Mission
 					id=1370;
 					type="Aegis_C_Offroad_01_F_Tanoa";
 					atlOffset=-0.066535473;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item15
 				{
@@ -39261,6 +39711,36 @@ class Mission
 					id=1371;
 					type="Aegis_C_Quadbike_01_F_Tanoa";
 					atlOffset=-0.013629913;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item16
 				{
@@ -39278,6 +39758,36 @@ class Mission
 					id=1372;
 					type="Aegis_C_Pickup_RF_Tanoa";
 					atlOffset=-0.00041294098;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item17
 				{
@@ -39295,6 +39805,36 @@ class Mission
 					id=1373;
 					type="Aegis_C_Van_01_transport_tanoa_F";
 					atlOffset=-0.0015730858;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item18
 				{
@@ -39312,6 +39852,36 @@ class Mission
 					id=1374;
 					type="Aegis_C_Van_02_vehicle_Tanoa_F";
 					atlOffset=-9.059906e-06;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item19
 				{
@@ -39329,6 +39899,36 @@ class Mission
 					id=1375;
 					type="Aegis_C_Van_01_fuel_tanoa_F";
 					atlOffset=-0.0033061504;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item20
 				{
@@ -39345,6 +39945,36 @@ class Mission
 					};
 					id=1406;
 					type="Aegis_C_Offroad_02_F_Tanoa";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item21
 				{
@@ -39435,7 +40065,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item22
@@ -39527,7 +40183,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item23
@@ -39619,7 +40301,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item24
@@ -39711,7 +40419,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item25
@@ -39803,7 +40537,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item26
@@ -39894,7 +40654,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item27
@@ -39986,7 +40772,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item28
@@ -40078,7 +40890,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item29
@@ -40150,7 +40988,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item30
@@ -40222,7 +41086,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item31
@@ -40293,7 +41183,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item32
@@ -40365,7 +41281,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[""FirstAidKit"",""ToolKit""],[2,1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item33
@@ -40721,7 +41663,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item35
@@ -40813,7 +41781,33 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item36
@@ -40905,12 +41899,389 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item37
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1744.3944,36.559311,3124.7158};
+						angles[]={0.013332055,1.1947633,0.036650803};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						textures="Green";
+					};
+					id=1451;
+					type="O_A_LSV_02_unarmed_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="VehicleCustomization";
+							expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+							class Value
+							{
+								class data
+								{
+									singleType="ARRAY";
+									class value
+									{
+										items=2;
+										class Item0
+										{
+											class data
+											{
+												singleType="ARRAY";
+												class value
+												{
+													items=2;
+													class Item0
+													{
+														class data
+														{
+															singleType="STRING";
+															value="Green";
+														};
+													};
+													class Item1
+													{
+														class data
+														{
+															singleType="SCALAR";
+															value=1;
+														};
+													};
+												};
+											};
+										};
+										class Item1
+										{
+											class data
+											{
+												singleType="ARRAY";
+												class value
+												{
+													items=2;
+													class Item0
+													{
+														class data
+														{
+															singleType="STRING";
+															value="Unarmed_Doors_Hide";
+														};
+													};
+													class Item1
+													{
+														class data
+														{
+															singleType="SCALAR";
+															value=0;
+														};
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item38
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1725.2242,36.180931,3085.4089};
+						angles[]={6.2698536,3.6246908,0.0099949092};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						textures="Green";
+					};
+					id=1452;
+					type="O_T_LSV_02_AT_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="VehicleCustomization";
+							expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+							class Value
+							{
+								class data
+								{
+									singleType="ARRAY";
+									class value
+									{
+										items=2;
+										class Item0
+										{
+											class data
+											{
+												singleType="ARRAY";
+												class value
+												{
+													items=2;
+													class Item0
+													{
+														class data
+														{
+															singleType="STRING";
+															value="Green";
+														};
+													};
+													class Item1
+													{
+														class data
+														{
+															singleType="SCALAR";
+															value=1;
+														};
+													};
+												};
+											};
+										};
+										class Item1
+										{
+											class data
+											{
+												singleType="ARRAY";
+												class value
+												{
+													items=2;
+													class Item0
+													{
+														class data
+														{
+															singleType="STRING";
+															value="Unarmed_Doors_Hide";
+														};
+													};
+													class Item1
+													{
+														class data
+														{
+															singleType="SCALAR";
+															value=0;
+														};
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item39
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1127.6217,9.1246433,2599.2498};
+						angles[]={0.02666023,4.8092642,6.2665191};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						textures="Green";
+					};
+					id=1455;
+					type="O_A_LSV_02_unarmed_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="VehicleCustomization";
+							expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+							class Value
+							{
+								class data
+								{
+									singleType="ARRAY";
+									class value
+									{
+										items=2;
+										class Item0
+										{
+											class data
+											{
+												singleType="ARRAY";
+												class value
+												{
+													items=2;
+													class Item0
+													{
+														class data
+														{
+															singleType="STRING";
+															value="Green";
+														};
+													};
+													class Item1
+													{
+														class data
+														{
+															singleType="SCALAR";
+															value=1;
+														};
+													};
+												};
+											};
+										};
+										class Item1
+										{
+											class data
+											{
+												singleType="ARRAY";
+												class value
+												{
+													items=2;
+													class Item0
+													{
+														class data
+														{
+															singleType="STRING";
+															value="Unarmed_Doors_Hide";
+														};
+													};
+													class Item1
+													{
+														class data
+														{
+															singleType="SCALAR";
+															value=0;
+														};
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""arifle_NCAR15_F""],[1]],[[""ACE_30Rnd_580x42_Mag_red""],[10]],[[""ToolKit""],[1]],[[],[]]],false]";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 			};
 			id=1353;
-			atlOffset=-0.21022749;
+			atlOffset=10.606874;
 		};
 		class Item77
 		{
@@ -41759,14 +43130,14 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4312.2432,5,2715.3789};
-				angles[]={-0,1.0701529,0};
+				position[]={4312.2432,4.9998908,2715.3789};
+				angles[]={0,1.0701486,0};
 			};
-			areaSize[]={200,0,134.2547};
+			areaSize[]={200,0,134.255};
 			flags=1;
 			id=1404;
 			type="lambs_wp_TaskPatrol";
-			atlOffset=-0.11589098;
+			atlOffset=-0.11600018;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -42240,6 +43611,7 @@ class Mission
 			};
 			id=1448;
 			type="O_T_Truck_03_covered_ghex_F";
+			atlOffset=-0.00052881241;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -42360,6 +43732,581 @@ class Mission
 					};
 				};
 				nAttributes=2;
+			};
+		};
+		class Item90
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1770.2189,37.638084,3129.1106};
+				angles[]={0.0033335788,4.2555838,0.010000736};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				textures="Green";
+			};
+			id=1450;
+			type="O_T_Truck_03_covered_ghex_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="VehicleCustomization";
+					expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										singleType="ARRAY";
+										class value
+										{
+											items=2;
+											class Item0
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Green";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="ARRAY";
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="attachMarker";
+					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""arifle_NCAR15_F"",""launch_O_Titan_short_ghex_F"",""launch_O_Vorona_green_F"",""Atlas_Launch_Pzf3_F""],[1,1,1,2]],[[""ACE_30Rnd_580x42_Mag_red"",""Titan_AT"",""Vorona_HEAT"",""Atlas_DM32_HEAT_MP_F""],[10,2,3,1]],[[""ToolKit""],[1]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item91
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1722.7344,34.118435,3081.9424};
+			};
+			areaSize[]={1,-1,1};
+			id=1453;
+			type="ModuleEditTerrainObject_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#name";
+					expression="_this setVariable [""#name"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=7;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="#initServer";
+					expression="_this setVariable [""#initServer"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="#state";
+					expression="_this setVariable [""#state"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=5;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="#allowDamage";
+					expression="_this setVariable [""#allowDamage"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="#doorStates";
+					expression="_this setVariable [""#doorStates"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=3;
+								class Item0
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0;
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0;
+									};
+								};
+								class Item2
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0;
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="#init";
+					expression="_this setVariable [""#init"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				nAttributes=7;
+			};
+		};
+		class Item92
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1099.1278,11.131492,2536.7402};
+				angles[]={6.2531958,1.822348,6.2765174};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				textures="Green";
+			};
+			id=1454;
+			type="O_T_Truck_03_covered_ghex_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="VehicleCustomization";
+					expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										singleType="ARRAY";
+										class value
+										{
+											items=2;
+											class Item0
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Green";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="ARRAY";
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="attachMarker";
+					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""arifle_NCAR15_F"",""launch_O_Titan_short_ghex_F"",""launch_O_Vorona_green_F"",""Atlas_Launch_Pzf3_F""],[1,1,1,2]],[[""ACE_30Rnd_580x42_Mag_red"",""Titan_AT"",""Vorona_HEAT"",""Atlas_DM32_HEAT_MP_F""],[10,2,3,1]],[[""ToolKit""],[1]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item93
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1100.8229,11.198054,2544.0916};
+				angles[]={6.2798557,1.822348,6.2765174};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				textures="Green";
+			};
+			id=1456;
+			type="O_T_Truck_03_covered_ghex_F";
+			atlOffset=9.5367432e-07;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="VehicleCustomization";
+					expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										singleType="ARRAY";
+										class value
+										{
+											items=2;
+											class Item0
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Green";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="ARRAY";
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="attachMarker";
+					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""arifle_NCAR15_F"",""launch_O_Titan_short_ghex_F"",""launch_O_Vorona_green_F"",""Atlas_Launch_Pzf3_F""],[1,1,1,2]],[[""ACE_30Rnd_580x42_Mag_red"",""Titan_AT"",""Vorona_HEAT"",""Atlas_DM32_HEAT_MP_F""],[10,2,3,1]],[[""ToolKit""],[1]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item94
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1066.5854,9.7365017,2608.9016};
+				angles[]={-0,6.2127399,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				textures="Green";
+			};
+			id=1457;
+			type="O_T_Truck_03_covered_ghex_F";
+			atlOffset=9.5367432e-07;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="VehicleCustomization";
+					expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										singleType="ARRAY";
+										class value
+										{
+											items=2;
+											class Item0
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Green";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="ARRAY";
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="attachMarker";
+					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""arifle_NCAR15_F"",""launch_O_Titan_short_ghex_F"",""launch_O_Vorona_green_F"",""Atlas_Launch_Pzf3_F""],[1,1,1,2]],[[""ACE_30Rnd_580x42_Mag_red"",""Titan_AT"",""Vorona_HEAT"",""Atlas_DM32_HEAT_MP_F""],[10,2,3,1]],[[""ToolKit""],[1]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=4;
 			};
 		};
 	};

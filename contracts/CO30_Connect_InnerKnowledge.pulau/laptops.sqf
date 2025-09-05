@@ -21,8 +21,8 @@ isHacked = false; // for a trigger so i dont have to program the moves :D
     },
     {
         systemChat "Laptop: Download Finished";
-	_pos = getPosASL _object;
-	_usb = createVehicle ["Item_FlashDisk", [0,0,0]];
+	private _pos = getPosASL _object;
+	private _usb = createVehicle ["Item_FlashDisk", [0,0,0]];
 	_usb setPosASL [(_pos select 0)+0.5, (_pos select 1), (_pos select 2)-0.054];
         // Clear the screen after 2 seconds
         [{
