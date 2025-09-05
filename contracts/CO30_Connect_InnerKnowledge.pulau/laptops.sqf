@@ -1,12 +1,14 @@
+isHacked = false; // for a trigger so i dont have to program the moves :D
+
 [
     laptop1,
     1,  // texture source
     50, // size in GB
     300,  // time to upload in seconds
     {
-        systemChat "Server: Download Started";
+        systemChat "Laptop: Download Started";
 	[{
-	    systemChat "Hack Detected";
+	    isHacked = true;
 	    {
 	      _x setObjectTextureGlobal [0, "hacked.jpg"];
 	    } forEach ((getMissionLayerEntities "hacked") select 0);
@@ -18,15 +20,16 @@
         }, _this, 10] call CBA_fnc_waitAndExecute;
     },
     {
-        systemChat "Server: Download Finished";
+        systemChat "Laptop: Download Finished";
+	_pos = getPosASL _object;
+	_usb = createVehicle ["Item_FlashDisk", [0,0,0]];
+	_usb setPosASL [(_pos select 0)+0.5, (_pos select 1), (_pos select 2)-0.054];
         // Clear the screen after 2 seconds
         [{
 	    systemChat "Pickup flashdrive";
             params ["_object"];
             _object setObjectTextureGlobal [1, "screen1.jpg"];
-	    _pos = getPosASL _object;
-	    _usb = createVehicle ["Item_FlashDisk", [0,0,0]];
-	    _usb setPosASL [(_pos select 0), (_pos select 1)+1, (_pos select 2)];
+
         }, _this, 1] call CBA_fnc_waitAndExecute;
     },
     "joostlaptop",
