@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=58;
+		nextID=63;
 	};
 	class Camera
 	{
-		pos[]={14391.846,647.92792,9852.3223};
-		dir[]={0.47595757,-0.46610975,0.74596065};
-		up[]={0.25075617,0.88466418,0.39300314};
-		aside[]={0.8431111,1.7207349e-06,-0.53793544};
+		pos[]={16827.547,17.276493,9504.2588};
+		dir[]={-0.093799628,-0.35267353,0.93103558};
+		up[]={-0.035352305,0.93574548,0.35089907};
+		aside[]={0.99496472,-1.7753337e-09,0.10024059};
 	};
 };
 binarizationWanted=0;
@@ -1315,16 +1315,71 @@ class Mission
 					class PositionInfo
 					{
 						position[]={16828.957,12.193759,9517.1172};
-						angles[]={0,4.0972166,0};
+						angles[]={0,4.0972128,0};
 					};
 					side="East";
 					flags=5;
 					class Attributes
 					{
-						isPlayer=1;
 					};
 					id=2947;
 					type="O_HeavyGunner_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="attachMarker";
+							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male03PER";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=4;
+					};
 				};
 			};
 			class Attributes
@@ -11844,17 +11899,33 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={13378.432,15.203482,7349.3804};
+				position[]={13378.432,15.2039,7349.3799};
 			};
 			side="Empty";
 			flags=1;
 			class Attributes
 			{
-				dynamicSimulation=1;
 			};
 			id=2603;
 			type="crate_client_garage_thing_large";
-			atlOffset=0.31757736;
+			atlOffset=0.31799889;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectCollision";
+					expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item56
 		{
