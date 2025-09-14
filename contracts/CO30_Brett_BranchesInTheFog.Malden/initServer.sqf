@@ -21,16 +21,16 @@ mission_uploads = 0;
     ["mission_toggleLip", [officer, true] ] call CBA_fnc_globalEvent;
     0 spawn {
         // Slide 1 - The Base
-        ["slide1.jpg"] call synixe_spectator_fnc_switchScreen;
+        ["mission_switchScreen", ["slide1.jpg"]] call CBA_fnc_globalEvent;
         sleep 40;
         // Slide 2 - Locals
-        ["slide2.jpg"] call synixe_spectator_fnc_switchScreen;
+        ["mission_switchScreen", ["slide2.jpg"]] call CBA_fnc_globalEvent;
         sleep 7;
         // Slide 3 - The Base, Night
-        ["slide3.jpg"] call synixe_spectator_fnc_switchScreen;
+        ["mission_switchScreen", ["slide3.jpg"]] call CBA_fnc_globalEvent;
         sleep 5;
         // Slide 4 - Annotated Map
-        ["slide4.jpg"] call synixe_spectator_fnc_switchScreen;
+        ["mission_switchScreen", ["slide4.jpg"]] call CBA_fnc_globalEvent;
         sleep 25;
         ["\x\synixe\addons\spectator\ui\screen_disabled_co.paa"] call synixe_spectator_fnc_switchScreen;
         officer call BIS_fnc_ambientAnim__terminate;

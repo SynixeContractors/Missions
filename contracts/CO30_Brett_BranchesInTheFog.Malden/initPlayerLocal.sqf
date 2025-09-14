@@ -175,3 +175,7 @@ voices_used = [];
     params ["_unit", "_state"];
     _unit setRandomLip _state;
 }] call CBA_fnc_addEventHandler;
+
+["mission_switchScreen", {
+    _this call synixe_spectator_fnc_switchScreen;
+}] call CBA_fnc_addEventHandler;
