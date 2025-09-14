@@ -17,7 +17,7 @@ mission_uploads = 0;
 }] call CBA_fnc_addEventHandler;
 
 ["mission_briefing", {
-    [officer, "BRIEFING_POINT_LEFT", "ASIS"] call BIS_fnc_ambientAnim;
+    ["mission_start_anim", [officer, "BRIEFING_POINT_LEFT", "ASIS"]] call CBA_fnc_globalEvent;
     ["mission_toggleLip", [officer, true] ] call CBA_fnc_globalEvent;
     0 spawn {
         // Slide 1 - The Base
@@ -32,8 +32,8 @@ mission_uploads = 0;
         // Slide 4 - Annotated Map
         ["mission_switchScreen", ["slide4.jpg"]] call CBA_fnc_globalEvent;
         sleep 25;
-        ["\x\synixe\addons\spectator\ui\screen_disabled_co.paa"] call synixe_spectator_fnc_switchScreen;
-        officer call BIS_fnc_ambientAnim__terminate;
+        ["mission_switchScreen", ["\x\synixe\addons\spectator\ui\screen_disabled_co.paa"]] call CBA_fnc_globalEvent;
         ["mission_toggleLip", [officer, false] ] call CBA_fnc_globalEvent;
+        ["mission_stop_anim", [officer]] call CBA_fnc_globalEvent;
     };
 }] call CBA_fnc_addEventHandler;

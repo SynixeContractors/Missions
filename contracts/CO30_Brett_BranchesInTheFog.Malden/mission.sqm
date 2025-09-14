@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5907.4106,138.32574,8405.5635};
-		dir[]={-0.7271114,-0.25064138,0.63913071};
-		up[]={-0.18825324,0.96807998,0.16547453};
-		aside[]={0.66020441,7.4505806e-09,0.75108606};
+		pos[]={5901.4917,138.32574,8410.5605};
+		dir[]={-0.94559789,-0.31470099,0.082556307};
+		up[]={-0.31350806,0.94919115,0.027371086};
+		aside[]={0.086975165,-1.0285294e-07,0.99621361};
 	};
 };
 binarizationWanted=0;
@@ -149369,15 +149369,46 @@ class Mission
 								};
 							};
 						};
-						nAttributes=5;
+						class Attribute5
+						{
+							property="ENH_disableAI_all";
+							expression="if (_value && local _this) then {[_this, 'all'] remoteExec ['disableAI', 0]}";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						nAttributes=6;
 					};
 				};
 			};
 			class Attributes
 			{
+				behaviour="CARELESS";
 			};
 			id=3898;
 			atlOffset=0.45599365;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item3488
 		{
@@ -152639,7 +152670,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7514.3135,30.589821,10613.174};
-				angles[]={-0,3.1967623,0};
+				angles[]={0,3.1967623,0};
 			};
 			side="Empty";
 			flags=4;
@@ -152986,7 +153017,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5918.6294,133.6707,8437.3281};
-				angles[]={-0,5.631989,0};
+				angles[]={0,5.631989,0};
 			};
 			side="Empty";
 			flags=4;

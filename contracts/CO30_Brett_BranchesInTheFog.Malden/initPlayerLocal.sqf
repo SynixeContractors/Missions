@@ -179,3 +179,13 @@ voices_used = [];
 ["mission_switchScreen", {
     _this call synixe_spectator_fnc_switchScreen;
 }] call CBA_fnc_addEventHandler;
+
+["mission_start_anim", {
+    params ["_unit", "_anim"];
+    [_unit, _anim, "ASIS"] call BIS_fnc_ambientAnim;
+}] call CBA_fnc_addEventHandler;
+
+["mission_stop_anim", {
+    params ["_unit"];
+    _unit call BIS_fnc_ambientAnim__terminate;
+}] call CBA_fnc_addEventHandler;
