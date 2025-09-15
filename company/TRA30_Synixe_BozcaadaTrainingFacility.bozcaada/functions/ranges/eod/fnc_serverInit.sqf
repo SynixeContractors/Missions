@@ -1,8 +1,16 @@
 #include "..\..\..\script_component.hpp"
 
 params ["_range"];
+diag_log format ["EOD: Initializing range '%1'.", _range];
+
+
+private _rangeShort = switch (_range) do {
+    case "EOD Urban": { missionNamespace setVariable [format ["%1_%2", QEGVAR(eod,objects), "urban"], [], true]; "urban" };
+    case "EOD House": { missionNamespace setVariable [format ["%1_%2", QEGVAR(eod,objects), "house"], [], true]; "house" };
+};
 
 {
+    diag_log format ["EOD: Hiding layer '%1 - %2'.", _range, _x];
     private _layer = getMissionLayerEntities format ["%1 - %2", _range, _x];
     if (count _layer > 0) then {
         {
@@ -23,13 +31,17 @@ eod_mines = [
     "tacgt_ModuleMine_Claymore_Training_F"
 ];
 
-[QEGVAR(eod,tablets), [(getMissionLayerEntities format ["%1 - Tablets", _range]) select 0]] call CBA_fnc_globalEventJIP;
+private _tablets = (getMissionLayerEntities format ["%1 - Tablets", _range]) select 0;
+diag_log format ["EOD: Initializing %2 tablets '%1'.", _range, count _tablets];
+[QEGVAR(eod,tablets), [_tablets, _range, _rangeShort]] call CBA_fnc_globalEventJIP;
+diag_log format ["EOD: Tablets for range '%1' initialized.", _range];
 
 [QEGVAR(eod,reset), {
     params ["_range"];
     if (_range == "") exitWith {
         diag_log "EOD Reset: Range not specified.";
     };
+    diag_log format ["EOD Reset: Resetting range '%1'.", _range];
     private _spawn = switch (_range) do {
         case "EOD Urban": { eod_urban_spawn };
         case "EOD House": { eod_house_spawn };
@@ -55,6 +67,7 @@ eod_mines = [
     eod_objects = [];
     for "_i" from 0 to 15 do {
         private _pos = _spawn call BIS_fnc_randomPosTrigger;
+        _pos set [2, 0]; // Force ground level
         private _obj = selectRandom eod_mines;
         private _obj = createVehicle [_obj, _pos, [], 0, "CAN_COLLIDE"];
         eod_objects pushBack _obj;
@@ -78,5 +91,11 @@ eod_mines = [
             };
         };
     } forEach ["Garbage", "Cars"];
-    missionNamespace setVariable [QEGVAR(eod,objects), eod_objects, true];
+    private _rangeShort = switch (_range) do {
+        case "EOD Urban": { "urban" };
+        case "EOD House": { "house" };
+    };
+    missionNamespace setVariable [format ["%1_%2", QEGVAR(eod,objects), _rangeShort], eod_objects, true];
 }] call CBA_fnc_addEventHandler;
+
+diag_log format ["EOD: Server '%1' initialization complete.", _range];
