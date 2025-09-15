@@ -5,6 +5,7 @@
 } forEach [
     "ar",
     "at",
+    "eod",
     "gl",
     "marksman"
 ];
