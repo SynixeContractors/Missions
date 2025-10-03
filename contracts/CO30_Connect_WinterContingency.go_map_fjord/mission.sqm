@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1167;
+		nextID=1180;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=63;
+		nextID=64;
 	};
 	class Camera
 	{
-		pos[]={7934.6904,109.11695,1414.078};
-		dir[]={-0.53759551,-0.37976316,0.75284755};
-		up[]={-0.22069298,0.92508197,0.30905792};
-		aside[]={0.8138144,4.5867637e-08,0.58113062};
+		pos[]={7915.0713,99.340981,1432.1289};
+		dir[]={-0.86231416,-0.28215724,0.42047808};
+		up[]={-0.25361294,0.95936811,0.1236657};
+		aside[]={0.43828645,-7.4505806e-09,0.89883542};
 	};
 };
 binarizationWanted=0;
@@ -13846,7 +13846,7 @@ class Mission
 			name="helbot";
 			class Entities
 			{
-				items=13;
+				items=14;
 				class Item0
 				{
 					dataType="Group";
@@ -18869,9 +18869,247 @@ class Mission
 						nAttributes=1;
 					};
 				};
+				class Item13
+				{
+					dataType="Group";
+					side="East";
+					class Entities
+					{
+						items=1;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={7899.7852,90.617996,1442.723};
+								angles[]={0,5.4183221,0};
+							};
+							side="East";
+							flags=7;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="Aegis_arifle_SR25_MR_khk_F";
+										optics="optic_AMS_khk";
+										firemode="Aegis_arifle_SR25_MR_khk_F:single";
+										class primaryMuzzleMag
+										{
+											name="ACE_20Rnd_762x51_M118LR_Mag";
+											ammoLeft=20;
+										};
+									};
+									class uniform
+									{
+										typeName="U_O_R_officer_noInsignia_taiga_F";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_painkillers";
+												count=1;
+												ammoLeft=10;
+											};
+										};
+										class ItemCargo
+										{
+											items=5;
+											class Item0
+											{
+												name="ACE_fieldDressing";
+												count=5;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=5;
+											};
+											class Item2
+											{
+												name="ACE_morphine";
+												count=1;
+											};
+											class Item3
+											{
+												name="ACE_splint";
+												count=1;
+											};
+											class Item4
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_lxWS_TacVestIR_oli";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="HandGrenade";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item1
+											{
+												name="SmokeShell";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="ACE_20Rnd_762x51_M118LR_Mag";
+												count=6;
+												ammoLeft=20;
+											};
+										};
+									};
+									headgear="H_HelmetB_plain_wdl";
+								};
+							};
+							id=1174;
+							type="Aegis_B_E_Soldier_M_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ENH_disableAI_move";
+									expression="if (_value && local _this) then {[_this, 'MOVE'] remoteExec ['disableAI', 0]}";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="ENH_spotTime";
+									expression="if (_value != 0.5) then {[_this, ['spotTime', _value]] remoteExec ['setSkill', _this]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.5;
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="attachMarker";
+									expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute4
+								{
+									property="ENH_doStop";
+									expression="if (!is3DEN && _value) then {doStop _this}";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute5
+								{
+									property="ENH_spotDistance";
+									expression="if (_value != 0.5) then {[_this, ['spotDistance', _value]] remoteExec ['setSkill', _this]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute6
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.95999998;
+										};
+									};
+								};
+								class Attribute7
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01POL";
+										};
+									};
+								};
+								class Attribute8
+								{
+									property="ENH_aimingAccuracy";
+									expression="if (_value != 0.5) then {[_this, ['aimingAccuracy', _value]] remoteExec ['setSkill', _this]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.30000001;
+										};
+									};
+								};
+								nAttributes=9;
+							};
+						};
+					};
+					class Attributes
+					{
+						combatMode="RED";
+						behaviour="SAFE";
+					};
+					id=1169;
+				};
 			};
 			id=445;
-			atlOffset=1.9395587;
+			atlOffset=41.580143;
 		};
 		class Item22
 		{
@@ -29343,6 +29581,7 @@ class Mission
 			};
 			id=1165;
 			type="TACU_Mercenaries_V_O_High_HEMTT_Covered";
+			atlOffset=-0.00031995773;
 		};
 		class Item42
 		{
