@@ -12,13 +12,7 @@ missionBriefing = false;
   _unit call ENH_fnc_ambientAnimations_exit;
 }] call CBA_fnc_addEventHandler;
 
-["city_1", 1000, 1138, []] call BIS_fnc_destroyCity;
-["city_2", 1000, 1138, []] call BIS_fnc_destroyCity;
-["city_3", 1000, 1138, []] call BIS_fnc_destroyCity;
-["city_4", 1000, 1138, []] call BIS_fnc_destroyCity;
-["city_5", 1000, 1138, []] call BIS_fnc_destroyCity;
-["city_6", 1000, 1138, []] call BIS_fnc_destroyCity;
-["city_7", 1000, 1138, []] call BIS_fnc_destroyCity;
+{ [_x, 1000, 1138, []] call BIS_fnc_destroyCity; } forEach ["city_1", "city_2", "city_3", "city_4", "city_5", "city_6", "city_7"];
 
 mission_fnc_scheduleEarthquake = {
     [mission_fnc_earthquake, "", random [300,600,900]] call CBA_fnc_waitAndExecute;
