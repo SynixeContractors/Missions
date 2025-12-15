@@ -1,1 +1,0 @@
-setApertureNew [2.6, 4, 5, 1];

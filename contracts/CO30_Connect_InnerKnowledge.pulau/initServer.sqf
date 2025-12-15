@@ -1,1 +1,0 @@
-call compile preprocessFile "laptops.sqf"

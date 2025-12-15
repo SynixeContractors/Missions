@@ -73,7 +73,7 @@ if (side player == sideLogic) exitWith {};
             [SFS_SPAWN_PFH] call CBA_fnc_removePerFrameHandler;
             SFS_SPAWN_PFH = nil;
         };
-    }, 1] call CBA_fnc_addPerFrameHandler;
+    }, 1 + random 1] call CBA_fnc_addPerFrameHandler;
 }] call CBA_fnc_waitUntilAndExecute;
 
 [{time > 2}, {
