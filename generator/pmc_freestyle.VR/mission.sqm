@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15.782633,11.779716,0.33504051};
-		dir[]={-0.80211633,-0.51641518,0.29987466};
-		up[]={-0.48371658,0.85633838,0.18083954};
-		aside[]={0.35018247,0,0.93668163};
+		pos[]={7.1005588,11.779716,-4.0967088};
+		dir[]={-0.18720575,-0.61190718,0.76845932};
+		up[]={-0.14483267,0.79092777,0.59452277};
+		aside[]={0.97158951,-5.2037649e-08,0.23669057};
 	};
 };
 binarizationWanted=0;
@@ -31,15 +31,13 @@ sourceName="pmc_freestyle";
 addons[]=
 {
 	"A3_Ui_F",
-	"A3_Characters_F",
-	"A3_Modules_F_Curator_Curator",
 	"synixe_contractors_units"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=2;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -48,20 +46,6 @@ class AddonsMetaData
 			url="https://www.arma3.com";
 		};
 		class Item1
-		{
-			className="A3_Characters_F";
-			name="Arma 3 Alpha - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item2
-		{
-			className="A3_Modules_F_Curator";
-			name="Arma 3 Zeus Update - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item3
 		{
 			className="synixe_contractors_units";
 			name="units";
@@ -105,7 +89,7 @@ class CustomAttributes
 		class Attribute1
 		{
 			property="ENH_dynamicSkill";
-			expression="if (!is3DEN && _value # 0 && isServer) then      {        _value params        [          '_enable',          '_skillMinBLUFOR',          '_skillAimMinBLUFOR',          '_skillMaxBLUFOR',          '_skillAimMaxBlUFOR',          '_skillMinOPFOR',          '_skillAimMinOPFOR',          '_skillMaxOPFOR',          '_skillAimMaxOPFOR',          '_skillMinINDFOR',          '_skillAimMinINDFOR',          '_skillMaxINDFOR',          '_skillAimMaxINDFOR'        ];        [          true,          [            [WEST, _skillMinBLUFOR, _skillAimMinBLUFOR, _skillMaxBLUFOR, _skillAimMaxBlUFOR],            [EAST, _skillMinOPFOR, _skillAimMinOPFOR, _skillMaxOPFOR, _skillAimMaxOPFOR],            [INDEPENDENT, _skillMinINDFOR, _skillAimMinINDFOR, _skillMaxINDFOR, _skillAimMaxINDFOR]          ]        ] call BIS_fnc_EXP_camp_dynamicAISkill;      }";
+			expression="if (!is3DEN && _value # 0 && isServer) then            {                _value params                [                    '_enable',                    '_skillMinBLUFOR',                    '_skillAimMinBLUFOR',                    '_skillMaxBLUFOR',                    '_skillAimMaxBlUFOR',                    '_skillMinOPFOR',                    '_skillAimMinOPFOR',                    '_skillMaxOPFOR',                    '_skillAimMaxOPFOR',                    '_skillMinIndependent',                    '_skillAimMinIndependent',                    '_skillMaxIndependent',                    '_skillAimMaxIndependent'                ];                [                    true,                    [                        [WEST, _skillMinBLUFOR, _skillAimMinBLUFOR, _skillMaxBLUFOR, _skillAimMaxBlUFOR],                        [EAST, _skillMinOPFOR, _skillAimMinOPFOR, _skillMaxOPFOR, _skillAimMaxOPFOR],                        [INDEPENDENT, _skillMinIndependent, _skillAimMinIndependent, _skillMaxIndependent, _skillAimMaxIndependent]                    ]                ] call BIS_fnc_EXP_camp_dynamicAISkill;            }";
 			class Value
 			{
 				class data
@@ -253,62 +237,6 @@ class CustomAttributes
 		name="Scenario";
 		class Attribute0
 		{
-			property="ENH_SPR";
-			expression="if (!is3DEN && _value # 0 > 0 && !isMultiplayer) then      {        ENH_SPR_Ruleset = _value param [0, 0];        ENH_SPR_Delay = _value param [1, 20];        ENH_SPR_CanDie = _value param [2, false];        ENH_SPR_RestoreLoadout = _value param [3, false];        ENH_SPR_OnRespawnCode = compile (_value param [4, '']);        ENH_SPR_Positions =        [          allMapMarkers select {'respawn_east' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_west' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_guerilla' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_civilian' in toLower _x} apply {getMarkerPos _x}        ];        {          _x setVariable ['ENH_SPR_OriginalSide', side group _x];          _x setVariable ['ENH_SPR_OriginalLoadout', getUnitLoadout _x];          _x addEventHandler ['handleDamage',          {            params ['_unit', '', '_damage', '', '', '_index'];            if (!alive _unit || lifeState _unit isEqualTo 'INCAPACITATED') exitWith {0};            if (_unit getVariable ['ENH_SPR_Tickets', 0] == 0) then            {              _unit removeEventHandler ['handleDamage', _thisEventHandler];              _damage;            };            if (ENH_SPR_CanDie && _index in [1, 2] && _damage >= 1) exitWith            {              _unit removeEventHandler ['handleDamage', _thisEventHandler];              1;            };            if (_index < 8 && (_damage min 0.95) == 0.95) then            {              setAccTime 1;              _unit allowDamage false;              _unit setCaptive true;              _unit setUnconscious true;              _unit setVariable ['ENH_SPR_Tickets', (_unit getVariable ['ENH_SPR_Tickets', 0]) - 1];              if (isPlayer _unit) then {enableTeamSwitch false} else {removeSwitchableUnit _unit};              moveOut _unit;              _unit spawn ENH_fnc_SPR_respawnTimer;            };            _damage min 0.95;          }];        } forEach (allUnits select {_x getVariable ['ENH_SPR_Tickets', 0] > 0});                ENH_fnc_SPR_respawn =        {          scriptName 'ENH_Attribute_SPR_Respawn';          params ['_unit'];          if (isPlayer _unit) then {enableTeamSwitch true} else {addSwitchableUnit _unit};          if (ENH_SPR_RestoreLoadout) then {_unit setUnitLoadout (_unit getVariable 'ENH_SPR_OriginalLoadout')};          private _sideID = (_unit getVariable 'ENH_SPR_OriginalSide') call BIS_fnc_sideID;          private _positions = ENH_SPR_Positions select _sideID;          if (_positions isNotEqualTo []) then          {            switch (ENH_SPR_Ruleset) do            {              case 3:              {                _unit setPos (([_positions, [], {_unit distance _x}, 'ASCEND'] call BIS_fnc_sortBy) select 0);              };              case 2:              {                _unit setPos selectRandom _positions;              };            };          };          _unit setUnconscious false;          _unit allowDamage true;          _unit setDamage 0;          _unit switchMove '';          _unit call ENH_SPR_OnRespawnCode;          _unit spawn          {            sleep 8;            _this setCaptive false;          };        };                ENH_fnc_SPR_respawnTimer =        {          scriptName 'ENH_Attribute_SPR_RespawnTimer';          params ['_unit'];          private _respawnTime = time + ENH_SPR_Delay;          if (isPlayer _unit) then          {            private _ctrlRespawnTimer = (call BIS_fnc_displayMission) ctrlCreate ['RscStructuredText',-1];            _ctrlRespawnTimer ctrlSetPosition [0.25, 0, 0.5, 0.06];            _ctrlRespawnTimer ctrlSetBackgroundColor [0, 0, 0, 0.1];            _ctrlRespawnTimer ctrlCommit 0;            ENH_SPR_OriginalVolume = [soundVolume, musicVolume, radioVolume, speechVolume, environmentVolume];            0 cutText ['', 'BLACK OUT', 0.3];            0.3 fadeSound 0;            0.3 fadeMusic 0;            0.3 fadeRadio 0;            0.3 fadeSpeech 0;            0.3 fadeEnvironment 0;            showChat false;            while {time < _respawnTime} do            {              _ctrlRespawnTimer ctrlSetStructuredText parseText format ['<t size=''1.25'' color=''#218a36'' align=''center''>%1</t>', [(_respawnTime - time), 'HH:MM'] call BIS_fnc_timeToString];              sleep 0.1;            };            ctrlDelete _ctrlRespawnTimer;            0 cutText ['', 'BLACK IN', 8];            8 fadeSound (ENH_SPR_OriginalVolume # 0);            8 fadeMusic (ENH_SPR_OriginalVolume # 1);            8 fadeRadio (ENH_SPR_OriginalVolume # 2);            8 fadeSpeech (ENH_SPR_OriginalVolume # 3);            8 fadeEnvironment (ENH_SPR_OriginalVolume # 4);            showChat true;            [              ['Respawned'],              [format ['GRID: %1', mapGridPosition _unit]],              [format ['Tickets left: %1', _unit getVariable 'ENH_SPR_Tickets']]            ] spawn BIS_fnc_EXP_camp_SITREP;          }          else          {            if ((side player getFriend (_unit getVariable 'ENH_SPR_OriginalSide')) >= 0.6) then            {              [                str _unit, 'onEachFrame',                {                  drawIcon3D ['\a3\Modules_f\data\portraitRespawn_ca.paa', [0.13, 0.54, 0.21, 0.8], ASLToAGL ((_this # 0) modelToWorldVisualWorld [0, 0, 1]), 1, 1, 0, str round ((_this # 1) - time), 2];                },                [_unit, _respawnTime]              ] call BIS_fnc_addStackedEventHandler;            };            sleep ENH_SPR_Delay;          };          [str _unit, 'onEachFrame'] call BIS_fnc_removeStackedEventHandler;          _unit call ENH_fnc_SPR_respawn;        };      }";
-			class Value
-			{
-				class data
-				{
-					singleType="ARRAY";
-					class value
-					{
-						items=5;
-						class Item0
-						{
-							class data
-							{
-								singleType="SCALAR";
-								value=0;
-							};
-						};
-						class Item1
-						{
-							class data
-							{
-								singleType="SCALAR";
-								value=20;
-							};
-						};
-						class Item2
-						{
-							class data
-							{
-								singleType="BOOL";
-								value=0;
-							};
-						};
-						class Item3
-						{
-							class data
-							{
-								singleType="BOOL";
-								value=0;
-							};
-						};
-						class Item4
-						{
-							class data
-							{
-								singleType="STRING";
-								value="";
-							};
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="cba_settings_hasSettingsFile";
 			expression="false";
 			class Value
@@ -320,7 +248,7 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=2;
+		nAttributes=1;
 	};
 };
 class Mission
@@ -347,7 +275,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=5;
+		items=2;
 		class Item0
 		{
 			dataType="Marker";
@@ -358,87 +286,8 @@ class Mission
 		};
 		class Item1
 		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={6.5520673,5,1.5033669};
-			};
-			name="hc1";
-			isPlayable=1;
-			description="hc1";
-			id=32;
-			type="HeadlessClient_F";
-		};
-		class Item2
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7.277,5,1.436};
-			};
-			id=35;
-			type="ModuleCurator_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleCurator_F_Owner";
-					expression="_this setVariable ['Owner',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="zeus";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ModuleCurator_F_Forced";
-					expression="_this setVariable ['Forced',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ModuleCurator_F_Name";
-					expression="_this setVariable ['Name',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ModuleCurator_F_Addons";
-					expression="_this setVariable ['Addons',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=2;
-						};
-					};
-				};
-				nAttributes=4;
-			};
-		};
-		class Item3
-		{
 			dataType="Group";
-			side="Independent";
+			side="West";
 			class Entities
 			{
 				items=30;
@@ -449,7 +298,7 @@ class Mission
 					{
 						position[]={0.79699999,5.0014391,1.148};
 					};
-					side="Independent";
+					side="West";
 					flags=7;
 					class Attributes
 					{
@@ -498,7 +347,7 @@ class Mission
 					{
 						position[]={1.796695,5.0014391,1.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -516,7 +365,7 @@ class Mission
 					{
 						position[]={2.796695,5.0014391,1.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -534,7 +383,7 @@ class Mission
 					{
 						position[]={3.796695,5.0014391,1.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -552,7 +401,7 @@ class Mission
 					{
 						position[]={4.7966948,5.0014391,1.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -570,7 +419,7 @@ class Mission
 					{
 						position[]={0.79669499,5.0014391,2.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -588,7 +437,7 @@ class Mission
 					{
 						position[]={1.796695,5.0014391,2.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -606,7 +455,7 @@ class Mission
 					{
 						position[]={2.796695,5.0014391,2.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -624,7 +473,7 @@ class Mission
 					{
 						position[]={3.796695,5.0014391,2.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -642,7 +491,7 @@ class Mission
 					{
 						position[]={4.7966948,5.0014391,2.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -660,7 +509,7 @@ class Mission
 					{
 						position[]={0.79669499,5.0014391,3.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -678,7 +527,7 @@ class Mission
 					{
 						position[]={1.796695,5.0014391,3.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -696,7 +545,7 @@ class Mission
 					{
 						position[]={2.796695,5.0014391,3.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -714,7 +563,7 @@ class Mission
 					{
 						position[]={3.796695,5.0014391,3.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -732,7 +581,7 @@ class Mission
 					{
 						position[]={4.7966948,5.0014391,3.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -750,7 +599,7 @@ class Mission
 					{
 						position[]={0.79669499,5.0014391,4.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -768,7 +617,7 @@ class Mission
 					{
 						position[]={1.796695,5.0014391,4.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -786,7 +635,7 @@ class Mission
 					{
 						position[]={2.796695,5.0014391,4.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -804,7 +653,7 @@ class Mission
 					{
 						position[]={3.796695,5.0014391,4.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -822,7 +671,7 @@ class Mission
 					{
 						position[]={4.7966948,5.0014391,4.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -840,7 +689,7 @@ class Mission
 					{
 						position[]={0.79669499,5.0014391,5.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -858,7 +707,7 @@ class Mission
 					{
 						position[]={1.796695,5.0014391,5.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -876,7 +725,7 @@ class Mission
 					{
 						position[]={2.796695,5.0014391,5.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -894,7 +743,7 @@ class Mission
 					{
 						position[]={3.796695,5.0014391,5.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -912,7 +761,7 @@ class Mission
 					{
 						position[]={4.7966948,5.0014391,5.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -930,7 +779,7 @@ class Mission
 					{
 						position[]={0.79669499,5.0014391,6.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -948,7 +797,7 @@ class Mission
 					{
 						position[]={1.796695,5.0014391,6.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -966,7 +815,7 @@ class Mission
 					{
 						position[]={2.796695,5.0014391,6.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -984,7 +833,7 @@ class Mission
 					{
 						position[]={3.796695,5.0014391,6.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -1002,7 +851,7 @@ class Mission
 					{
 						position[]={4.7966948,5.0014391,6.1476555};
 					};
-					side="Independent";
+					side="West";
 					flags=5;
 					class Attributes
 					{
@@ -1023,7 +872,7 @@ class Mission
 				class Attribute0
 				{
 					property="groupID";
-					expression=" if (isNil 'CBA_fnc_setCallsign') then { _this setGroupID [_value]; } else { [_this, _value] call CBA_fnc_setCallsign; }; ";
+					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
 					class Value
 					{
 						class data
@@ -1035,67 +884,6 @@ class Mission
 				};
 				nAttributes=1;
 			};
-		};
-		class Item4
-		{
-			dataType="Group";
-			side="Independent";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6.217,5.0014391,4.8460002};
-					};
-					side="Independent";
-					flags=7;
-					class Attributes
-					{
-						name="zeus";
-						description="Zeus@Zeus";
-						isPlayable=1;
-					};
-					id=47;
-					type="synixe_contractors_Unit_I_Contractor";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.94999999;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=46;
 		};
 	};
 };
