@@ -1,7 +1,7 @@
 // Register freestyle modules
 ["Freestyle", "Spawn Location", {
     params ["_location", ""];
-    missionNamespace setVariable ["SFS_SPAWN_POS", ASLtoAGL _location, true];
+    missionNamespace setVariable ["synixe_freestyle_spawn_location", ASLtoAGL _location, true];
 }] call zen_custom_modules_fnc_register;
 
 ["Freestyle", "Kill", {
@@ -14,7 +14,7 @@
     private _deadPlayers = [];
     private _deadNames = [];
     {
-        if (SFS_SPECTATORS getVariable [getPlayerUID _x, false]) then {
+        if (_x getVariable ["ace_spectator_isSet", false]) then {
             _deadPlayers pushBack _x;
             _deadNames pushBack (name _x);
         };
@@ -29,7 +29,7 @@
         params ["_values", "_args"];
         _values params ["_player", "_loadout"];
         _args params ["_location"];
-        ["SFS_RESPAWN", [_location, _loadout], _player] call CBA_fnc_targetEvent;
+        ["synixe_freestyle_respawn", [_player, _location, _loadout]] call CBA_fnc_serverEvent;
     }, {}, [_location]] call zen_dialog_fnc_create;
 }] call zen_custom_modules_fnc_register;
 
@@ -41,7 +41,11 @@
         params ["_values", "_args"];
         _values params ["_loadout"];
         _args params ["_location"];
-        ["SFS_RESPAWN", [_location, _loadout]] call CBA_fnc_globalEvent;
+        {
+            if (_x getVariable ["ace_spectator_isSet", false]) then {
+                ["synixe_freestyle_respawn", [_x, _location, _loadout]] call CBA_fnc_serverEvent;
+            };
+        } forEach allPlayers;
     }, {}, [_location]] call zen_dialog_fnc_create;
 }] call zen_custom_modules_fnc_register;
 
@@ -52,55 +56,40 @@ if (side player == sideLogic) exitWith {};
     player setPosASL [0,0,5];
     player enableSimulation false;
     
-    if (player isNotEqualTo zeus) then {
-        [true] call ace_spectator_fnc_setSpectator;
-    };
+    if (player isEqualTo zeus) exitWith {};
 
-    SFS_SPAWN_PFH = [{
-        if !((missionNamespace getVariable ["SFS_SPAWN_POS", []]) isEqualTo []) then {
-            [player, SFS_SPAWN_POS, true] call BIS_fnc_moveToRespawnPosition;
+    [true] call ace_spectator_fnc_setSpectator;
+    synixe_freestyle_spawn_pfh = [{
+        if ((missionNamespace getVariable ["synixe_freestyle_spawn_location", []]) isNotEqualTo []) then {
             player enableSimulation true;
             if (player isNotEqualTo zeus) then {
                 [false] call ace_spectator_fnc_setSpectator;
             };
-            [SFS_SPAWN_PFH] call CBA_fnc_removePerFrameHandler;
-            SFS_SPAWN_PFH = nil;
+            [synixe_freestyle_spawn_pfh] call CBA_fnc_removePerFrameHandler;
+            synixe_freestyle_spawn_pfh = nil;
+            [{
+                player setVelocity [0,0,0];
+                [player, synixe_freestyle_spawn_location, true] call BIS_fnc_moveToRespawnPosition;
+            }, [], 0.5] call CBA_fnc_waitAndExecute;
         };
     }, 1] call CBA_fnc_addPerFrameHandler;
-
-    // Return to spectator if the player was in spectator when they disconnected
-    if (SFS_SPECTATORS getVariable [getPlayerUID player, false]) then {
-        [player, true] call ace_medical_fnc_setDead;
-    };
 }] call CBA_fnc_waitUntilAndExecute;
 
-["SFS_RESPAWN", {
+["synixe_freestyle_respawn", {
     params ["_location", "_loadout"];
-    player setPos _location;
-    player enableSimulation true;
-    [false] call ace_spectator_fnc_setSpectator;
-    SFS_SPECTATORS setVariable [getPlayerUID player, false, true];
-    deleteVehicle (player getVariable ["SFS_CORPSE", objNull]);
-    if (_loadout) then {
-        player setUnitLoadout [(SFS_LOADOUTS getVariable [getPlayerUID player, getUnitLoadout player]), false];
-    };
+    [player, _loadout] call CBA_fnc_setLoadout;
+    [{
+        player setVelocity [0,0,0];
+        [player, _this, true] call BIS_fnc_moveToRespawnPosition;
+    }, _location, 0.5] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
 
 player addEventHandler ["Respawn", {
-    params ["", "_corpse"];
-    private _pos = getPosASL _corpse;
     [true] call ace_spectator_fnc_setSpectator;
-    player setVariable ["SFS_CORPSE", _corpse, true];
-    SFS_SPECTATORS setVariable [getPlayerUID player, true, true];
-    player enableSimulation false;
-    _pos spawn {
-        sleep 0.2;
-        ace_spectator_camera setPosASL _this;
-    };
 }];
 
 player addMPEventHandler ["MPKilled", {
-    SFS_LOADOUTS setVariable [getPlayerUID player, getUnitLoadout player, true];
+    ["synixe_freestyle_killed", [player]] call CBA_fnc_serverEvent;
 }];
 
 [{time > 2}, {

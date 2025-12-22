@@ -65,15 +65,18 @@ if (side player == sideLogic) exitWith {};
 
     SFS_SPAWN_PFH = [{
         if ((missionNamespace getVariable ["SFS_SPAWN_POS", []]) isNotEqualTo []) then {
-            [player, SFS_SPAWN_POS, true] call BIS_fnc_moveToRespawnPosition;
             player enableSimulation true;
             if (player isNotEqualTo zeus) then {
                 [false] call ace_spectator_fnc_setSpectator;
             };
             [SFS_SPAWN_PFH] call CBA_fnc_removePerFrameHandler;
             SFS_SPAWN_PFH = nil;
+            [{
+                player setVelocity [0,0,0];
+                [player, SFS_SPAWN_POS, true] call BIS_fnc_moveToRespawnPosition;
+            }, [], 0.5] call CBA_fnc_waitAndExecute;
         };
-    }, 1 + random 1] call CBA_fnc_addPerFrameHandler;
+    }, 1] call CBA_fnc_addPerFrameHandler;
 }] call CBA_fnc_waitUntilAndExecute;
 
 [{time > 2}, {
