@@ -58,13 +58,9 @@ if (side player == sideLogic) exitWith {};
     
     if (player isEqualTo zeus) exitWith {};
 
-    [true] call ace_spectator_fnc_setSpectator;
     synixe_freestyle_spawn_pfh = [{
         if ((missionNamespace getVariable ["synixe_freestyle_spawn_location", []]) isNotEqualTo []) then {
             player enableSimulation true;
-            if (player isNotEqualTo zeus) then {
-                [false] call ace_spectator_fnc_setSpectator;
-            };
             [synixe_freestyle_spawn_pfh] call CBA_fnc_removePerFrameHandler;
             synixe_freestyle_spawn_pfh = nil;
             [{

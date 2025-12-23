@@ -59,10 +59,6 @@ if (side player == sideLogic) exitWith {};
     player setPosASL [0,0,5];
     player enableSimulation false;
 
-    if (player isNotEqualTo zeus) then {
-        [true] call ace_spectator_fnc_setSpectator;
-    };
-
     SFS_SPAWN_PFH = [{
         if ((missionNamespace getVariable ["SFS_SPAWN_POS", []]) isNotEqualTo []) then {
             player enableSimulation true;
@@ -77,10 +73,4 @@ if (side player == sideLogic) exitWith {};
             }, [], 0.5] call CBA_fnc_waitAndExecute;
         };
     }, 1] call CBA_fnc_addPerFrameHandler;
-}] call CBA_fnc_waitUntilAndExecute;
-
-[{time > 2}, {
-    if (player isEqualTo zeus) then {
-        openCuratorInterface;
-    };
 }] call CBA_fnc_waitUntilAndExecute;
