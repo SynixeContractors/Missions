@@ -46,7 +46,7 @@
                 ["synixe_freestyle_respawn", [_x, _location, _loadout]] call CBA_fnc_serverEvent;
             };
         } forEach allPlayers;
-    }, {}, [_location]] call zen_dialog_fnc_create;
+    }, {}, [ASLtoAGL _location]] call zen_dialog_fnc_create;
 }] call zen_custom_modules_fnc_register;
 
 if (side player == sideLogic) exitWith {};
