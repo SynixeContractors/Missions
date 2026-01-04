@@ -74,6 +74,7 @@ if (side player == sideLogic) exitWith {};
 ["synixe_freestyle_respawn", {
     params ["_location", "_loadout"];
     [player, _loadout] call CBA_fnc_setLoadout;
+    [false] call ace_spectator_fnc_setSpectator;
     [{
         player setVelocity [0,0,0];
         [player, _this, true] call BIS_fnc_moveToRespawnPosition;
