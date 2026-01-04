@@ -75,9 +75,11 @@ if (side player == sideLogic) exitWith {};
     params ["_location", "_loadout"];
     [player, _loadout] call CBA_fnc_setLoadout;
     [false] call ace_spectator_fnc_setSpectator;
+    player enableSimulation false;
     [{
-        player setVelocity [0,0,0];
         [player, _this, true] call BIS_fnc_moveToRespawnPosition;
+        player enableSimulation true;
+        player setVelocity [0,0,0];
     }, _location, 0.5] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
 

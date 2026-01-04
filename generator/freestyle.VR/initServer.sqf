@@ -8,11 +8,11 @@ synixe_freestyle_loadouts = createHashMap;
 
 // Requesting a respawn
 ["synixe_freestyle_respawn", {
-    params ["_player", "_location", "_loadout"];
+    params ["_unit", "_location", "_loadout"];
     private _loadout = if (_loadout) then {
-        synixe_freestyle_loadouts get [getPlayerUID _player, [_unit] call CBA_fnc_getLoadout]
+        synixe_freestyle_loadouts getOrDefault [getPlayerUID _unit, [_unit] call CBA_fnc_getLoadout]
     } else {
         []
     };
-    ["synixe_freestyle_respawn", [_location, _loadout], _player] call CBA_fnc_targetEvent;
+    ["synixe_freestyle_respawn", [_location, _loadout], _unit] call CBA_fnc_targetEvent;
 }] call CBA_fnc_addEventHandler;
