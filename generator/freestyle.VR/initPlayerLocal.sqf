@@ -30,7 +30,7 @@
         _values params ["_player", "_loadout"];
         _args params ["_location"];
         ["synixe_freestyle_respawn", [_player, _location, _loadout]] call CBA_fnc_serverEvent;
-    }, {}, [_location]] call zen_dialog_fnc_create;
+    }, {}, [ASLtoAGL _location]] call zen_dialog_fnc_create;
 }] call zen_custom_modules_fnc_register;
 
 ["Freestyle", "Respawn All", {
