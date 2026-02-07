@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1025;
+	toggles=1537;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=607;
+		nextID=611;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7;
+		nextID=8;
 	};
 	class Camera
 	{
-		pos[]={3439.3013,126.95834,3996.6807};
-		dir[]={0.66529739,-0.30398619,0.68190306};
-		up[]={0.21228926,0.95267093,0.21758629};
-		aside[]={0.71577513,-1.3912213e-06,-0.69834483};
+		pos[]={3943.5659,549.77411,4022.8074};
+		dir[]={-0.38247973,-0.59570479,-0.70632255};
+		up[]={-0.28366581,0.80319595,-0.52384466};
+		aside[]={-0.87936699,-5.2293763e-07,0.47618505};
 	};
 };
 binarizationWanted=0;
@@ -799,7 +799,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=73;
+		items=74;
 		class Item0
 		{
 			dataType="Object";
@@ -812,7 +812,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="[this] spawn {" \n "    params [""_gate""];" \n "    " \n "    while {true} do {" \n "        if ({_x distance _gate < 10} count allPlayers > 0) then {" \n "            _gate animate [""Door_1_rot"", 1];" \n "        } else {" \n "            _gate animate [""Door_1_rot"", 0];" \n "        };" \n "        " \n "        sleep 1;    };" \n "};";
+				name="entry_gate";
 			};
 			id=0;
 			type="Land_BarGate_F";
@@ -6215,6 +6215,7 @@ class Mission
 				sizeA=106.098;
 				sizeB=36.297001;
 				sizeC=11.548;
+				activationType="EAST D";
 				activationBy="ANYPLAYER";
 				type="SWITCH";
 				isRectangle=1;
@@ -9291,6 +9292,7 @@ class Mission
 					{
 						rank="SERGEANT";
 						init="doStop this;";
+						name="guard_gate";
 						class Inventory
 						{
 							class primaryWeapon
@@ -11590,7 +11592,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3429.6973,22.35,3959.5366};
-			angle=0.098601967;
+			angle=0.09860196;
 			class Attributes
 			{
 				sizeA=189.48285;
@@ -12991,6 +12993,28 @@ class Mission
 			};
 			id=606;
 			type="APERSTripMine";
+		};
+		class Item73
+		{
+			dataType="Trigger";
+			position[]={4794.7251,31.262949,4524.374};
+			angle=5.9382205;
+			class Attributes
+			{
+				condition="count thisList > 0";
+				onActivation="entry_gate animate [""Door_1_rot"", 1];" \n "[guard_gate, ""PutDown""] call ace_common_fnc_doGesture;";
+				onDeactivation="entry_gate animate [""Door_1_rot"", 0];" \n "[guard_gate, ""PutDown""] call ace_common_fnc_doGesture;";
+				sizeA=20.981001;
+				sizeB=7.3249998;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+				isServerOnly=1;
+				triggerInterval=1;
+			};
+			id=607;
+			type="EmptyDetectorAreaR50";
+			atlOffset=2.0890007;
 		};
 	};
 	class Connections
