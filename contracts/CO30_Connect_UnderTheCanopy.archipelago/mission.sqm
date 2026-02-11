@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=209;
+		nextID=232;
 	};
 	class Camera
 	{
-		pos[]={1391.176,142.29228,6107.6152};
-		dir[]={0.77383542,-0.5333119,-0.34171921};
-		up[]={0.48786825,0.84591383,-0.2154382};
-		aside[]={-0.40396354,-2.9383227e-07,-0.91478699};
+		pos[]={1972.16,540.66016,5980.6826};
+		dir[]={0.45164937,-0.66790187,0.59154034};
+		up[]={0.40531772,0.74424934,0.53085822};
+		aside[]={0.79481471,0,-0.60685217};
 	};
 };
 binarizationWanted=0;
@@ -3226,14 +3226,13 @@ class Mission
 						angles[]={0,2.5728073,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=1340;
 					type="Land_Tablet_01_F";
-					atlOffset=0.0013141632;
+					atlOffset=0.0055541992;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3280,7 +3279,7 @@ class Mission
 				};
 			};
 			id=95;
-			atlOffset=-0.020830154;
+			atlOffset=-0.018713951;
 		};
 		class Item1
 		{
@@ -3730,7 +3729,7 @@ class Mission
 							};
 							id=387;
 							type="Land_Hammer_F";
-							atlOffset=-0.00019836426;
+							atlOffset=-0.00018310547;
 						};
 						class Item14
 						{
@@ -11336,7 +11335,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2105.073,46.959606,6388.3594};
-						angles[]={0.06988623,2.3801279,0.064909652};
+						angles[]={0.069882989,2.3801229,0.064908795};
 					};
 					side="East";
 					flags=2;
@@ -11374,7 +11373,7 @@ class Mission
 				};
 			};
 			id=528;
-			atlOffset=-0.0099220276;
+			atlOffset=-0.0099983215;
 		};
 		class Item10
 		{
@@ -11576,7 +11575,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2242.7817,49.886921,6263.5137};
-						angles[]={0.014998405,2.2389171,6.2482009};
+						angles[]={6.278182,0.72346276,6.268187};
 					};
 					side="East";
 					flags=2;
@@ -11614,7 +11613,7 @@ class Mission
 				};
 			};
 			id=536;
-			atlOffset=-0.0001373291;
+			atlOffset=-0.00086975098;
 		};
 		class Item13
 		{
@@ -11636,21 +11635,22 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2220.469,48.034401,6373.3286};
-								angles[]={0.06988623,2.3801279,0.064909652};
+								position[]={2220.4692,48.03434,6373.3286};
+								angles[]={0.069882989,2.3801229,0.064908795};
 							};
 							side="East";
 							flags=6;
 							class Attributes
 							{
 								textures="Green";
+								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
 								aiRadarUsage=1;
 							};
 							id=530;
 							type="synixe_factions_mbakora_army_combat_SAM02";
-							atlOffset=-0.0099220276;
+							atlOffset=-0.0099983215;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -11703,7 +11703,33 @@ class Mission
 										};
 									};
 								};
-								nAttributes=1;
+								class Attribute1
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="attachMarker";
+									expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								nAttributes=3;
 							};
 						};
 						class Item1
@@ -11711,21 +11737,22 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2166.5356,46.583931,6465.0454};
-								angles[]={0.014998405,2.2389171,6.2482009};
+								position[]={2159.2991,47.1366,6481.9526};
+								angles[]={6.278182,0.72346276,6.268187};
 							};
 							side="East";
 							flags=6;
 							class Attributes
 							{
 								textures="Green";
+								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
 								aiRadarUsage=1;
 							};
 							id=538;
 							type="synixe_factions_mbakora_army_combat_SAM02";
-							atlOffset=-0.0001373291;
+							atlOffset=-0.00086975098;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -11778,7 +11805,33 @@ class Mission
 										};
 									};
 								};
-								nAttributes=1;
+								class Attribute1
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="attachMarker";
+									expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								nAttributes=3;
 							};
 						};
 						class Item2
@@ -12922,7 +12975,7 @@ class Mission
 						};
 					};
 					id=543;
-					atlOffset=64.36174;
+					atlOffset=64.364456;
 				};
 				class Item1
 				{
@@ -15336,7 +15389,7 @@ class Mission
 				};
 			};
 			id=542;
-			atlOffset=-26.368256;
+			atlOffset=-26.368237;
 		};
 		class Item14
 		{
