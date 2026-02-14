@@ -12,6 +12,7 @@ waitUntil {!isNull(findDisplay 46)};
 mission_textOpen = false;
 mission_messages = [];
 mission_phone_volume = 1;
+mission_noSound = false;
 
 ["mission_text", {
     params ["_profile", "_text"];
@@ -19,7 +20,7 @@ mission_phone_volume = 1;
     mission_messages pushBack [_profile, _text];
     if !("SmartPhone" in magazines player) exitWith {};
     hint format ["%1: %2", _profile, _text];
-    if !(visibleMap) then {
+    if (!visibleMap && !mission_noSound) then {
         playSound3D [getMissionPath "phone.ogg", player, false, getPosASL player, mission_phone_volume];
     };
 }] call CBA_fnc_addEventHandler;
@@ -75,7 +76,7 @@ mission_fnc_keypressed = {
 };
 
 mission_fnc_clack = {
-    params ["_display", "_control", "_event", "_args"];
+    if (mission_noSound) exitWith {false};
     private _clacks = [1,1,2,0.25];
     private _clack = selectRandomWeighted _clacks;
     playSound3D [getMissionPath format ["clack%1.ogg", _clack], player, false, getPosASL player, mission_phone_volume];
