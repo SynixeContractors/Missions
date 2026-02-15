@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=471;
+		nextID=483;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={10417.421,281.6507,6370.3745};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={5729.7686,131.52344,11301.617};
+		dir[]={0.65401095,-0.56250966,0.50583422};
+		up[]={0.44495633,0.82678664,0.34414387};
+		aside[]={0.61180168,2.1875894e-07,-0.79102105};
 	};
 };
 binarizationWanted=0;
@@ -118,13 +118,17 @@ addons[]=
 	"synixe_standardization_rename_wslv",
 	"A3_Characters_F_Orange_Vests",
 	"A3_Weapons_F_Explosives",
-	"A3_Ui_F"
+	"A3_Ui_F",
+	"A3_Supplies_F_Orange_Ammoboxes",
+	"A3_Aegis_Supplies_F_Aegis_Ammoboxes",
+	"synixe_spectator",
+	"crate_client_garage"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=53;
+		items=57;
 		class Item0
 		{
 			className="synixe_factions_synixe";
@@ -474,6 +478,31 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item53
+		{
+			className="A3_Supplies_F_Orange";
+			name="Arma 3 Orange - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item54
+		{
+			className="A3_Aegis_Supplies_F_Aegis";
+			name="Arma 3 Aegis - Ammoboxes and Supplies";
+			author="Avery Kaiserin";
+			url="https://steamcommunity.com/sharedfiles/filedetails/?id=949252631";
+		};
+		class Item55
+		{
+			className="synixe_spectator";
+			name="spectator";
+		};
+		class Item56
+		{
+			className="crate_client_garage";
+			name="garage";
+			author="AUTHOR";
+		};
 	};
 };
 dlcs[]=
@@ -495,7 +524,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Scenario";
 		class Attribute0
@@ -562,7 +591,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=29;
+		items=41;
 		class Item0
 		{
 			dataType="Layer";
@@ -9725,7 +9754,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9945.7295,373.84427,7717.4912};
-			angle=2.5011756;
+			angle=2.5011754;
 			class Attributes
 			{
 				text="setupambush_east";
@@ -9745,7 +9774,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={4643.7852,310.98334,6846.29};
-			angle=0.45394263;
+			angle=0.45394257;
 			class Attributes
 			{
 				text="setupambush_west";
@@ -13769,12 +13798,12 @@ class Mission
 								angles[]={0.00069053395,5.0050225,0.0093414048};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
 							};
 							id=312;
 							type="synixe_factions_M2_High";
+							atlOffset=3.0424805;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -15130,7 +15159,7 @@ class Mission
 								{
 									dataType="Waypoint";
 									loiterAltitude=-3.4028235e+38;
-									position[]={10522.289,263.77261,6474.7476};
+									position[]={10519.281,263.56555,6471.0244};
 									class Effects
 									{
 									};
@@ -15142,7 +15171,7 @@ class Mission
 								{
 									dataType="Waypoint";
 									loiterAltitude=-3.4028235e+38;
-									position[]={10386.064,258.11316,6447.2983};
+									position[]={10388.974,258.06458,6447.4624};
 									class Effects
 									{
 									};
@@ -15748,8 +15777,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={10386.11,260.22583,6447.2188};
-								angles[]={6.2527947,1.5279658,6.2655902};
+								position[]={10389.023,260.17719,6447.3828};
+								angles[]={6.2527947,1.5279658,6.2639866};
 							};
 							side="Empty";
 							flags=4;
@@ -15932,11 +15961,11 @@ class Mission
 						};
 					};
 					id=345;
-					atlOffset=3.3392944;
+					atlOffset=3.3331299;
 				};
 			};
 			id=313;
-			atlOffset=-17.877869;
+			atlOffset=-17.876587;
 		};
 		class Item12
 		{
@@ -20576,6 +20605,417 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item29
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5816.2622,83.932426,11366.86};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=471;
+			type="C_IDAP_supplyCrate_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="crate_client_gear_attribute_shop";
+					expression="if(_value)then{crate_client_gear_shop_boxes pushBack _this}";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item30
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5816.5952,83.932426,11343.625};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=472;
+			type="C_IDAP_supplyCrate_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="crate_client_gear_attribute_shop";
+					expression="if(_value)then{crate_client_gear_shop_boxes pushBack _this}";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item31
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5789.7935,83.932426,11321.154};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=473;
+			type="C_IDAP_supplyCrate_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="crate_client_gear_attribute_shop";
+					expression="if(_value)then{crate_client_gear_shop_boxes pushBack _this}";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item32
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5774.0688,83.932426,11307.075};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=474;
+			type="C_IDAP_supplyCrate_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="crate_client_gear_attribute_shop";
+					expression="if(_value)then{crate_client_gear_shop_boxes pushBack _this}";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item33
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5782.3936,84.083168,11319.668};
+				angles[]={-0,5.6770282,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=475;
+			type="synixe_spectator_screen";
+		};
+		class Item34
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5817.6914,84.083168,11348.592};
+				angles[]={-0,5.6770282,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=476;
+			type="synixe_spectator_screen";
+		};
+		class Item35
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5801.0972,84.083168,11331.983};
+				angles[]={-0,5.3514352,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=477;
+			type="synixe_spectator_screen";
+		};
+		class Item36
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5757.5142,83.040504,11349.366};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=478;
+			type="crate_client_garage_heli_large";
+		};
+		class Item37
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5775.0889,83.040504,11366.54};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=479;
+			type="crate_client_garage_land_large";
+		};
+		class Item38
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5787.6768,83.040504,11379.093};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=480;
+			type="crate_client_garage_land_large";
+		};
+		class Item39
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5800.645,83.040504,11392.295};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=481;
+			type="crate_client_garage_land_large";
+		};
+		class Item40
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5744.1987,83.040504,11336.371};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=482;
+			type="crate_client_garage_thing_large";
 		};
 	};
 	class Connections
