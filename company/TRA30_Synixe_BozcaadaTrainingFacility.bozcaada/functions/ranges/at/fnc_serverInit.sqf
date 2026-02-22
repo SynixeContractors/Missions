@@ -6,7 +6,8 @@
             typeof _x == "WeaponHolderSimulated"
         } select {
             count ((weaponCargo _x) select {
-                "used" in toLower _x
+                private _lower = toLower _x;
+                "used" in _lower || "expended" in _lower
             }) > 0
         }
     )
