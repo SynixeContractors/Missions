@@ -20,6 +20,9 @@ In the main review comment, provide an overview of the mission objectives, facti
    - Operations should be western-aligned or neutral in nature.
    - Missions should not promote or glorify violence or war crimes.
 
+5. **Allegiances**
+   - Virelia is a major friendly country, Calvane is a major hostile country. Calvane and the CSP is the main antagonist, but other factions exist and mission may not involve them. Drovak and the MSA (Mutual Security Alliance), and may be slightly friendly or hostile depending on the mission.
+
 5. **Spelling and Grammar**: Check for spelling and grammatical errors in the mission briefing and any associated documentation. Clear communication is essential for mission clarity.
 
 # Feedback and Approval
