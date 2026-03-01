@@ -34,3 +34,6 @@ In the main review comment, provide an overview of the mission objectives, facti
 ## Mission Structure
 
 - Each mission should have a mission.sqm, a do_not_edit and edit_me folder. If those files are missing, or in a folder named "mission", the PR needs to be fixed before it can be approved.
+
+## Ignore Template Error
+If the mission has "// if you create "edit_me/briefing/example.html, then add "Example" here" (missing the " after .html), do not leave a comment, this was a mistake in the template and is not a problem for PRs.
