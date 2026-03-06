@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1119;
+		nextID=1125;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=89;
+		nextID=117;
 	};
 	class Camera
 	{
-		pos[]={2645.3911,74.20433,968.9068};
-		dir[]={0.63033253,-0.27998605,0.72411388};
-		up[]={0.18384103,0.95999998,0.21119079};
-		aside[]={0.75428116,-9.0632238e-07,-0.65659535};
+		pos[]={2647.5913,74.842194,961.75226};
+		dir[]={-0.96558166,-0.26019058,-0.0062661497};
+		up[]={-0.26020989,0.96554589,-0.0016876493};
+		aside[]={-0.0064848801,-1.0388928e-06,1.0000306};
 	};
 };
 binarizationWanted=0;
@@ -176,9 +176,9 @@ addons[]=
 	"A3_Atlas_Weapons_F_Atlas",
 	"ace_grenades",
 	"A3_Aegis_Weapons_F_Aegis_Rifles_AKS",
+	"synixe_armoury_scopes",
 	"RF_Weapons_Rifles_H6",
 	"ace_compat_rf_realisticnames",
-	"synixe_armoury_scopes",
 	"Props_Globe_Humanitarian_Garbage",
 	"A3_Structures_F_Enoch_Civilian_Camps",
 	"CUP_CA_Config",
@@ -758,24 +758,24 @@ class AddonsMetaData
 		};
 		class Item83
 		{
+			className="synixe_armoury_scopes";
+			name="Synixe Armoury - Scopes";
+			author="Synixe Contractors";
+			url="https://github.com/SynixeContractors/Armoury";
+		};
+		class Item84
+		{
 			className="RF_Weapons";
 			name="Arma 3 Creator DLC: Reaction Forces - Weapons and Accessories";
 			author="Rotators Collective";
 			url="https://reactionforces.rotators.net/";
 		};
-		class Item84
+		class Item85
 		{
 			className="ace_compat_rf_realisticnames";
 			name="ACE3 - Reaction Forces Compatibility - Realistic Names";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
-		};
-		class Item85
-		{
-			className="synixe_armoury_scopes";
-			name="Synixe Armoury - Scopes";
-			author="Synixe Contractors";
-			url="https://github.com/SynixeContractors/Armoury";
 		};
 		class Item86
 		{
@@ -1065,7 +1065,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=182;
+		items=184;
 		class Item0
 		{
 			dataType="Logic";
@@ -3771,6 +3771,7 @@ class Mission
 			};
 			id=107;
 			type="synixe_spectator_screen";
+			atlOffset=1.9073486e-05;
 		};
 		class Item10
 		{
@@ -3787,6 +3788,7 @@ class Mission
 			};
 			id=108;
 			type="synixe_spectator_screen";
+			atlOffset=1.9073486e-05;
 		};
 		class Item11
 		{
@@ -26619,7 +26621,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="if (isServer) then { " \n "    this spawn { " \n "        params [""_charge""]; " \n "        sleep 9720; " \n "        _charge setDamage 1; " \n "    }; " \n "}; " \n "";
+				name="bomb4";
 			};
 			id=746;
 			type="UnderwaterMineAB";
@@ -26654,7 +26656,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="if (isServer) then { " \n "    this spawn { " \n "        params [""_charge""]; " \n "        sleep 9720; " \n "        _charge setDamage 1; " \n "    }; " \n "}; " \n "";
+				name="bomb5";
 			};
 			id=747;
 			type="UnderwaterMineAB";
@@ -26688,7 +26690,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="if (isServer) then { " \n "    this spawn { " \n "        params [""_charge""]; " \n "        sleep 9720; " \n "        _charge setDamage 1; " \n "    }; " \n "}; " \n "";
+				name="bomb6";
 			};
 			id=749;
 			type="UnderwaterMineAB";
@@ -31129,7 +31131,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="if (isServer) then { " \n "    this spawn { " \n "        params [""_charge""]; " \n "        sleep 7596; " \n "        _charge setDamage 1; " \n "    }; " \n "}; " \n "";
+				name="bomb1";
 			};
 			id=881;
 			type="UnderwaterMineAB";
@@ -31164,7 +31166,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="if (isServer) then { " \n "    this spawn { " \n "        params [""_charge""]; " \n "        sleep 7596; " \n "        _charge setDamage 1; " \n "    }; " \n "}; " \n "";
+				name="bomb3";
 			};
 			id=882;
 			type="UnderwaterMineAB";
@@ -31208,17 +31210,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2652.6426,54.845001,991.64941};
+				position[]={2652.6431,54.845123,991.64899};
 				angles[]={0,5.8514781,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="if (isServer) then { " \n "    this spawn { " \n "        params [""_charge""]; " \n "        sleep 7596; " \n "        _charge setDamage 1; " \n "    }; " \n "}; " \n "";
+				name="bomb2";
 			};
 			id=885;
 			type="UnderwaterMineAB";
+			atlOffset=0.00012207031;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -33178,7 +33181,7 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=8;
+				items=9;
 				class Item0
 				{
 					dataType="Object";
@@ -34632,6 +34635,143 @@ class Mission
 								{
 									singleType="SCALAR";
 									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2626.7141,65.326439,975.62};
+						angles[]={0,1.5413177,0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+						skill=0.65421885;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="srifle_DMR_06_olive_F";
+								optics="synixe_armoury_optic_DMS_ghex";
+								underBarrel="bipod_03_F_oli";
+								firemode="srifle_DMR_06_olive_F:Single";
+								class primaryMuzzleMag
+								{
+									name="synixe_armoury_20Rnd_762x51_AP";
+									ammoLeft=20;
+								};
+							};
+							class uniform
+							{
+								typeName="U_C_PilotJacket_lbrown_RF";
+								isBackpack=0;
+								class ItemCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="ACE_elasticBandage";
+										count=4;
+									};
+									class Item1
+									{
+										name="ACE_packingBandage";
+										count=4;
+									};
+									class Item2
+									{
+										name="ACE_tourniquet";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="Aegis_V_ChestrigEast_grn_F";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							gps="ItemGPS";
+							headgear="H_Watchcap_khk";
+						};
+					};
+					id=1124;
+					type="synixe_factions_disenfranchisedyoungmen_militia_OPFOR_Rifleman";
+					atlOffset=6.7991409;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ENH_disableAI_move";
+							expression="if (_value && local _this) then {[_this, 'MOVE'] remoteExec ['disableAI', 0]}";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="attachMarker";
+							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male01POL";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.03;
 								};
 							};
 						};
@@ -41661,6 +41801,34 @@ class Mission
 			id=1110;
 			type="EmptyDetectorAreaR250";
 			atlOffset=-3.4058151;
+		};
+		class Item182
+		{
+			dataType="Trigger";
+			position[]={2544.2109,54.700001,961.03998};
+			class Attributes
+			{
+				condition="date params [""_year"", ""_month"", ""_day"", ""_hours"", ""_minutes""];" \n "if (_hours != 08) exitWith {false};" \n "if (_minutes < 11) exitWith {false};" \n "true";
+				onActivation="bomb1 setDamage 1;" \n "bomb2 setDamage 1;" \n "bomb3 setDamage 1;";
+				sizeA=0;
+				sizeB=0;
+			};
+			id=1119;
+			type="EmptyDetector";
+		};
+		class Item183
+		{
+			dataType="Trigger";
+			position[]={5592.1538,48.388706,668.99701};
+			class Attributes
+			{
+				condition="date params [""_year"", ""_month"", ""_day"", ""_hours"", ""_minutes""];" \n "if (_hours != 08) exitWith {false};" \n "if (_minutes < 40) exitWith {false};" \n "true";
+				onActivation="bomb4 setDamage 1;" \n "bomb5 setDamage 1;" \n "bomb6 setDamage 1;";
+				sizeA=0;
+				sizeB=0;
+			};
+			id=1120;
+			type="EmptyDetector";
 		};
 	};
 	class Connections
