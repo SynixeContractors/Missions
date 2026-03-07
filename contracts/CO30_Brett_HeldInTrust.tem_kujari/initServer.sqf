@@ -1,8 +1,3 @@
-["hostile", {
-    west setFriend [resistance, 0];
-    resistance setFriend [west, 0];
-}] call CBA_fnc_addEventHandler;
-
 mission_tried_cheating = false;
 mission_intro = false;
 mission_voice_active = "";
@@ -56,7 +51,8 @@ mission_voice_active = "";
                     sleep 5;
                     mission_voice_active = "";
                 };
-                ["hostile"] call CBA_fnc_serverEvent;
+                west setFriend [resistance, 0];
+                resistance setFriend [west, 0];
             } else {
                 mission_voice_active = "complete";
                 playSound3D [getMissionPath "audio\complete.ogg", contact, true, getPosASL contact, 5];
