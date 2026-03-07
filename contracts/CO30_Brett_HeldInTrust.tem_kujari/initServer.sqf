@@ -29,7 +29,7 @@ mission_fnc_countMoney = {
             mission_intro = true;
             mission_voice_active = "intro";
             playSound3D [getMissionPath "audio\intro.ogg", contact, false, getPosASL contact, 5];
-            ["lip", 8] call CBA_fnc_serverEvent;
+            ["lip", 8] call CBA_fnc_globalEvent;
             0 spawn {
                 sleep 8;
                 mission_voice_active = "";
@@ -42,7 +42,7 @@ mission_fnc_countMoney = {
                 mission_voice_active = "cheat";
                 mission_tried_cheating = true;
                 playSound3D [getMissionPath "audio\cheat.ogg", contact, false, getPosASL contact, 5];
-                ["lip", 8] call CBA_fnc_serverEvent;
+                ["lip", 8] call CBA_fnc_globalEvent;
                 0 spawn {
                     sleep 8;
                     mission_voice_active = "";
@@ -52,7 +52,7 @@ mission_fnc_countMoney = {
                     mission_voice_active = "cheat_avoid";
                     mission_tried_cheating = false;
                     playSound3D [getMissionPath "audio\cheat_avoid.ogg", contact, false, getPosASL contact, 5];
-                    ["lip", 4] call CBA_fnc_serverEvent;
+                    ["lip", 4] call CBA_fnc_globalEvent;
                     0 spawn {
                         sleep 4;
                         mission_voice_active = "";
@@ -65,7 +65,7 @@ mission_fnc_countMoney = {
             if (_cheating) then {
                 mission_voice_active = "hostile";
                 playSound3D [getMissionPath "audio\hostile.ogg", contact, false, getPosASL contact, 5];
-                ["lip", 5] call CBA_fnc_serverEvent;
+                ["lip", 5] call CBA_fnc_globalEvent;
                 0 spawn {
                     sleep 5;
                     mission_voice_active = "";
@@ -75,7 +75,7 @@ mission_fnc_countMoney = {
             } else {
                 mission_voice_active = "complete";
                 playSound3D [getMissionPath "audio\complete.ogg", contact, false, getPosASL contact, 5];
-                ["lip", 4] call CBA_fnc_serverEvent;
+                ["lip", 4] call CBA_fnc_globalEvent;
                 0 spawn {
                     sleep 4;
                     mission_voice_active = "";
