@@ -3,7 +3,6 @@
 params ["_range"];
 diag_log format ["EOD: Initializing range '%1'.", _range];
 
-
 private _rangeShort = switch (_range) do {
     case "EOD Urban": { missionNamespace setVariable [format ["%1_%2", QEGVAR(eod,objects), "urban"], [], true]; "urban" };
     case "EOD House": { missionNamespace setVariable [format ["%1_%2", QEGVAR(eod,objects), "house"], [], true]; "house" };
@@ -21,14 +20,14 @@ private _rangeShort = switch (_range) do {
 } forEach ["Tripwires", "Garbage", "Cars"];
 
 eod_mines = [
-    "tacgt_ModuleMine_APERSBoundingMine_Training_F",
-    "tacgt_ModuleMine_APERSMine_Training_F",
-    "tacgt_ModuleMine_APERSBoundingMine_Training_F",
-    "tacgt_ModuleMine_APERSMine_Training_F",
-    "tacgt_ModuleMine_APERSBoundingMine_Training_F",
-    "tacgt_ModuleMine_APERSMine_Training_F",
-    "tacgt_ModuleMine_ATMine_Training_F",
-    "tacgt_ModuleMine_Claymore_Training_F"
+    "synixe_armoury_ModuleMine_APERSBoundingMine_Training_F",
+    "synixe_armoury_ModuleMine_APERSMine_Training_F",
+    "synixe_armoury_ModuleMine_APERSBoundingMine_Training_F",
+    "synixe_armoury_ModuleMine_APERSMine_Training_F",
+    "synixe_armoury_ModuleMine_APERSBoundingMine_Training_F",
+    "synixe_armoury_ModuleMine_APERSMine_Training_F",
+    "synixe_armoury_ModuleMine_ATMine_Training_F",
+    "synixe_armoury_ModuleMine_Claymore_Training_F"
 ];
 
 private _tablets = (getMissionLayerEntities format ["%1 - Tablets", _range]) select 0;
@@ -76,7 +75,7 @@ diag_log format ["EOD: Tablets for range '%1' initialized.", _range];
     [_tripwires, true] call CBA_fnc_shuffle;
     for "_i" from 0 to (floor random count _tripwires) do {
         private _tripwire = _tripwires select _i;
-        private _obj = createVehicle ["tacgt_ModuleMine_ApersTripMine_Training_F", position _tripwire, [], 0, "CAN_COLLIDE"];
+        private _obj = createVehicle ["synixe_armoury_ModuleMine_ApersTripMine_Training_F", position _tripwire, [], 0, "CAN_COLLIDE"];
         _obj setDir (getDir _tripwire);
         eod_objects pushBack _obj;
     };
