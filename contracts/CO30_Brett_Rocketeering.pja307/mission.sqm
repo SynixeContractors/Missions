@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2871;
+		nextID=2873;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4793.1816,300.84995,1487.703};
-		dir[]={-0.20905133,-0.34479421,-0.91512084};
-		up[]={-0.076788403,0.93867546,-0.33613995};
-		aside[]={-0.9749012,-3.2961907e-07,0.22270899};
+		pos[]={1105.7087,302.32309,1319.6106};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -138,13 +138,14 @@ addons[]=
 	"A3_Props_F_Exp_Commercial_Market",
 	"A3_Aegis_Supplies_F_Aegis_CargoNets",
 	"A3_Structures_F_Mil_Shelters",
-	"A3_Props_F_Exp_Military_Camps"
+	"A3_Props_F_Exp_Military_Camps",
+	"grad_civs_common"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=56;
+		items=57;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -525,6 +526,12 @@ class AddonsMetaData
 			name="Arma 3 Aegis - Ammoboxes and Supplies";
 			author="Avery Kaiserin";
 			url="https://steamcommunity.com/sharedfiles/filedetails/?id=949252631";
+		};
+		class Item56
+		{
+			className="grad_civs_common";
+			name="common";
+			author="AUTHOR";
 		};
 	};
 };
@@ -1043,7 +1050,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=114;
+		items=116;
 		class Item0
 		{
 			dataType="Logic";
@@ -29559,16 +29566,38 @@ class Mission
 				nAttributes=3;
 			};
 		};
+		class Item114
+		{
+			dataType="Trigger";
+			position[]={1223.1298,277.34137,1636.488};
+			class Attributes
+			{
+				sizeA=1165.8914;
+				sizeB=901.97144;
+			};
+			id=2871;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item115
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1090.052,283.04227,1512.3572};
+			};
+			id=2872;
+			type="grad_civs_common_ExclusionZone";
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=21;
+			nextID=22;
 		};
 		class Links
 		{
-			items=21;
+			items=22;
 			class Item0
 			{
 				linkID=0;
@@ -29774,6 +29803,16 @@ class Mission
 				linkID=20;
 				item0=2848;
 				item1=2840;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item21
+			{
+				linkID=21;
+				item0=2872;
+				item1=2871;
 				class CustomData
 				{
 					type="Sync";
