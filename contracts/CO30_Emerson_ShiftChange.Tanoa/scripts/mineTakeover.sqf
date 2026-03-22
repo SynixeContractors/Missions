@@ -4,4 +4,4 @@
 
     // if dudes were prone, set them back to auto stance
     _x setUnitPos "AUTO";
-} forEach ((getMissionLayerEntities "Mine Takeover Baddies") select 0);
+} forEach ((getMissionLayerEntities "Mine Enemies") select 0);
