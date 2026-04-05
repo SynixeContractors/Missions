@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1990;
+		nextID=2026;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12988.199,11.62149,2119.5051};
-		dir[]={-0.26147428,-0.5013119,0.82489496};
-		up[]={-0.15148722,0.86524761,0.47790709};
-		aside[]={0.95332402,5.500624e-07,0.30218202};
+		pos[]={11820.278,135.94885,2447.4817};
+		dir[]={-0.66659725,-0.69422334,0.27168882};
+		up[]={-0.64287353,0.71975642,0.2620194};
+		aside[]={0.37745118,1.1010561e-06,0.92608255};
 	};
 };
 binarizationWanted=0;
@@ -150,13 +150,20 @@ addons[]=
 	"A3_Weapons_F_Mark_Machineguns_MMG_01",
 	"Weapons_F_JCA_IA_SMGs_UMP",
 	"Weapons_1_F_lxWS_Acc",
-	"ace_compat_ws_realisticnames"
+	"ace_compat_ws_realisticnames",
+	"timmy_gen_civ",
+	"synixe_pictures_gcg",
+	"synixe_standardization_generic_civilian",
+	"A3_Characters_F_AoW",
+	"A3_Characters_F_Enoch",
+	"A3_Characters_F_Orange_Vests",
+	"A3_Characters_F_Orange"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=60;
+		items=64;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -560,6 +567,31 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item60
+		{
+			className="timmy_gen_civ";
+			name="timmy_gen_civ";
+			author="Timmy Taliban";
+		};
+		class Item61
+		{
+			className="synixe_pictures_gcg";
+			name="Synixe - Generic Civilian Gear";
+		};
+		class Item62
+		{
+			className="A3_Characters_F_AoW";
+			name="Arma 3 Art of War - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item63
+		{
+			className="A3_Characters_F_Enoch";
+			name="Arma 3 Contact Platform - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -571,7 +603,8 @@ dlcs[]=
 	"ws",
 	"rf",
 	"Mark",
-	"tacs"
+	"tacs",
+	"Enoch"
 };
 randomSeed=6315673;
 class ScenarioData
@@ -762,7 +795,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=160;
+		items=172;
 		class Item0
 		{
 			dataType="Logic";
@@ -1945,6 +1978,23 @@ class Mission
 			{
 			};
 			id=13;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item6
 		{
@@ -38338,7 +38388,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=2;
+				items=3;
 				class Item0
 				{
 					dataType="Object";
@@ -38504,6 +38554,33 @@ class Mission
 						};
 						nAttributes=2;
 					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11694.092,3.0614388,2770.0676};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="tacs_Uniform_Polo_TP_BS_TP_TB_NoLogo";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="ItemSmartPhone";
+						};
+					};
+					id=2018;
+					type="synixe_factions_civilians_Citizen_Polo_Pants_Ngabiri";
 				};
 			};
 			class Attributes
@@ -39583,6 +39660,23 @@ class Mission
 			{
 			};
 			id=1968;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item148
 		{
@@ -39623,6 +39717,23 @@ class Mission
 			{
 			};
 			id=1971;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item149
 		{
@@ -41006,6 +41117,785 @@ class Mission
 					};
 				};
 				nAttributes=3;
+			};
+		};
+		class Item160
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11633.067,3.0614388,2731.6033};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="casual_polo_peach_sage_uniform";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="ItemSmartPhone";
+						};
+					};
+					id=1991;
+					type="synixe_factions_civilians_Citizen_Polo_Pants_Ngabiri";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1992;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item161
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11628.314,3.0614388,2636.1704};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_C_Poloshirt_blue";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="ItemSmartPhone";
+						};
+					};
+					id=1994;
+					type="synixe_factions_civilians_Citizen_Polo_Shorts_Ngabiri";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1995;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item162
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11715.521,3.4557629,2786.3364};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="tacs_Uniform_Plaid_SP_LPP_BP_BB";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="ItemSmartPhone";
+						};
+					};
+					id=1997;
+					type="synixe_factions_civilians_Citizen_Polo_Shorts_Ngabiri";
+					atlOffset=-1.6927719e-05;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1998;
+			atlOffset=-1.6927719e-05;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item163
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11556.239,3.151439,2423.5232};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_C_FormalSuit_01_black_F";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="ItemSmartPhone";
+						};
+					};
+					id=2000;
+					type="synixe_factions_civilians_Citizen_Suit_Formal_Ngabiri";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2001;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item164
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11379.88,4.7678924,2316.7637};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="casual_polo_brown_black_uniform";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="ItemSmartPhone";
+						};
+					};
+					id=2003;
+					type="synixe_factions_civilians_Citizen_Polo_Pants_Ngabiri";
+					atlOffset=-1.001358e-05;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2004;
+			atlOffset=-1.001358e-05;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item165
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10897.389,2.4337358,2050.9255};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_I_L_Uniform_01_tshirt_olive_F";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="V_Pocketed_olive_F";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="ItemSmartPhone";
+						};
+					};
+					id=2006;
+					type="synixe_factions_civilians_Citizen_Fisherman_Ngabiri";
+					atlOffset=4.529953e-06;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2007;
+			atlOffset=4.529953e-06;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item166
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11363.236,8.5726976,2911.8037};
+					};
+					side="West";
+					flags=3;
+					class Attributes
+					{
+						class Inventory
+						{
+							class handgun
+							{
+								name="hgun_P07_blk_F";
+								firemode="hgun_P07_blk_F:Single";
+							};
+							class uniform
+							{
+								typeName="U_B_GEN_Soldier_F";
+								isBackpack=0;
+								class ItemCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="ACE_elasticBandage";
+										count=4;
+									};
+									class Item1
+									{
+										name="ACE_packingBandage";
+										count=4;
+									};
+									class Item2
+									{
+										name="ACE_tourniquet";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="V_TacVest_blk_POLICE";
+								isBackpack=0;
+							};
+							headgear="H_MilCap_blue";
+						};
+					};
+					id=2009;
+					type="synixe_factions_police_Ngabiri_BLUFOR_PolicemanPistol";
+					atlOffset=0.31648064;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11364.906,8.5920877,2912.6072};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="SMG_02_F";
+								optics="Aegis_optic_ICO";
+								firemode="SMG_02_F:Single";
+							};
+							class handgun
+							{
+								name="hgun_P07_blk_F";
+							};
+							class uniform
+							{
+								typeName="U_B_GEN_Commander_F";
+								isBackpack=0;
+								class ItemCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="ACE_elasticBandage";
+										count=4;
+									};
+									class Item1
+									{
+										name="ACE_packingBandage";
+										count=4;
+									};
+									class Item2
+									{
+										name="ACE_tourniquet";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="V_TacVest_blk_POLICE";
+								isBackpack=0;
+							};
+							headgear="H_Cap_police_headset";
+						};
+					};
+					id=2010;
+					type="synixe_factions_police_Ngabiri_BLUFOR_PolicemanSMG";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2008;
+			atlOffset=0.31648064;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item167
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11704.473,3.0614388,2654.4871};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="casual_polo_white_khaki_uniform";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="ItemSmartPhone";
+						};
+					};
+					id=2012;
+					type="synixe_factions_civilians_Citizen_Polo_Pants_Ngabiri";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2013;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item168
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11769.088,3.1057432,2637.0605};
+					};
+					side="West";
+					flags=3;
+					class Attributes
+					{
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_C_Mechanic_01_F";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="V_Pocketed_olive_F";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="ItemSmartPhone";
+						};
+					};
+					id=2015;
+					type="synixe_factions_civilians_Citizen_Fisherman_Ngabiri";
+					atlOffset=0.59072781;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2016;
+			atlOffset=0.59072781;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item169
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11690.266,4.621439,2284.8196};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_C_ConstructionCoverall_Black_F";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="ItemSmartPhone";
+							headgear="H_Construction_basic_white_F";
+						};
+					};
+					id=2020;
+					type="synixe_factions_civilians_Citizen_Construction_Ngabiri";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2021;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item170
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11664.785,6.2315025,2296.3618};
+				angles[]={0,3.5434895,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				fuel=0.59846973;
+			};
+			id=2022;
+			type="synixe_factions_civilians_Offroad_Ngabiri";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="attachMarker";
+					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item171
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11676.235,3.0614388,2521.5859};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="casual_polo_blue_gray_uniform";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="ItemSmartPhone";
+						};
+					};
+					id=2024;
+					type="synixe_factions_civilians_Citizen_Polo_Pants_Ngabiri";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2025;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="synixe_surrender_attribute_disabled";
+					expression="_this setVariable [""synixe_surrender_disable"", _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
 			};
 		};
 	};
