@@ -12,18 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=576;
+		nextID=577;
 	};
 	class LayerIndexProvider
 	{
-		nextID=48;
+		nextID=76;
 	};
 	class Camera
 	{
-		pos[]={2860.5669,110.47446,3936.6272};
-		dir[]={0.7236836,-0.57837909,-0.37651914};
-		up[]={0.5130924,0.81576574,-0.26695269};
-		aside[]={-0.46155173,2.1900632e-08,-0.88711971};
+		pos[]={3988.4902,127.39327,3687.7754};
+		dir[]={-0.18005191,-0.52563161,-0.83144015};
+		up[]={-0.11124909,0.85071224,-0.51372385};
+		aside[]={-0.97734582,0,0.2116484};
 	};
 };
 binarizationWanted=0;
@@ -129,13 +129,14 @@ addons[]=
 	"A3_Aegis_Characters_F_Aegis_RF_Vests",
 	"A3_Structures_F_Mil_BagFence",
 	"A3_Opf_Characters_F_Opf_Uniforms",
-	"grad_civs_common"
+	"grad_civs_common",
+	"ace_intelitems"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=62;
+		items=63;
 		class Item0
 		{
 			className="synixe_factions_synixe";
@@ -543,6 +544,13 @@ class AddonsMetaData
 			name="common";
 			author="AUTHOR";
 		};
+		class Item62
+		{
+			className="ace_intelitems";
+			name="ACE3 - Intel Items";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
 	};
 };
 dlcs[]=
@@ -777,7 +785,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			dataType="Layer";
@@ -10225,7 +10233,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={3988.3174,125.2166,3685.7117};
+										position[]={3988.3169,125.21663,3685.7122};
 									};
 									side="Civilian";
 									flags=5;
@@ -10247,7 +10255,7 @@ class Mission
 									};
 									id=118;
 									type="synixe_factions_civilians_Citizen_Polo_Shorts_Luban";
-									atlOffset=-7.6293945e-06;
+									atlOffset=7.6293945e-06;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -10263,7 +10271,59 @@ class Mission
 												};
 											};
 										};
-										nAttributes=1;
+										class Attribute1
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male02PER";
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.97000003;
+												};
+											};
+										};
+										class Attribute4
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Face60";
+												};
+											};
+										};
+										nAttributes=5;
 									};
 								};
 								class Item4
@@ -11284,7 +11344,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={3998.292,126.47701,3701.4907};
-										angles[]={0,3.8182037,-0};
+										angles[]={0,3.8182037,0};
 									};
 									side="East";
 									flags=5;
@@ -19566,14 +19626,14 @@ class Mission
 						{
 							dataType="Waypoint";
 							loiterAltitude=-3.4028235e+38;
-							position[]={2877.3081,92.200554,3925.179};
+							position[]={2877.3081,92.2005,3925.1792};
 							class Effects
 							{
 							};
 							showWP="NEVER";
 							id=575;
 							type="GetIn";
-							atlOffset=0.49900055;
+							atlOffset=0.49894714;
 							class AttachedTo
 							{
 								id=435;
@@ -20291,6 +20351,53 @@ class Mission
 					};
 				};
 				nAttributes=7;
+			};
+		};
+		class Item22
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3988.4141,125.21661,3685.502};
+				angles[]={6.2206674,0,0.03609341};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=576;
+			type="acex_intelitems_photo";
+			atlOffset=7.6293945e-06;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_intelitems_data";
+					expression="[_this, _value] call ace_intelitems_fnc_setObjectData";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="friends.jpg";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 	};
