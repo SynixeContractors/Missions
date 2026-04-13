@@ -20,7 +20,10 @@ In the main review comment, provide an overview of the mission objectives, facti
    - Operations should be western-aligned or neutral in nature.
    - Missions should not promote or glorify violence or war crimes.
 
-5. **Spelling and Grammar**: Check for spelling and grammatical errors in the mission briefing and any associated documentation. Clear communication is essential for mission clarity.
+5. **Allegiances**
+   - Virelia is a major friendly country, Calvane is a major hostile country. Calvane and the CSP is the main antagonist, but other factions exist and mission may not involve them. Calvane and any of their allies can not be our employer. Reject any mission where Calvane is employing us. Drovak and the MSA (Mutual Security Alliance), and may be slightly friendly or hostile depending on the mission.
+
+5. **Spelling and Grammar**: Check for spelling and grammatical errors in the mission briefing and any associated documentation. Clear communication is essential for mission clarity. objectives.html should be in jot-note format, not full sentences, and be straight and to the point. In the briefing, if available, use names instead of acronyms or pronouns to avoid confusion.
 
 # Feedback and Approval
 
@@ -31,3 +34,6 @@ In the main review comment, provide an overview of the mission objectives, facti
 ## Mission Structure
 
 - Each mission should have a mission.sqm, a do_not_edit and edit_me folder. If those files are missing, or in a folder named "mission", the PR needs to be fixed before it can be approved.
+
+## Ignore Template Error
+If the mission has "// if you create "edit_me/briefing/example.html, then add "Example" here" (missing the " after .html), do not leave a comment, this was a mistake in the template and is not a problem for PRs.
