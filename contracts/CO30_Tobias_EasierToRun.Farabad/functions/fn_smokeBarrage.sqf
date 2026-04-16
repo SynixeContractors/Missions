@@ -8,36 +8,50 @@ params [
 
 if (!isServer) exitWith {};
 
-{
-    private _mortar = _x;
+private _aliveMortars = _mortars select { alive _x };
 
-    if (!isNull _mortar && {alive _mortar}) then {
+if (_aliveMortars isEqualTo []) exitWith {};
 
-        for "_i" from 1 to _rounds do {
+[
+    {
+        params ["_aliveMortars"];
+        { unitReady _x } count _aliveMortars == count _aliveMortars
+    },
 
-            private _impactPos = (markerPos _marker) getPos [random _spread, random 360];
+    {
+        params ["_aliveMortars", "_marker", "_spread", "_rounds", "_delayRange"];
 
-            _mortar doArtilleryFire [_impactPos, "8Rnd_82mm_Mo_Smoke_white", 1];
+        private _delayMin = _delayRange select 0;
+        private _delayMax = _delayRange select 1;
 
-            private _delayMin = 0;
-            private _delayMax = 0;
-
-            if ((count _delayRange) >= 2) then {
-                _delayMin = _delayRange select 0;
-                _delayMax = _delayRange select 1;
-            } else {
-                _delayMin = 60;
-                _delayMax = 90;
-            };
-
-            if (_delayMax < _delayMin) then {
-                private _tmp = _delayMin;
-                _delayMin = _delayMax;
-                _delayMax = _tmp;
-            };
-
-            sleep (_delayMin + random (_delayMax - _delayMin));
+        if (_delayMax < _delayMin) then {
+            private _tmp = _delayMin;
+            _delayMin = _delayMax;
+            _delayMax = _tmp;
         };
-    };
 
-} forEach _mortars;
+        {
+            private _mortar = _x;
+
+            for "_i" from 1 to _rounds do {
+
+                private _impactPos = (markerPos _marker) getPos [
+                    random _spread,
+                    random 360
+                ];
+
+                _mortar doArtilleryFire [
+                    _impactPos,
+                    "8Rnd_82mm_Mo_Smoke_white",
+                    1
+                ];
+
+                sleep (_delayMin + random (_delayMax - _delayMin));
+            };
+
+        } forEach _aliveMortars;
+    },
+
+    [_aliveMortars, _marker, _spread, _rounds, _delayRange]
+
+] call CBA_fnc_waitUntilAndExecute;

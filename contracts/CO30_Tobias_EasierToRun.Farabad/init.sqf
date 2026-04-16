@@ -14,7 +14,7 @@ private _action = [
     "",
     {
         [10,[],{
-            [rcws_1] call nibs_fnc_joinSide; missionNamespace setVariable ["rcws_1_connect", true, true]; 
+            [rcws_1] remoteExec ["nibs_fnc_joinSide", 2]; missionNamespace setVariable ["rcws_1_connect", true, true]; 
         },{},"Connecting to UGV..."] call ace_common_fnc_progressBar
     },
     {   !(missionNamespace getVariable ["rcws_1_connect", true]) &&
@@ -29,7 +29,7 @@ private _action = [
     "",
     {
         [10,[],{
-            [rcws_2] call nibs_fnc_joinSide; missionNamespace setVariable ["rcws_2_connect", true, true]; 
+            [rcws_2] remoteExec ["nibs_fnc_joinSide", 2]; missionNamespace setVariable ["rcws_2_connect", true, true]; 
         },{},"Connecting to UGV..."] call ace_common_fnc_progressBar
     },
     {   !(missionNamespace getVariable ["rcws_2_connect", true]) &&
@@ -44,7 +44,7 @@ private _action = [
     "",
     {
         [10,[],{
-            [rcws_3] call nibs_fnc_joinSide; missionNamespace setVariable ["rcws_3_connect", true, true]; 
+            [rcws_3] remoteExec ["nibs_fnc_joinSide", 2]; missionNamespace setVariable ["rcws_3_connect", true, true]; 
         },{},"Connecting to UGV..."] call ace_common_fnc_progressBar
     },
     {   !(missionNamespace getVariable ["rcws_3_connect", true]) &&
@@ -59,7 +59,7 @@ private _action = [
     "",
     {
         [10,[],{
-            [ugv_1] call nibs_fnc_joinSide; missionNamespace setVariable ["ugv_1_connect", true, true]; 
+            [ugv_1] remoteExec ["nibs_fnc_joinSide", 2]; missionNamespace setVariable ["ugv_1_connect", true, true]; 
         },{},"Connecting to UGV..."] call ace_common_fnc_progressBar
     },
     {   !(missionNamespace getVariable ["ugv_1_connect", true]) &&
@@ -74,7 +74,7 @@ private _action = [
     "",
     {
         [10,[],{
-            [reaper_1] call nibs_fnc_joinSide; missionNamespace setVariable ["ugv_1_connect", true, true]; 
+            [reaper_1] remoteExec ["nibs_fnc_joinSide", 2]; missionNamespace setVariable ["reaper_1_connect", true, true]; 
         },{},"Connecting to Reaper..."] call ace_common_fnc_progressBar
     },
     {   !(missionNamespace getVariable ["reaper_1_connect", true]) &&
