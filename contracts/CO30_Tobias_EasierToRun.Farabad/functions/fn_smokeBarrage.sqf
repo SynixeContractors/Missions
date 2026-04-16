@@ -19,7 +19,24 @@ if (!isServer) exitWith {};
 
             _mortar doArtilleryFire [_impactPos, "8Rnd_82mm_Mo_Smoke_white", 1];
 
-            sleep (5 + random 5);
+            private _delayMin = 0;
+            private _delayMax = 0;
+
+            if ((count _delayRange) >= 2) then {
+                _delayMin = _delayRange select 0;
+                _delayMax = _delayRange select 1;
+            } else {
+                _delayMin = 60;
+                _delayMax = 90;
+            };
+
+            if (_delayMax < _delayMin) then {
+                private _tmp = _delayMin;
+                _delayMin = _delayMax;
+                _delayMax = _tmp;
+            };
+
+            sleep (_delayMin + random (_delayMax - _delayMin));
         };
     };
 
