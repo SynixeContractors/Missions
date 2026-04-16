@@ -1,4 +1,6 @@
-#include "functions\boxCargo.sqf"
+if (isServer) then {
+    #include "functions\boxCargo.sqf"
+};
 
 missionNamespace setVariable ["rcws_1_connect", false, true];
 missionNamespace setVariable ["rcws_2_connect", false, true];
