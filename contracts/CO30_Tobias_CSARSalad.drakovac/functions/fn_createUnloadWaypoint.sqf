@@ -7,7 +7,7 @@ params [
 private _grp = if (_input isEqualType grpNull) then {_input} else {group _input};
 
 if (isNull _grp) exitWith {
-    diag_log "[transportToMarker] ERROR: Group is null.";
+    diag_log "[createUnloadWaypoint] ERROR: Group is null.";
 };
 
 private _mPos = markerPos _marker;
