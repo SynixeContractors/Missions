@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=158;
+		nextID=160;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4271.4229,519.12134,7033.9995};
-		dir[]={0.85842931,-0.50982386,-0.056445502};
-		up[]={0.50872689,0.86027879,-0.033451054};
-		aside[]={-0.065612257,1.0678923e-07,-0.99784899};
+		pos[]={7684.3672,44.017445,8099.4014};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -76,13 +76,14 @@ addons[]=
 	"A3_Aegis_Weapons_F_Aegis_Rifles_RPK74",
 	"A3_Weapons_F_Acc",
 	"A3_Modules_F_Curator_Misc",
-	"A3_Ui_F"
+	"A3_Ui_F",
+	"synixe_spectator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=31;
+		items=32;
 		class Item0
 		{
 			className="Desert";
@@ -291,6 +292,11 @@ class AddonsMetaData
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item31
+		{
+			className="synixe_spectator";
+			name="spectator";
 		};
 	};
 };
@@ -687,13 +693,14 @@ class Mission
 		year=2018;
 		month=6;
 		day=1;
-		hour=10;
+		hour=11;
+		minute=0;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};
 	class Entities
 	{
-		items=12;
+		items=14;
 		class Item0
 		{
 			dataType="Comment";
@@ -731,10 +738,29 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
 								isPlayer=1;
+								isPlayable=1;
 							};
 							id=2;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item1
 						{
@@ -748,9 +774,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=3;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item2
 						{
@@ -764,9 +809,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=4;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item3
 						{
@@ -780,9 +844,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=5;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item4
 						{
@@ -796,9 +879,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=6;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item5
 						{
@@ -812,9 +914,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=7;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item6
 						{
@@ -828,9 +949,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=8;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item7
 						{
@@ -844,9 +984,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=9;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item8
 						{
@@ -860,9 +1019,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=10;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item9
 						{
@@ -876,9 +1054,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=11;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item10
 						{
@@ -892,9 +1089,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=12;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item11
 						{
@@ -908,9 +1124,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=13;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item12
 						{
@@ -924,9 +1159,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=14;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item13
 						{
@@ -940,9 +1194,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=15;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item14
 						{
@@ -956,9 +1229,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=16;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item15
 						{
@@ -972,9 +1264,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=17;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item16
 						{
@@ -988,9 +1299,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=18;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item17
 						{
@@ -1004,9 +1334,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=19;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item18
 						{
@@ -1020,9 +1369,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=20;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item19
 						{
@@ -1036,9 +1404,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=21;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item20
 						{
@@ -1052,9 +1439,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=22;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item21
 						{
@@ -1068,10 +1474,29 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=23;
 							type="synixe_factions_synixe_Contractor";
 							atlOffset=-1.9073486e-06;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item22
 						{
@@ -1085,9 +1510,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=24;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item23
 						{
@@ -1101,9 +1545,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=25;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item24
 						{
@@ -1117,9 +1580,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=26;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item25
 						{
@@ -1133,10 +1615,29 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=27;
 							type="synixe_factions_synixe_Contractor";
 							atlOffset=-1.9073486e-06;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item26
 						{
@@ -1150,10 +1651,29 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=28;
 							type="synixe_factions_synixe_Contractor";
 							atlOffset=-1.9073486e-06;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item27
 						{
@@ -1167,9 +1687,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=29;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item28
 						{
@@ -1183,9 +1722,28 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=30;
 							type="synixe_factions_synixe_Contractor";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item29
 						{
@@ -1199,10 +1757,29 @@ class Mission
 							class Attributes
 							{
 								skill=0.40000001;
+								description="Contractors";
+								isPlayable=1;
 							};
 							id=31;
 							type="synixe_factions_synixe_Contractor";
 							atlOffset=1.9073486e-06;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 					};
 					class Attributes
@@ -1248,7 +1825,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={7686.4243,18.916399,8149.4414};
-						angles[]={0,3.1175439,0};
+						angles[]={0,3.1749673,-0};
 					};
 					side="Empty";
 					flags=1;
@@ -1265,7 +1842,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={7686.229,19.170242,8138.5957};
-						angles[]={0,3.1175439,0};
+						angles[]={0,3.154685,-0};
 					};
 					side="Empty";
 					flags=1;
@@ -1281,8 +1858,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7686.9097,19.41259,8126.9048};
-						angles[]={0,3.1175439,0};
+						position[]={7685.4692,19.405592,8127.1768};
+						angles[]={0,3.1863675,-0};
 					};
 					side="Empty";
 					flags=1;
@@ -1291,7 +1868,7 @@ class Mission
 					};
 					id=39;
 					type="crate_client_garage_land_large";
-					atlOffset=0.071126938;
+					atlOffset=0.071128845;
 				};
 				class Item6
 				{
@@ -1591,7 +2168,7 @@ class Mission
 				};
 			};
 			id=32;
-			atlOffset=1.7280998;
+			atlOffset=1.7339554;
 		};
 		class Item2
 		{
@@ -5980,6 +6557,38 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7701.9492,19.860296,8153.2681};
+				angles[]={0.0099949092,0,0.0049914722};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=158;
+			type="synixe_spectator_screen";
+		};
+		class Item13
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7679.2666,19.81918,8152.3457};
+				angles[]={0.019996032,0,0.010000871};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=159;
+			type="synixe_spectator_screen";
 		};
 	};
 	class Connections
