@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=294;
+		nextID=317;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3455.2449,57.691341,7056.3208};
-		dir[]={0.081516623,-0.7216574,0.68743593};
-		up[]={0.084979333,0.692249,0.71663719};
-		aside[]={0.99304336,-6.8394002e-10,-0.11775569};
+		pos[]={5243.4639,25.149889,5199.9731};
+		dir[]={0.097283371,-0.62762284,0.77241808};
+		up[]={0.078427345,0.77851778,0.62270367};
+		aside[]={0.99216324,3.7252903e-09,-0.12495954};
 	};
 };
 binarizationWanted=0;
@@ -74,6 +74,7 @@ addons[]=
 	"A3_Atlas_Weapons_F_Atlas",
 	"RF_Weapons_Launchers_PSRL1",
 	"A3_Weapons_F_Acc",
+	"ace_compat_aegis_hearing",
 	"A3_Modules_F_Curator_Misc",
 	"A3_Ui_F",
 	"grad_civs_common",
@@ -5744,7 +5745,7 @@ class Mission
 			name="Nyrhilanmaki";
 			class Entities
 			{
-				items=7;
+				items=8;
 				class Item0
 				{
 					dataType="Object";
@@ -7076,9 +7077,510 @@ class Mission
 					id=162;
 					type="synixe_factions_chernarus_army_combat_Offroad";
 				};
+				class Item7
+				{
+					dataType="Group";
+					side="Independent";
+					class Entities
+					{
+						items=6;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5242.5332,11.428959,5225.2598};
+							};
+							side="Independent";
+							flags=7;
+							class Attributes
+							{
+								rank="SERGEANT";
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="Aegis_arifle_AKS74_F";
+										optics="Aegis_optic_1p87";
+										firemode="Aegis_arifle_AKS74_F:Single";
+									};
+									class handgun
+									{
+										name="Aegis_hgun_Pistol_R57_sand_F";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_CarrierRigKBT_01_CDF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_MilCap_grn";
+								};
+							};
+							id=310;
+							type="synixe_factions_chernarus_army_recon_TeamLeader";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="lambs_danger_dangerRadio";
+									expression="if (_value) then { _this setVariable ['lambs_danger_dangerRadio', _value, true]; }";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5245.1187,11.476618,5222.5518};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								skill=0.40000001;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_AK12_green";
+										optics="Aegis_optic_1p87";
+										flashlight="saber_light_khaki_lxWS";
+										firemode="synixe_armoury_arifle_AK12_green:FullAuto";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_CarrierRigKBT_01_light_CDF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="Aegis_H_MilCap_tachs_grn_F";
+								};
+							};
+							id=311;
+							type="synixe_factions_chernarus_army_recon_Rifleman";
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5240.1797,11.59152,5221.686};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								rank="SERGEANT";
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_AK12_green";
+										optics="Aegis_optic_1p87";
+										flashlight="saber_light_khaki_lxWS";
+										firemode="synixe_armoury_arifle_AK12_green:FullAuto";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_CarrierRigKBT_01_CDF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_Watchcap_camo_hs";
+								};
+							};
+							id=312;
+							type="synixe_factions_chernarus_army_recon_Rifleman";
+							atlOffset=9.5367432e-07;
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5242.1851,11.492543,5222.6191};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								rank="SERGEANT";
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_AK12K_green";
+										optics="Aegis_optic_1p87";
+										flashlight="saber_light_khaki_lxWS";
+										firemode="synixe_armoury_arifle_AK12K_green:FullAuto";
+									};
+									class handgun
+									{
+										name="Aegis_hgun_Pistol_R57_sand_F";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_CarrierRigKBT_01_CDF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetSpecter_cover_CDF_F";
+								};
+							};
+							id=314;
+							type="synixe_factions_chernarus_army_recon_TeamLeader";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="lambs_danger_dangerRadio";
+									expression="if (_value) then { _this setVariable ['lambs_danger_dangerRadio', _value, true]; }";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item4
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5244.7705,11.543843,5219.9111};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								skill=0.40000001;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_AK12_green";
+										optics="Aegis_optic_1p87";
+										flashlight="saber_light_khaki_lxWS";
+										firemode="synixe_armoury_arifle_AK12_green:FullAuto";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_CarrierRigKBT_01_CDF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="Aegis_H_MilCap_tachs_grn_F";
+								};
+							};
+							id=315;
+							type="synixe_factions_chernarus_army_recon_Rifleman";
+						};
+						class Item5
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5239.8315,11.736337,5219.0454};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								rank="SERGEANT";
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_AK12_green";
+										optics="Aegis_optic_1p87";
+										firemode="synixe_armoury_arifle_AK12_green:FullAuto";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="Atlas_V_CarrierRigKBT_01_CQB_CDF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_MilCap_grn";
+								};
+							};
+							id=316;
+							type="synixe_factions_chernarus_army_recon_Rifleman";
+							atlOffset=9.5367432e-07;
+						};
+					};
+					class Attributes
+					{
+					};
+					id=309;
+				};
 			};
 			id=100;
-			atlOffset=-0.33573437;
+			atlOffset=-0.010436058;
 		};
 		class Item8
 		{
@@ -7357,7 +7859,7 @@ class Mission
 			name="patrol";
 			class Entities
 			{
-				items=5;
+				items=8;
 				class Item0
 				{
 					dataType="Group";
@@ -7940,13 +8442,13 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={4310.2637,31.496758,6971.9229};
+						position[]={3497.2168,31.496758,6807.7539};
 					};
-					areaSize[]={1010.8494,0,1202.2278};
+					areaSize[]={1823.8962,0,1366.3967};
 					flags=1;
 					id=199;
 					type="lambs_wp_TaskPatrol";
-					atlOffset=-5.6170044;
+					atlOffset=0.78943253;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8567,9 +9069,879 @@ class Mission
 					};
 					id=206;
 				};
+				class Item5
+				{
+					dataType="Group";
+					side="Independent";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3951.8721,15.705213,5887.3047};
+							};
+							side="Independent";
+							flags=7;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="Aegis_arifle_AKS74_F";
+										firemode="Aegis_arifle_AKS74_F:Single";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_shortsleeve_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_TacChestrig_oli_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="NVGoggles_OPFOR";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="lxWS_H_ssh40_green";
+								};
+							};
+							id=295;
+							type="synixe_factions_chernarus_army_garrison_TeamLeader";
+							atlOffset=1.9073486e-06;
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3953.7759,15.682158,5885.3257};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_AK12_green";
+										flashlight="saber_light_khaki_lxWS";
+										firemode="synixe_armoury_arifle_AK12_green:FullAuto";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_TacChestrig_oli_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="NVGoggles_OPFOR";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetSpecter_cover_CDF_F";
+								};
+							};
+							id=296;
+							type="synixe_factions_chernarus_army_garrison_Rifleman";
+							atlOffset=2.8610229e-05;
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3953.0532,15.679081,5884.4302};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_AK12_green";
+										firemode="synixe_armoury_arifle_AK12_green:FullAuto";
+									};
+									class secondaryWeapon
+									{
+										name="launch_PSRL1_olive_RF";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_TacChestrig_oli_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="NVGoggles_OPFOR";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetSpecter_cover_CDF_F";
+								};
+							};
+							id=297;
+							type="synixe_factions_chernarus_army_garrison_Rifleman";
+							atlOffset=5.531311e-05;
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3951.814,15.679639,5884.0386};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_RPK15_green";
+										optics="Aegis_optic_1p87";
+										flashlight="saber_light_khaki_lxWS";
+										firemode="synixe_armoury_arifle_RPK15_green:FullAuto";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_TacChestrig_oli_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="NVGoggles_OPFOR";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetSpecter_cover_CDF_F";
+								};
+							};
+							id=298;
+							type="synixe_factions_chernarus_army_garrison_Autorifleman";
+							atlOffset=8.7738037e-05;
+						};
+					};
+					class Attributes
+					{
+					};
+					id=294;
+					atlOffset=1.9073486e-06;
+				};
+				class Item6
+				{
+					dataType="Group";
+					side="Independent";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4191.7109,26.058931,6279.9985};
+							};
+							side="Independent";
+							flags=7;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_AK12K_green";
+										firemode="synixe_armoury_arifle_AK12K_green:FullAuto";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_TacChestrig_oli_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="NVGoggles_OPFOR";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetSpecter_cover_CDF_F";
+								};
+							};
+							id=300;
+							type="synixe_factions_chernarus_army_garrison_TeamLeader";
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4193.2607,26.177261,6278.9971};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="Aegis_arifle_AK74_F";
+										firemode="Aegis_arifle_AK74_F:Single";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_TacChestrig_oli_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="NVGoggles_OPFOR";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetSpecter_cover_CDF_F";
+								};
+							};
+							id=301;
+							type="synixe_factions_chernarus_army_garrison_Rifleman";
+							atlOffset=3.0517578e-05;
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4192.8921,26.413458,6277.124};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_AK12_green";
+										flashlight="saber_light_khaki_lxWS";
+										firemode="synixe_armoury_arifle_AK12_green:FullAuto";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_TacChestrig_oli_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="NVGoggles_OPFOR";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetSpecter_cover_CDF_F";
+								};
+							};
+							id=302;
+							type="synixe_factions_chernarus_army_garrison_Rifleman";
+							atlOffset=6.1035156e-05;
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4191.6528,26.479666,6276.7324};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="Aegis_arifle_RPK74M_F";
+										optics="optic_LRCO_blk_F";
+										firemode="Aegis_arifle_RPK74M_F:FullAuto";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_shortsleeve_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_TacChestrig_oli_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="NVGoggles_OPFOR";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="lxWS_H_ssh40_green";
+								};
+							};
+							id=303;
+							type="synixe_factions_chernarus_army_garrison_Autorifleman";
+							atlOffset=9.1552734e-05;
+						};
+					};
+					class Attributes
+					{
+					};
+					id=299;
+				};
+				class Item7
+				{
+					dataType="Group";
+					side="Independent";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3651.229,13.092175,5923.6187};
+							};
+							side="Independent";
+							flags=7;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_AK12K_green";
+										firemode="synixe_armoury_arifle_AK12K_green:FullAuto";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_TacChestrig_oli_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="NVGoggles_OPFOR";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetSpecter_cover_CDF_F";
+								};
+							};
+							id=305;
+							type="synixe_factions_chernarus_army_garrison_TeamLeader";
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3653.1328,13.034725,5921.6396};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="Aegis_arifle_AK74_F";
+										firemode="Aegis_arifle_AK74_F:Single";
+									};
+									class secondaryWeapon
+									{
+										name="launch_PSRL1_olive_RF";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_TacChestrig_oli_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="NVGoggles_OPFOR";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetSpecter_cover_CDF_F";
+								};
+							};
+							id=306;
+							type="synixe_factions_chernarus_army_garrison_Rifleman";
+							atlOffset=3.4332275e-05;
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3652.4102,13.020809,5920.7441};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_AK12_green";
+										flashlight="saber_light_khaki_lxWS";
+										firemode="synixe_armoury_arifle_AK12_green:FullAuto";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_TacChestrig_oli_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="NVGoggles_OPFOR";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetSpecter_cover_CDF_F";
+								};
+							};
+							id=307;
+							type="synixe_factions_chernarus_army_garrison_Rifleman";
+							atlOffset=6.1035156e-05;
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3651.1709,13.088945,5920.3525};
+							};
+							side="Independent";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="synixe_armoury_arifle_RPK15_green";
+										optics="Aegis_optic_1p87";
+										flashlight="saber_light_khaki_lxWS";
+										firemode="synixe_armoury_arifle_RPK15_green:FullAuto";
+									};
+									class uniform
+									{
+										typeName="Atlas_U_I_UW_CombatUniform_UNO";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_TacChestrig_oli_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="NVGoggles_OPFOR";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetSpecter_cover_CDF_F";
+								};
+							};
+							id=308;
+							type="synixe_factions_chernarus_army_garrison_Autorifleman";
+							atlOffset=9.1552734e-05;
+						};
+					};
+					class Attributes
+					{
+					};
+					id=304;
+				};
 			};
 			id=200;
-			atlOffset=-1.0409298;
+			atlOffset=0.58145714;
 		};
 		class Item14
 		{
@@ -11491,11 +12863,11 @@ class Mission
 	{
 		class LinkIDProvider
 		{
-			nextID=50;
+			nextID=68;
 		};
 		class Links
 		{
-			items=50;
+			items=68;
 			class Item0
 			{
 				linkID=0;
@@ -11991,6 +13363,186 @@ class Mission
 				linkID=49;
 				item0=289;
 				item1=129;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item50
+			{
+				linkID=50;
+				item0=295;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item51
+			{
+				linkID=51;
+				item0=296;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item52
+			{
+				linkID=52;
+				item0=297;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item53
+			{
+				linkID=53;
+				item0=298;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item54
+			{
+				linkID=54;
+				item0=300;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item55
+			{
+				linkID=55;
+				item0=301;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item56
+			{
+				linkID=56;
+				item0=302;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item57
+			{
+				linkID=57;
+				item0=303;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item58
+			{
+				linkID=58;
+				item0=305;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item59
+			{
+				linkID=59;
+				item0=306;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item60
+			{
+				linkID=60;
+				item0=307;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item61
+			{
+				linkID=61;
+				item0=308;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item62
+			{
+				linkID=62;
+				item0=310;
+				item1=155;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item63
+			{
+				linkID=63;
+				item0=311;
+				item1=155;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item64
+			{
+				linkID=64;
+				item0=312;
+				item1=155;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item65
+			{
+				linkID=65;
+				item0=314;
+				item1=155;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item66
+			{
+				linkID=66;
+				item0=315;
+				item1=155;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item67
+			{
+				linkID=67;
+				item0=316;
+				item1=155;
 				class CustomData
 				{
 					type="Sync";
