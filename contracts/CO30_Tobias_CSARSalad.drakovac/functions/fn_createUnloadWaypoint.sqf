@@ -32,7 +32,7 @@ _wpUnload setWaypointSpeed "LIMITED";
 _wpUnload setWaypointFormation "COLUMN";
 
 if (_isHeli) then {
-    private _wpFollow = _grp addWaypoint [markerPos "_marker", 0];
+    private _wpFollow = _grp addWaypoint [_mPos, 0];
     _wpFollow setWaypointType "MOVE";
     _wpFollow setWaypointSpeed "FULL";
     _wpFollow setWaypointBehaviour "AWARE";
