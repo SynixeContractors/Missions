@@ -39,24 +39,24 @@
     };
 };
 ["mission_area_entered", {
-  {
-      _x params ["_bomb", "_random"];
-      [{
-          _this setDamage 1;
-      }, _bomb, random _random] call CBA_fnc_waitAndExecute;
-  } forEach [
-      [carbiance_1,  [20, 60, 240]],
-      [carbiance_2,  [20, 50, 240]],
-      [carbiance_3,  [20, 30, 240]],
-      [carbiance_4,  [20, 80, 240]],
-      [carbiance_5,  [20, 100, 240]],
-      [carbiance_6, [20, 120, 240]],
-      [carbiance_7,  [20, 140, 240]],
-      [carbiance_8,  [20, 160, 240]],
-      [carbiance_9,  [20, 180, 240]],
-      [carbiance_10,  [20, 200, 240]],
-      [carbiance_11,  [20, 220, 240]],
-      [carbiance_12,  [20, 240, 240]],
-      [carbiance_13,  [20, 40, 240]],
-  ];
+    {
+        _x params ["_bomb", "_random"];
+        [{
+            _this setDamage 1;
+        }, _bomb, random _random] call CBA_fnc_waitAndExecute;
+    } forEach [
+        [carbiance_1,  [20, 60, 240]],
+        [carbiance_2,  [20, 50, 240]],
+        [carbiance_3,  [20, 30, 240]],
+        [carbiance_4,  [20, 80, 240]],
+        [carbiance_5,  [20, 100, 240]],
+        [carbiance_6, [20, 120, 240]],
+        [carbiance_7,  [20, 140, 240]],
+        [carbiance_8,  [20, 160, 240]],
+        [carbiance_9,  [20, 180, 240]],
+        [carbiance_10,  [20, 200, 240]],
+        [carbiance_11,  [20, 220, 240]],
+        [carbiance_12,  [20, 240, 240]],
+        [carbiance_13,  [20, 40, 240]],
+    ];
 }] call CBA_fnc_addEventHandler;
