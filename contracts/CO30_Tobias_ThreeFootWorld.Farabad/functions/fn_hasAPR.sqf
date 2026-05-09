@@ -23,8 +23,7 @@ private _CBRN_Masks = [
     "JCA_G_AirPurifyingRespirator_04_olive_clear_F",
     "JCA_G_AirPurifyingRespirator_04_olive_tinted_F",
     "JCA_G_AirPurifyingRespirator_04_sand_clear_F",
-    "JCA_G_AirPurifyingRespirator_04_sand_tinted_F",
-    "G_AirPurifyingRespirator_02_sand_nofilter_F"
+    "JCA_G_AirPurifyingRespirator_04_sand_tinted_F"
 ];
 
 (goggles _unit) in _CBRN_Masks
