@@ -11,6 +11,7 @@
 
 [] spawn {
     waitUntil {
+        sleep 10;
         ((date select 3) >= 4) && 
         ((date select 4) >= 20) &&
         !(synixe_spectator_allowed)
@@ -27,6 +28,7 @@
 
 [] spawn {
     waitUntil {
+        sleep 10;
         ((date select 3) >= 4) && 
         ((date select 4) >= 40) &&
         !(synixe_spectator_allowed)
@@ -40,6 +42,7 @@
 
 [] spawn {
     waitUntil {
+        sleep 10;
         ((date select 3) >= 5) && 
         ((date select 4) >= 0) &&
         !(synixe_spectator_allowed)
@@ -55,6 +58,7 @@
 
 [] spawn {
     waitUntil {
+        sleep 10;
         ((date select 3) >= 5) && 
         ((date select 4) >= 20) &&
         !(synixe_spectator_allowed)
@@ -71,6 +75,7 @@
 
 [] spawn {
     waitUntil {
+        sleep 10;
         ((date select 3) >= 5) && 
         ((date select 4) >= 40) &&
         !(synixe_spectator_allowed)
@@ -89,6 +94,7 @@
 
 [] spawn {
     waitUntil {
+        sleep 10;
         ((date select 3) >= 6) && 
         ((date select 4) >= 0) &&
         !(synixe_spectator_allowed)
@@ -110,6 +116,7 @@
 
 [] spawn {
     waitUntil {
+        sleep 10;
         ((date select 3) >= 6) && 
         ((date select 4) >= 20) &&
         !(synixe_spectator_allowed)
@@ -134,6 +141,7 @@
 
 [] spawn {
     waitUntil {
+        sleep 10;
         ((date select 3) >= 6) && 
         ((date select 4) >= 40) &&
         !(synixe_spectator_allowed)
@@ -158,6 +166,7 @@
 
 [] spawn {
     waitUntil {
+        sleep 10;
         ((date select 3) >= 7) && 
         ((date select 4) >= 0) &&
         !(synixe_spectator_allowed)
