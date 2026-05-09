@@ -19693,7 +19693,6 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						isPlayer=1;
 						class Inventory
 						{
 							class primaryWeapon
@@ -19770,7 +19769,46 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="attachMarker";
+							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male01FRE";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=4;
 					};
 				};
 				class Item1
@@ -20159,7 +20197,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1742.4404,341.05167,1660.8296};
-				angles[]={-0,1.8729209,0};
+				angles[]={0,1.8729209,0};
 			};
 			side="East";
 			flags=4;
@@ -22808,7 +22846,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1643.5275,339.00143,1615.3466};
-						angles[]={-0,5.2492614,6.2818937};
+						angles[]={0,5.2492614,6.2818937};
 					};
 					side="East";
 					flags=4;
@@ -22882,10 +22920,10 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1643.5275,341.54132,1615.3466};
-						angles[]={-0,5.2492614,6.2818937};
+						angles[]={0,5.2492614,6.2818937};
 					};
 					side="East";
-					flags=6;
+					flags=2;
 					class Attributes
 					{
 						class Inventory
@@ -22949,6 +22987,7 @@ class Mission
 					};
 					id=745;
 					type="synixe_factions_illanz_army_combat_Rifleman";
+					atlOffset=2.5398865;
 				};
 			};
 			class Attributes
@@ -22994,7 +23033,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1615.3607,341.53607,1730.2703};
-				angles[]={-0,5.2492614,6.2818937};
+				angles[]={0,5.2492614,6.2818937};
 			};
 			side="East";
 			flags=6;
@@ -23012,7 +23051,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1649.708,339,1814.507};
-				angles[]={-0,4.1713896,0};
+				angles[]={0,4.1713896,0};
 			};
 			areaSize[]={800,0,100};
 			flags=1;
