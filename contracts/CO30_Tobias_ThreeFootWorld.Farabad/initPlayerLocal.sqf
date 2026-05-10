@@ -24,14 +24,6 @@ if (isNil "APR_Stamina_PFH") then {
                     _unit setVariable ["APR_LastState", _hasAPR];
                 };
 
-                if (_hasAPR) then {
-                    [_unit, -0.6] call ace_medical_status_fnc_adjustOxygenSaturation;
-                };
-
-                if (!_hasAPR) then {
-                    [_unit, +0.01] call ace_medical_status_fnc_adjustOxygenSaturation;
-                };
-
             } forEach allUnits;
         },
         2
