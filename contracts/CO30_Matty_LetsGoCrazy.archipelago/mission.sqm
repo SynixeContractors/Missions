@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=268;
+		nextID=276;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7563.5732,12.218792,1698.4078};
-		dir[]={-0.32344019,-0.36557418,0.8727783};
-		up[]={-0.12703443,0.9307822,0.34279254};
-		aside[]={0.93768257,0,0.34749287};
+		pos[]={4385.1816,32.26479,2781.876};
+		dir[]={-0.92481208,-0.35965911,0.12403465};
+		up[]={-0.35647237,0.93308127,0.047809515};
+		aside[]={0.13293055,-1.0100121e-07,0.99113238};
 	};
 };
 binarizationWanted=0;
@@ -154,13 +154,15 @@ addons[]=
 	"A3_Weapons_F_SMGs_Pdw2000",
 	"Weapons_F_JCA_IA_SMGs_UMP",
 	"A3_Aegis_Weapons_F_Aegis_Rifles_AKM74",
-	"A3_Weapons_F_SMGs_SMG_02"
+	"A3_Weapons_F_SMGs_SMG_02",
+	"synixe_factions_dalriada_marines_special_forces",
+	"synixe_factions_disenfranchisedyoungmen_militia"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=78;
+		items=80;
 		class Item0
 		{
 			className="synixe_factions_synixe";
@@ -675,6 +677,18 @@ class AddonsMetaData
 			author="Trager";
 			url="https://steamcommunity.com/workshop/filedetails/?id=1923321700";
 		};
+		class Item78
+		{
+			className="synixe_factions_dalriada_marines_special_forces";
+			name="dalriada_marines_special_forces";
+			author="Synixe Contractors";
+		};
+		class Item79
+		{
+			className="synixe_factions_disenfranchisedyoungmen_militia";
+			name="disenfranchisedyoungmen_militia";
+			author="Synixe Contractors";
+		};
 	};
 };
 dlcs[]=
@@ -753,7 +767,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=44;
+		items=46;
 		class Item0
 		{
 			dataType="Group";
@@ -3038,12 +3052,13 @@ class Mission
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+38;
 					position[]={7551.4692,3.8199999,1731.266};
+					completitionRadius=5;
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=178;
-					type="VehicleInVehicleGetOut";
+					type="GetOut";
 				};
 				class Item11
 				{
@@ -5746,7 +5761,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7464.4897,3.8199999,1715.8978};
+				position[]={7464.4902,3.8199999,1715.8979};
 			};
 			areaSize[]={15,0,15};
 			flags=1;
@@ -5802,7 +5817,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -8641,14 +8656,14 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="attachMarker";
-					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					property="ace_markinglaser_enabled";
+					expression="_this setVariable [""ace_markinglaser_enabled"", _value, true]";
 					class Value
 					{
 						class data
 						{
-							singleType="STRING";
-							value="";
+							singleType="BOOL";
+							value=0;
 						};
 					};
 				};
@@ -8665,8 +8680,132 @@ class Mission
 						};
 					};
 				};
-				nAttributes=2;
+				class Attribute2
+				{
+					property="attachMarker";
+					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				nAttributes=3;
 			};
+		};
+		class Item44
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4344.2632,1.3190708,2780.0098};
+				angles[]={0,3.1409218,0};
+			};
+			side="East";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=272;
+			type="synixe_factions_dalriada_marines_special_forces_RHIB";
+			atlOffset=4.615684;
+		};
+		class Item45
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4344.2632,0.0014390945,2780.0598};
+					};
+					side="East";
+					flags=3;
+					class Attributes
+					{
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="srifle_DMR_06_hunter_F";
+								firemode="srifle_DMR_06_hunter_F:Single";
+							};
+							class uniform
+							{
+								typeName="casual_plaid_gray_sage_uniform";
+								isBackpack=0;
+								class ItemCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="ACE_elasticBandage";
+										count=4;
+									};
+									class Item1
+									{
+										name="ACE_packingBandage";
+										count=4;
+									};
+									class Item2
+									{
+										name="ACE_tourniquet";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="V_ChestrigF_blk";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							gps="ItemGPS";
+							headgear="H_Watchcap_camo";
+						};
+					};
+					id=275;
+					type="synixe_factions_disenfranchisedyoungmen_militia_OPFOR_Rifleman";
+					atlOffset=4.615684;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=275;
+						item1=272;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+				};
+			};
+			id=274;
+			atlOffset=4.615684;
 		};
 	};
 	class Connections
