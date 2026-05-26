@@ -12504,20 +12504,52 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7507.3325,36.583527,12406.521};
-						angles[]={0,5.1568227,0};
+						position[]={7507.333,36.583805,12406.521};
+						angles[]={0,5.1568193,0};
 					};
 					side="Empty";
 					class Attributes
 					{
+						createAsLocalObject=1;
+						disableSimulation=1;
 					};
 					id=1606;
 					type="FootBridge_0_ACR";
-					atlOffset=16.70083;
+					atlOffset=16.701183;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 			};
 			id=500;
-			atlOffset=18.249409;
+			atlOffset=18.249516;
 		};
 		class Item7
 		{
