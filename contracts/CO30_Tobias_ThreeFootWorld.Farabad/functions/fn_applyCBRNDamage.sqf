@@ -14,23 +14,13 @@ private _count  = floor (1 + random 3);
 
 if (!_hasSuit) then {
     for "_i" from 1 to _count do {
-        ["mission_applyDamage", [
-            _unit,
-            _damage,
-            selectRandom ["body","hand_l","hand_r","leg_l","leg_r"],
-            "burn"
-        ], _unit] call CBA_fnc_targetEvent;
+        [_unit, _damage, selectRandom ["body","hand_l","hand_r","leg_l","leg_r"], "burn"] call ace_medical_fnc_addDamageToUnit;
     };
 };
 
 if (!_hasAPR) then {
     for "_i" from 1 to _count do {
-        ["mission_applyDamage", [
-            _unit,
-            _damage * 2,
-            selectRandom ["head","body"],
-            "burn"
-        ], _unit] call CBA_fnc_targetEvent;
+        [_unit, _damage * 2, selectRandom ["head","body"], "burn"] call ace_medical_fnc_addDamageToUnit;
     };
 };
 
