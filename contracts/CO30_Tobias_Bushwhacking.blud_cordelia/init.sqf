@@ -6,11 +6,11 @@ private _parts = [
     "HitFuel","HitEngine"
 ];
 
-for "_i" from 1 to 3 do {
-    {
+{
+    for "_i" from 1 to 3 do {
         private _dmg  = 0.3 + random 0.4;
         private _part = selectRandom _parts;
 
         _x setHitPointDamage [_part, _dmg];
-    } forEach [vic_1, vic_2, vic_3, vic_4];
-};
+    };
+} forEach [vic_1, vic_2, vic_3, vic_4];
