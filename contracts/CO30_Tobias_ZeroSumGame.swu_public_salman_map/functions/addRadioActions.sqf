@@ -1,4 +1,4 @@
-params ["_player"];
+if (!hasInterface) exitWith {};
 
 private _action = [
     "startMission",
@@ -9,7 +9,9 @@ private _action = [
 
         [10, [], {
             [] remoteExec ["nibs_fnc_paradrop", 2];
-        }, {}, "Starting mission, completing final checks..."] call ace_common_fnc_progressBar;
+        }, {
+            missionNamespace setVariable ["nibs_missionStart", false, true];
+        }, "Starting mission, completing final checks..."] call ace_common_fnc_progressBar;
     },
     {
         !(missionNamespace getVariable ["nibs_missionStart", false])
