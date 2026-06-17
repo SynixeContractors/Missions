@@ -5,7 +5,7 @@ if (isServer) then {
             private _guns = [
                 arty_1, arty_2, arty_3, arty_4, arty_5,
                 arty_6, arty_7, arty_8, arty_9
-            ] select { !isNull _x };
+            ] select { !isNull _x && {alive _x} };
 
             private _targets = [
                 "target_1","target_2","target_3","target_4","target_5","target_6",
