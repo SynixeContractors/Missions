@@ -18,6 +18,7 @@ private _openAlt = 300;
         params ["_args", "_pfh"];
         _args params ["_cargo", "_openAlt"];
 
+        if (isNull _cargo) exitWith { [_pfh] call CBA_fnc_removePerFrameHandler; };
         private _alt = (getPosASL _cargo) select 2;
 
         if (_alt <= _openAlt) then {
