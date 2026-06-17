@@ -1,4 +1,4 @@
-_red = "#lightpoint" createVehicleLocal [0,0,0];
+private _red = "#lightpoint" createVehicleLocal [0,0,0];
 _red setLightColor [1,0,0];
 _red setLightBrightness 0;
 _red setLightAttenuation [0.1, 0, 100, 0];
