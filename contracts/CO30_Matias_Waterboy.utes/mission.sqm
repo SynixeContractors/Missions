@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1388.7607,35.534744,1120.5028};
-		dir[]={-0.4446151,-0.5082702,-0.73758119};
-		up[]={-0.26240051,0.86119437,-0.43530104};
-		aside[]={-0.85645503,2.7753413e-07,0.51627362};
+		pos[]={3591.3452,44.88512,3608.8735};
+		dir[]={-0.45052096,-0.42942911,0.78270143};
+		up[]={-0.21422511,0.90310061,0.37217873};
+		aside[]={0.86668253,-1.4901161e-08,0.49886024};
 	};
 };
 binarizationWanted=0;
@@ -16632,6 +16632,19 @@ class Mission
 					{
 						class Attribute0
 						{
+							property="ENH_disableAI_target";
+							expression="if (_value && local _this) then {[_this, 'TARGET'] remoteExec ['disableAI', 0]}";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
 							property="ObjectCollision";
 							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
 							class Value
@@ -16643,7 +16656,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute1
+						class Attribute2
 						{
 							property="attachMarker";
 							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
@@ -16656,20 +16669,20 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
+						class Attribute3
 						{
-							property="speaker";
-							expression="_this setspeaker _value;";
+							property="ENH_disableAI_autocombat";
+							expression="if (_value && local _this) then {[_this, 'AUTOCOMBAT'] remoteExec ['disableAI', 0]}";
 							class Value
 							{
 								class data
 								{
-									singleType="STRING";
-									value="Male03POL";
+									singleType="BOOL";
+									value=1;
 								};
 							};
 						};
-						class Attribute3
+						class Attribute4
 						{
 							property="pitch";
 							expression="_this setpitch _value;";
@@ -16682,10 +16695,23 @@ class Mission
 								};
 							};
 						};
-						class Attribute4
+						class Attribute5
 						{
-							property="ENH_disableAI_target";
-							expression="if (_value && local _this) then {[_this, 'TARGET'] remoteExec ['disableAI', 0]}";
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male03POL";
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="ENH_disableAI_autotarget";
+							expression="if (_value && local _this) then {[_this, 'AUTOTARGET'] remoteExec ['disableAI', 0]}";
 							class Value
 							{
 								class data
@@ -16695,7 +16721,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute5
+						class Attribute7
 						{
 							property="ENH_disableAI_weaponAim";
 							expression="if (_value && local _this) then {[_this, 'WEAPONAIM'] remoteExec ['disableAI', 0]}";
@@ -16708,7 +16734,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=6;
+						nAttributes=8;
 					};
 				};
 			};
@@ -16792,6 +16818,19 @@ class Mission
 					{
 						class Attribute0
 						{
+							property="ENH_disableAI_target";
+							expression="if (_value && local _this) then {[_this, 'TARGET'] remoteExec ['disableAI', 0]}";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
 							property="ObjectCollision";
 							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
 							class Value
@@ -16803,7 +16842,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute1
+						class Attribute2
 						{
 							property="attachMarker";
 							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
@@ -16816,20 +16855,20 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
+						class Attribute3
 						{
-							property="speaker";
-							expression="_this setspeaker _value;";
+							property="ENH_disableAI_autocombat";
+							expression="if (_value && local _this) then {[_this, 'AUTOCOMBAT'] remoteExec ['disableAI', 0]}";
 							class Value
 							{
 								class data
 								{
-									singleType="STRING";
-									value="Male03POL";
+									singleType="BOOL";
+									value=1;
 								};
 							};
 						};
-						class Attribute3
+						class Attribute4
 						{
 							property="pitch";
 							expression="_this setpitch _value;";
@@ -16842,10 +16881,23 @@ class Mission
 								};
 							};
 						};
-						class Attribute4
+						class Attribute5
 						{
-							property="ENH_disableAI_target";
-							expression="if (_value && local _this) then {[_this, 'TARGET'] remoteExec ['disableAI', 0]}";
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male03POL";
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="ENH_disableAI_autotarget";
+							expression="if (_value && local _this) then {[_this, 'AUTOTARGET'] remoteExec ['disableAI', 0]}";
 							class Value
 							{
 								class data
@@ -16855,7 +16907,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute5
+						class Attribute7
 						{
 							property="ENH_disableAI_weaponAim";
 							expression="if (_value && local _this) then {[_this, 'WEAPONAIM'] remoteExec ['disableAI', 0]}";
@@ -16868,7 +16920,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=6;
+						nAttributes=8;
 					};
 				};
 				class Item1
@@ -18283,6 +18335,7 @@ class Mission
 					};
 					id=347;
 					type="synixe_factions_livonia_woodland_army_combat_Rifleman";
+					atlOffset=-9.5367432e-07;
 				};
 				class Item2
 				{
@@ -18434,6 +18487,7 @@ class Mission
 					};
 					id=349;
 					type="synixe_factions_livonia_woodland_army_combat_Autorifleman";
+					atlOffset=-9.5367432e-07;
 				};
 			};
 			class Attributes
@@ -19046,7 +19100,7 @@ class Mission
 					};
 					id=359;
 					type="synixe_factions_livonia_woodland_army_combat_Rifleman";
-					atlOffset=3.8146973e-06;
+					atlOffset=2.8610229e-06;
 				};
 				class Item2
 				{
@@ -19119,6 +19173,7 @@ class Mission
 					};
 					id=360;
 					type="synixe_factions_livonia_woodland_army_combat_Rifleman";
+					atlOffset=-9.5367432e-07;
 				};
 				class Item3
 				{
@@ -19198,6 +19253,7 @@ class Mission
 					};
 					id=361;
 					type="synixe_factions_livonia_woodland_army_combat_Autorifleman";
+					atlOffset=-9.5367432e-07;
 				};
 			};
 			class Attributes
