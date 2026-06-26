@@ -42,6 +42,6 @@ private _openAlt = 300;
             [_pfh] call CBA_fnc_removePerFrameHandler;
         };
     },
-    0,
+    0.1,
     [_cargo, _openAlt]
 ] call CBA_fnc_addPerFrameHandler;
