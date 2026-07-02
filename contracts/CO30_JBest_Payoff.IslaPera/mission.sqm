@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=907;
+		nextID=908;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=38;
+		nextID=42;
 	};
 	class Camera
 	{
-		pos[]={5438.3384,156.53206,3026.4194};
-		dir[]={-0.28736794,-0.61024529,-0.73827249};
-		up[]={-0.22136186,0.79219443,-0.56869817};
-		aside[]={-0.93190569,2.706438e-07,0.36273506};
+		pos[]={6956.2627,169.78099,5225.5005};
+		dir[]={0.10436038,-0.62777215,0.77137506};
+		up[]={0.084165886,0.7783944,0.62210578};
+		aside[]={0.99097604,4.530375e-08,-0.13407063};
 	};
 };
 binarizationWanted=0;
@@ -158,13 +158,14 @@ addons[]=
 	"A3_Missions_F_Oldman",
 	"A3_Ui_F_Globe",
 	"A3_Ui_F",
-	"grad_civs_common"
+	"grad_civs_common",
+	"lambs_wp"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=84;
+		items=85;
 		class Item0
 		{
 			className="A3_Props_F_Enoch";
@@ -716,6 +717,12 @@ class AddonsMetaData
 			name="common";
 			author="AUTHOR";
 		};
+		class Item84
+		{
+			className="lambs_wp";
+			name="LAMBS Danger WP";
+			author="LAMBS Danger Dev Team";
+		};
 	};
 };
 dlcs[]=
@@ -810,7 +817,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=80;
+		items=81;
 		class Item0
 		{
 			dataType="Object";
@@ -6602,7 +6609,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={5307.2349,0.35046762,2905.814};
-			angle=3.979279;
+			angle=3.9792809;
 			class Attributes
 			{
 				onActivation="marksman_1 setUnitPos ""UP"";" \n "marksman_1 setCombatMode ""RED"";";
@@ -6610,6 +6617,7 @@ class Mission
 				sizeB=30;
 				activationBy="WEST";
 				isServerOnly=1;
+				triggerInterval=2;
 			};
 			id=747;
 			type="EmptyDetectorAreaR50";
@@ -6767,7 +6775,7 @@ class Mission
 			side="Independent";
 			class Entities
 			{
-				items=7;
+				items=6;
 				class Item0
 				{
 					dataType="Object";
@@ -7274,24 +7282,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
-					};
-				};
-				class Item6
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+38;
-					position[]={6959.7012,144.78099,5272.1021};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=765;
-					type="Guard";
-					atlOffset=0.46961975;
-					class AttachedTo
-					{
-						id=752;
-						offset[]={0,0.5,0};
 					};
 				};
 			};
@@ -8406,16 +8396,85 @@ class Mission
 			id=900;
 			type="grad_civs_common_ExclusionZone";
 		};
+		class Item80
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6961.3447,148.27434,5260.9736};
+			};
+			areaSize[]={50,-1,50};
+			flags=1;
+			id=907;
+			type="lambs_wp_TaskGarrison";
+			atlOffset=0.00012207031;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="lambs_wp_Teleport";
+					expression="_this setVariable ['lambs_wp_Teleport',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="lambs_wp_Patrol";
+					expression="_this setVariable ['lambs_wp_Patrol',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="lambs_wp_ExitConditions";
+					expression="_this setVariable ['lambs_wp_ExitConditions', _value, true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=-2;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="lambs_wp_SortByHeight";
+					expression="_this setVariable ['lambs_wp_SortByHeight',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=4;
+			nextID=5;
 		};
 		class Links
 		{
-			items=4;
+			items=5;
 			class Item0
 			{
 				linkID=0;
@@ -8454,6 +8513,16 @@ class Mission
 				class CustomData
 				{
 					type="WaypointActivation";
+				};
+			};
+			class Item4
+			{
+				linkID=4;
+				item0=907;
+				item1=754;
+				class CustomData
+				{
+					type="Sync";
 				};
 			};
 		};
