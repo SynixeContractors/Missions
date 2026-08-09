@@ -2,7 +2,7 @@
     antena1,
     0,  // texture source
     32, // size in GB
-    300,  // time to upload in seconds
+    150,  // time to upload in seconds
     {
         diag_log "Server: Upload Started 1";
     },
@@ -22,7 +22,7 @@
     antena2,
     0,  // texture source
     42, // size in GB
-    300,  // time to upload in seconds
+    250,  // time to upload in seconds
     {
         diag_log "Server: Upload Started 2";
     },
