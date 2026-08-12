@@ -20,7 +20,7 @@ ied_1 setDamage 1;
 private _newGrp = createGroup east; 
  
 { 
-    [_newGrp, _x] joinSilent _newGrp; 
+    [_x] joinSilent _newGrp;
     _x setCaptive false; 
 } forEach units (group terrorist_1);
 
