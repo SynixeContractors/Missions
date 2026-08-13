@@ -1,4 +1,3 @@
-#include "functions\fn_phaselines.sqf"
 #include "functions\fn_malfunctions.sqf"
 
 private _parts = [
@@ -17,3 +16,24 @@ private _parts = [
         _x setHitPointDamage [_part, _dmg];
     };
 } forEach [vic_1, vic_2, vic_3, vic_4];
+
+fnc_malfunctionLoop = {
+
+    private _veh = selectRandom (allPlayers apply { vehicle _x });
+
+    if (!isNull _veh && { isEngineOn _veh }) then {
+        [_veh] call fnc_malfunction;
+    };
+
+    [
+        { [] call fnc_malfunctionLoop },
+        [],
+        300 + random 600
+    ] call CBA_fnc_waitAndExecute;
+};
+
+[
+    { [] call fnc_malfunctionLoop },
+    [],
+    300 + random 600
+] call CBA_fnc_waitAndExecute;
