@@ -1,4 +1,8 @@
-params ["_unit"];
+params [
+    ["_unit", objNull, [objNull]]
+];
+
+if (isNull _unit) exitWith {false};
 
 private _detectors = [
     "ChemicalDetector_01_black_F",
