@@ -1,7 +1,7 @@
 params [
     ["_unit", objNull, [objNull]]
 ];
-
+if (isNull _unit) exitWith {false};
 private _CBRN_Masks = [
     "G_RegulatorMask_F",
     "G_AirPurifyingRespirator_02_black_F",
