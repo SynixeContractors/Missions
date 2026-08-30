@@ -10,29 +10,14 @@ private _detectors = [
     "ChemicalDetector_01_tan_F"
 ];
 
-private _found = false;
+if ((assignedItems _unit) findIf { _x in _detectors } != -1) exitWith { true };
+if ((uniformItems _unit) findIf { _x in _detectors } != -1) exitWith { true };
+if ((vestItems _unit) findIf { _x in _detectors } != -1) exitWith { true };
+if ((backpackItems _unit) findIf { _x in _detectors } != -1) exitWith { true };
 
-// Assigned items
-{
-    if (_x in _detectors) exitWith { _found = true };
-} forEach assignedItems _unit;
+if (
+    isClass (configFile >> "CfgPatches" >> "ace_main")
+    && { (_unit call ace_common_fnc_uniqueItems) findIf { _x in _detectors } != -1 }
+) exitWith { true };
 
-{
-    private _items = _unit call _x;
-    {
-        if (_x in _detectors) exitWith { _found = true };
-    } forEach _items;
-} forEach [
-    { uniformItems _this },
-    { vestItems _this },
-    { backpackItems _this }
-];
-
-if (!_found && { isClass (configFile >> "CfgPatches" >> "ace_main") }) then {
-    private _aceItems = _unit call ace_common_fnc_uniqueItems;
-    {
-        if (_x in _detectors) exitWith { _found = true };
-    } forEach _aceItems;
-};
-
-_found
+false
