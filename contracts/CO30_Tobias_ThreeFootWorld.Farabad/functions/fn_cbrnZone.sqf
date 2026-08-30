@@ -15,7 +15,7 @@ if (isNil "CBRN_Zones") then {
 };
 
 private _existing = CBRN_Zones select { _x#0 == _marker };
-if (!(_existing isEqualTo [])) exitWith {
+if (_existing isNotEqualTo []) exitWith {
     _existing#0
 };
 
