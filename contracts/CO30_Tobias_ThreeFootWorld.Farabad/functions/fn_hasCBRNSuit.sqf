@@ -1,7 +1,7 @@
 params [
     ["_unit", objNull, [objNull]]
 ];
-
+if (isNull _unit) exitWith {false};
 private _CBRN_Suits = [
     "U_C_CBRN_Suit_01_Black_F",
     "U_C_CBRN_Suit_01_Yellow_F",
