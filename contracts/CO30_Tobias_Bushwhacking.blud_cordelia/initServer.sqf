@@ -1,17 +1,17 @@
 #include "functions\fn_malfunctions.sqf"
 
-private _parts = [
-    "HitLFWheel","HitRFWheel",
-    "HitLF2Wheel","HitRF2Wheel",
-    "HitLMWheel","HitRMWheel",
-    "HitLBWheel","HitRBWheel",
-    "HitFuel","HitEngine"
-];
+    mission_parts = [
+        "HitLFWheel","HitRFWheel",
+        "HitLF2Wheel","HitRF2Wheel",
+        "HitLMWheel","HitRMWheel",
+        "HitLBWheel","HitRBWheel",
+        "HitFuel","HitEngine"
+    ];
 
 {
     for "_i" from 1 to 3 do {
         private _dmg  = 0.3 + random 0.4;
-        private _part = selectRandom _parts;
+        private _part = selectRandom mission_parts;
 
         _x setHitPointDamage [_part, _dmg];
     };
@@ -19,7 +19,7 @@ private _parts = [
 
 fnc_malfunctionLoop = {
 
-    private _veh = selectRandom (allPlayers apply { vehicle _x });
+    private _veh = selectRandom allMissionObjects "car";
 
     if (!isNull _veh && { isEngineOn _veh }) then {
         [_veh] call fnc_malfunction;
