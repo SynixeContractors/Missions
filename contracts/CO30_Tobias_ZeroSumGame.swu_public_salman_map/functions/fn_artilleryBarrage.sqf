@@ -38,9 +38,8 @@ if (!isServer) exitWith {};
         _gun doArtilleryFire [_impactPos, _ammo, _rounds];
 
         private _delay = _delayRange#0 + random (_delayRange#1 - _delayRange#0);
-        sleep _delay;
-
-        sleep 20;
+        
+        sleep _delay + 20;
 
         _x setAmmo [currentWeapon _x, 12];
 

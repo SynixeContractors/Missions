@@ -5,10 +5,12 @@ private _action = [
     "Start Mission",
     "",
     {
-        missionNamespace setVariable ["nibs_missionStart", true, true];
+        missionNamespace setVariable ["nibs_missionStarting", true, true];
 
         [10, [], {
             [] remoteExec ["nibs_fnc_paradrop", 2];
+            [] remoteExec ["nibs_fnc_flightPath", 2];
+            missionNamespace setVariable ["nibs_missionStart", true, true];
         }, {
             missionNamespace setVariable ["nibs_missionStart", false, true];
         }, "Starting mission, completing final checks..."] call ace_common_fnc_progressBar;
