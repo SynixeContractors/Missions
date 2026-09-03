@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9141.8115,88.956078,9761.9824};
-		dir[]={0.072595164,-0.42430362,0.90263933};
-		up[]={0.034016572,0.90550041,0.42296115};
-		aside[]={0.99681193,9.3714334e-08,-0.080169283};
+		pos[]={5791.8237,41.902977,5649.1948};
+		dir[]={0.16445141,-0.53893363,0.82614332};
+		up[]={0.10521566,0.84234577,0.52856529};
+		aside[]={0.9807598,-4.3448381e-08,-0.19522929};
 	};
 };
 binarizationWanted=0;
@@ -952,7 +952,7 @@ class Mission
 			name="Synixe FOB";
 			class Entities
 			{
-				items=12;
+				items=10;
 				class Item0
 				{
 					dataType="Group";
@@ -2535,98 +2535,6 @@ class Mission
 						nAttributes=6;
 					};
 				};
-				class Item10
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={9112.0371,20.186705,9366.6895};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						name="box_1";
-					};
-					id=966;
-					type="Box_A_NATO_WpsSpecial_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ammoBox";
-							expression="[_this,_value] call bis_fnc_initAmmoBox;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item11
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={9112.0391,20.186705,9365.5137};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						name="box_2";
-					};
-					id=967;
-					type="Box_A_NATO_WpsSpecial_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ammoBox";
-							expression="[_this,_value] call bis_fnc_initAmmoBox;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
 			};
 			id=56;
 		};
@@ -3084,7 +2992,7 @@ class Mission
 			name="Infil";
 			class Entities
 			{
-				items=20;
+				items=18;
 				class Item0
 				{
 					dataType="Object";
@@ -3833,40 +3741,6 @@ class Mission
 				};
 				class Item15
 				{
-					dataType="Trigger";
-					position[]={8999.6279,9.1073055,1418.8617};
-					class Attributes
-					{
-						condition="heli_1 in thisList";
-						onActivation="[box_2, heli_1] call nibs_fnc_airdrop;" \n "";
-						sizeA=1000;
-						sizeB=100;
-						activationBy="ANY";
-						isRectangle=1;
-						isServerOnly=1;
-					};
-					id=1062;
-					type="EmptyDetectorAreaR50";
-				};
-				class Item16
-				{
-					dataType="Trigger";
-					position[]={8999.6182,7.1207309,803.93597};
-					class Attributes
-					{
-						condition="heli_1 in thisList";
-						onActivation="heli_1 animateDoor [""cargoramp_open"", 0];";
-						sizeA=1000;
-						sizeB=100;
-						activationBy="ANY";
-						isRectangle=1;
-						isServerOnly=1;
-					};
-					id=1063;
-					type="EmptyDetectorAreaR50";
-				};
-				class Item17
-				{
 					dataType="Marker";
 					position[]={8979.0225,31.367662,7876.4214};
 					name="marker_3";
@@ -3932,7 +3806,7 @@ class Mission
 						nAttributes=2;
 					};
 				};
-				class Item18
+				class Item16
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -3973,7 +3847,7 @@ class Mission
 						nAttributes=2;
 					};
 				};
-				class Item19
+				class Item17
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -67886,11 +67760,11 @@ class Mission
 	{
 		class LinkIDProvider
 		{
-			nextID=72;
+			nextID=73;
 		};
 		class Links
 		{
-			items=72;
+			items=73;
 			class Item0
 			{
 				linkID=0;
@@ -68606,6 +68480,16 @@ class Mission
 				linkID=71;
 				item0=2714;
 				item1=2699;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item72
+			{
+				linkID=72;
+				item0=2765;
+				item1=1036;
 				class CustomData
 				{
 					type="Sync";
