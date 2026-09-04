@@ -8,5 +8,5 @@ fnc_malfunction = {
         [_veh, _part, _dmg] remoteExec ["setHitPointDamage", _veh];
     };
 
-    playSound3D ["EngineSFX_lxWS", _veh];
+    [_veh, "EngineSFX_lxWS"] remoteExec ["say3d", -2];
 };
