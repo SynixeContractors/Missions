@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=951;
+		nextID=963;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=46;
+		nextID=65;
 	};
 	class Camera
 	{
-		pos[]={6440.5439,29.87487,10965.175};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={6534.2769,40.323647,11558.431};
+		dir[]={-0.063372985,-0.50713462,0.85953432};
+		up[]={-0.037289582,0.86186624,0.50576258};
+		aside[]={0.99729294,-5.3114491e-09,0.073529862};
 	};
 };
 binarizationWanted=0;
@@ -752,13 +752,37 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=1;
+									items=4;
 									class Item0
 									{
 										class data
 										{
 											singleType="STRING";
 											value="grad_civs_main_enabled";
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											singleType="STRING";
+											value="grad_civs_lifecycle_civclasses";
+										};
+									};
+									class Item2
+									{
+										class data
+										{
+											singleType="STRING";
+											value="grad_civs_cars_vehicles";
+										};
+									};
+									class Item3
+									{
+										class data
+										{
+											singleType="STRING";
+											value="grad_civs_cars_globalspeedlimit";
 										};
 									};
 								};
@@ -771,7 +795,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=1;
+									items=4;
 									class Item0
 									{
 										class data
@@ -786,6 +810,87 @@ class CustomAttributes
 													{
 														singleType="BOOL";
 														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="synixe_factions_civilians_Citizen_Polo_Pants_Livonia,  synixe_factions_civilians_Citizen_Polo_Pants_Livonia,  synixe_factions_civilians_Citizen_Polo_Pants_Livonia,  synixe_factions_civilians_Citizen_Polo_Pants_Livonia,  synixe_factions_civilians_Citizen_Polo_Pants_Livonia,  synixe_factions_civilians_Citizen_Polo_Shorts_Livonia,  synixe_factions_civilians_Citizen_Polo_Shorts_Livonia,  synixe_factions_civilians_Citizen_Polo_Shorts_Livonia,  synixe_factions_civilians_Citizen_Polo_Shorts_Livonia,  synixe_factions_civilians_Citizen_Suit_Business_Livonia,  synixe_factions_civilians_Citizen_Summer_Livonia,  synixe_factions_civilians_Citizen_Summer_Livonia,  synixe_factions_civilians_Citizen_Summer_Livonia,  synixe_factions_civilians_Citizen_Summer_Livonia,  synixe_factions_civilians_Citizen_Summer_Livonia,  synixe_factions_civilians_Citizen_Farmer_Livonia";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item2
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="[""synixe_factions_Offroad"",  ""synixe_factions_Hatchback""]  ";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item3
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=30;
 													};
 												};
 												class Item1
@@ -14353,6 +14458,23 @@ class Mission
 									};
 									id=811;
 									type="synixe_factions_civilians_Citizen_Suit_Business_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 								class Item1
 								{
@@ -14381,6 +14503,23 @@ class Mission
 									};
 									id=812;
 									type="synixe_factions_civilians_Citizen_Construction_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 								class Item2
 								{
@@ -14409,6 +14548,23 @@ class Mission
 									};
 									id=813;
 									type="synixe_factions_civilians_Citizen_Construction_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 								class Item3
 								{
@@ -14437,6 +14593,23 @@ class Mission
 									};
 									id=814;
 									type="synixe_factions_civilians_Citizen_Construction_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 								class Item4
 								{
@@ -14465,6 +14638,23 @@ class Mission
 									};
 									id=815;
 									type="synixe_factions_civilians_Citizen_Construction_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 								class Item5
 								{
@@ -14493,6 +14683,23 @@ class Mission
 									};
 									id=816;
 									type="synixe_factions_civilians_Citizen_Construction_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 								class Item6
 								{
@@ -14520,10 +14727,28 @@ class Mission
 									};
 									id=817;
 									type="synixe_factions_civilians_Citizen_Suit_Business_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 							};
 							class Attributes
 							{
+								dynamicSimulation=1;
 							};
 							id=810;
 						};
@@ -14560,6 +14785,23 @@ class Mission
 									};
 									id=809;
 									type="synixe_factions_civilians_Citizen_Suit_Business_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 								class Item1
 								{
@@ -14588,6 +14830,23 @@ class Mission
 									};
 									id=795;
 									type="synixe_factions_civilians_Citizen_Construction_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 								class Item2
 								{
@@ -14616,6 +14875,23 @@ class Mission
 									};
 									id=797;
 									type="synixe_factions_civilians_Citizen_Construction_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 								class Item3
 								{
@@ -14644,6 +14920,23 @@ class Mission
 									};
 									id=799;
 									type="synixe_factions_civilians_Citizen_Construction_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 								class Item4
 								{
@@ -14672,6 +14965,23 @@ class Mission
 									};
 									id=801;
 									type="synixe_factions_civilians_Citizen_Construction_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 								class Item5
 								{
@@ -14700,6 +15010,23 @@ class Mission
 									};
 									id=803;
 									type="synixe_factions_civilians_Citizen_Construction_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 								class Item6
 								{
@@ -14727,10 +15054,28 @@ class Mission
 									};
 									id=807;
 									type="synixe_factions_civilians_Citizen_Suit_Business_Livonia";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
 								};
 							};
 							class Attributes
 							{
+								dynamicSimulation=1;
 							};
 							id=808;
 						};
@@ -19333,7 +19678,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={3898.1333,86.124222,10264.762};
-					angle=5.5530477;
+					angle=5.5530467;
 					class Attributes
 					{
 						text="gradtrigger";
@@ -19349,7 +19694,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={5971.6353,162.88805,5322.103};
-					angle=6.0470705;
+					angle=6.0470695;
 					class Attributes
 					{
 						text="gradtrigger";
@@ -19396,11 +19741,11 @@ class Mission
 	{
 		class LinkIDProvider
 		{
-			nextID=68;
+			nextID=70;
 		};
 		class Links
 		{
-			items=68;
+			items=70;
 			class Item0
 			{
 				linkID=0;
@@ -20076,6 +20421,26 @@ class Mission
 				linkID=67;
 				item0=949;
 				item1=950;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item68
+			{
+				linkID=68;
+				item0=911;
+				item1=914;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item69
+			{
+				linkID=69;
+				item0=912;
+				item1=914;
 				class CustomData
 				{
 					type="Sync";
