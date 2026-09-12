@@ -14,6 +14,6 @@ fnc_malfunctionConvoy = {
         [_veh, _part, _dmg] remoteExec ["TAG_fnc_setHP", _veh];
     };
 
-    [_veh, "EngineSFX_lxWS"] remoteExec ["say3D", 0, true];
+[_veh, "EngineSFX_lxWS"] remoteExec ["say3D", 0, false];
     [_veh, 0] remoteExec ["setFuel", _veh];
 };
