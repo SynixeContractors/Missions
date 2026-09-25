@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=771;
+		nextID=774;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=49;
+		nextID=77;
 	};
 	class Camera
 	{
-		pos[]={10162.485,207.899,8394.9375};
-		dir[]={0.95549911,-0.19882813,0.21806787};
-		up[]={0.19385742,0.9800272,0.044242907};
-		aside[]={0.22251053,-2.9980583e-08,-0.97496295};
+		pos[]={10739.627,171.94911,9347.8379};
+		dir[]={-0.83975548,-0.4980568,0.21623184};
+		up[]={-0.48232451,0.8671425,0.12419557};
+		aside[]={0.24936017,3.4924597e-09,0.96841323};
 	};
 };
 binarizationWanted=0;
@@ -194,13 +194,14 @@ addons[]=
 	"Weapons_F_lxWS",
 	"A3_Weapons_F_Enoch_Machineguns_M200",
 	"ace_minedetector",
-	"synixe_factions_sahrani_army_recon"
+	"synixe_factions_sahrani_army_recon",
+	"A3_Structures_F_Oldman_Decals"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=92;
+		items=93;
 		class Item0
 		{
 			className="synixe_factions_synixe";
@@ -807,6 +808,13 @@ class AddonsMetaData
 			name="sahrani_army_recon";
 			author="Synixe Contractors";
 		};
+		class Item92
+		{
+			className="A3_Structures_F_Oldman";
+			name="Arma 3 Old Man - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -821,7 +829,8 @@ dlcs[]=
 	"tacs",
 	"OfficialMod",
 	"Heli",
-	"Jets"
+	"Jets",
+	"Oldman"
 };
 randomSeed=8473740;
 class ScenarioData
@@ -884,7 +893,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=10;
+		items=12;
 		class Item0
 		{
 			dataType="Layer";
@@ -3058,7 +3067,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="church";
-			state=1;
 			class Entities
 			{
 				items=26;
@@ -3597,7 +3605,7 @@ class Mission
 					{
 					};
 					id=33;
-					atlOffset=67.664726;
+					atlOffset=0.0001373291;
 				};
 				class Item1
 				{
@@ -4253,7 +4261,7 @@ class Mission
 					{
 					};
 					id=67;
-					atlOffset=67.664726;
+					atlOffset=0.0001373291;
 				};
 				class Item6
 				{
@@ -4876,7 +4884,6 @@ class Mission
 					{
 					};
 					id=91;
-					atlOffset=67.664726;
 				};
 				class Item13
 				{
@@ -5409,7 +5416,7 @@ class Mission
 					{
 					};
 					id=100;
-					atlOffset=67.664726;
+					atlOffset=1.5258789e-05;
 				};
 				class Item14
 				{
@@ -14164,7 +14171,7 @@ class Mission
 					{
 					};
 					id=314;
-					atlOffset=67.664726;
+					atlOffset=0.0001373291;
 				};
 				class Item23
 				{
@@ -14636,11 +14643,10 @@ class Mission
 					{
 					};
 					id=550;
-					atlOffset=67.664726;
 				};
 			};
 			id=42;
-			atlOffset=141.81148;
+			atlOffset=2.0834808;
 		};
 		class Item2
 		{
@@ -16154,6 +16160,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="pesto";
+			state=1;
 			class Entities
 			{
 				items=15;
@@ -17879,6 +17886,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ENH_disableAI_move";
+									expression="if (_value && local _this) then {[_this, 'MOVE'] remoteExec ['disableAI', 0]}";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="ObjectCollision";
 									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
 									class Value
@@ -17890,7 +17910,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="ENH_doStop";
 									expression="if (!is3DEN && _value) then {doStop _this}";
@@ -17903,7 +17923,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item1
@@ -17973,6 +17993,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ENH_disableAI_move";
+									expression="if (_value && local _this) then {[_this, 'MOVE'] remoteExec ['disableAI', 0]}";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="ObjectCollision";
 									expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
 									class Value
@@ -17984,7 +18017,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="ENH_doStop";
 									expression="if (!is3DEN && _value) then {doStop _this}";
@@ -17997,7 +18030,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 					};
@@ -18170,6 +18203,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="heli attack";
+			state=1;
 			class Entities
 			{
 				items=9;
@@ -18624,7 +18658,7 @@ class Mission
 						};
 					};
 					id=380;
-					atlOffset=69.880737;
+					atlOffset=67.664726;
 				};
 				class Item2
 				{
@@ -18943,7 +18977,7 @@ class Mission
 						};
 					};
 					id=383;
-					atlOffset=-0.00852108;
+					atlOffset=67.664726;
 				};
 				class Item3
 				{
@@ -19177,7 +19211,7 @@ class Mission
 						};
 					};
 					id=388;
-					atlOffset=0.00052165985;
+					atlOffset=67.664726;
 				};
 				class Item4
 				{
@@ -19982,7 +20016,7 @@ class Mission
 						};
 					};
 					id=394;
-					atlOffset=69.880737;
+					atlOffset=67.664726;
 				};
 				class Item7
 				{
@@ -20592,7 +20626,7 @@ class Mission
 						};
 					};
 					id=399;
-					atlOffset=-0.00852108;
+					atlOffset=67.664726;
 				};
 				class Item8
 				{
@@ -20641,7 +20675,7 @@ class Mission
 				};
 			};
 			id=376;
-			atlOffset=119.60461;
+			atlOffset=120.94431;
 		};
 		class Item5
 		{
@@ -22616,6 +22650,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="base";
+			state=1;
 			class Entities
 			{
 				items=12;
@@ -22904,6 +22939,7 @@ class Mission
 						};
 					};
 					id=492;
+					atlOffset=67.664726;
 				};
 				class Item3
 				{
@@ -23345,6 +23381,7 @@ class Mission
 						};
 					};
 					id=497;
+					atlOffset=67.664726;
 				};
 				class Item4
 				{
@@ -23595,6 +23632,7 @@ class Mission
 						};
 					};
 					id=507;
+					atlOffset=67.664726;
 				};
 				class Item5
 				{
@@ -23821,6 +23859,7 @@ class Mission
 						};
 					};
 					id=510;
+					atlOffset=67.664726;
 				};
 				class Item6
 				{
@@ -24303,6 +24342,7 @@ class Mission
 						};
 					};
 					id=750;
+					atlOffset=67.664726;
 				};
 				class Item10
 				{
@@ -24507,6 +24547,7 @@ class Mission
 						};
 					};
 					id=745;
+					atlOffset=67.664726;
 				};
 				class Item11
 				{
@@ -24827,6 +24868,7 @@ class Mission
 				};
 			};
 			id=489;
+			atlOffset=113.0165;
 		};
 		class Item7
 		{
@@ -29681,6 +29723,171 @@ class Mission
 			};
 			id=732;
 			atlOffset=2.1184387;
+		};
+		class Item10
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10720.942,152.67978,9361.4961};
+				angles[]={0,1.8483182,-0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=771;
+			type="Land_Decal_ScorchMark_01_small_F";
+		};
+		class Item11
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10721.176,152.60199,9361.292};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						health=0;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="Aegis_arifle_M4A1_F";
+								optics="optic_r1_high_lxWS";
+								flashlight="acc_flashlight";
+								firemode="Aegis_arifle_M4A1_F:Single";
+							};
+							class handgun
+							{
+								name="hgun_P07_blk_F";
+								flashlight="acc_flashlight_pistol";
+							};
+							class uniform
+							{
+								typeName="U_B_GEN_Soldier_F";
+								isBackpack=0;
+								class ItemCargo
+								{
+									items=4;
+									class Item0
+									{
+										name="ACE_elasticBandage";
+										count=4;
+									};
+									class Item1
+									{
+										name="ACE_packingBandage";
+										count=4;
+									};
+									class Item2
+									{
+										name="ACE_tourniquet";
+										count=1;
+									};
+									class Item3
+									{
+										name="ACE_CableTie";
+										count=6;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="V_TacVest_blk_POLICE";
+								isBackpack=0;
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="NVGoggles_OPFOR";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							gps="ItemGPS";
+							headgear="H_PASGT_basic_blue_F";
+						};
+					};
+					id=773;
+					type="synixe_factions_police_Sahrani_BLUFOR_SWATRifle";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectCollision";
+							expression="[_this, if (_value isEqualType []) then {	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	}] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="attachMarker";
+							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male04GRE";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=4;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=772;
 		};
 	};
 	class Connections
