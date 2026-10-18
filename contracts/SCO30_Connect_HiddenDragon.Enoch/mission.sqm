@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1002;
+		nextID=1022;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4088.8625,43.034725,7948.1426};
-		dir[]={-0.75256926,-0.62787372,-0.198551};
-		up[]={-0.60710359,0.77831101,-0.16017279};
-		aside[]={-0.25510275,5.4191332e-08,0.96691734};
+		pos[]={5558.2427,259.55106,3841.4395};
+		dir[]={0,-0.70710659,0.70710707};
+		up[]={0,0.70710701,0.70710653};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -173,17 +173,13 @@ addons[]=
 	"lxws_cba_compat",
 	"A3_Weapons_F_Enoch_LongRangeRifles_DMR_06",
 	"grad_civs_common",
-	"synixe_factions_livonia_woodland_reserves",
-	"A3_Atlas_Characters_F_Atlas_Uniforms",
-	"A3_Atlas_Characters_F_Atlas_Vests",
-	"Weapons_F_JCA_IA_Launchers_M72",
-	"synixe_armoury_launchers_m72"
+	"RF_Weapons_Launchers_PSRL1"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=84;
+		items=81;
 		class Item0
 		{
 			className="synixe_factions_synixe";
@@ -713,26 +709,6 @@ class AddonsMetaData
 			name="common";
 			author="AUTHOR";
 		};
-		class Item81
-		{
-			className="synixe_factions_livonia_woodland_reserves";
-			name="livonia_woodland_reserves";
-			author="Synixe Contractors";
-		};
-		class Item82
-		{
-			className="A3_Weapons_F_Tank";
-			name="Arma 3 Tank - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item83
-		{
-			className="synixe_armoury_launchers_m72";
-			name="launchers_m72";
-			author="Synixe Contractors";
-			url="https://github.com/SynixeContractors/Armoury";
-		};
 	};
 };
 dlcs[]=
@@ -756,7 +732,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -20990,7 +20966,6 @@ class Mission
 							flags=7;
 							class Attributes
 							{
-								rank="SERGEANT";
 								class Inventory
 								{
 									class primaryWeapon
@@ -20999,9 +20974,17 @@ class Mission
 										flashlight="Aegis_acc_pointer_DM";
 										firemode="arifle_MSBS65_camo_F:Single";
 									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Rangefinder";
+									};
 									class uniform
 									{
-										typeName="Atlas_U_UniformBDU_04_reservist_F";
+										typeName="U_I_E_Uniform_01_shortsleeve_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21025,7 +21008,7 @@ class Mission
 									};
 									class vest
 									{
-										typeName="Atlas_V_OCarrierRig_CQB_oli_F";
+										typeName="Aegis_V_CarrierRigKBT_01_cqb_EAF_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21042,11 +21025,11 @@ class Mission
 									watch="ItemWatch";
 									radio="ItemRadio";
 									gps="ItemGPS";
-									headgear="Atlas_H_PASGT_Cover_I_EAF_R_F";
+									headgear="H_HelmetHBK_headset_F";
 								};
 							};
-							id=968;
-							type="synixe_factions_livonia_woodland_reserves_SquadLeader";
+							id=1005;
+							type="synixe_factions_livonia_woodland_army_combat_SquadLeader";
 						};
 						class Item1
 						{
@@ -21059,18 +21042,25 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								skill=0.40000001;
 								class Inventory
 								{
 									class primaryWeapon
 									{
-										name="arifle_MSBS65_camo_F";
-										flashlight="Aegis_acc_pointer_DM";
-										firemode="arifle_MSBS65_camo_F:Single";
+										name="arifle_MSBS65_GL_camo_F";
+										flashlight="saber_light_lxWS";
+										firemode="arifle_MSBS65_GL_camo_F:Single";
+									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Rangefinder";
 									};
 									class uniform
 									{
-										typeName="Atlas_U_UniformBDU_03_reservist_F";
+										typeName="U_I_E_Uniform_01_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21094,7 +21084,7 @@ class Mission
 									};
 									class vest
 									{
-										typeName="Atlas_V_OCarrierRig_CQB_oli_F";
+										typeName="V_CarrierRigKBT_01_heavy_EAF_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21111,11 +21101,11 @@ class Mission
 									watch="ItemWatch";
 									radio="ItemRadio";
 									gps="ItemGPS";
-									headgear="Atlas_H_PASGT_Cover_I_EAF_R_F";
+									headgear="H_HelmetHBK_headset_F";
 								};
 							};
-							id=969;
-							type="synixe_factions_livonia_woodland_reserves_Rifleman";
+							id=1007;
+							type="synixe_factions_livonia_woodland_army_combat_TeamLeader";
 						};
 						class Item2
 						{
@@ -21128,18 +21118,25 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								rank="SERGEANT";
 								class Inventory
 								{
 									class primaryWeapon
 									{
 										name="arifle_MSBS65_camo_F";
-										flashlight="Aegis_acc_pointer_DM";
+										flashlight="saber_light_lxWS";
 										firemode="arifle_MSBS65_camo_F:Single";
+									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Binocular";
 									};
 									class uniform
 									{
-										typeName="Atlas_U_UniformBDU_03_reservist_F";
+										typeName="U_I_E_Uniform_01_sweater_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21163,7 +21160,7 @@ class Mission
 									};
 									class vest
 									{
-										typeName="Atlas_V_OCarrierRig_CQB_oli_F";
+										typeName="V_CarrierRigKBT_01_heavy_EAF_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21180,11 +21177,11 @@ class Mission
 									watch="ItemWatch";
 									radio="ItemRadio";
 									gps="ItemGPS";
-									headgear="Atlas_H_PASGT_Cover_I_EAF_R_F";
+									headgear="H_HelmetHBK_ear_F";
 								};
 							};
-							id=970;
-							type="synixe_factions_livonia_woodland_reserves_Rifleman";
+							id=1008;
+							type="synixe_factions_livonia_woodland_army_combat_Rifleman";
 						};
 						class Item3
 						{
@@ -21197,19 +21194,25 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								skill=0.44999999;
-								rank="CORPORAL";
 								class Inventory
 								{
 									class primaryWeapon
 									{
 										name="arifle_MSBS65_camo_F";
-										flashlight="saber_light_lxWS";
+										flashlight="Aegis_acc_pointer_DM";
 										firemode="arifle_MSBS65_camo_F:Single";
+									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Binocular";
 									};
 									class uniform
 									{
-										typeName="Atlas_U_UniformBDU_04_reservist_F";
+										typeName="U_I_E_Uniform_01_shortsleeve_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21233,7 +21236,244 @@ class Mission
 									};
 									class vest
 									{
-										typeName="Atlas_V_OCarrierRig_CQB_oli_F";
+										typeName="Aegis_V_CarrierRigKBT_01_cqb_EAF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetHBK_ear_F";
+								};
+							};
+							id=1009;
+							type="synixe_factions_livonia_woodland_army_combat_Rifleman";
+						};
+						class Item4
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={9061.7754,129.81602,6676.6362};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MSBS65_camo_F";
+										flashlight="saber_light_lxWS";
+										firemode="arifle_MSBS65_camo_F:Single";
+									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Binocular";
+									};
+									class uniform
+									{
+										typeName="U_I_E_Uniform_01_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="Aegis_V_CarrierRigKBT_01_cqb_EAF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetHBK_ear_F";
+								};
+							};
+							id=1010;
+							type="synixe_factions_livonia_woodland_army_combat_Rifleman";
+						};
+						class Item5
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={9061.7754,129.81602,6676.6362};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MSBS65_camo_F";
+										flashlight="Aegis_acc_pointer_DM";
+										firemode="arifle_MSBS65_camo_F:Single";
+									};
+									class secondaryWeapon
+									{
+										name="launch_PSRL1_PWS_geo_RF";
+									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Binocular";
+									};
+									class uniform
+									{
+										typeName="U_I_E_Uniform_01_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="Aegis_V_CarrierRigKBT_01_cqb_EAF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									class backpack
+									{
+										typeName="B_Kitbag_eaf_F";
+										isBackpack=1;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetHBK_ear_F";
+								};
+							};
+							id=1011;
+							type="synixe_factions_livonia_woodland_army_combat_RiflemanMAT";
+						};
+						class Item6
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={9061.7754,129.81602,6676.6362};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MSBS65_camo_F";
+										flashlight="saber_light_lxWS";
+										firemode="arifle_MSBS65_camo_F:Single";
+									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Binocular";
+									};
+									class uniform
+									{
+										typeName="U_I_E_Uniform_01_sweater_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="Aegis_V_CarrierRigKBT_01_cqb_EAF_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21309,13 +21549,13 @@ class Mission
 									watch="ItemWatch";
 									radio="ItemRadio";
 									gps="ItemGPS";
-									headgear="Atlas_H_FieldCap_hs_pantera";
+									headgear="H_HelmetHBK_F";
 								};
 							};
-							id=971;
-							type="synixe_factions_livonia_woodland_reserves_Medic";
+							id=1012;
+							type="synixe_factions_livonia_woodland_army_combat_Medic";
 						};
-						class Item4
+						class Item7
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21326,91 +21566,25 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								skill=0.40000001;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="arifle_MSBS65_GL_camo_F";
-										flashlight="saber_light_lxWS";
-										firemode="arifle_MSBS65_GL_camo_F:Single";
-									};
-									class secondaryWeapon
-									{
-										name="JCA_launch_M72_olive_F";
-									};
-									class uniform
-									{
-										typeName="Atlas_U_UniformBDU_03_reservist_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=3;
-											class Item0
-											{
-												name="ACE_elasticBandage";
-												count=4;
-											};
-											class Item1
-											{
-												name="ACE_packingBandage";
-												count=4;
-											};
-											class Item2
-											{
-												name="ACE_tourniquet";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="Atlas_V_OCarrierRig_CQB_oli_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="ACE_NVG_Gen4_Black_WP";
-												count=1;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									gps="ItemGPS";
-									headgear="Atlas_H_PASGT_Cover_I_EAF_R_F";
-								};
-							};
-							id=972;
-							type="synixe_factions_livonia_woodland_reserves_TeamLeader";
-						};
-						class Item5
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={9061.7754,129.81602,6676.6362};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								rank="SERGEANT";
 								class Inventory
 								{
 									class primaryWeapon
 									{
 										name="arifle_MSBS65_camo_F";
-										flashlight="Aegis_acc_pointer_DM";
+										flashlight="saber_light_lxWS";
 										firemode="arifle_MSBS65_camo_F:Single";
 									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Binocular";
+									};
 									class uniform
 									{
-										typeName="Atlas_U_UniformBDU_03_reservist_F";
+										typeName="U_I_E_Uniform_01_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21434,78 +21608,7 @@ class Mission
 									};
 									class vest
 									{
-										typeName="Atlas_V_OCarrierRig_Lite_oli_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="ACE_NVG_Gen4_Black_WP";
-												count=1;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									gps="ItemGPS";
-									headgear="Atlas_H_PASGT_Cover_I_EAF_R_F";
-								};
-							};
-							id=973;
-							type="synixe_factions_livonia_woodland_reserves_Rifleman";
-						};
-						class Item6
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={9061.7754,129.81602,6676.6362};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								skill=0.44999999;
-								rank="CORPORAL";
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="LMG_Mk200_black_F";
-										optics="JCA_optic_MROS_black";
-										flashlight="saber_light_lxWS";
-										firemode="LMG_Mk200_black_F:manual";
-									};
-									class uniform
-									{
-										typeName="Atlas_U_UniformBDU_04_reservist_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=3;
-											class Item0
-											{
-												name="ACE_elasticBandage";
-												count=4;
-											};
-											class Item1
-											{
-												name="ACE_packingBandage";
-												count=4;
-											};
-											class Item2
-											{
-												name="ACE_tourniquet";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="Atlas_V_ORigLBV_oli_F";
+										typeName="Aegis_V_CarrierRigKBT_01_cqb_EAF_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21521,72 +21624,12 @@ class Mission
 									{
 										typeName="B_AssaultPack_eaf_F";
 										isBackpack=1;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									gps="ItemGPS";
-									headgear="Atlas_H_PASGT_Cover_I_EAF_R_F";
-								};
-							};
-							id=974;
-							type="synixe_factions_livonia_woodland_reserves_Autorifleman";
-						};
-						class Item7
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={9061.7754,129.81602,6676.6362};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								skill=0.40000001;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="arifle_MSBS65_camo_F";
-										flashlight="saber_light_lxWS";
-										firemode="arifle_MSBS65_camo_F:Single";
-									};
-									class uniform
-									{
-										typeName="Atlas_U_UniformBDU_03_reservist_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=3;
-											class Item0
-											{
-												name="ACE_elasticBandage";
-												count=4;
-											};
-											class Item1
-											{
-												name="ACE_packingBandage";
-												count=4;
-											};
-											class Item2
-											{
-												name="ACE_tourniquet";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="Atlas_V_OCarrierRig_CQB_oli_F";
-										isBackpack=0;
 										class ItemCargo
 										{
 											items=1;
 											class Item0
 											{
-												name="ACE_NVG_Gen4_Black_WP";
+												name="ToolKit";
 												count=1;
 											};
 										};
@@ -21596,11 +21639,11 @@ class Mission
 									watch="ItemWatch";
 									radio="ItemRadio";
 									gps="ItemGPS";
-									headgear="Atlas_H_PASGT_Cover_I_EAF_R_F";
+									headgear="H_HelmetHBK_ear_F";
 								};
 							};
-							id=975;
-							type="synixe_factions_livonia_woodland_reserves_Rifleman";
+							id=1013;
+							type="synixe_factions_livonia_woodland_army_combat_Engineer";
 						};
 						class Item8
 						{
@@ -21660,7 +21703,7 @@ class Mission
 							class Item0
 							{
 								linkID=0;
-								item0=968;
+								item0=1005;
 								item1=966;
 								class CustomData
 								{
@@ -21670,7 +21713,7 @@ class Mission
 							class Item1
 							{
 								linkID=1;
-								item0=969;
+								item0=1007;
 								item1=966;
 								class CustomData
 								{
@@ -21681,7 +21724,7 @@ class Mission
 							class Item2
 							{
 								linkID=2;
-								item0=970;
+								item0=1008;
 								item1=966;
 								class CustomData
 								{
@@ -21692,7 +21735,7 @@ class Mission
 							class Item3
 							{
 								linkID=3;
-								item0=971;
+								item0=1009;
 								item1=966;
 								class CustomData
 								{
@@ -21703,7 +21746,7 @@ class Mission
 							class Item4
 							{
 								linkID=4;
-								item0=972;
+								item0=1010;
 								item1=966;
 								class CustomData
 								{
@@ -21714,7 +21757,7 @@ class Mission
 							class Item5
 							{
 								linkID=5;
-								item0=973;
+								item0=1011;
 								item1=966;
 								class CustomData
 								{
@@ -21725,7 +21768,7 @@ class Mission
 							class Item6
 							{
 								linkID=6;
-								item0=974;
+								item0=1012;
 								item1=966;
 								class CustomData
 								{
@@ -21736,7 +21779,7 @@ class Mission
 							class Item7
 							{
 								linkID=7;
-								item0=975;
+								item0=1013;
 								item1=966;
 								class CustomData
 								{
@@ -21776,14 +21819,12 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={5559.0181,251.52977,3852.6074};
-								angles[]={0.0016194459,6.0046859,6.2623916};
+								position[]={5559.0591,251.52899,3852.5591};
 							};
 							side="East";
 							flags=7;
 							class Attributes
 							{
-								rank="SERGEANT";
 								class Inventory
 								{
 									class primaryWeapon
@@ -21792,9 +21833,17 @@ class Mission
 										flashlight="Aegis_acc_pointer_DM";
 										firemode="arifle_MSBS65_camo_F:Single";
 									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Rangefinder";
+									};
 									class uniform
 									{
-										typeName="Atlas_U_UniformBDU_04_reservist_F";
+										typeName="U_I_E_Uniform_01_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21818,7 +21867,7 @@ class Mission
 									};
 									class vest
 									{
-										typeName="Atlas_V_OCarrierRig_CQB_oli_F";
+										typeName="Aegis_V_CarrierRigKBT_01_cqb_EAF_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21835,36 +21884,42 @@ class Mission
 									watch="ItemWatch";
 									radio="ItemRadio";
 									gps="ItemGPS";
-									headgear="Atlas_H_FieldCap_pantera";
+									headgear="H_HelmetHBK_headset_F";
 								};
 							};
-							id=981;
-							type="synixe_factions_livonia_woodland_reserves_SquadLeader";
+							id=1014;
+							type="synixe_factions_livonia_woodland_army_combat_SquadLeader";
 						};
 						class Item1
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={5559.0181,251.52977,3852.6074};
-								angles[]={0.0016194459,6.0046859,6.2623916};
+								position[]={5559.0591,251.52899,3852.5591};
 							};
 							side="East";
 							flags=5;
 							class Attributes
 							{
-								skill=0.40000001;
 								class Inventory
 								{
 									class primaryWeapon
 									{
-										name="arifle_MSBS65_camo_F";
+										name="arifle_MSBS65_GL_camo_F";
 										flashlight="saber_light_lxWS";
-										firemode="arifle_MSBS65_camo_F:Single";
+										firemode="arifle_MSBS65_GL_camo_F:Single";
+									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Rangefinder";
 									};
 									class uniform
 									{
-										typeName="Atlas_U_UniformBDU_04_reservist_F";
+										typeName="U_I_E_Uniform_01_sweater_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21888,7 +21943,7 @@ class Mission
 									};
 									class vest
 									{
-										typeName="Atlas_V_OCarrierRig_Lite_oli_F";
+										typeName="Aegis_V_CarrierRigKBT_01_cqb_EAF_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21905,25 +21960,175 @@ class Mission
 									watch="ItemWatch";
 									radio="ItemRadio";
 									gps="ItemGPS";
-									headgear="Atlas_H_PASGT_Cover_I_EAF_R_F";
+									headgear="H_HelmetHBK_headset_F";
 								};
 							};
-							id=982;
-							type="synixe_factions_livonia_woodland_reserves_Rifleman";
+							id=1015;
+							type="synixe_factions_livonia_woodland_army_combat_TeamLeader";
 						};
 						class Item2
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={5559.0181,251.52977,3852.6074};
-								angles[]={0.0016194459,6.0046859,6.2623916};
+								position[]={5559.0591,251.52899,3852.5591};
 							};
 							side="East";
 							flags=5;
 							class Attributes
 							{
-								rank="SERGEANT";
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MSBS65_camo_F";
+										flashlight="saber_light_lxWS";
+										firemode="arifle_MSBS65_camo_F:Single";
+									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Binocular";
+									};
+									class uniform
+									{
+										typeName="U_I_E_Uniform_01_sweater_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_CarrierRigKBT_01_heavy_EAF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetHBK_F";
+								};
+							};
+							id=1016;
+							type="synixe_factions_livonia_woodland_army_combat_Rifleman";
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5559.0591,251.52899,3852.5591};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MSBS65_camo_F";
+										flashlight="saber_light_lxWS";
+										firemode="arifle_MSBS65_camo_F:Single";
+									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Binocular";
+									};
+									class uniform
+									{
+										typeName="U_I_E_Uniform_01_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="Aegis_V_CarrierRigKBT_01_cqb_EAF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetHBK_headset_F";
+								};
+							};
+							id=1017;
+							type="synixe_factions_livonia_woodland_army_combat_Rifleman";
+						};
+						class Item4
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5559.0591,251.52899,3852.5591};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
 								class Inventory
 								{
 									class primaryWeapon
@@ -21932,9 +22137,17 @@ class Mission
 										flashlight="Aegis_acc_pointer_DM";
 										firemode="arifle_MSBS65_camo_F:Single";
 									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Binocular";
+									};
 									class uniform
 									{
-										typeName="Atlas_U_UniformBDU_03_reservist_F";
+										typeName="U_I_E_Uniform_01_sweater_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21958,7 +22171,7 @@ class Mission
 									};
 									class vest
 									{
-										typeName="Atlas_V_OCarrierRig_Lite_oli_F";
+										typeName="Aegis_V_CarrierRigKBT_01_cqb_EAF_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -21975,26 +22188,23 @@ class Mission
 									watch="ItemWatch";
 									radio="ItemRadio";
 									gps="ItemGPS";
-									headgear="Atlas_H_PASGT_Cover_I_EAF_R_F";
+									headgear="H_HelmetHBK_headset_F";
 								};
 							};
-							id=983;
-							type="synixe_factions_livonia_woodland_reserves_Rifleman";
+							id=1018;
+							type="synixe_factions_livonia_woodland_army_combat_Rifleman";
 						};
-						class Item3
+						class Item5
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={5559.0181,251.52977,3852.6074};
-								angles[]={0.0016194459,6.0046859,6.2623916};
+								position[]={5559.0591,251.52899,3852.5591};
 							};
 							side="East";
 							flags=5;
 							class Attributes
 							{
-								skill=0.44999999;
-								rank="CORPORAL";
 								class Inventory
 								{
 									class primaryWeapon
@@ -22003,9 +22213,21 @@ class Mission
 										flashlight="saber_light_lxWS";
 										firemode="arifle_MSBS65_camo_F:Single";
 									};
+									class secondaryWeapon
+									{
+										name="launch_PSRL1_PWS_geo_RF";
+									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Binocular";
+									};
 									class uniform
 									{
-										typeName="Atlas_U_UniformBDU_04_reservist_F";
+										typeName="U_I_E_Uniform_01_shortsleeve_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -22029,7 +22251,178 @@ class Mission
 									};
 									class vest
 									{
-										typeName="Atlas_V_OCarrierRig_Lite_oli_F";
+										typeName="Aegis_V_CarrierRigKBT_01_cqb_EAF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									class backpack
+									{
+										typeName="B_Kitbag_eaf_F";
+										isBackpack=1;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetHBK_ear_F";
+								};
+							};
+							id=1019;
+							type="synixe_factions_livonia_woodland_army_combat_RiflemanMAT";
+						};
+						class Item6
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5559.0591,251.52899,3852.5591};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MSBS65_camo_F";
+										flashlight="saber_light_lxWS";
+										firemode="arifle_MSBS65_camo_F:Single";
+									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Binocular";
+									};
+									class uniform
+									{
+										typeName="U_I_E_Uniform_01_shortsleeve_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="Aegis_V_CarrierRigKBT_01_cqb_EAF_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ACE_NVG_Gen4_Black_WP";
+												count=1;
+											};
+										};
+									};
+									class backpack
+									{
+										typeName="B_AssaultPack_eaf_F";
+										isBackpack=1;
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="ToolKit";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+									gps="ItemGPS";
+									headgear="H_HelmetHBK_F";
+								};
+							};
+							id=1020;
+							type="synixe_factions_livonia_woodland_army_combat_Engineer";
+						};
+						class Item7
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5559.0591,251.52899,3852.5591};
+							};
+							side="East";
+							flags=5;
+							class Attributes
+							{
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MSBS65_camo_F";
+										flashlight="saber_light_lxWS";
+										firemode="arifle_MSBS65_camo_F:Single";
+									};
+									class handgun
+									{
+										name="hgun_G17_black_F";
+									};
+									class binocular
+									{
+										name="Binocular";
+									};
+									class uniform
+									{
+										typeName="U_I_E_Uniform_01_F";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="ACE_elasticBandage";
+												count=4;
+											};
+											class Item1
+											{
+												name="ACE_packingBandage";
+												count=4;
+											};
+											class Item2
+											{
+												name="ACE_tourniquet";
+												count=1;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_CarrierRigKBT_01_heavy_EAF_F";
 										isBackpack=0;
 										class ItemCargo
 										{
@@ -22105,298 +22498,11 @@ class Mission
 									watch="ItemWatch";
 									radio="ItemRadio";
 									gps="ItemGPS";
-									headgear="Atlas_H_FieldCap_hs_pantera";
+									headgear="H_HelmetHBK_F";
 								};
 							};
-							id=984;
-							type="synixe_factions_livonia_woodland_reserves_Medic";
-						};
-						class Item4
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={5559.0181,251.52977,3852.6074};
-								angles[]={0.0016194459,6.0046859,6.2623916};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								skill=0.40000001;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="arifle_MSBS65_GL_camo_F";
-										flashlight="Aegis_acc_pointer_DM";
-										firemode="arifle_MSBS65_GL_camo_F:Single";
-									};
-									class uniform
-									{
-										typeName="Atlas_U_UniformBDU_03_reservist_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=3;
-											class Item0
-											{
-												name="ACE_elasticBandage";
-												count=4;
-											};
-											class Item1
-											{
-												name="ACE_packingBandage";
-												count=4;
-											};
-											class Item2
-											{
-												name="ACE_tourniquet";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="Atlas_V_OCarrierRig_Lite_oli_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="ACE_NVG_Gen4_Black_WP";
-												count=1;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									gps="ItemGPS";
-									headgear="Atlas_H_PASGT_Cover_I_EAF_R_F";
-								};
-							};
-							id=985;
-							type="synixe_factions_livonia_woodland_reserves_TeamLeader";
-						};
-						class Item5
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={5559.0181,251.52977,3852.6074};
-								angles[]={0.0016194459,6.0046859,6.2623916};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								rank="SERGEANT";
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="arifle_MSBS65_camo_F";
-										flashlight="saber_light_lxWS";
-										firemode="arifle_MSBS65_camo_F:Single";
-									};
-									class uniform
-									{
-										typeName="Atlas_U_UniformBDU_03_reservist_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=3;
-											class Item0
-											{
-												name="ACE_elasticBandage";
-												count=4;
-											};
-											class Item1
-											{
-												name="ACE_packingBandage";
-												count=4;
-											};
-											class Item2
-											{
-												name="ACE_tourniquet";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="Atlas_V_OCarrierRig_Lite_oli_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="ACE_NVG_Gen4_Black_WP";
-												count=1;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									gps="ItemGPS";
-									headgear="Atlas_H_FieldCap_pantera";
-								};
-							};
-							id=986;
-							type="synixe_factions_livonia_woodland_reserves_Rifleman";
-						};
-						class Item6
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={5559.0181,251.52977,3852.6074};
-								angles[]={0.0016194459,6.0046859,6.2623916};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								skill=0.44999999;
-								rank="CORPORAL";
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="LMG_Mk200_black_F";
-										optics="JCA_optic_MROS_black";
-										flashlight="Aegis_acc_pointer_DM";
-										firemode="LMG_Mk200_black_F:manual";
-									};
-									class uniform
-									{
-										typeName="Atlas_U_UniformBDU_03_reservist_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=3;
-											class Item0
-											{
-												name="ACE_elasticBandage";
-												count=4;
-											};
-											class Item1
-											{
-												name="ACE_packingBandage";
-												count=4;
-											};
-											class Item2
-											{
-												name="ACE_tourniquet";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="Atlas_V_ORigLBV_oli_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="ACE_NVG_Gen4_Black_WP";
-												count=1;
-											};
-										};
-									};
-									class backpack
-									{
-										typeName="B_AssaultPack_eaf_F";
-										isBackpack=1;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									gps="ItemGPS";
-									headgear="Atlas_H_PASGT_Cover_I_EAF_R_F";
-								};
-							};
-							id=987;
-							type="synixe_factions_livonia_woodland_reserves_Autorifleman";
-						};
-						class Item7
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={5559.0181,251.52977,3852.6074};
-								angles[]={0.0016194459,6.0046859,6.2623916};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								skill=0.40000001;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="arifle_MSBS65_camo_F";
-										flashlight="saber_light_lxWS";
-										firemode="arifle_MSBS65_camo_F:Single";
-									};
-									class uniform
-									{
-										typeName="Atlas_U_UniformBDU_03_reservist_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=3;
-											class Item0
-											{
-												name="ACE_elasticBandage";
-												count=4;
-											};
-											class Item1
-											{
-												name="ACE_packingBandage";
-												count=4;
-											};
-											class Item2
-											{
-												name="ACE_tourniquet";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="Atlas_V_OCarrierRig_Lite_oli_F";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="ACE_NVG_Gen4_Black_WP";
-												count=1;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									gps="ItemGPS";
-									headgear="Atlas_H_FieldCap_hs_pantera";
-								};
-							};
-							id=988;
-							type="synixe_factions_livonia_woodland_reserves_Rifleman";
+							id=1021;
+							type="synixe_factions_livonia_woodland_army_combat_Medic";
 						};
 						class Item8
 						{
@@ -22487,7 +22593,7 @@ class Mission
 							class Item0
 							{
 								linkID=0;
-								item0=981;
+								item0=1014;
 								item1=990;
 								class CustomData
 								{
@@ -22497,7 +22603,7 @@ class Mission
 							class Item1
 							{
 								linkID=1;
-								item0=982;
+								item0=1015;
 								item1=990;
 								class CustomData
 								{
@@ -22508,7 +22614,7 @@ class Mission
 							class Item2
 							{
 								linkID=2;
-								item0=983;
+								item0=1016;
 								item1=990;
 								class CustomData
 								{
@@ -22519,7 +22625,7 @@ class Mission
 							class Item3
 							{
 								linkID=3;
-								item0=984;
+								item0=1017;
 								item1=990;
 								class CustomData
 								{
@@ -22530,7 +22636,7 @@ class Mission
 							class Item4
 							{
 								linkID=4;
-								item0=985;
+								item0=1018;
 								item1=990;
 								class CustomData
 								{
@@ -22541,7 +22647,7 @@ class Mission
 							class Item5
 							{
 								linkID=5;
-								item0=986;
+								item0=1019;
 								item1=990;
 								class CustomData
 								{
@@ -22552,7 +22658,7 @@ class Mission
 							class Item6
 							{
 								linkID=6;
-								item0=987;
+								item0=1020;
 								item1=990;
 								class CustomData
 								{
@@ -22563,7 +22669,7 @@ class Mission
 							class Item7
 							{
 								linkID=7;
-								item0=988;
+								item0=1021;
 								item1=990;
 								class CustomData
 								{
