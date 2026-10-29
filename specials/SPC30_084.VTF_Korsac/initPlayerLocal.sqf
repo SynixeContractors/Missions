@@ -7,6 +7,7 @@
 ] call mission_fnc_briefing;
 
 ace_player setVariable ["mission_current_layer", "overworld", true];
+current_time = 8;
 
 mission_fnc_setTime = {
     params ["_hour", "_minute"];
@@ -74,7 +75,7 @@ mission_fnc_go = {
     [_to] call mission_fnc_showLayer;
     [_to] call mission_fnc_enter;
     [_to] call mission_fnc_pp;
-    ["mission_went", ace_player, _to] call CBA_fnc_globalEvent;
+    ["mission_went", [ace_player, _to]] call CBA_fnc_globalEvent;
     ace_player setVariable ["mission_current_layer", _to, true];
     [{ace_player setVariable ["mission_blocked", false]} , [], 5] call CBA_fnc_waitAndExecute;
 };
@@ -147,14 +148,14 @@ mission_fnc_enter = {
     params ["_layer"];
     switch (_layer) do {
         case "overworld": {
-            [8,0] call mission_fnc_setTime;
+            current_time = 8;
         };
         case "alpha": {
-            [4,0] call mission_fnc_setTime;
+            current_time = 4;
             ace_player setVariable ["acre_sys_core_isDisabled", true, true];
         };
         case "bravo": {
-            [12,0] call mission_fnc_setTime;
+            current_time = 12;
             ["bravo"] call mission_fnc_teleport;
         };
         default {
@@ -192,3 +193,7 @@ mission_fnc_toggleMemory = {
 [{
     ["overworld"] call mission_fnc_showLayer;
 }, [], 2] call CBA_fnc_waitAndExecute;
+
+[{
+    [current_time, 0] call mission_fnc_setTime;
+}, 0] call CBA_fnc_addPerFrameHandler;
