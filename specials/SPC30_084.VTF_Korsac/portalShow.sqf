@@ -48,7 +48,7 @@ _effects pushback [_effect,0.01];
 
 private _light = createVehicle ["#lightpoint",getPosATL _object,[],0,"can_collide"];
 _light setlightambient [0.05,0.05,0.05]; 
-_light setlightcolor [0.2,0.2,0.2];
+_light setlightcolor [0.2,0,0];
 _light setlightbrightness 200;
 _light setLightAttenuation [0,100,100,0,0.1,1];
 _light setlightdaylight true;

@@ -7,7 +7,9 @@
 ] call mission_fnc_briefing;
 
 ace_player setVariable ["mission_current_layer", "overworld", true];
+mission_current_layer = "overworld";
 current_time = 8;
+current_rain = 0.2;
 
 mission_fnc_setTime = {
     params ["_hour", "_minute"];
@@ -46,6 +48,7 @@ mission_fnc_showLayer = {
     } forEach _objects;
     {
         if (_x == ace_player) then { continue };
+        if (_x getVariable ["mission_solo", false]) then { continue };
         private _other_layer = _x getVariable ["mission_current_layer", "overworld"];
         _x hideObject (_other_layer != _layer);
     } forEach allPlayers;
@@ -66,10 +69,10 @@ mission_fnc_hideLayer = {
 
 mission_fnc_go = {
     params ["_to"];
-    if (_to == (ace_player getVariable ["mission_current_layer", "overworld"])) exitWith {};
+    if (_to == mission_current_layer) exitWith {};
     private _blocked = ace_player getVariable ["mission_blocked", false];
     ace_player setVariable ["mission_blocked", true];
-    private _from = ace_player getVariable ["mission_current_layer", "overworld"];
+    private _from = mission_current_layer;
     [_from] call mission_fnc_hideLayer;
     [_from] call mission_fnc_leave;
     [_to] call mission_fnc_showLayer;
@@ -77,6 +80,7 @@ mission_fnc_go = {
     [_to] call mission_fnc_pp;
     ["mission_went", [ace_player, _to]] call CBA_fnc_globalEvent;
     ace_player setVariable ["mission_current_layer", _to, true];
+    mission_current_layer = _to;
     [{ace_player setVariable ["mission_blocked", false]} , [], 5] call CBA_fnc_waitAndExecute;
 };
 
@@ -84,12 +88,12 @@ mission_fnc_go = {
 ["mission_went", {
     params ["_player", "_to"];
     if (_player == ace_player) exitWith {};
-    if (_to != (ace_player getVariable ["mission_current_layer", "overworld"])) then {
+    if (_to != mission_current_layer) then {
         _player hideObject true;
     } else {
         _player hideObject false;
     };
-}];
+}] call CBA_fnc_addEventHandler;
 
 mission_fnc_ppreset = {
     [mission_pp1, mission_pp2] apply {
@@ -104,13 +108,8 @@ mission_fnc_ppreset = {
 
 mission_fnc_pp = {
     params ["_layer"];
-    // apply different pp effects per layer
-
-    // overworld - reset pp effects
     switch (_layer) do {
-        case "overworld": {
-            call mission_fnc_ppreset;
-        };
+        case "delta";
         case "alpha": {
             mission_pp1 = ppEffectCreate ["ColorCorrections", 1];
             mission_pp1 ppEffectEnable true;
@@ -135,11 +134,8 @@ mission_fnc_pp = {
             ];
             mission_pp2 ppEffectCommit 0;
         };
-        case "bravo": {
-            call mission_fnc_ppreset;
-        };
         default {
-            
+            call mission_fnc_ppreset;
         };
     };
 };
@@ -150,6 +146,7 @@ mission_fnc_enter = {
         case "overworld": {
             current_time = 8;
         };
+        case "delta";
         case "alpha": {
             current_time = 4;
             ace_player setVariable ["acre_sys_core_isDisabled", true, true];
@@ -157,6 +154,15 @@ mission_fnc_enter = {
         case "bravo": {
             current_time = 12;
             ["bravo"] call mission_fnc_teleport;
+        };
+        case "echo": {
+            current_time = 18;
+            current_rain = 0;
+            ace_player setPosASL (getPosASL echo_tp);
+            ace_player setDir (getDir echo_tp);
+            ace_player setVariable ["acre_sys_core_isDisabled", true, true];
+            ace_player hideObjectGlobal true;
+            ace_player setVariable ["mission_solo", true, true];
         };
         default {
             
@@ -167,8 +173,14 @@ mission_fnc_enter = {
 mission_fnc_leave = {
     params ["_layer"];
     switch (_layer) do {
+        case "delta";
         case "alpha": {
             ace_player setVariable ["acre_sys_core_isDisabled", false, true];
+        };
+        case "echo": {
+            current_rain = 0.2;
+            ace_player setVariable ["acre_sys_core_isDisabled", false, true];
+            ace_player setVariable ["mission_solo", false, true];
         };
         default {
             
@@ -176,13 +188,20 @@ mission_fnc_leave = {
     };
 };
 
-mission_fnc_toggleMemory = {
-    params ["_object", "_set"];
-    private _effects = _object getVariable ["bis_effects",[]];
-    {
-        deleteVehicle (_x select 0);
-    } forEach _effects;
-};
+["mission_say", {
+    params ["_object", "_sound", "_layer"];
+    if (_layer == mission_current_layer) then {
+        _object say _sound;
+    };
+}] call CBA_fnc_addEventHandler;
+mission_said = [];
+["mission_say_once", {
+    params ["_object", "_sound", "_layer"];
+    if !(_sound in mission_said) then {
+        mission_said pushBack _sound;
+        ["mission_say", [_object, _sound, _layer]] call CBA_fnc_localEvent;
+    };
+}] call CBA_fnc_addEventHandler;
 
 [{
     if (ace_player getVariable ["acre_sys_core_isDisabled", false]) then {
@@ -196,4 +215,5 @@ mission_fnc_toggleMemory = {
 
 [{
     [current_time, 0] call mission_fnc_setTime;
+    0 setRain current_rain;
 }, 0] call CBA_fnc_addPerFrameHandler;

@@ -1,6 +1,10 @@
 [
     "Overworld",
-    "Alpha"
+    "Alpha",
+    "Bravo",
+    "Charlie",
+    "Delta",
+    "Echo"
 ] apply {
     private _layer = toLower _x;
     private _objects = (getMissionLayerEntities _x) select 0;
@@ -10,3 +14,5 @@
     } forEach _objects;
     missionNamespace setVariable [format ["mission_layer_%1", _layer], _objects, true];
 };
+
+missionNamespace setVariable ["mission_layer_check", true, true];
