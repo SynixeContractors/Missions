@@ -91,6 +91,7 @@ mission_fnc_go = {
     if (_to != mission_current_layer) then {
         _player hideObject true;
     } else {
+        if (_player getVariable ["mission_solo", false]) exitWith {};
         _player hideObject false;
     };
 }] call CBA_fnc_addEventHandler;
