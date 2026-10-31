@@ -187,8 +187,6 @@ mission_fnc_enter = {
             ace_player hideObjectGlobal true;
             ace_player hideObject false;
             ace_player setVariable ["mission_solo", true, true];
-            [echo_radio, "https://radio.synixe.contractors/listen/bbc_radio_drama/radio.mp3"] call live_radio_manager_fnc_play;
-            [echo_radio, 1] call live_radio_manager_fnc_volume;
             if !(is3DENPreview) then {
                 ace_player forceWalk true;
             };
@@ -204,7 +202,7 @@ mission_fnc_enter = {
             current_overcast = 0.3;
         };
         case "lima": {
-            current_time = 4;
+            current_time = 5;
             current_rain = 0;
             current_overcast = 0.1;
             private _loadout = [ace_player] call CBA_fnc_getLoadout;
@@ -285,8 +283,6 @@ mission_fnc_enter = {
             current_rain = 0;
             ace_player setVariable ["mission_solo", true, true];
             ace_player setVariable ["acre_sys_core_isDisabled", true, true];
-            [romeo_radio, "https://radio.synixe.contractors/listen/doctor/radio.mp3"] call live_radio_manager_fnc_play;
-            [romeo_radio, 1] call live_radio_manager_fnc_volume;
             ace_player setPosASL (getPosASL romeo_tp);
             ace_player setDir (getDir romeo_tp);
             ace_player forceWalk true;
@@ -317,7 +313,6 @@ mission_fnc_leave = {
         case "juliet": {
             ace_player setVariable ["acre_sys_core_isDisabled", false, true];
             ace_player setVariable ["mission_solo", false, true];
-            [echo_radio, ""] call live_radio_manager_fnc_play;
             ace_player forceWalk false;
             ace_player hideObjectGlobal false;
         };
@@ -334,7 +329,6 @@ mission_fnc_leave = {
         };
         case "sierra": {
             ace_player setVariable ["mission_solo", false, true];
-            [romeo_radio, ""] call live_radio_manager_fnc_play;
             ace_player forceWalk false;
             ace_player setVariable ["acre_sys_core_isDisabled", false, true];
         };

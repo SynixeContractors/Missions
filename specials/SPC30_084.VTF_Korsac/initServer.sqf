@@ -39,8 +39,13 @@ missionNamespace setVariable ["mission_fry_yelling", false];
 }] call CBA_fnc_addEventHandler;
 
 [{
-    if (missionNamespace getVariable ["mission_fry_yelling", false]) exitWith {};
+    if !(missionNamespace getVariable ["mission_fry_yelling", false]) exitWith {};
     if !(alive russel_final) exitWith {};
     private _say = selectRandom ["russel_overworld_1", "russel_overworld_2", "russel_overworld_3", "russel_overworld_4"];
     ["mission_say", [russel_final, _say, "overworld"]] call CBA_fnc_globalEvent;
 }, 9] call CBA_fnc_addPerFrameHandler;
+
+[romeo_radio, "https://radio.synixe.contractors/listen/doctor/radio.mp3"] call live_radio_manager_fnc_play;
+[romeo_radio, 1] call live_radio_manager_fnc_volume;
+[echo_radio, "https://radio.synixe.contractors/listen/bbc_radio_drama/radio.mp3"] call live_radio_manager_fnc_play;
+[echo_radio, 1] call live_radio_manager_fnc_volume;
