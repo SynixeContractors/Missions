@@ -24,5 +24,5 @@ private _costs = [
     ["La Rochelle", "Ipota", 500],
     ["Ipota", "La Rochelle", 500],
     ["Ipota", "Georgetown", 1500],
-    ["Georgetown", "Ipota", 1500]
+    ["Georgetown", "Ipota", 1500],
 ];
