@@ -1,6 +1,6 @@
 mission_fnc_bombing = compile preprocessFile "hhour.sqf";
 mission_hhour = 7;
-mission_hminute = 20;
+mission_hminute = 30;
 
 //hack for not killing people in destruction animation
 radiomast setDamage 1;
