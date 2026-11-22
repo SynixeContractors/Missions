@@ -1,0 +1,3 @@
+[{unitReady mlrs1;}, {mlrs1 doArtilleryFire [getmarkerpos "marker_arty_1", "12Rnd_230mm_rockets", 1];}] call CBA_fnc_waitUntilAndExecute; 
+[{unitReady mlrs1;}, {mlrs1 doArtilleryFire [getmarkerpos "marker_arty_2", "12Rnd_230mm_rockets", 1];}] call CBA_fnc_waitUntilAndExecute; 
+[{unitReady mlrs1;}, {mlrs1 doArtilleryFire [getmarkerpos "marker_arty_3", "12Rnd_230mm_rockets", 1];}] call CBA_fnc_waitUntilAndExecute;
