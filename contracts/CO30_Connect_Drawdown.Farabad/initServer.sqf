@@ -1,8 +1,8 @@
 mission_function_mlrs_attack = compile preprocessFileLineNumbers "mlrs.sqf";
 
-const mission_note1 = "Daddy, when are you going to be back? Me and mommy miss you so much";
-const mission_note2 = "There is a new group comming this week, we moved the supplies south from Kaftar Kar";
-const mission_note3 = "Sand is bones, bones is sand, the whales eat the bones into sand";
+mission_note1 = "Daddy, when are you going to be back? Me and mommy miss you so much";
+mission_note2 = "There is a new group coming this week, we moved the supplies south from Kaftar Kar";
+mission_note3 = "Sand is bones, bones is sand, the whales eat the bones into sand";
 
 
 
