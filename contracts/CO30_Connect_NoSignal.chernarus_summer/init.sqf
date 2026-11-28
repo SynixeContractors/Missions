@@ -1,3 +1,7 @@
+mission_antena1 = false;
+mission_antena2 = false;
+mission_antena3 = false;
+
 [
     antena1,
     0,  // texture source
